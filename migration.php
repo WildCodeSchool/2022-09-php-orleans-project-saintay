@@ -16,7 +16,8 @@ try {
         DB_PASSWORD
     );
 
-
+    $pdo->exec('DROP DATABASE IF EXISTS ' . DB_NAME);
+    $pdo->exec('CREATE DATABASE ' . DB_NAME);
     $pdo->exec('USE ' . DB_NAME);
 
     if (is_file(DB_DUMP_PATH) && is_readable(DB_DUMP_PATH)) {
