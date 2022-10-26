@@ -1,0 +1,12 @@
+
+.background-nav{
+    position: fixed;
+    top: -100px;
+    left: -5vw;
+    height: 300px;
+    width: 120vw;
+    box-shadow: 0px 6px 20px 20px rgba(16, 114, 234, 0.15);
+    transform: rotate(-1.2deg);
+    background-color: #FFFEFC;
+    z-index: 3;
+}
