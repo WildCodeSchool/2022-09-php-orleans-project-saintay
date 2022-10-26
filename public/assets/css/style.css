@@ -5,3 +5,7 @@ h1, h2, h3, h4, h5 {
 body{
     font-family: var(--font-fam-body);
 }
+
+ul  {
+    list-style: none;
+}
