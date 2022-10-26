@@ -6,15 +6,12 @@ use App\Model\ItemManager;
 
 class ItemController extends AbstractController
 {
-    /**
-     * List items
-     */
     public function index(): string
     {
         $itemManager = new ItemManager();
         $items = $itemManager->selectAll('title');
 
-        return $this->twig->render('Item/index.html.twig', ['items' => $items]);
+        return $this->twig->render('Home/index.html.twig', ['items' => $items]);
     }
 
     /**
