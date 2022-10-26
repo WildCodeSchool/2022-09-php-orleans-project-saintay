@@ -9,6 +9,7 @@
 return [
     '' => ['HomeController', 'index',],
     'items' => ['ItemController', 'index',],
+    'municipalite' => ['MunicipaliteController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
