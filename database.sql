@@ -1,3 +1,4 @@
+-- Active: 1666773360795@@127.0.0.1@3306@saint_ay
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -61,3 +62,18 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE
+    Organigramme (
+        id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        firstname VARCHAR(80) NOT NULL,
+        lastname VARCHAR(80) NOT NULL,
+        role TEXT
+    );
+
+INSERT INTO Organigramme (firstname, lastname, role)
+VALUES 
+    ('Frédéric', 'CUILLERIER', 'Compétence générale - Police - Sécurité - Etat Civil'),
+    ('Marie-Françoise ', 'QUERE', 'Adjointe aux bâtiments et au développement durable - biodiversité'),
+    ('Pascal ', 'FOULON', 'Adjoint aux affaires scolaires, culture, communication et gestion des salles'),
+    ('Dominique', 'RENAULT', 'Adjoint aux travaux, voirie et traitement des eaux.');
