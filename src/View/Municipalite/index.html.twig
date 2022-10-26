@@ -1,13 +1,63 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="/assets/css/municipalite.css">
+	<link rel="stylesheet" href="/assets/css/municipalite.css">
 {% endblock %}
 
 {% block content %}
-   <h1>L'équipe Municipale</h1>
-   <img src 
 
+	<div class="container">
+		<h1>L'équipe Municipale</h1>
+		<img src="/../assets/images/Lequipe-Municipal.jpg" alt="L'équipe municipal" width="650" height="250">
+		<p>
+			L'organisation des responsabilités au sein de l'équipe municipale a été votée le 23 mai 2020, et remaniée en septembre 2020:
+			<br>
+			<br>
+			Maire : Compétence générale - Police - Sécurité - Etat civil : Frédéric CUILLERIER<br>
+			Adjoint aux affaires scolaires, culture, communication et gestion des salles : Pascal FOULON<br>
+			Adjointe aux bâtiments et au développement durable - biodiversité : Marie-Françoise QUERE<br>
+			Adjoint aux travaux, voirie et traitement des eaux : Dominique RENAULT<br>
+			Adjointe à l'urbanisme et au droit des sols : Valérie LABOUACHRA
+			<br>
+			Adjoint aux finances : Serge LEBRUN<br>
+			Adjointe déléguée à la vie des quartiers et au commerce : Isabelle BRIARD<br>
+			Conseiller délégué à la jeunesse et à la petite enfance : Jean-Marc MASSE<br>
+			Conseiller délégué aux sports, à l'entretien des installations sportives et des cérémonies : Joël GIRARD<br>
+			Conseiller délégué aux affaires sociales : Carl LEQUERTIER<br>
+		</p>
+		<h2>Organigramme de l'équipe Municipale</h2>
+		<div class="container">
+			<div class="row">
+				<div class="card col-md-6">
+					<img class="card-img-top" src="/../assets/images/MairePortrait.png" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">Maire</p>
+						<p class="card-text">Frédéric CUILLERIER</p>
+						<p class="card-text">Compétence générale - Police - Sécurité - Etat Civil</p>
+					</div>
+				</div>
+				<div class="card col-md-6">
+					<img class="card-img-top" src="/../assets/images/Marie-françoisePortrait.png" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">Marie-Françoise QUERE</p>
+						<p class="card-text">Adjointe aux bâtiments et au développement durable - biodiversité</p>
+					</div>
+				</div>
+				<div class="card col-md-6 w-150 h-250">
+					<img class="card-img-top" src="/../assets/images/PascalPortrait.png" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">Pascal FOULON</p>
+						<p class="card-text">Adjoint aux affaires scolaires, culture, communication et gestion des salles</p>
+					</div>
+				</div>
+				<div class="card col-md-6 ">
+					<img class="card-img-top" src="/../assets/images/DominiquePortrait.png" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">Dominique RENAULT</p>
+						<p class="card-text">Adjoint aux travaux, voirie et traitement des eaux.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-
-{% endblock %}
+	{% endblock %}
