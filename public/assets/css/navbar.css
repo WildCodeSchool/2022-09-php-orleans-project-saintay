@@ -2,8 +2,6 @@
     font-family: var(--font-fam-title);
 }
 
-.navbar{
-    padding-inline: 10vw;
-    margin: 0;
-    box-shadow: 0px 1px 30px var(--bs-primary);
+.navbar{ 
+    box-shadow: 0px 0px 20px var(--bs-primary);
 }
