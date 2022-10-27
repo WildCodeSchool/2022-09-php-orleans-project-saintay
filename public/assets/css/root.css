@@ -14,12 +14,8 @@
 
     --font-fam-title: 'Marianne-bold';
     --font-fam-body: 'Hind Madurai', sans-serif;
-
 }
 
-.btn btn-primary {
-    background-color: var(--bs-primary-rgb);
-}
 
 
 

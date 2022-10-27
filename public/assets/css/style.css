@@ -7,7 +7,7 @@ body{
 }
 
 .btn-primary {
-background-color: var(--bs-primary-rgb: 52, 90, 137);
+background-color: var(--bs-primary-rgb);
 }
 
 
