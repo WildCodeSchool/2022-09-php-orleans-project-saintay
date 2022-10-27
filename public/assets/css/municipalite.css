@@ -25,6 +25,11 @@
     }
 
     .row {
-        gap:10px
+        gap:36px
+    }
+
+    .team {
+        width: 430px;
+        height: 250px;
     }
 }
