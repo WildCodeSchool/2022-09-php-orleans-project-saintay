@@ -8,7 +8,6 @@ class MunicipaliteManager extends AbstractManager
 {
     public const TABLE = 'Organigramme';
 
-   
     public function selectAll(string $orderBy = '', string $direction = 'ASC'): array
     {
         $query = 'SELECT firstname, lastname, role, image FROM ' . static::TABLE;

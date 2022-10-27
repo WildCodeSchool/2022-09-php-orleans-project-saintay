@@ -63,6 +63,11 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+
+
+
+/* // PAGE MUNICIPALITE ORGANIGRAMME */
+
 DROP TABLE `Organigramme`;
 
 CREATE TABLE
@@ -80,3 +85,5 @@ VALUES
     ('Marie-Françoise ', 'QUERE', 'Adjointe aux bâtiments et au développement durable - biodiversité','/../assets/images/Marie-francoisePortrait.png'),
     ('Pascal ', 'FOULON', 'Adjoint aux affaires scolaires, culture, communication et gestion des salles','/../assets/images/PascalPortrait.png'),
     ('Dominique', 'RENAULT', 'Adjoint aux travaux, voirie et traitement des eaux.','/../assets/images/DominiquePortrait.png');
+
+/*     // PAGE MUNICIPALITE ORGANIGRAMME */
