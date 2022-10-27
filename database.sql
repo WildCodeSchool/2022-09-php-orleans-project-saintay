@@ -1,4 +1,3 @@
--- Active: 1666785953847@@127.0.0.1@3306@saint_ay
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
