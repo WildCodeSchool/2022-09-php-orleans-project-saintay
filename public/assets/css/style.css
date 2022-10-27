@@ -5,3 +5,16 @@ h1, h2, h3, h4, h5 {
 body{
     font-family: var(--font-fam-body);
 }
+
+.services-municipaux, h3{   
+border-bottom:  1px solid #333;
+padding: 3px;
+}
+
+.col-md-9 {
+    margin-inline: 3%;
+    
+}
+
+
+
