@@ -1,6 +1,26 @@
 {% extends 'layout.html.twig' %}
 
 {% block sidebar %}
+    {% set sideNav = [
+        {
+            'title' : 'test', 
+            'link' : 'test'
+        },
+        {
+            'title' : 'test', 
+            'link' : 'test'
+        },
+        {
+            'title' : 'test', 
+            'link' : 'test'
+        },
+        {
+            'title' : 'test', 
+            'link' : 'test'
+        }
+    ]      
+    %}
+    
     {% include './Item/_sidebar.html.twig' %}
 {% endblock %}  
 

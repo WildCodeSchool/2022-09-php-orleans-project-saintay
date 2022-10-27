@@ -22,16 +22,22 @@ main {
 
     padding-block-start: 120px;
 }
-.sidebar-nav {
-    transition: 0.4s ease;
-}
 
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 960px) {
     .sidebar {
         position: relative;
         width: 100%;
         height: fit-content;
         clip-path: none;
+        
+    }
+    .sidebar-nav{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(1fr);
+        text-align: center;
+        
     }
     main {
         margin-inline-start: 0px;

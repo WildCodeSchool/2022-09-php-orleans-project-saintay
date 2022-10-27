@@ -12,47 +12,6 @@ use Twig\Loader\FilesystemLoader;
 abstract class AbstractController
 {
     protected Environment $twig;
-    protected array $sideMenuIndex = [
-        [
-            'title' => 'retour à l\'acceuil',
-            'link' => '/home'
-        ],
-        [
-            'title' => 'retour à l\'acceuil',
-            'link' => '#'
-        ],
-    ];
-    protected $sideMenuAssociation = [
-        [
-            'title' => 'test',
-            'link' => '#'
-        ],
-        [
-            'title' => 'test',
-            'link' => '#'
-        ],
-    ];
-    protected $sideMenuMunicipalité = [
-        [
-            'title' => 'test',
-            'link' => '#'
-        ],
-        [
-            'title' => 'test',
-            'link' => '#'
-        ],
-    ];
-    protected $sideMenuServicesMunicipaux = [
-        [
-            'title' => 'test',
-            'link' => '#'
-        ],
-        [
-            'title' => 'test',
-            'link' => '#'
-        ],
-    ];
-
 
     public function __construct()
     {
