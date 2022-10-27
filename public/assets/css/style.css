@@ -5,6 +5,15 @@ h1, h2, h3, h4, h5 {
 body{
     font-family: var(--font-fam-body);
 }
+
+
+.btn-primary {
+background-color: var(--bs-primary-rgb);
+}
+
+
+
 main{
     margin-block-start: 3rem;
 }
+
