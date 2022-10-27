@@ -6,7 +6,7 @@ body{
     font-family: var(--font-fam-body);
 }
 
-.services-municipaux, h3{   
+.municipal-service, .title {   
 border-bottom:  1px solid #333;
 padding: 3px;
 margin: 3%;
@@ -25,7 +25,7 @@ margin: 3%;
   
 
     @media screen and (max-width: 768px) {
-        h4{
+        .fireman{
     padding-top: 18px;
 }
     }
