@@ -8,3 +8,17 @@ body{
 main{
     margin-block-start: 3rem;
 }
+
+.home-actualite .btn {
+    border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
+}
+.home-actualite .card {
+    width: 25rem;
+    height: 25rem;
+}
+.home-actualite .card img {
+    margin: 1rem;
+    width: 10em;
+    height: 10rem;
+    object-fit: cover;
+}
