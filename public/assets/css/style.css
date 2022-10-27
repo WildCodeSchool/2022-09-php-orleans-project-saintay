@@ -6,6 +6,7 @@ body{
     font-family: var(--font-fam-body);
 }
 
+
 .services-municipaux, h3{   
 border-bottom:  1px solid #333;
 padding: 3px;
@@ -30,5 +31,8 @@ margin: 3%;
 }
     }
       
+
+
+
 
 
