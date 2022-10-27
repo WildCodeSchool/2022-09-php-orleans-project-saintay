@@ -3,5 +3,28 @@
 }
 
 .card {
-height: 500px;
+    height: 500px;
+    width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+    .card-img-top {
+        height: 350px;
+        width: 100%;
+    }
+
+    .card {
+        height: 550px;
+        width: 300px;
+        display: flex;
+    }
+
+    .col-lg-3{
+        display: flex;
+        justify-content: center;
+    }
+
+    .row {
+        gap:10px
+    }
 }
