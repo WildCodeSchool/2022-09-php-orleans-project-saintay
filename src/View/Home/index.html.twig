@@ -1,22 +1,39 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<h2>Mot du maire</h2>
-	<div>
-		<p class="fst-italic">"De la force de la douceur, de la douceur de la force"</p>
-	</div>
-	<div>
-		<p>La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l'indépendance d'une grande agglomération, génère le caractère attractif de SAINT-AY. 
-			Le dynamisme de ses habitants à travers la vie associative, scolaire et économique, constitue sa principale richesse. 
-			Ses bords de Loire et de Mauve et ses terres champêtres dégagent une impression de douceur et de bien-être.</p>
-	</div>
-	<div>
-		<p>Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces atouts agyliens, en fondant son action sur trois principes directeurs :</p>
-	</div>
-    <div>
-    <p>Développer et moderniser les équipements et les infrastructures,
-Favoriser le plein épanouissement de la vie associative, scolaire et économique,
-Protéger et mettre en valeur le patrimoine naturel et architectural.
-Ainsi, d'agréable village de vignerons du début du XXème siècle, SAINT-AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n'a d'égal que la douceur de vivre.</p>
-</div>
-{% endblock %}
+	<div class="d-flex flex-column mb-3">
+		<h2>Mot du maire</h2>
+		<div class="p-2">
+			<p class="fst-italic">"De la force de la douceur, de la douceur de la force"</p>
+		</div>
+		<div class="p-2">
+			<p>La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l'indépendance d'une grande agglomération, génère le caractère attractif de SAINT-AY. 
+											Le dynamisme de ses habitants à travers la vie associative, scolaire et économique, constitue sa principale richesse. 
+											Ses bords de Loire et de Mauve et ses terres champêtres dégagent une impression de douceur et de bien-être.</p>
+		</div>
+		<div class="p-2">
+			<p>Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces atouts agyliens, en fondant son action sur trois principes directeurs :</p>
+		</div>
+		<div class="p-2">
+			<p>Développer et moderniser les équipements et les infrastructures,
+								Favoriser le plein épanouissement de la vie associative, scolaire et économique,
+								Protéger et mettre en valeur le patrimoine naturel et architectural.
+								Ainsi, d'agréable village de vignerons du début du XXème siècle, SAINT-AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n'a d'égal que la douceur de vivre.</p>
+		</div>
+		
+			<div class="d-flex  p-2 flex-md-row mb-3">
+				<img src="./assets/images/fredo.png" class="rounded" alt="maire"/>
+				<ul>
+					<b>
+						<li>Fréderic CUILLERIER</li>
+					</b>
+					<b>
+						<li>Maire de Saint-AY</li>
+					</b>
+					<b>
+						<li>Président du Pays Loire-Beauce</li>
+					</b>
+				</ul>
+			</div>
+		</div>
+	{% endblock %}
