@@ -7,9 +7,7 @@ body{
 }
 
 ul {
-    
     flex-direction: start;
     list-style: none;
     padding: 0;
-   
-}
+ }
