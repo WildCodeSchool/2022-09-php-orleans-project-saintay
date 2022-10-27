@@ -17,7 +17,7 @@ main {
 .sidebar {
     font-family: var(--font-fam-title);
     width: 350px;
-    height: 130vh;
+    height: 100vh;
     clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
 
     padding-block-start: 120px;
