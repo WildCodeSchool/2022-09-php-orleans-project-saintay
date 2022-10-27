@@ -2,13 +2,23 @@
 
 namespace App\Controller;
 
+use App\Model\MunicipaliteManager;
+use PDO;
+
 class MunicipaliteController extends AbstractController
 {
-    /**
-     * Display home page
-     */
+
+   // public MunicipaliteManager $municipaliteManager = new MunicipaliteManager();
+
     public function index(): string
+
     {
-        return $this->twig->render('Municipalite/index.html.twig');
+        $municipaliteManager = new MunicipaliteManager();
+        return $this->twig->render(
+            'Municipalite/index.html.twig',
+            [
+                'personne' => $municipaliteManager->selectAll(),
+            ],
+        );
     }
 }

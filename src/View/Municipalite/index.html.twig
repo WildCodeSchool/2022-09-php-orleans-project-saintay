@@ -28,44 +28,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<div class="card">
-					<img class="card-img-top" src="/../assets/images/MairePortrait.png" alt="Card image cap">
-					<div class="card-body">
-						<p class="card-text">Maire</p>
-						<p class="card-text">Frédéric CUILLERIER</p>
-						<p class="card-text">Compétence générale - Police - Sécurité - Etat Civil</p>
+				{% for personnes in personne %}
+					<div class="card">
+						<img class="card-img-top" src="{{ personnes.image }}" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-text">{{ personnes.firstname }}
+								{{personnes.lastname}}
+							</p>
+							<p class="card-text">{{ personnes.role}}
+							</p>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card">
-					<img class="card-img-top" src="/../assets/images/Marie-francoisePortrait.png" alt="Card image cap">
-					<div class="card-body">
-						<p class="card-text">Marie-Françoise QUERE</p>
-						<p class="card-text">Adjointe aux bâtiments et au développement durable - biodiversité</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card">
-					<img class="card-img-top" src="/../assets/images/PascalPortrait.png" alt="Card image cap">
-					<div class="card-body">
-						<p class="card-text">Pascal FOULON</p>
-						<p class="card-text">Adjoint aux affaires scolaires, culture, communication et gestion des salles</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card">
-					<img class="card-img-top" src="/../assets/images/DominiquePortrait.png" alt="Card image cap">
-					<div class="card-body">
-						<p class="card-text">Dominique RENAULT</p>
-						<p class="card-text">Adjoint aux travaux, voirie et traitement des eaux.</p>
-					</div>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
+	</div>
 
-	{% endblock %}
-
-// Insert to pdo ??
+{% endblock %}

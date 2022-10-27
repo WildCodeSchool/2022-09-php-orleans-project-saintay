@@ -63,17 +63,20 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+DROP TABLE `Organigramme`;
+
 CREATE TABLE
     Organigramme (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         firstname VARCHAR(80) NOT NULL,
         lastname VARCHAR(80) NOT NULL,
-        role TEXT
+        role TEXT NOT NULL,
+        image TEXT NOT NULL
     );
 
-INSERT INTO Organigramme (firstname, lastname, role)
+INSERT INTO Organigramme (firstname, lastname, role, image)
 VALUES 
-    ('Frédéric', 'CUILLERIER', 'Compétence générale - Police - Sécurité - Etat Civil'),
-    ('Marie-Françoise ', 'QUERE', 'Adjointe aux bâtiments et au développement durable - biodiversité'),
-    ('Pascal ', 'FOULON', 'Adjoint aux affaires scolaires, culture, communication et gestion des salles'),
-    ('Dominique', 'RENAULT', 'Adjoint aux travaux, voirie et traitement des eaux.');
+    ('Frédéric', 'CUILLERIER', 'Compétence générale - Police - Sécurité - Etat Civil','/../assets/images/MairePortrait.png'),
+    ('Marie-Françoise ', 'QUERE', 'Adjointe aux bâtiments et au développement durable - biodiversité','/../assets/images/Marie-francoisePortrait.png'),
+    ('Pascal ', 'FOULON', 'Adjoint aux affaires scolaires, culture, communication et gestion des salles','/../assets/images/PascalPortrait.png'),
+    ('Dominique', 'RENAULT', 'Adjoint aux travaux, voirie et traitement des eaux.','/../assets/images/DominiquePortrait.png');
