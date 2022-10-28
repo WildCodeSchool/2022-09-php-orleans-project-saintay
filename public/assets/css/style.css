@@ -11,7 +11,8 @@ body {
 }
 
 main{
-    margin-block-start: 3rem;
+    margin-block-start: 12rem;
+    margin-inline-start: 350px;
 }
 
 .home-actualities .btn {
@@ -34,6 +35,8 @@ main{
     clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
 
     padding-block-start: 120px;
+
+    z-index: -1;
 }
 
 
@@ -42,9 +45,9 @@ main{
         position: relative;
         width: 100%;
         height: fit-content;
-        clip-path: none;
-        
+        clip-path: none;   
     }
+
     .sidebar-nav{
         display: grid;
         grid-template-columns: 1fr 1fr;

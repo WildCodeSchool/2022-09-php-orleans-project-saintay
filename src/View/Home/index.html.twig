@@ -1,17 +1,5 @@
 {% extends 'layout.html.twig' %}
 
-{% block sidebar %}
-    {% set sideNav = [
-        {
-            'title' : '', 
-            'link' : ''
-        }
-    ]      
-    %}
-    
-    {% include './Item/_sidebar.html.twig' %}
-{% endblock %}
-
 {% block content %}
     <h1>Bienvenue à Saint Ay !</h1>
     {% include './Home/_actuality.html.twig' %}
