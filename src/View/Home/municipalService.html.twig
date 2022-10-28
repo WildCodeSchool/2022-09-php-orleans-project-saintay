@@ -1,10 +1,22 @@
 {% extends 'layout.html.twig' %}
 
-{% block stylesheet %}{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="../assets/css/municipalService.css">
+{% endblock %}
 
 {% block content %}
-<h1 class="mb-5">Vie scolaire</h1>
-<h2>L'école maternelle</h2>
-<img src="../assets/images/ecoleMaternelle.jpeg" alt="EcoleMaternelle">
-
+	<div class="container-fluid">
+		<h1 class="title">Vie scolaire</h1>
+		<section class="municipal-service">
+			<h2>L'école maternelle</h2>
+			<div class="d-flex">
+				<img class="rounded mb-5" src="../assets/images/ecoleMaternelle.jpeg" alt="EcoleMaternelle" width="400px">
+				<div class="m-3">
+					<p>L'école maternelle est située Rue de la Métairie, entrée des enfants par la venelle depuis le parking de la Salle François Villon.</p>
+					<p>Elle comprend six classes avec ATSEM.</p>
+					<p>Tél : 02 38 60 04 97</p>
+                    <p>ecm-saint-ay@ac-orleans-tours.fr</p>
+				</div>
+			</div>
+		</section>
+	</div>
 {% endblock %}
