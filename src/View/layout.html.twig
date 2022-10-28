@@ -15,13 +15,18 @@
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="stylesheet" href="/assets/css/navbar.css">
 
+
 		{% block stylesheet %}{% endblock %}
 		</head>
 
 		<body>
+
 			{% block navbar %}
 				{% include './Item/_navbar.html.twig' %}
 			{% endblock %}
+      
+      {% block sidebar %}	
+		  {% endblock %}
 			
 			<main>
 			{% block content %}{% endblock %}
