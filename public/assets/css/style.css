@@ -8,3 +8,18 @@ body{
 main{
     margin-block-start: 3rem;
 }
+
+.municipal-service .title {   
+    border-bottom:  1px solid #333;
+    padding: 3px;
+    margin: 3%;
+    }
+    
+    .municipal-service .col-md-9 {
+        margin-inline: 3%;
+    
+    }
+    
+    .lead {
+        padding: 10px;
+    }
