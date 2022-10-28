@@ -1,0 +1,7 @@
+.navbar-nav{
+    font-family: var(--font-fam-title);
+}
+
+.navbar{ 
+    box-shadow: 0px 0px 20px var(--bs-primary);
+}
