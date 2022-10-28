@@ -1,8 +1,10 @@
+
 h1,
 h2,
 h3,
 h4,
 h5 {
+
     font-family: var(--font-fam-title);
 }
 
@@ -10,6 +12,25 @@ body {
     font-family: var(--font-fam-body);
 }
 
+.btn-primary {
+background-color: var(--bs-primary-rgb);
+}
+
+.municipal-service, .title {   
+border-bottom:  1px solid #333;
+padding: 3px;
+margin: 3%;
+}
+
+.col-md-9 {
+    margin-inline: 3%;
+    
+}
+
+.lead {
+    padding: 10px;
+}
+      
 main{
     margin-block-start: 12rem;
     margin-inline-start: 350px;
@@ -39,6 +60,11 @@ main{
     z-index: -1;
 }
 
+@media screen and (max-width: 768px) {
+        .fireman {
+    padding-top: 18px;
+  }
+}
 
 @media screen and (max-width: 960px) {
     .sidebar {
@@ -60,6 +86,4 @@ main{
     }
 }
 
-.btn-primary {
-background-color: var(--bs-primary-rgb);
-}
+
