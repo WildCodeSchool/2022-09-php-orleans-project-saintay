@@ -6,9 +6,6 @@ use App\Model\ItemManager;
 
 class ItemController extends AbstractController
 {
-    /**
-     * List items
-     */
     public function index(): string
     {
         $itemManager = new ItemManager();
