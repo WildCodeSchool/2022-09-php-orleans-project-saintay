@@ -13,12 +13,12 @@
 		</div>
 		<h2 class="mb-3">Organigramme de l'équipe Municipale</h2>
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row organigrammeRow ">
 				{% for personnes in personne %}
-					<div class="col-lg-3">
-						<div class="card">
-							<img class="card-img-top" src="{{ personnes.image }}" alt="Card image cap">
-							<div class="card-body">
+					<div class="col-lg-3 organigrammeCol-lg-3 ">
+						<div class="card organigrammeCard">
+							<img class="card-img-top organigrammeCard-img-top" src="{{ personnes.image }}" alt="Card image cap">
+							<div class="card-body organigrammeCard-body ">
 								<h5 class="card-text">{{ personnes.firstname }}
 									{{personnes.lastname}}
 								</h5>

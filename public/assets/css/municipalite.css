@@ -1,31 +1,31 @@
-.card-img-top {
+.organigrammeCard-img-top {
     height: 360px;
 }
 
-.card {
+.organigrammeCard {
     height: 500px;
     width: 300px;
 }
 
 @media screen and (max-width: 768px) {
-    .card-img-top {
+    .organigrammeCard-img-top {
         height: 350px;
         width: 100%;
     }
 
-    .card {
+    .organigrammeCard {
         height: 550px;
         width: 300px;
         display: flex;
     }
 
-    .col-lg-3{
+    .organigrammeCol-lg-3 {
         display: flex;
         justify-content: center;
     }
 
-    .row {
-        gap:36px
+    .organigrammeRow {
+        gap: 36px;
     }
 
     .team {
