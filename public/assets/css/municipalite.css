@@ -1,30 +1,30 @@
-.organigrammeCard-img-top {
+.municipalityTeam .card-img-top {
     height: 360px;
 }
 
-.organigrammeCard {
+.municipalityTeam .card {
     height: 500px;
     width: 300px;
 }
 
 @media screen and (max-width: 768px) {
-    .organigrammeCard-img-top {
+    .municipalityTeam .card-img-top {
         height: 350px;
         width: 100%;
     }
 
-    .organigrammeCard {
+    .municipalityTeam .card {
         height: 550px;
         width: 300px;
         display: flex;
     }
 
-    .organigrammeCol-lg-3 {
+    .municipalityTeam .col-lg-3 {
         display: flex;
         justify-content: center;
     }
 
-    .organigrammeRow {
+    .municipalityTeam .row {
         gap: 36px;
     }
 

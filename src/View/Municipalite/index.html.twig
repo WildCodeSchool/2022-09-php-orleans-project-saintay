@@ -6,19 +6,19 @@
 
 {% block content %}
 
-	<div class="container">
+	<div class="container municipalityTeam">
 		<h1 class="mt-5">L'équipe Municipale</h1>
 		<div class="d-flex justify-content-center mb-5 mt-3">
 			<img class="team" src="/../assets/images/Lequipe-Municipal.jpg" alt="L'équipe municipal" width="1000" height="400">
 		</div>
 		<h2 class="mb-3">Organigramme de l'équipe Municipale</h2>
 		<div class="container-fluid">
-			<div class="row organigrammeRow ">
+			<div class="row">
 				{% for personnes in personne %}
-					<div class="col-lg-3 organigrammeCol-lg-3 ">
-						<div class="card organigrammeCard">
-							<img class="card-img-top organigrammeCard-img-top" src="{{ personnes.image }}" alt="Card image cap">
-							<div class="card-body organigrammeCard-body ">
+					<div class="col-lg-3">
+						<div class="card">
+							<img class="card-img-top" src="{{ personnes.image }}" alt="Card image cap">
+							<div class="card-body">
 								<h5 class="card-text">{{ personnes.firstname }}
 									{{personnes.lastname}}
 								</h5>

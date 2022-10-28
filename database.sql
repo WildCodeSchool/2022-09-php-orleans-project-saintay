@@ -110,10 +110,9 @@ ALTER TABLE
 
 /* // PAGE MUNICIPALITE ORGANIGRAMME */
 
-DROP TABLE `Organigramme`;
 
 CREATE TABLE
-    Organigramme (
+    MunicipalityTeam (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         firstname VARCHAR(80) NOT NULL,
         lastname VARCHAR(80) NOT NULL,
@@ -122,7 +121,7 @@ CREATE TABLE
     );
 
 INSERT INTO
-    Organigramme (
+    MunicipalityTeam (
         firstname,
         lastname,
         role,
