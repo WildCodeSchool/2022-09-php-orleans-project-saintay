@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
+
 @font-face {
     font-family: 'Marianne';
-    src: url(../font/Marianne-Bold.woff)
-        url(../font/Marianne-Medium.woff);
+    src: url(../font/Marianne-Bold.woff) url(../font/Marianne-Medium.woff);
 }
 
 :root {
