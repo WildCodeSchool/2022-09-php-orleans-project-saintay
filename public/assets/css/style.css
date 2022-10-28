@@ -13,6 +13,7 @@ main {
     margin-block-start: 120px;
     margin-inline-start: 350px;
 }
+
 .sidebar {
     font-family: var(--font-fam-title);
     width: 350px;
@@ -29,14 +30,14 @@ main {
         width: 100%;
         height: fit-content;
         clip-path: none;
-        
+
     }
     .sidebar-nav{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(1fr);
         text-align: center;
-        
+
     }
     main {
         margin-inline-start: 0px;
