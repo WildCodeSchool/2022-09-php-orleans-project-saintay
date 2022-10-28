@@ -1,11 +1,18 @@
-.municipal-service, .kindergarten {
-border-bottom: 1px solid black;
-padding: 3px;
-margin: 3%;
+.municipal-service,
+.kindergarten {
+    border-bottom: 1px solid black;
+    padding: 3px;
+    margin: 3%;
 }
 
-.school {
+@media screen and (max-width: 768px) {
+    .school img {
+        height: 250px;
+    }
 
+    .school .d-flex {
+        flex-direction: column;
+    }
+
+    
 }
-
-
