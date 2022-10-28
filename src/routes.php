@@ -10,6 +10,7 @@ return [
     '' => ['HomeController', 'index',],
     'contact' => ['ContactController', 'index'],
     'items' => ['ItemController', 'index',],
+    'municipalService' => ['MunicipalServiceController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
