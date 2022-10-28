@@ -9,9 +9,23 @@ h5 {
 body {
     font-family: var(--font-fam-body);
 }
-main {
-    margin-block-start: 120px;
-    margin-inline-start: 350px;
+
+main{
+    margin-block-start: 3rem;
+}
+
+.home-actualities .btn {
+    border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
+}
+.home-actualities .card {
+    width: 25rem;
+    height: 25rem;
+}
+.home-actualities .card img {
+    margin: 1rem;
+    width: 10em;
+    height: 10rem;
+    object-fit: cover;
 }
 .sidebar {
     font-family: var(--font-fam-title);
