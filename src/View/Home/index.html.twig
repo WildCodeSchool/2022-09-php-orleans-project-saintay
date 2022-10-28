@@ -1,5 +1,17 @@
 {% extends 'layout.html.twig' %}
 
+{% block sidebar %}
+    {% set sideNav = [
+        {
+            'title' : '', 
+            'link' : ''
+        }
+    ]      
+    %}
+    
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
 {% block content %}
 	<div class="d-flex flex-column mb-3">
 		<h2>Mot du maire</h2>

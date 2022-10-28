@@ -20,9 +20,13 @@
 		</head>
 
 		<body>
+
 			{% block navbar %}
 				{% include './Item/_navbar.html.twig' %}
 			{% endblock %}
+      
+      {% block sidebar %}	
+		  {% endblock %}
 			
 			<main>
 			{% block content %}{% endblock %}
