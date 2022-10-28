@@ -1,5 +1,17 @@
 {% extends 'layout.html.twig' %}
 
+{% block sidebar %}
+    {% set sideNav = [
+        {
+            'title' : '', 
+            'link' : ''
+        }
+    ]      
+    %}
+    
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
 {% block content %}
 	<div class="container mt-5">
 		{% if errors is not empty  %}
