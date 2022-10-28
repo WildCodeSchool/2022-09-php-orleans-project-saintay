@@ -12,6 +12,11 @@ body {
     font-family: var(--font-fam-body);
 }
 
+.lead  {
+    list-style: none;
+     padding: 10px;
+}
+
 .btn-primary {
 background-color: var(--bs-primary-rgb);
 }
@@ -27,10 +32,6 @@ margin: 3%;
     
 }
 
-.lead {
-    padding: 10px;
-}
-      
 main{
     margin-block-start: 12rem;
     margin-inline-start: 350px;
@@ -39,16 +40,19 @@ main{
 .home-actualities .btn {
     border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
 }
+
 .home-actualities .card {
     width: 25rem;
     height: 25rem;
 }
+
 .home-actualities .card img {
     margin: 1rem;
     width: 10em;
     height: 10rem;
     object-fit: cover;
 }
+
 .sidebar {
     font-family: var(--font-fam-title);
     width: 350px;
@@ -72,7 +76,7 @@ main{
         width: 100%;
         height: fit-content;
         clip-path: none;   
-    }
+}
 
     .sidebar-nav{
         display: grid;
@@ -80,10 +84,10 @@ main{
         grid-template-rows: repeat(1fr);
         text-align: center;
         
-    }
+}
     main {
         margin-inline-start: 0px;
-    }
+ }
 }
 
 
