@@ -15,11 +15,17 @@ main{
     margin: 3%;
     }
     
-    .municipal-service .col-md-9 {
+    .municipal-service .truck {
         margin-inline: 3%;
     
     }
     
-    .lead {
+    .firemanWord {
         padding: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .fireman {
+            padding-top: 18px
+        }
     }
