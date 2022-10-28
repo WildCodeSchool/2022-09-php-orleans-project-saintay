@@ -9,14 +9,14 @@ main{
     margin-block-start: 3rem;
 }
 
-.home-actualite .btn {
+.home-actualities .btn {
     border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
 }
-.home-actualite .card {
+.home-actualities .card {
     width: 25rem;
     height: 25rem;
 }
-.home-actualite .card img {
+.home-actualities .card img {
     margin: 1rem;
     width: 10em;
     height: 10rem;

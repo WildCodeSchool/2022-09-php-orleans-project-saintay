@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use App\Model\ActualiteManager;
+use App\Model\ActualityManager;
 
 class HomeController extends AbstractController
 {
     public function index(): string
     {
-        $actuManager = new ActualiteManager();
-        $homeActu = $actuManager->selectHomeActu();
-        return $this->twig->render('Home/index.html.twig', ['actualit' => $homeActu]);
+        $actuManager = new ActualityManager();
+        $homeActualities = $actuManager->selectActualities(2);
+        return $this->twig->render('Home/index.html.twig', ['actualities' => $homeActualities]);
     }
 }
