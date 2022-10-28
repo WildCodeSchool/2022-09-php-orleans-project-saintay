@@ -1,17 +1,19 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-<div class="d-flex flex-column">
-	<h2>Infos pratique</h2>
-	<h3>Horaire d'ouverture au public</h3>
-	<ul>
-		<li class="lead">Le lundi de 15 à 19 heures (17 heures en août)</li>
-		<li class="lead">Le mardi de 9 à 12 et de 15 à 17 heures</li>
-		<li class="lead">Le mercredi de 15 à 17 heures</li>
-		<li class="lead">Le jeudi de 9 à 12 heures</li>
-		<li class="lead">Le vendredi de 9 à 12 et de 15 à 17 heures</li>
-		<li class="lead">Le samedi de 9 à 12 heures les semaines paires uniquement</li>
-		<li class="lead">(fermé tous les samedis en août)</li>
-	</ul>
+  <h1>Bienvenue à Saint Ay !</h1>
+{% include './Home/_actuality.html.twig' %}
+  <div class="d-flex flex-column">
+	  <h2>Infos pratique</h2>
+	  <h3>Horaire d'ouverture au public</h3>
+	    <ul>
+		    <li class="lead">Le lundi de 15 à 19 heures (17 heures en août)</li>
+		    <li class="lead">Le mardi de 9 à 12 et de 15 à 17 heures</li>
+		    <li class="lead">Le mercredi de 15 à 17 heures</li>
+		    <li class="lead">Le jeudi de 9 à 12 heures</li>
+		    <li class="lead">Le vendredi de 9 à 12 et de 15 à 17 heures</li>
+		    <li class="lead">Le samedi de 9 à 12 heures les semaines paires uniquement</li>
+		    <li class="lead">(fermé tous les samedis en août)</li>
+	    </ul>
 	</div>
 {% endblock %}
