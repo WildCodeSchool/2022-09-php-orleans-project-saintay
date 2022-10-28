@@ -6,7 +6,7 @@ use PDO;
 
 class ActualityManager extends AbstractManager
 {
-    public const TABLE = "actualities";
+    public const TABLE = "actuality";
 
     public function selectActualities(int $limit): array
     {
