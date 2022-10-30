@@ -22,11 +22,23 @@ CREATE TABLE actuality (
   PRIMARY KEY (`id`)
 );
 
+CREATE TABLE user (
+    'id' INT NOT NULL AUTO_INCREMENT PRIMARY_KEY,
+    'email' VARCHAR(255) NOT NULL,
+    'password' VARCHAR(255) NOT NULL
+);
 
-INSERT INTO actuality 
+INSERT INTO 'user' ('email', 'password')
+VALUES (
+    'admin@saintay.fr',
+    'password'
+);
+
+
+INSERT INTO actuality
 VALUES (1, "Nouveau site est en construction", 20221020 , "/assets/images/homme-devant-ordinateur.jpg", "Un nouveau site est actuellement en cours de construction. Tout le contenu n'est pas encore disponible", NULL);
 
-INSERT INTO actuality 
+INSERT INTO actuality
 VALUES (2, "A Saint-Ay, après l'incendie du mois de janvier, l'usine Ciritec ne sera pas reconstruite.", 20221003, "/assets/images/incendie_saintay.jpeg", "Spécialisée dans les circuits imprimés, l'usine de Saint-Ay a été détruite par un incendie fin janvier. Un plan de sauvegarde de l'emploi est en cours pour 53 salariés. Seul un site d'expertise de dix-sept personnes sera conservé dans la commune.", "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/les-marcheurs-agyliens-sont-en-forme_14204782/");
 
 INSERT INTO actuality
