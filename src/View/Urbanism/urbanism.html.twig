@@ -1,19 +1,67 @@
 {% extends 'layout.html.twig' %}
 
 {% block sidebar %}
-    {% set sideNav = [
-        {
-            'title' : '',
-            'link' : ''
-        }
-    ]
-    %}
+	{% set sideNav = [
+{
+'title' : '',
+'link' : ''
+}
+]
+%}
 
-    {% include './Item/_sidebar.html.twig' %}
+	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}
-<h1>Urbanisme</h1>
-<p>Cette page est destinée à vous aider dans vos démarches concernant vos projets immobiliers, qu'il s'agisse de constructions nouvelles, de modifications ou d'extensions, avec ou sans démolitions.</p>
+	<div>
+		<h1>Urbanisme</h1>
+		<p>Cette page est destinée à vous aider dans vos démarches concernant vos projets immobiliers, qu'il s'agisse de constructions nouvelles, de modifications ou d'extensions, avec ou sans démolitions.</p>
+	</div>
 
-{% endblock %}
+	<div class="container mt-2">
+		<p class="text-black bg-light p-2 rounded text-center">Le plan local d'urbanisme (PLU) et le règlement Local de publicité (RLP) en vigueur à Saint-Ay ont été votés le 3 février 2020.<br>Vous pouvez en visualiser toutes les pièces en cliquant ici.</p>
+	</div>
+	<section class="section mt-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
+					<div>
+						<h2>Le service urbanisme</h2>
+						<p>
+							<b>Il exerce les missions suivantes</b>
+							sous l’autorité de Monsieur le Maire :</p>
+						<ul>
+							<li>Gestion des autorisations du Droit d'Occupation des Sols : permis de construire, permis de démolir, déclaration préalable, certificat d’urbanisme, etc.</li>
+							<li>Information et accompagnement en amont et en aval pour chacun de tout projet tant auprès des administrés que des professionnels (notaire, géomètre, agence, Domaines, etc.)</li>
+							<li>Gestion du Plan Local d'Urbanisme et du développement du territoire</li>
+							<li>Suivi des contentieux en urbanisme</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div>
+						<img alt="Web Studio" class="img-fluid" src="./assets/images/sky_town_hall.jpg">
+					</div>
+				</div>
+			</div>
+			<div>
+				<p>Vous pouvez joindre le service urbanisme :</p>
+				<ul>
+					<li>par courriel à
+						<a href="mailto:urbanisme@ville-saint-ay.fr">urbanisme@ville-saint-ay.fr</a>
+					</li>
+					<li>par téléphone au  02 38 88 44 44</li>
+					<li>ou sur rendez-vous à la Mairie : Tél 02 38 88 44 44</li>
+					<li>aux horaires suivants : Les Lundi, Jeudi et Vendredi de 9 à 12 heures et de 15 à 17 heures</li>
+				</ul>
+			</div>
+		</section>
+		<div class="container mt-2">
+			<p class="text-black bg-light p-2 rounded text-center">
+				<b>AVERTISSEMENT</b>
+				<br>Cette page ne représente pas la totalité du droit des sols applicable aux projets immobiliers. Malgré nos efforts il se peut que des informations données ici soient partielles ou obsolètes. Nous vous prions de nous en excuser.
+				<br>Le service urbanisme de la mairie est à même de vous renseigner plus précisément sur les textes en vigueur.
+				<br>Merci de signaler toute erreur ou imprécision au <a href="webmestre@ville-saint-ay.fr">webmestre</a> ou au <a href="urbanisme@ville-saint-ay.fr">service urbanisme</a>.</p>
+		</div>
+
+	{% endblock %}
