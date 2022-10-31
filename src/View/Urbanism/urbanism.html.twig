@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block sidebar %}
+    {% set sideNav = [
+        {
+            'title' : '',
+            'link' : ''
+        }
+    ]
+    %}
+
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+<h1>Urbanisme</h1>
+<p>Cette page est destinée à vous aider dans vos démarches concernant vos projets immobiliers, qu'il s'agisse de constructions nouvelles, de modifications ou d'extensions, avec ou sans démolitions.</p>
+
+{% endblock %}
