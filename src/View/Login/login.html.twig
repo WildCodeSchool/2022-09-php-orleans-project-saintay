@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block sidebar %}
 	{% set sideNav = [
@@ -14,7 +14,7 @@
 
 {% block content %}
 
-	<h1>Connexion Administrateur</h1>
+	<h2>Connexion</h2>
 	<div class="container mt-5">
 		{% if errors is not empty  %}
 			<ul class="error">
