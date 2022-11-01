@@ -1,8 +1,11 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-  <h1>Bienvenue à Saint Ay !</h1>
+  
 {% include './Home/_actuality.html.twig' %}
+
+
+  <h1>Bienvenue à Saint Ay !</h1>
   <div class="d-flex flex-column">
 	  <h2>Infos pratique</h2>
 	  <h3>Horaire d'ouverture au public</h3>
@@ -15,5 +18,17 @@
 		    <li class="lead">Le samedi de 9 à 12 heures les semaines paires uniquement</li>
 		    <li class="lead">(fermé tous les samedis en août)</li>
 	    </ul>
-	</div>
+     </div>
+     
+      <div class="d-flex flex-column">
+        <h3>Coordonnées</h3>
+        <ul class="contact-info">
+          <li class="lead">Adresse: Place de la Mairie - 45130 Saint AY</li>
+          <li class="lead">Tél. 02 38 88 44 44 - Fax 02 38 88 82 14</li>
+          <li class="lead">accueil@ville-saint-ay.fr</li>
+		    </ul>
+      </div>
+
+
+	
 {% endblock %}

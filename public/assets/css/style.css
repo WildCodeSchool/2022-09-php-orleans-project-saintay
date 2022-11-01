@@ -12,25 +12,23 @@ body {
     font-family: var(--font-fam-body);
 }
 
-.lead  {
+.contact-info {
+    flex-direction: start;
     list-style: none;
-     padding: 10px;
-}
+    padding: 0;
+ }
 
 .btn-primary {
 background-color: var(--bs-primary-rgb);
 }
 
-.municipal-service, .title {   
+.municipal-service .title {   
 border-bottom:  1px solid #333;
 padding: 3px;
 margin: 3%;
 }
 
-.col-md-9 {
-    margin-inline: 3%;
-    
-}
+
 
 main{
     margin-block-start: 12rem;
@@ -89,5 +87,4 @@ main{
         margin-inline-start: 0px;
  }
 }
-
 
