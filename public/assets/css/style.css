@@ -14,9 +14,17 @@ body {
 }
 
 
+
 .municipal-service .title {
     border-bottom: 1px solid var(--font-color-dark);
 }
+
+.contact-info {
+    flex-direction: start;
+    list-style: none;
+    padding: 0;
+ }
+
 
 .municipal-service .truck {
     width: 150px;
@@ -24,13 +32,19 @@ body {
     object-fit: cover;
 }
 
+
 .municipal-service .fireman-wrapper {
     max-width: 700px;
 }
 
-
 .btn-primary {
 background-color: var(--bs-primary-rgb);
+}
+
+.municipal-service .title {   
+border-bottom:  1px solid #333;
+padding: 3px;
+margin: 3%;
 }
 
 main{
@@ -84,6 +98,4 @@ main{
         margin-inline-start: 0px;
  }
 }
-
-
 
