@@ -9,6 +9,7 @@ h5 {
 
 body {
     font-family: var(--font-fam-body);
+    color: var(--font-color-body);
     margin: 0;
 }
 
@@ -23,7 +24,7 @@ body {
 }
 
 .municipal-service .title {   
-    border-bottom:  1px solid #333;
+    border-bottom:  1px solid var(--font-color-body);
     padding: 3px;
     margin: 3%;
 }
