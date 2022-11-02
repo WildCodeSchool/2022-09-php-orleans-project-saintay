@@ -46,6 +46,11 @@ main {
     z-index: -1;
 }
 
+
+
+
+
+
 @media screen and (max-width: 768px) {
     .fireman {
         padding-top: 18px;
