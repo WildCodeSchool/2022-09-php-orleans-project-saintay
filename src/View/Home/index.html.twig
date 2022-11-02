@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 
+
 {% block sidebar %}
     {% set sideNav = [
         {
@@ -11,10 +12,18 @@
     %}
     
     {% include './Item/_sidebar.html.twig' %}
+    
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
+
 
 {% block content %}
-  
-{% include './Home/_actuality.html.twig' %}
+
+{% include './Home/_side-assets.html.twig' %}
+	<div class="home-main-content px-3">
+		<div class="m-auto">
+			<h1>Bienvenue à Saint Ay !</h1>
 
 
   <h1>Bienvenue à Saint Ay !</h1>
@@ -40,6 +49,34 @@
           <li class="lead">accueil@ville-saint-ay.fr</li>
 		    </ul>
      </div>
+
+			{% include './Home/_actuality.html.twig' %}
+
+			<div class="d-flex flex-column">
+				<h2>Infos pratique</h2>
+				<h3>Horaire d'ouverture au public</h3>
+				<ul>
+					<li class="lead">Le lundi de 15 à 19 heures (17 heures en août)</li>
+					<li class="lead">Le mardi de 9 à 12 et de 15 à 17 heures</li>
+					<li class="lead">Le mercredi de 15 à 17 heures</li>
+					<li class="lead">Le jeudi de 9 à 12 heures</li>
+					<li class="lead">Le vendredi de 9 à 12 et de 15 à 17 heures</li>
+					<li class="lead">Le samedi de 9 à 12 heures les semaines paires uniquement</li>
+					<li class="lead">(fermé tous les samedis en août)</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="quick-access">
+		<h2>Accès rapide</h2>
+		<div class="quick-access-buttons">
+			<a href="#" class="btn bg-primary text-secondary my-4 p-3">Plan de la ville</a>
+			<a href="#" class="btn bg-primary text-secondary my-4 p-3">Vie scolaire</a>
+			<a href="#" class="btn bg-primary text-secondary my-4 p-3">Annuaire des associations</a>
+			<a href="/contact" class="btn bg-primary text-secondary my-4 p-3">Contact</a>
+		</div>
+	</div>
+
 
 {% endblock %}
 

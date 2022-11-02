@@ -29,5 +29,8 @@ VALUES (1, "Nouveau site est en construction", 20221020 , "/assets/images/homme-
 INSERT INTO actuality 
 VALUES (2, "A Saint-Ay, après l'incendie du mois de janvier, l'usine Ciritec ne sera pas reconstruite.", 20221003, "/assets/images/incendie_saintay.jpeg", "Spécialisée dans les circuits imprimés, l'usine de Saint-Ay a été détruite par un incendie fin janvier. Un plan de sauvegarde de l'emploi est en cours pour 53 salariés. Seul un site d'expertise de dix-sept personnes sera conservé dans la commune.", "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/les-marcheurs-agyliens-sont-en-forme_14204782/");
 
+
 INSERT INTO actuality
 VALUES (3, "Les marcheur Agyliens sont en forme !", 20220923, "/assets/images/marcheur_agyliens.jpeg", "Les Marcheurs agyliens sont en forme. Les Marcheurs agyliens ont tenu leur assemblée générale, mardi, à laquelle a assisté Joël Girard, conseiller délégué aux sports.", "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/a-saint-ay-apres-l-incendie-du-mois-de-janvier-l-usine-ciretec-ne-sera-pas-reconstruite_14203826/");
+
+
