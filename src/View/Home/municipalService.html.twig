@@ -1,6 +1,23 @@
 {% extends 'layout.html.twig' %}
 
+{% block sidebar %}
+    {% set sideNav = [
+        {
+            'title' : '', 
+            'link' : '#'
+        }
+    ]      
+    %}
+    
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
 {% block content %}
+	<h2>Services municipaux</h2>
+	<img src="assets/images/bureau_mairie.png" class="services-municipaux-bureau my-3 mw-100 rounded" alt="Reception de la Mairie de Saint-Ay"/>
+	{% include './Home/_mayorReception.html.twig' %}
+
+	<div id="fireman" class="mt-4">
 	<h3 class="title">Service  pompiers</h3>
 	<section class="municipal-service ">
 		<div class="container-fluid">
@@ -22,4 +39,5 @@
 			</div>
 		</div>
 	</section>
+	</div>
 {% endblock %}
