@@ -1,4 +1,3 @@
-
 h1,
 h2,
 h3,
@@ -12,27 +11,28 @@ body {
     font-family: var(--font-fam-body);
 }
 
-.lead  {
+.lead {
     list-style: none;
-     padding: 10px;
+    padding: 10px;
 }
 
 .btn-primary {
-background-color: var(--bs-primary-rgb);
+    background-color: var(--bs-primary-rgb);
 }
 
-.municipal-service, .title {   
-border-bottom:  1px solid #333;
-padding: 3px;
-margin: 3%;
+.municipal-service,
+.title {
+    border-bottom: 1px solid #333;
+    padding: 3px;
+    margin: 3%;
 }
 
 .col-md-9 {
     margin-inline: 3%;
-    
+
 }
 
-main{
+main {
     margin-block-start: 12rem;
     margin-inline-start: 350px;
 }
@@ -64,10 +64,15 @@ main{
     z-index: -1;
 }
 
+.nav-anchor:target {
+    padding-top: 10rem;
+    margin-top: -10rem;
+}
+
 @media screen and (max-width: 768px) {
-        .fireman {
-    padding-top: 18px;
-  }
+    .fireman {
+        padding-top: 18px;
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -75,19 +80,18 @@ main{
         position: relative;
         width: 100%;
         height: fit-content;
-        clip-path: none;   
-}
+        clip-path: none;
+    }
 
-    .sidebar-nav{
+    .sidebar-nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(1fr);
         text-align: center;
-        
-}
+
+    }
+
     main {
         margin-inline-start: 0px;
- }
+    }
 }
-
-
