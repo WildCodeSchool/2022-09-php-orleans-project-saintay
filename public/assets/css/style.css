@@ -1,4 +1,3 @@
-
 h1,
 h2,
 h3,
@@ -10,13 +9,13 @@ h5 {
 
 body {
     font-family: var(--font-fam-body);
+
     color: var(--font-color-dark);
 }
 
-
-
 .municipal-service .title {
     border-bottom: 1px solid var(--font-color-dark);
+    margin: 0;
 }
 
 .contact-info {
@@ -25,47 +24,24 @@ body {
     padding: 0;
  }
 
-
 .municipal-service .truck {
     width: 150px;
     height: 200px;
     object-fit: cover;
 }
 
-
 .municipal-service .fireman-wrapper {
     max-width: 700px;
 }
 
 .btn-primary {
-background-color: var(--bs-primary-rgb);
+    background-color: var(--bs-primary-rgb);
 }
 
-.municipal-service .title {   
-border-bottom:  1px solid #333;
-padding: 3px;
-margin: 3%;
-}
+main {
 
-main{
     margin-block-start: 12rem;
     margin-inline-start: 350px;
-}
-
-.home-actualities .btn {
-    border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
-}
-
-.home-actualities .card {
-    width: 25rem;
-    height: 25rem;
-}
-
-.home-actualities .card img {
-    margin: 1rem;
-    width: 10em;
-    height: 10rem;
-    object-fit: cover;
 }
 
 .sidebar {
@@ -79,23 +55,31 @@ main{
     z-index: -1;
 }
 
-@media screen and (max-width: 960px) {
+
+@media screen and (max-width: 768px) {
+    .fireman {
+        padding-top: 18px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
     .sidebar {
         position: relative;
         width: 100%;
         height: fit-content;
-        clip-path: none;   
-}
+        clip-path: none;
+    }
 
-    .sidebar-nav{
+    .sidebar-nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(1fr);
         text-align: center;
-        
-}
+
+    }
+
     main {
         margin-inline-start: 0px;
- }
+    }
 }
-

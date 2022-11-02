@@ -1,8 +1,64 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+
+	<link rel="stylesheet" href="/assets/css/periscolaire.css">
+
+{% endblock %}
+
+{% block sidebar %}
+    {% set sideNav = [
+        {
+            'title' : '', 
+            'link' : '#'
+        }
+    ]      
+    %}
+    
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
 {% block content %}
 
-	<section class="municipal-service container-fluid">
+  <h2>Services municipaux</h2>
+	<img src="assets/images/bureau_mairie.png" class="services-municipaux-bureau my-3 mw-100 rounded" alt="Reception de la Mairie de Saint-Ay"/>
+	{% include './Home/_mayorReception.html.twig' %}
+  
+  <h3 class="title">L'Accueil Périscolaire</h3>
+	<section class="municipal-service">
+  
+		<div class="container-fluid">
+			<div class="row justify-content-md-start">
+
+				<div class="col-md-auto">
+					<img src="./assets/images/periscolaire.jpg" class="rounded float-start" alt="Périscolaire">
+				</div>
+
+				<div class="col">
+					<div class="periscolaireText">
+						<div class="container text-start">
+							<p class="lead">Ce service, autrefois appelé Garderie Périscolaire, est ouvert aux enfants de 3 à 11 ans scolarisés à Saint-Ay, et se tient dans le nouveau local HQE dédié situé entre les écoles maternelle et élémentaire.</p>
+							<p class="lead">Il accueille les enfants avant et après la classe, à partir de 7h30, et jusqu'à 18h30.</p>
+							<p class="lead">Les animateurs proposent à vos enfants des activités variées autant manuelles, sportives que culturelles.</p>
+							<p class="lead">Directrice: Ingrid OOSTERLINCK</p>
+							<p class="lead">Tél: 02 38 86 08 61 ou 06 98 38 44 62</p>
+							<p class="lead">garderie.periscolaire@ville-saint-ay.fr</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+    </div>
+
+	<h3 class="title">Le portail familles</h3>
+	<section class="portailFamilie">
+		<div class="row justify-content-md-start">
+			<p class="lead m-0">À compter de la rentrée scolaire 2017 toutes les activités du service jeunesse de Saint-Ay sont accessibles sur Internet à travers le portail-familles ville-saint-ay.portail-familles.net</p>
+			<p class="lead m-0">Vous pouvez sur ce portail inscrire vos enfants et gérer toutes les activités. Pour avoir la possibilité de le faire vous devez faire au préalable une demande en ligne au moyen du formulaire disponible ici.</p>
+		</div>
+	</section>
+
+		<section class="municipal-service container-fluid">
 		<h3 class="title">Service  pompiers</h3>
 		<div class="d-flex flex-wrap p-3">
 			<img src="./assets/images/Pompiers.png" alt="Pompier" class="truck rounded me-4 mb-2"/>
@@ -18,6 +74,8 @@
 				<p class="lead">Le Service d'incendie et de secours est centralisé sur le département. Pour en savoir plus voir le site www.sdis45.com</p>
 				<p class="lead">Depuis le 1er septembre 2015 le Centre de Première Intervention(CPI) de Saint-Ay a été dissous et ses fonctions regroupées dans le CPI de Chaingy/Saint-Ay basé à Chaingy.</p>
 			</div>
-		</section>
- {% endblock %}
+		</div>
+	</section>
+	</div>
+{% endblock %}
 
