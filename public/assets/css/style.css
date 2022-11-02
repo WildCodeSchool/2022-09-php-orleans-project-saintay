@@ -9,6 +9,7 @@ h5 {
 
 body {
     font-family: var(--font-fam-body);
+    margin: 0;
 }
 
 .contact-info {
@@ -34,22 +35,6 @@ main {
     margin-inline-start: 350px;
 }
 
-.home-actualities .btn {
-    border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
-}
-
-.home-actualities .card {
-    width: 25rem;
-    height: 25rem;
-}
-
-.home-actualities .card img {
-    margin: 1rem;
-    width: 10em;
-    height: 10rem;
-    object-fit: cover;
-}
-
 .sidebar {
     font-family: var(--font-fam-title);
     width: 350px;
@@ -67,7 +52,7 @@ main {
     }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 991px) {
     .sidebar {
         position: relative;
         width: 100%;
