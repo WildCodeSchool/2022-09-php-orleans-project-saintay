@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Roboto:wght@700&display=swap');
+
 @font-face {
     font-family: 'Marianne';
-    src: url(../font/Marianne-Bold.woff)
-        url(../font/Marianne-Medium.woff);
+    src: url(../font/Marianne-Bold.woff) url(../font/Marianne-Medium.woff);
 }
 
 :root {
@@ -12,6 +12,12 @@
     --bs-secondary-rgb: 255, 254, 252;
     --bs-secondary: rgb(var(--bs-secondary-rgb));
 
-    --font-fam-title: 'Marianne-bold';
+    --font-fam-title: 'Marianne-bold', 'Roboto', sans-serif;
     --font-fam-body: 'Hind Madurai', sans-serif;
 }
+
+
+
+
+
+

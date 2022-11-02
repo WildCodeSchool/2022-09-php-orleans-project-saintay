@@ -1,0 +1,61 @@
+{% extends 'layout.html.twig' %}
+
+{% block sidebar %}
+    {% set sideNav = [
+        {
+            'title' : '', 
+            'link' : ''
+        }
+    ]      
+    %}
+    
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+	<div class="container mt-5">
+		{% if errors is not empty  %}
+		<ul class="error">
+			{% for error in errors  %}
+			<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+
+		<h1>Contact</h1>
+		<form class="row g-3" method="POST" id="contactForm">
+			<div class="col-md-6">
+				<label for="firstName" class="form-label">Prénom</label>
+				<input type="text" class="form-control" name="firstName" id="firstName" placeholder="Pierre" required>
+			</div>
+			<div class="col-md-6">
+				<label for="lastName" class="form-label">Nom</label>
+				<input type="text" class="form-control" name="lastName" id="lastName" placeholder="Dupont" required>
+			</div>
+			<div class="col-md-8">
+				<label for="emailInfo" class="form-label">Adresse email</label>
+				<input type="email" class="form-control" name="emailInfo" id="emailInfo" placeholder="pseudo@mail.fr" required>
+			</div>
+			<div class="col-md-4">
+				<label for="phoneNumber" class="form-label">Numéro de téléphone</label>
+				<input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="+33 6 66 66 66 66" required>
+			</div>
+			<div class="col-md-8">
+				<label for="subjectInfo" class="form-label">Votre sujet</label>
+				<select type="subject" class="form-control" name="subject" id="subject" placeholder="Votre demande" required>
+					{% for subjectKey, subject in subjects %}
+						<option value="{{ subjectKey }}" {% if contact.subject is defined and contact.subject is same as subjectKey %} selected {% endif %}>{{subject}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="col-md-12">
+				<label for="comments" class="form-label">Votre message</label>
+				<textarea class="form-control" name="message" id="message" rows="3" placeholder="Votre message ici" required></textarea>
+			</div>
+			<div class="col-md-12">
+				<button type="submit" class="btn bg-primary text-secondary">Envoyez</button>
+			</div>
+		</form>
+	</div>
+
+{% endblock %}
