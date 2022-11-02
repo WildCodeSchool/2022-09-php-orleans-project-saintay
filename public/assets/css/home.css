@@ -32,7 +32,7 @@ main{
     z-index: -1;
 }
 
-.home-side-assets .image-mairie{
+.home-side-assets .image-town-hall{
     height: 50vh;
     width: 90%;
 
@@ -40,17 +40,17 @@ main{
     object-fit: cover;
 }
 
-.home-side-assets .logo-centre{
+.home-side-assets .logo-center-region{
     height: 5vh;
     max-width: 200px;
 }
 
-.home-side-assets .logo-val-de-loire{
+.home-side-assets .logo-loire-valley{
     height: 8vh;
     max-width: 300px;
 }
 
-.home-side-assets .logo-republique-française{
+.home-side-assets .logo-french-republic{
     height: 5vh;
     max-width: 200px;
 }
