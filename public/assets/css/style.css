@@ -9,6 +9,7 @@ h5 {
 
 body {
     font-family: var(--font-fam-body);
+    margin: 0;
 }
 
 .lead {
@@ -16,20 +17,21 @@ body {
     padding: 10px;
 }
 
+.contact-info {
+    flex-direction: start;
+    list-style: none;
+    padding: 0;
+}
+
+
 .btn-primary {
     background-color: var(--bs-primary-rgb);
 }
 
-.municipal-service,
-.title {
+.municipal-service .title {
     border-bottom: 1px solid #333;
     padding: 3px;
     margin: 3%;
-}
-
-.col-md-9 {
-    margin-inline: 3%;
-
 }
 
 main {
@@ -75,7 +77,7 @@ main {
     }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 991px) {
     .sidebar {
         position: relative;
         width: 100%;
