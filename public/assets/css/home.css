@@ -1,0 +1,69 @@
+main{
+    margin-inline-start: 0;
+    width: 100vw;
+}
+.home-actualities .btn {
+    border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
+}
+
+.home-actualities .card {
+    width: 25rem;
+    height: 25rem;
+}
+
+.home-actualities .card img {
+    margin: 1rem;
+    width: 10em;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.home-main-content{
+    max-width: 1000px;
+    margin-inline-start: 40vw;
+}
+
+.home-side-assets{
+    width: 35vw;
+    height: 100vh;
+
+    padding-block-start: 10rem;
+
+    z-index: -1;
+}
+
+.home-side-assets .image-town-hall{
+    height: 50vh;
+    width: 90%;
+
+    max-width: 400px;
+    object-fit: cover;
+}
+
+.home-side-assets .logo-center-region{
+    height: 5vh;
+    max-width: 200px;
+}
+
+.home-side-assets .logo-loire-valley{
+    height: 8vh;
+    max-width: 300px;
+}
+
+.home-side-assets .logo-french-republic{
+    height: 5vh;
+    max-width: 200px;
+}
+
+@media screen and (max-width: 991px) {
+    .home-main-content {
+        margin-inline-start: 0;
+    }
+    .home-side-assets{
+        position: relative;
+        width: 100vw;
+        height: fit-content;
+
+        padding-block-start: 0;
+    }
+}
