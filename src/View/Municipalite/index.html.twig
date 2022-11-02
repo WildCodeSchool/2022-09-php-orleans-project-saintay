@@ -14,15 +14,15 @@
 		<h2 class="mb-3">Organigramme de l'équipe Municipale</h2>
 		<div class="container-fluid">
 			<div class="row">
-				{% for personnes in personne %}
+				{% for employee in employees %}
 					<div class="col-md-3 d-flex justify-content-center">
 						<div class="card">
-							<img class="card-img-top" src="{{ personnes.image }}" alt="Card image cap">
+							<img class="card-img-top" src="{{ employee.image }}" alt="Card image cap">
 							<div class="card-body">
-								<h5 class="card-text">{{ personnes.firstname }}
-									{{personnes.lastname}}
+								<h5 class="card-text">{{ employee.firstname }}
+									{{employee.lastname}}
 								</h5>
-								<p class="card-text">{{ personnes.role}}
+								<p class="card-text">{{ employee.role }}
 								</p>
 							</div>
 						</div>

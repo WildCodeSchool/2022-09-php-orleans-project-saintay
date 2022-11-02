@@ -13,7 +13,7 @@ class MunicipaliteController extends AbstractController
         return $this->twig->render(
             'Municipalite/index.html.twig',
             [
-                'personne' => $municipaliteManager->selectAll(),
+                'employees' => $municipaliteManager->selectAll(),
             ],
         );
     }
