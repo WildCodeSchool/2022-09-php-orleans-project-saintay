@@ -1,16 +1,44 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
---
--- Client :  localhost
--- Généré le :  Jeu 26 Octobre 2017 à 13:53
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
+-- Active: 1666773360795@@127.0.0.1@3306@saint_ay
+CREATE TABLE
+    municipalityTeam (
+        id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        firstname VARCHAR(80) NOT NULL,
+        lastname VARCHAR(80) NOT NULL,
+        role TEXT NOT NULL,
+        image TEXT NOT NULL
+    );
+
+INSERT INTO
+    municipalityTeam (
+        firstname,
+        lastname,
+        role,
+        image
+    )
+VALUES (
+        'Frédéric',
+        'CUILLERIER',
+        'Compétence générale - Police - Sécurité - Etat Civil',
+        '/../assets/images/MairePortrait.png'
+    ), (
+        'Marie-Françoise ',
+        'QUERE',
+        'Adjointe aux bâtiments et au développement durable - biodiversité',
+        '/../assets/images/Marie-francoisePortrait.png'
+    ), (
+        'Pascal ',
+        'FOULON',
+        'Adjoint aux affaires scolaires, culture, communication et gestion des salles',
+        '/../assets/images/PascalPortrait.png'
+    ), (
+        'Dominique',
+        'RENAULT',
+        'Adjoint aux travaux, voirie et traitement des eaux.',
+        '/../assets/images/DominiquePortrait.png'
+    );
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
 
 CREATE TABLE actuality (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -44,3 +72,4 @@ VALUES (2, "A Saint-Ay, après l'incendie du mois de janvier, l'usine Ciritec ne
 
 INSERT INTO actuality
 VALUES (3, "Les marcheur Agyliens sont en forme !", 20220923, "/assets/images/marcheur_agyliens.jpeg", "Les Marcheurs agyliens sont en forme. Les Marcheurs agyliens ont tenu leur assemblée générale, mardi, à laquelle a assisté Joël Girard, conseiller délégué aux sports.", "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/a-saint-ay-apres-l-incendie-du-mois-de-janvier-l-usine-ciretec-ne-sera-pas-reconstruite_14203826/");
+

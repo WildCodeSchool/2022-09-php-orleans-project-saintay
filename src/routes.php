@@ -14,6 +14,7 @@ return [
     'logout' => ['LoginController', 'logout'],
     'urbanism' => ['UrbanismController', 'index'],
     'items' => ['ItemController', 'index',],
+    'municipalite' => ['MunicipaliteTeamController','index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
