@@ -1,0 +1,7 @@
+.municipal-service,
+.kindergarten {
+    border-bottom: 1px solid var(--bs-dark);
+    padding: 3px;
+    margin: 3%;
+}
+
