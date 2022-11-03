@@ -24,15 +24,7 @@ body {
     padding: 0;
  }
 
-.municipal-service .truck {
-    width: 150px;
-    height: 200px;
-    object-fit: cover;
-}
 
-.municipal-service .fireman-wrapper {
-    max-width: 700px;
-}
 
 .btn-primary {
     background-color: var(--bs-primary-rgb);
@@ -49,18 +41,12 @@ main {
     width: 350px;
     height: 100vh;
     clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
-
     padding-block-start: 120px;
-
     z-index: -1;
 }
 
 
-@media screen and (max-width: 768px) {
-    .fireman {
-        padding-top: 18px;
-    }
-}
+
 
 @media screen and (max-width: 991px) {
 
