@@ -9,26 +9,23 @@
 	<div class="container municipalityTeam">
 		<h1 class="mt-5">L'équipe Municipale</h1>
 		<div class="d-flex justify-content-center mb-5 mt-3">
-			<img class="team" src="/../assets/images/Lequipe-Municipal.jpg" alt="L'équipe municipal" width="1000" height="400">
+			<img class="w-100" src="/../assets/images/Lequipe-Municipal.jpg" alt="L'équipe municipal">
 		</div>
 		<h2 class="mb-3">Organigramme de l'équipe Municipale</h2>
-		<div class="container-fluid">
-			<div class="row">
-				{% for employee in employees %}
-					<div class="col-md-3 d-flex justify-content-center">
-						<div class="card">
-							<img class="card-img-top" src="{{ employee.image }}" alt="Card image cap">
-							<div class="card-body">
-								<h5 class="card-text">{{ employee.firstname }}
-									{{employee.lastname}}
-								</h5>
-								<p class="card-text">{{ employee.role }}
-								</p>
-							</div>
+		<div class="row justify-content-center g-3">
+			{% for employee in employees %}
+				<div class="col-sm-3">
+					<div class="card">
+						<img class="card-img-top" src="{{ employee.image }}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-text">{{ employee.firstname }}
+								{{employee.lastname}}
+							</h5>
+							<p class="card-text">{{ employee.role }}
+							</p>
 						</div>
 					</div>
-				{% endfor %}
-			</div>
+				</div>
+			{% endfor %}
 		</div>
-
 	{% endblock %}

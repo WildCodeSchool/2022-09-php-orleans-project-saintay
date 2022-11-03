@@ -1,5 +1,6 @@
+-- Active: 1666773360795@@127.0.0.1@3306@saint_ay
 CREATE TABLE
-    MunicipalityTeam (
+    municipalityTeam (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         firstname VARCHAR(80) NOT NULL,
         lastname VARCHAR(80) NOT NULL,
@@ -8,7 +9,7 @@ CREATE TABLE
     );
 
 INSERT INTO
-    MunicipalityTeam (
+    municipalityTeam (
         firstname,
         lastname,
         role,

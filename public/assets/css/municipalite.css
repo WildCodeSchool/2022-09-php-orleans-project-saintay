@@ -1,24 +1,8 @@
-.municipalityTeam .card-img-top {
+ .municipalityTeam .card-img-top {
     height: 360px;
+    object-fit: cover;
+    object-position: top;
 }
 
-.municipalityTeam .card {
-    height: 500px;
-    width: 300px;
-}
 
-@media screen and (max-width: 768px) {
-    .municipalityTeam .card-img-top {
-        height: 350px;
-        width: 100%;
-    }
 
-    .municipalityTeam .row {
-        gap: 36px;
-    }
-
-    .team {
-        width: 430px;
-        height: 250px;
-    }
-}

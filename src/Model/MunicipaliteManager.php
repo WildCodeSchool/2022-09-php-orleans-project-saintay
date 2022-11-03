@@ -6,7 +6,7 @@ use PDO;
 
 class MunicipaliteManager extends AbstractManager
 {
-    public const TABLE = 'MunicipalityTeam';
+    public const TABLE = 'municipalityTeam';
 
     public function selectAll(string $orderBy = '', string $direction = 'ASC'): array
     {
