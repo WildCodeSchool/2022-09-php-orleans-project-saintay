@@ -62,7 +62,9 @@ main {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(1fr);
         text-align: center;
-
+    }
+    .sidebar .sidebar-back-home {
+        position: relative;
     }
 
     main {
