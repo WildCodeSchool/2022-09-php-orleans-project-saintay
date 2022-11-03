@@ -1,8 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+
+
+{% block sidebar %}
+    {% set sideNav = [
+        {
+            'title' : '', 
+            'link' : ''
+        }
+    ]      
+    %}
+    
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}    
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
+
+
+{% block content %}
+
 <div class="municipal-services-all-actualities my-3 m-1">
-    <h2 class="">Les dernières actualités</h2>
+    <h2 class="">Toutes les dernières actualités</h2>
     <div class="d-flex flex-wrap gap-3">
+
        {% for actuality in actualities %}
-        <div class="card justify-content-between">
+
+        <div class="actuality-card card justify-content-between">
             <div class="d-flex align-items-center">
                 <img src="{{ actuality.image }}" class="card-img-top" alt="image concernant l'actualité">
                 <h5 class="card-title px-1"> {{actuality.title}} </h5>
@@ -13,7 +37,10 @@
             </div>
             <a href="{{ actuality.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'info</a>
         </div>
+
         {% endfor %}
     </div>
     <a href="#" class="btn bg-primary text-secondary my-4 p-3">Voir toutes les actus</a>
 </div>
+
+{% endblock %}

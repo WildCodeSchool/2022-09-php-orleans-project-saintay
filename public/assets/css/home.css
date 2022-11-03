@@ -55,6 +55,11 @@ main{
     max-width: 200px;
 }
 
+.actuality-card {
+    width: 300px;
+    height: 400px;
+}
+
 @media screen and (max-width: 991px) {
     .home-main-content {
         margin-inline-start: 0;
