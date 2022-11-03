@@ -16,18 +16,21 @@ body {
     flex-direction: start;
     list-style: none;
     padding: 0;
- }
+}
 
+.mayor-speech ul {
+    list-style: none;
+}
 
 .btn-primary {
     background-color: var(--bs-primary-rgb);
 }
 
 
-.municipal-service .title {   
-border-bottom:  1px solid #333;
-padding: 3px;
-margin: 3%;
+.municipal-service .title {
+    border-bottom: 1px solid #333;
+    padding: 3px;
+    margin: 3%;
 }
 
 main {
