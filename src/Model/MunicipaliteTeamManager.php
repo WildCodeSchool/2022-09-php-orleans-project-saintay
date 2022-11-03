@@ -4,7 +4,7 @@ namespace App\Model;
 
 use PDO;
 
-class MunicipaliteManager extends AbstractManager
+class MunicipaliteTeamManager extends AbstractManager
 {
     public const TABLE = 'municipalityTeam';
 }

@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use App\Model\MunicipaliteManager;
+use App\Model\MunicipaliteTeamManager;
 use PDO;
 
-class MunicipaliteController extends AbstractController
+class MunicipaliteTeamController extends AbstractController
 {
     public function index(): string
     {
-        $municipaliteManager = new MunicipaliteManager();
+        $municipaliteManager = new MunicipaliteTeamManager();
         return $this->twig->render(
             'Municipalite/index.html.twig',
             [
