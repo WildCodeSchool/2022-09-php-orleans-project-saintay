@@ -77,11 +77,6 @@ main {
     position: fixed;
 }
 
-@media screen and (max-width: 768px) {
-    .fireman {
-        padding-top: 18px;
-    }
-}
 
 @media screen and (max-width: 991px) {
     .sidebar {
