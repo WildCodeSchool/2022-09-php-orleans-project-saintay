@@ -12,27 +12,52 @@ body {
     margin: 0;
 }
 
+.lead {
+    list-style: none;
+    padding: 10px;
+}
+
 .contact-info {
     flex-direction: start;
     list-style: none;
     padding: 0;
- }
+}
 
 
 .btn-primary {
     background-color: var(--bs-primary-rgb);
 }
 
-
-.municipal-service .title {   
-border-bottom:  1px solid #333;
-padding: 3px;
-margin: 3%;
+.municipal-service .title {
+    border-bottom: 1px solid #333;
+    padding: 3px;
+    margin: 3%;
 }
 
 main {
     margin-block-start: 12rem;
     margin-inline-start: 350px;
+}
+
+.home-actualities .btn {
+    border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
+}
+
+.home-actualities .card {
+    width: 25rem;
+    height: 25rem;
+}
+
+.home-actualities .card img {
+    margin: 1rem;
+    width: 10em;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.logo-navbar {
+    width: 30px;
+    height: 40px;
 }
 
 .sidebar {
@@ -45,11 +70,6 @@ main {
 
     z-index: -1;
 }
-
-
-
-
-
 
 @media screen and (max-width: 768px) {
     .fireman {

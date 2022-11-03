@@ -1,0 +1,42 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block sidebar %}
+	{% set sideNav = [
+        {
+            'title' : '',
+            'link' : ''
+        }
+    ]
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+	<h2>Connexion</h2>
+	<div class="container mt-5">
+		{% if errors is not empty  %}
+			<ul class="error">
+				{% for error in errors  %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+		<form class="row g-3" method="POST">
+			<div class="col-md-8">
+				<label for="email" class="form-label">Email</label>
+				<input type="email" class="form-control" name="email" id="email">
+			</div>
+			<div class="col-md-8">
+				<label for="password" class="form-label">Mot de passe</label>
+				<input type="password" class="form-control" name="password" id="password">
+			</div>
+			<div class="col-md-12">
+				<button type="submit" class="btn bg-primary text-secondary">Connexion</button>
+			</div>
+		</form>
+	</div>
+
+{% endblock %}
