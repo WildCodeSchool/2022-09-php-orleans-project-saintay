@@ -44,11 +44,6 @@ main{
     margin-top: -10rem;
 }
 
-@media screen and (max-width: 768px) {
-        .fireman {
-    padding-top: 18px;
-  }
-}
 
 @media screen and (max-width: 991px) {
     .sidebar {
