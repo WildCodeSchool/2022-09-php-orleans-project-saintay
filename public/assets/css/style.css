@@ -24,6 +24,10 @@ body {
     padding: 0;
 }
 
+.mayor-speech ul {
+    list-style: none;
+}
+
 .btn-primary {
     background-color: var(--bs-primary-rgb);
 }
@@ -73,11 +77,6 @@ main {
     position: fixed;
 }
 
-@media screen and (max-width: 768px) {
-    .fireman {
-        padding-top: 18px;
-    }
-}
 
 @media screen and (max-width: 991px) {
     .sidebar {
