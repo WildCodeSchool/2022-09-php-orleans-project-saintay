@@ -4,21 +4,25 @@
 {% endblock %}
 
 {% block sidebar %}
-    {% set sideNav = [
+	{% set sideNav = [
         {
             'title' : '', 
             'link' : '#'
         }
     ]      
     %}
-    
-    {% include './Item/_sidebar.html.twig' %}
+
+	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}
 	<h2>Services municipaux</h2>
 	<img src="assets/images/bureau_mairie.png" class="services-municipaux-bureau my-3 mw-100 rounded" alt="Reception de la Mairie de Saint-Ay"/>
 	{% include './Home/_mayorReception.html.twig' %}
+
+
+	<h3 class="title">L'Accueil Périscolaire</h3>
+	<section class="municipal-service">
 	<div class="container-fluid school">
 		<h1 class="kindergarten">Vie scolaire</h1>
 		<section class="municipal-service">
@@ -79,6 +83,8 @@
 					<p class="lead m-0">Adresse courriel : restaurant.scolaire@ville-saint-ay.fr</p>
 				</div>
 			</div>
+		</div>
+	</section>
     </div>
    </section>
 	<h3 class="title">Le portail familles</h3>
@@ -111,5 +117,6 @@
 		</div>
 	</section>
   </div>
-   {% include './Item/_babySitting.html.twig' %}
+	{% include 'Home/_childCare.html.twig' %}
+  {% include './Item/_babySitting.html.twig' %}
 {% endblock %}
