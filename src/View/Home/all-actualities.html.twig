@@ -19,24 +19,12 @@
 {% block content %}
 
 
-<div class="municipal-services-all-actualities my-3 m-1">
-    <h2 class="">Toutes les dernières actualités</h2>
+<div class="p-1 p-lg-5 my-3 m-1">
+    <h2 class="mb-3">Toutes les dernières actualités</h2>
     <div class="d-flex flex-wrap gap-3">
 
        {% for actuality in actualities %}
-
-        <div class="actuality-card card justify-content-between">
-            <div class="d-flex align-items-center">
-                <img src="{{ actuality.image }}" class="card-img-top" alt="image concernant l'actualité">
-                <h5 class="card-title px-1"> {{actuality.title}} </h5>
-            </div>
-            <div class="card-bod gap-2 mt-1 p-0">
-                <p class="card-text mx-2 pbr-1"><b> Le {{ actuality.date|date("d-m-y") }}, </b></p>
-                <p class="card-text mx-2 pbr-1"> {{ actuality.description }}</p>
-            </div>
-            <a href="{{ actuality.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'info</a>
-        </div>
-
+            {% include './Home/_actuality-card.html.twig' %}
         {% endfor %}
     </div>
 </div>
