@@ -1,6 +1,8 @@
 {% extends 'layout.html.twig' %}
-
-
+   
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/actuality-cards.css">
+{% endblock %}
 
 {% block sidebar %}
     {% set sideNav = [
@@ -12,13 +14,10 @@
     %}
     
     {% include './Item/_sidebar.html.twig' %}
-{% endblock %}    
-{% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/home.css">
-{% endblock %}
-
+{% endblock %} 
 
 {% block content %}
+
 
 <div class="municipal-services-all-actualities my-3 m-1">
     <h2 class="">Toutes les dernières actualités</h2>
@@ -40,7 +39,7 @@
 
         {% endfor %}
     </div>
-    <a href="#" class="btn bg-primary text-secondary my-4 p-3">Voir toutes les actus</a>
 </div>
+
 
 {% endblock %}
