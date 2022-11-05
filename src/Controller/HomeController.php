@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     public function displayAllActualities(): string
     {
         $actuManager = new ActualityManager();
-        $allActualities = $actuManager->selectActualities(30);
+        $allActualities = $actuManager->selectActualities(40);
         return $this->twig->render('Home/all-actualities.html.twig', ['actualities' => $allActualities]);
     }
 }
