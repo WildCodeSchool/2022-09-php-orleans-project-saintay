@@ -1,25 +1,25 @@
 {% extends 'layout.html.twig' %}
 
 {% block sidebar %}
-    {% set sideNav = [
+	{% set sideNav = [
         {
             'title' : '', 
             'link' : ''
         }
     ]      
     %}
-    
-    {% include './Item/_sidebar.html.twig' %}
+
+	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}
-	<div class="container mt-5">
+	<div class="container my-5 ">
 		{% if errors is not empty  %}
-		<ul class="error">
-			{% for error in errors  %}
-			<li>{{ error }}</li>
-			{% endfor %}
-		</ul>
+			<ul class="error">
+				{% for error in errors  %}
+					<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
 		{% endif %}
 
 		<h1>Contact</h1>
