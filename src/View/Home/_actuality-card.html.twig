@@ -1,11 +1,11 @@
-<div class="actuality-card card my-2 m-lg-2">
+<div class="actuality-card card my-2 my-lg-3">
 
     <img src="{{ actuality.image }}" class="card-img-top" alt="image concernant l'actualité">
     <div class="d-flex flex-column justify-content-between h-100">
         <div class="p-3">
-            <h5 class="card-title d-flex align-items-center"> {{actuality.title}} </h5>
+            <h5 class="card-title d-flex pt-4"> {{actuality.title}} </h5>
             <p class="card-text"><b> Le {{ actuality.date|date("d-m-y") }}, </b></p>
-            <p class="actuality-card-description card-text"> {{ actuality.description }}</p>    
+            <p class="actuality-card-description card-text blockquote-footer pt-3"> {{ actuality.description|u.truncate(150, '...', false) }}</p>    
         </div>
         <div>
             <a href="{{ actuality.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'info</a>

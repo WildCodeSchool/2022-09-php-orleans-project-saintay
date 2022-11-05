@@ -17,8 +17,8 @@
 
     --font-color-body: #333;
 
-    --border-radius-card: 4px;
-    --box-shadow-card: 1px 0px 6px rgba(var(--bs-primary-rgb), 0.1);
+    --border-radius-card: 2px;
+    --box-shadow-card: 2px 2px 20px rgba(var(--bs-primary-rgb), 0.1);
 }
 
 
