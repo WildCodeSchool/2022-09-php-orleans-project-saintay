@@ -13,6 +13,7 @@ return [
     'login' => ['LoginController', 'login'],
     'logout' => ['LoginController', 'logout'],
     'urbanism' => ['UrbanismController', 'index'],
+    'city_map' => ['CityMapController','index'],
     'items' => ['ItemController', 'index',],
     'municipalite' => ['MunicipaliteTeamController','index',],
     'items/edit' => ['ItemController', 'edit', ['id']],

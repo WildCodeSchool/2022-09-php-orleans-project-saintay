@@ -11,7 +11,6 @@ class ContactController extends AbstractController
         'secretariat' => 'Secretariat',
         'webmaster' => 'Webmaster',
     ];
-
     public function index(): string
     {
         $contact = [];
