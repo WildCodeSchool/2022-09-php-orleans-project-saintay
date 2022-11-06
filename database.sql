@@ -182,12 +182,12 @@ VALUES (
         '02 38 88 84 06'
     ), (
         'Amicale des Retraités de Saint Ay',
-        'Community',
+        'Communaute',
         'Venez nous rejoindre Tous les jeudis de 14 H à 18 H à la salle Jacques Brel où nous pratiquons divers jeux de sociétés, belote, scrabble, tarot, rumikub, triominos et pétanque. Nous organisons quelques sorties tout au long de l’année, d’une journée, quelques fois plusieurs jours, des repas de temps en temps.',
         '06 70 60 01 20'
     ), (
         'Amicale des Sapeurs Pompiers',
-        'Community',
+        'Communaute',
         'Pourquoi pas vous?',
         '06 28 53 58 54'
     ), (
@@ -242,7 +242,7 @@ VALUES (
         '06 23 23 23 44'
     ), (
         'Danse Country',
-        'Danse',
+        'Sport',
         'Vous aimez la musique country ? Vous aimez danser ? Alors n\'hésitez pas, venez nous rejoindre!',
         '06 60 79 75 48'
     ), (
@@ -276,3 +276,34 @@ VALUES (
         'L\'association Saint-Ay Mad Skaters a été fondée vers la fin des années 80 par des jeunes de la commune de Saint-Ay, passionnés de sports de glisse. Le skatepark de Saint-Ay est géré par l\'association qui pense, fabrique et entretient les modules qui composent le skatepark depuis plus de 20 ans, faisant de lui l\'un des plus vieux skateparks français.',
         '06 20 27 76 71'
     );
+
+INSERT INTO
+    `Category` (
+        name,
+        image
+    )
+VALUES (
+    'Culture',
+    "/assets/images/association_images/culturelles.png"
+), (
+    'Education',
+    "/assets/images/association_images/education.png"
+), (
+    'Parents',
+    "/assets/images/association_images/parents.png"
+), (
+     'Communaute',
+     "/assets/images/association_images/amicale.png"
+), (
+    'Associations patriotiques et d\'Anciens Combattants',
+     "/assets/images/association_images/patriotique.png"
+), (
+     'Aide mutuelle',
+     "/assets/images/association_images/aide.png"
+), (
+     'Professionnelles',
+     "/assets/images/association_images/professionnelles.png"
+), (
+     'Sport',
+     "/assets/images/association_images/sportives.png"
+);
