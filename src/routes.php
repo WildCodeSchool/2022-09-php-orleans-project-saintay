@@ -16,6 +16,7 @@ return [
     'histoire' => ['HistoryController', 'index',],
     'items' => ['ItemController', 'index',],
     'municipalite' => ['MunicipaliteTeamController','index',],
+    'association' => ['AssociationController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
