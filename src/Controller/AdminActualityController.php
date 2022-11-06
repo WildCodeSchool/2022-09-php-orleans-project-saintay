@@ -19,37 +19,38 @@ class AdminActualityController extends AdminController
     {
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
             $actuality = array_map('trim', $_POST);
 
-            if(DateTime::createFromFormat('Y-m-d', $actuality['date']) === false){
+            if (DateTime::createFromFormat('Y-m-d', $actuality['date']) === false) {
                 $errors[] = 'Le format de la date est incorrect';
             }
-            if(empty($actuality['title'])){
+            if (empty($actuality['title'])) {
                 $errors[] = 'Erreur, le champ titre est requis';
             }
-            if(empty($actuality['date'])){
+            if (empty($actuality['date'])) {
                 $errors[] = 'Erreur, le champ date est requis';
             }
-            if(empty($actuality['description'])){
+            if (empty($actuality['description'])) {
                 $errors[] = 'Erreur, le champ description est requis';
             }
-            if(empty($actuality['link'])){
+            if (empty($actuality['link'])) {
                 $errors[] = 'Erreur, le lien de l\'actualité est requis';
             }
-            if(empty($actuality['image'])){
+            if (empty($actuality['image'])) {
                 $errors[] = 'Erreur, le lien de l\'image est requis';
             }
-            if(empty($errors))
-            {
+            if (empty($errors)) {
                 $actualityManager = new ActualityManager();
                 $actualityManager->insert($actuality);
 
                 header('Location: /admin/actualite');
                 return '';
-            }          
+            }
         }
 
-        return $this->twig->render('Admin/admin-add-actuality.html.twig', ['errors' => $errors, 'actuality' => $actuality ?? '']);
+        return $this->twig->render('Admin/admin-add-actuality.html.twig', [
+            'errors' => $errors,
+            'actuality' => $actuality ?? ''
+        ]);
     }
 }

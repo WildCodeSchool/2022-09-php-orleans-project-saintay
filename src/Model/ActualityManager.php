@@ -29,6 +29,5 @@ class ActualityManager extends AbstractManager
         $statement->bindValue('image', $actuality['image'], PDO::PARAM_STR);
 
         $statement->execute();
-
     }
 }
