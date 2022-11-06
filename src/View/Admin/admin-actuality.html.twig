@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block sidebar %}
+    {% set sideNav = [
+            {
+                'title' : 'Tutoriel', 
+                'link' : '/admin'
+            },
+            {
+                'title' : 'Actualités', 
+                'link' : '/admin/actualite'
+            }
+        ]      
+    %}
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+ 
+    <a href="/admin/actualite/add" class="btn bg-primary text-secondary my-3">Crée une actualité</a>
+
+    <h2>Toutes vos actualités : </h2>
+
+    <ul>
+
+        {% for actuality in actualities %}
+
+        <li class="row">
+
+            <p class="col"> {{ actuality.title }} </p>
+
+        </li>
+
+        {% endfor %}
+
+    </ul>
+    
+{% endblock %}
