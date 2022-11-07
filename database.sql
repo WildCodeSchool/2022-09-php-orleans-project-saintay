@@ -1,4 +1,4 @@
--- Active: 1666785953847@@127.0.0.1@3306@saint_ay
+-- Active: 1666611564923@@127.0.0.1@3306@saint_ay
 
 CREATE TABLE
     municipalityTeam (
@@ -101,9 +101,9 @@ CREATE TABLE
     Association (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         name VARCHAR(120) NOT NULL,
-        category_id TEXT NOT NULL,
+        category_id INT NOT NULL,
         description TEXT NOT NULL,
-        phone_number INT NOT NULL
+        phone_number NOT NULL
     );
 
 CREATE TABLE
@@ -122,159 +122,159 @@ INSERT INTO
     )
 VALUES (
         'Arts en Partage',
-        'Culture',
+        '1',
         'L\'association a pour but de favoriser les échanges entre amateurs d\’arts sous leurs différentes formes, et artistes, de promouvoir l\’art, le patrimoine, la littérature au plan local et plus largement, notamment en diffusant toutes informations sur les manifestations artistiques et culturelles, en organisant de telles manifestations et en créant des liens avec les autres structures locales œuvrant dans le même sens.',
-        '06 71 08 13 51'
+        '0671081351'
     ), (
         'Association Théatrale Le Paradoxe',
-        'Culture',
+        '1',
         'L’objectif visé est de permettre à chacun(e) de s’exprimer et de s’épanouir avec son propre imaginaire et sa personnalité dans le respect de l’autre, en s’appuyant et apprenant les technique d’art dramatique (mise en espace des corps, positionnement de la voix, improvisation…).',
-        '06 11 17 79 61'
+        '0611177961'
     ), (
         'Bibliothèque Municipale',
-        'Culture',
+        '1',
         'La bibliothèque met à votre disposition des romans, albums, revues, documentaires, BD, livres en gros caractères. La bibliothèque acquiert des nouveautés plusieurs fois par an. N’hésitez pas à faire des suggestions d’achats ou d’emprunts à la Bibliothèque.',
-        '02 38 66 46 41'
+        '0238664641'
     ), (
         'Chorale "Ensemble"',
-        'Culture',
+        '1',
         'Notre chorale a un répertoire varié, elle est ouverte à tous, jeunes ou moins jeunes, musiciens ou non. Elle veille à progresser, dans le souci de réussir ses prestations, mais toujours dans la bonne humeur ! Venez nous rejoindre !',
-        '06 28 29 41 45'
+        '0628294145'
     ), (
         'Club Céramique "Les Argyliennes"',
-        'Culture',
+        '1',
         'L\'atélier réunit deux fois par semaine une communauté de passionnés, débutants ou confirmés, qui partagent l\'envie de créees avec la terre et d\'échanger leur savoir-faire.',
-        '06 31 03 13 87'
+        '0631031387'
     ), (
         'Comité des fêtes de Saint-Ay',
-        'Culture',
+        '1',
         'Depuis mars 2015, le Comité des Fêtes compte 14 membres : 7 membres du bureau, 6 membres très actifs et 1 membre d’honneur.',
-        '02 38 88 84 86'
+        '0238888486'
     ), (
         'Harmonie de Saint-Ay',
-        'Culture',
+        '1',
         'Composée d\'environ 40 musiciens, l\'orchestre d\'harmonie se produit lors des concerts, de festivals, de cérémonies et a participé à des concours nationaux.',
-        '06 83 40 76 20'
+        '0683407620'
     ), (
         'Association Jeanne d\'Arc (Centre Paroissial)',
-        'Culture',
+        '1',
         'Contribue au bon déroulement de la vie paroissiale sous toutes ses formes.',
-        '09 51 48 38 20'
+        '0951483820'
     ), (
         'Club Informatique Agylien',
-        'Education',
+        '2',
         'En toute convivialité, venez quand vous voulez au club, toute l\'année hors vacances scolaires et jours fériés, avec vos appareils, pour partager, évoluer dans votre pratique, pour trouver des solutions. Plusieurs thèmes abordés: photo, vidéo, mail, tableur, traitement de texte, dessin, retouche, sauvegarde, réseaux sociaux, jeux, applications.',
-        '02 46 91 01 19'
+        '0246910119'
     ), (
         'Association des Parents Indépendants de Saint-Ay',
-        'Parents',
+        '3',
         'Une association locale regroupant une trentaine de parents qui a pour objectif d\'améliorer la scolarité de tous les enfants et de répondre aux attentes de tous les parents.',
-        '06 78 64 15 76'
+        '0678641576'
     ), (
         'Association des Parents Indépendants du Collège Nelson Mandela',
-        'Parents',
+        '3',
         'Votre enfant est au collège de Saint AY ? Vous souhaitez vous investir dans sa scolarité ? Vous voulez rejoindre une équipe de parents motivés ? Rejoignez-nous !',
-        '06 66 02 366 29'
+        '0660236629'
     ), (
         'Association Parentale de Soutien aux Actions du PAJ',
-        'Parents',
+        '3',
         'L’APSA-PAJ (Association Parentale de Soutien aux Actions du Point Accueil Jeunes) est une association para municipale, loi de 1901, créée à l’initiative de parents des jeunes adhérents du Point Accueil Jeunes en Juillet 2007.',
-        '02 38 88 84 06'
+        '0238888406'
     ), (
         'Amicale des Retraités de Saint Ay',
-        'Communaute',
+        '4',
         'Venez nous rejoindre Tous les jeudis de 14 H à 18 H à la salle Jacques Brel où nous pratiquons divers jeux de sociétés, belote, scrabble, tarot, rumikub, triominos et pétanque. Nous organisons quelques sorties tout au long de l’année, d’une journée, quelques fois plusieurs jours, des repas de temps en temps.',
-        '06 70 60 01 20'
+        '0670600120'
     ), (
         'Amicale des Sapeurs Pompiers',
-        'Communaute',
+        '4',
         'Pourquoi pas vous?',
-        '06 28 53 58 54'
+        '0628535854'
     ), (
         'La Médaille Militaire Meung-sur-Loire-Saint-Ay-Beaugency Comité cantonal du Souvenir Français',
-        'Associations patriotiques et d\'Anciens Combattants',
+        '5',
         'Notre association a pour but de Rassembler les hommes et les femmes qui ont porté l’uniforme pour La défense de la France pendant les conflits ou au titre du Service national, les veuves d’Anciens Combattants et les veuves et orphelins de guerre.',
-        '06 19 38 55 88'
+        '0619385588'
     ), (
         'Union Nationale des Combattants de Saint-Ay',
-        'Associations patriotiques et d\'Anciens Combattants',
+        '5',
         'Notre association accueille tous ceux qui ont participé à tous les conflits : 1939/1945, Indochine, Corée du Nord, opérations extérieures sous toute forme, tous les Anciens du Service Militaire, Militaires de carrière, Gendarmes, Policiers, Pompiers, Douaniers, Surveillants pénitentiaires, ainsi que tous les sympathisants (Élus locaux et nationaux par exemple) qui se retrouvent dans nos valeurs.',
-        '06 24 24 90 22'
+        '0624249022'
     ), (
         'Association des Donneurs de Sang Bénévoles',
-        'Aide mutuelle',
+        '6',
         'Les buts de l’association : - seconder l’établissement de Transfusion Sanguine en participant activement au développement de la transfusion sanguine en recrutant de nouveaux donneurs, notamment chez les jeunes. - maintenir entre ses membres des liens d’amitié et de fraternité en organisant des manifestations ou sorties familiales.',
-        '02 36 47 15 84'
+        '0236471584'
     ), (
         'Bouchons, ça roule',
-        'Aide mutuelle',
+        '6',
         'À Saint-Ay, Danielle, bénévole de Bouchons ça roule, s\'occupe des sept collecteurs de la commune.',
-        '06 81 16 76 94'
+        '0681167694'
     ), (
         'Les façonneurs d\'Agylus',
-        'Professionnelles',
+        '7',
         'Notre association a pour but de produire, promouvoir et soutenir l’expression artistique et culturelle sous toutes ses formes.',
-        '06 63 10 85 38'
+        '0663108538'
     ), (
         'Union Economique Agylienne',
-        'Professionnelles',
+        '7',
         'C’est la dynamique de l’ensemble du tissu économique de Saint-Ay regroupé sous forme d’association pour développer, valoriser et mieux faire connaître toutes les activités proposées par les professionnels de notre commune.',
-        '02 38 88 85 18'
+        '0238888518'
     ), (
         'Association de Sophrologie et Disciplines Associées',
-        'Sport',
+        '8',
         'Ensemble de techniques qui vous permet : - d’apprendre à gérer le stress, - de diminuer l’anxiété, - de découvrir ses propres ressources, - de développer la confiance en soi, - de prendre conscience de ses capacités, - de savoir se détendre à tout moment.',
-        '06 77 73 44 57'
+        '0677734457'
     ), (
         'Cercle Gaston Couté de cyclotourisme',
-        'Sport',
+        '8',
         'Pratique du cyclisme et du clyclotourisme ainsi que toutes initiatives propres a la formation phisique et morale de ses members.',
-        '06 71 43 31 03'
+        '0671433103'
     ), (
         'Cercle Saint Agylien Basket',
-        'Sport',
+        '8',
         'Dynamique et énergique, le club de Saint Ay Basket est composé de joueuses en équipe loisir et en équipe 1ère série départementale, féminines. Un peu d’habileté, d’explosivité, d’endurance, un minimum de qualités techniques et mentales sont les bases du basket !',
-        '06 60 78 16 75'
+        '0660781675'
     ), (
         'Club de Badminton',
-        'Sport',
+        '8',
         'Le club de Badminton est ouvert à tous à partir de 16 ans pour les « adultes » et 7 ans pour le créneau jeunes. En compétition et en loisir.',
-        '06 23 23 23 44'
+        '0623232344'
     ), (
         'Danse Country',
-        'Sport',
+        '8',
         'Vous aimez la musique country ? Vous aimez danser ? Alors n\'hésitez pas, venez nous rejoindre!',
-        '06 60 79 75 48'
+        '0660797548'
     ), (
         'Ecole de rugby O\'Val des Mauves',
-        'Sport',
+        '8',
         'Une vingtaine de parents et enfants ont répondu à l\'invitation du nouveau club de rugby de l\'ouest Orléanais, « l\'O\'val des Mauves », pour la réunion de présentation du projet.',
-        '06 82 55 93 77'
+        '0682559377'
     ), (
         'Entente Chaingy Saint Ay Football',
-        'Sport',
+        '8',
         'Déjà la rentrée ! Votre enfant ne fait pas encore de sport ? Avez-vous pensé au football ? Dans le cadre de son Ecole de foot labellisée par la FFF, 1 entraînement gratuit pour les nouveaux enfants en début de saison. Donc n’hésitez pas à venir pour essayer sans engagement !',
-        '06 25 62 22 44'
+        '0625622244'
     ), (
         'Gymnastique volontaire Saint-Ay',
-        'Sport',
+        '8',
         'Assouplissement/Renfort musculaire/Stretching/Zumba',
-        '06 85 46 42 10 '
+        '0685464210 '
     ), (
         'Marcheurs Agyliens',
-        'Sport',
+        '8',
         'Le Club organise diverses randonnées durant la saison qui débute à partir du mois de septembre jusqu’au mois de juin suivant.',
-        '06 13 41 35 41'
+        '0613413541'
     ), (
         'Physic Form Agylien',
-        'Sport',
+        '8',
         'Musculation, Espace Cardio, Remise en forme',
-        '06 20 79 84 10'
+        '0620798410'
     ), (
         'Saint-Ay Mad Skaters',
-        'Sport',
+        '8',
         'L\'association Saint-Ay Mad Skaters a été fondée vers la fin des années 80 par des jeunes de la commune de Saint-Ay, passionnés de sports de glisse. Le skatepark de Saint-Ay est géré par l\'association qui pense, fabrique et entretient les modules qui composent le skatepark depuis plus de 20 ans, faisant de lui l\'un des plus vieux skateparks français.',
-        '06 20 27 76 71'
+        '0620277671'
     );
 
 INSERT INTO

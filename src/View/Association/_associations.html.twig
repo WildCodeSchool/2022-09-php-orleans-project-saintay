@@ -1,9 +1,20 @@
-!	<section class="association">
+!
+<section class="association">
 
 	<div class="container-fluid text-wrap">
 		<div class="row justify-content-md-start">
-		
+
 			<h1 class="title m-3">Annuaire des association</h3>
+
+			{% for association in associations %}
+
+				<p>{{ association.associationName }}</p>
+				<p>{{ association.categoryName }}</p>
+				<p>{{ association.description }}</p>
+				<p>{{ association.phone_number }}</p>
+				<img src="{{ association.image }}">
+
+			{% endfor %}
 
 		</div>
 	</div>
