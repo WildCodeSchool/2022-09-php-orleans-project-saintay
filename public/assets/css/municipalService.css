@@ -5,3 +5,8 @@
     margin: 3%;
 }
 
+.municipal-service-library-img {
+    height: 10rem;
+    object-fit: cover;
+}
+
