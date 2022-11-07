@@ -10,8 +10,9 @@ class AssociationManager extends AbstractManager
 
     public function selectAllAssociation(): array
     {
-        $query = "SELECT Association.name as associationName, Category.name as categoryName, description, phone_number, image 
-        FROM " . static::TABLE . " 
+        $query = "SELECT Association.name as associationName, 
+        Category.name as categoryName, description, phone_number, image 
+        FROM " . self::TABLE . " 
         INNER JOIN Category
         ON Category.id = Association.category_id
         ORDER BY Association.name DESC ";
