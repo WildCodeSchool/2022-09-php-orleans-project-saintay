@@ -10,7 +10,12 @@ h5 {
 
 body {
     font-family: var(--font-fam-body);
-    color: var(--font-color-body);
+
+    color: var(--font-color-dark);
+}
+
+.municipal-service .title {
+    border-bottom: 1px solid var(--font-color-dark);
     margin: 0;
 }
 
@@ -29,14 +34,9 @@ body {
     list-style: none;
 }
 
+
 .btn-primary {
 background-color: var(--bs-primary-rgb);
-}
-
-.municipal-service .title {   
-    border-bottom:  1px solid var(--font-color-body);
-    padding: 3px;
-    margin: 3%;
 }
 
 main{
@@ -84,6 +84,7 @@ main{
 
 
 @media screen and (max-width: 991px) {
+
     .sidebar {
         position: relative;
         width: 100%;
