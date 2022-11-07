@@ -16,6 +16,12 @@
     --font-fam-body: 'Hind Madurai', sans-serif;
     --font-color-body: #333;
 
+    --border-radius-card: 2px;
+    --box-shadow-card: 0px 1px 3px rgba(var(--bs-primary-rgb), 0.1);
+}
+
+
+
 }
 
 }
