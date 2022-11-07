@@ -5,8 +5,14 @@
     margin: 3%;
 }
 
+
+.municipal-service-postal {
+    height: 20rem;
+}
+
 .municipal-service-library-img {
     height: 10rem;
     object-fit: cover;
 }
+
 
