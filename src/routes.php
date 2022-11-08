@@ -12,6 +12,7 @@ return [
     'municipalService' => ['MunicipalServiceController', 'index',],
     'contact' => ['ContactController', 'index'],
     'login' => ['LoginController', 'login'],
+    'city_map' => ['CityMapController','index'],
     'logout' => ['LoginController', 'logout'],
     'urbanism' => ['UrbanismController', 'index'],
     'items' => ['ItemController', 'index',],
