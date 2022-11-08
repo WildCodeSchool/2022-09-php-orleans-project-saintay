@@ -1,19 +1,9 @@
-<div class="home-actualities my-3 m-1">
+<div class="mt-3">
     <h2 class="">Les dernières actualités</h2>
     <div class="d-flex flex-wrap gap-3">
        {% for actuality in actualities %}
-        <div class="card justify-content-between">
-            <div class="d-flex align-items-center">
-                <img src="{{ actuality.image }}" class="card-img-top" alt="image concernant l'actualité">
-                <h5 class="card-title px-1"> {{actuality.title}} </h5>
-            </div>
-            <div class="card-bod gap-2 mt-1 p-0">
-                <p class="card-text mx-2 pbr-1"><b> Le {{ actuality.date|date("d-m-y") }}, </b></p>
-                <p class="card-text mx-2 pbr-1"> {{ actuality.description }}</p>
-            </div>
-            <a href="{{ actuality.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'info</a>
-        </div>
+            {% include './Home/_actuality-card.html.twig' %}
         {% endfor %}
     </div>
-    <a href="#" class="btn bg-primary text-secondary my-4 p-3">Voir toutes les actus</a>
+    <a href="/toutes-les-actus" class="btn bg-primary text-secondary my-4 p-3">Voir toutes les actus</a>
 </div>
