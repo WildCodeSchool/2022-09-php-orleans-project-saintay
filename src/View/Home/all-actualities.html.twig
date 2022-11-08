@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+   
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/actuality-cards.css">
+{% endblock %}
+
+{% block sidebar %}
+    {% set sideNav = [
+        {
+            'title' : '', 
+            'link' : ''
+        }
+    ]      
+    %}
+    
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %} 
+
+{% block content %}
+
+
+<div class="p-1 p-lg-5 my-3 m-1">
+    <h2 class="mb-3">Toutes les dernières actualités</h2>
+    <div class="d-flex flex-wrap gap-3 mx-2 mx-lg-0">
+
+       {% for actuality in actualities %}
+            {% include './Home/_actuality-card.html.twig' %}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
