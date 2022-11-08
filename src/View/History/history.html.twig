@@ -1,5 +1,15 @@
 {% extends 'layout.html.twig' %}
 
+{% block sidebar %}
+	{% set sideNav = [
+        {
+        }
+    ]      
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
 {% block content %}
 	{% include './History/_city-heritage.html.twig' %}
 {% endblock %}
