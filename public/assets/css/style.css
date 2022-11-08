@@ -12,8 +12,6 @@ body {
     font-family: var(--font-fam-body);
     color: var(--font-color-body);
     margin: 0;
-    width: 100vw;
-    overflow-x: hidden;
 }
 
 .lead {
