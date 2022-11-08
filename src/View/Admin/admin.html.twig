@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block sidebar %}
+    {% set sideNav = [
+            {
+                'title' : 'Tutoriel', 
+                'link' : '/admin'
+            },
+            {
+                'title' : 'Actualités', 
+                'link' : '/admin/actualite'
+            }
+        ]      
+    %}
+ {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}{% endblock %}
