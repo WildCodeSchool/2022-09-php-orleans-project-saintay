@@ -4,24 +4,24 @@
 {% endblock %}
 
 {% block sidebar %}
-	{% set sideNav = [
-        {
-            'title' : 'Service de secours', 
-            'link' : '#firemen-number'
-        }
-    ]      
-    %}
+{% set sideNav = [
+      {
+          'title' : 'Service de secours', 
+          'link' : '#firemen-number'
+      }
+  ]      
+  %}
 
-	{% include './Item/_sidebar.html.twig' %}
+{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}
 
 <div class="px-2 px-lg-5 w-100">
 
-	<h2>Services municipaux</h2>
-	<img src="assets/images/bureau_mairie.png" class="services-municipaux-bureau my-3 mw-100 rounded" alt="Reception de la Mairie de Saint-Ay"/>
-	{% include './Home/_mayorReception.html.twig' %}
+<h2>Services municipaux</h2>
+<img src="assets/images/bureau_mairie.png" class="services-municipaux-bureau my-3 mw-100 rounded" alt="Reception de la Mairie de Saint-Ay"/>
+{% include './Home/_mayorReception.html.twig' %}
 
 
 	{% include './Home/_postalAgency.html.twig' %}
@@ -104,10 +104,10 @@
 </section>
 <h3 class="title">Le portail familles</h3>
 <section class="portailFamilie">
-	<div class="row justify-content-md-start">
-		<p class="lead m-0">À compter de la rentrée scolaire 2017 toutes les activités du service jeunesse de Saint-Ay sont accessibles sur Internet à travers le portail-familles ville-saint-ay.portail-familles.net</p>
-		<p class="lead m-0">Vous pouvez sur ce portail inscrire vos enfants et gérer toutes les activités. Pour avoir la possibilité de le faire vous devez faire au préalable une demande en ligne au moyen du formulaire disponible ici.</p>
-	</div>
+<div class="row justify-content-md-start">
+  <p class="lead m-0">À compter de la rentrée scolaire 2017 toutes les activités du service jeunesse de Saint-Ay sont accessibles sur Internet à travers le portail-familles ville-saint-ay.portail-familles.net</p>
+  <p class="lead m-0">Vous pouvez sur ce portail inscrire vos enfants et gérer toutes les activités. Pour avoir la possibilité de le faire vous devez faire au préalable une demande en ligne au moyen du formulaire disponible ici.</p>
+</div>
 </section>
 <div id="fireman" class="mt-4">
 	<h3 class="title">Service  pompiers</h3>
