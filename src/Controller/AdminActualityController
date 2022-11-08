@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Controller;
+
+use DateTime;
+use App\Model\ActualityManager;
+use App\Controller\AbstractController;
+
+class AdminActualityController extends AdminController
+{
+    public function index()
+    {
+        $actuManager = new ActualityManager();
+        $actualities = $actuManager->selectActualities(30);
+        return $this->twig->render('Admin/admin-actuality.html.twig', ['actualities' => $actualities]);
+    }
+}
