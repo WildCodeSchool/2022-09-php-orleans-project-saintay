@@ -12,8 +12,6 @@ return [
     'contact' => ['ContactController', 'index'],
     'login' => ['LoginController', 'login'],
     'logout' => ['LoginController', 'logout'],
-    'admin' => ['AdminController', 'index'],
-    'admin/actualite' => ['AdminActualityController', 'index'],
     'admin/actualite/add' => ['AdminActualityController', 'add'],
     'urbanism' => ['UrbanismController', 'index'],
     'items' => ['ItemController', 'index',],
