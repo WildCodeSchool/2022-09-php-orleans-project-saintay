@@ -12,7 +12,7 @@ return [
     'contact' => ['ContactController', 'index'],
     'login' => ['LoginController', 'login'],
     'logout' => ['LoginController', 'logout'],
-    'admin/actualite/add' => ['AdminActualityController', 'add'],
+    'admin/actualite/ajouter' => ['AdminActualityController', 'add'],
     'urbanism' => ['UrbanismController', 'index'],
     'items' => ['ItemController', 'index',],
     'municipalite' => ['MunicipaliteTeamController','index',],
