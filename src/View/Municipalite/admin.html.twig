@@ -1,0 +1,41 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/municipalite.css">
+{% endblock %}
+
+{% block sidebar %}
+	{% set sideNav = [
+        {
+        }
+    ]      
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+	<div class="container municipalityTeam">
+		<h1 class="mt-5">L'équipe Municipale</h1>
+		<div class="d-flex justify-content-center mb-5 mt-3">
+			<img class="w-100" src="/../assets/images/Lequipe-Municipal.jpg" alt="L'équipe municipal">
+		</div>
+		<h2 class="mb-3">Organigramme de l'équipe Municipale</h2>
+		<div class="row justify-content-center g-3">
+			{% for employee in employees %}
+				<div class="col-sm-3">
+					<div class="card">
+						<img class="card-img-top" src="{{ employee.image }}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-text">{{ employee.firstname }}
+								{{employee.lastname}}
+							</h5>
+							<p class="card-text">{{ employee.role }}
+							</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endblock %}
