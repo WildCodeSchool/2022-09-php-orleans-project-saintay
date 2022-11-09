@@ -1,0 +1,17 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/municipalite.css">
+{% endblock %}
+
+{% block sidebar %}
+	{% set sideNav = [
+        {
+        }
+    ]      
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}{% endblock %}

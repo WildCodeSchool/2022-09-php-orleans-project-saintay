@@ -17,4 +17,15 @@ class AdminMunicipaliteTeamController extends AbstractController
             ],
         );
     }
+
+    public function add(): string
+    {
+        $municipaliteManager = new MunicipaliteTeamManager();
+        return $this->twig->render(
+            'Municipalite/add.html.twig',
+            [
+                'employees' => $municipaliteManager->selectAll('lastname'),
+            ],
+        );
+    }
 }

@@ -20,7 +20,7 @@ return [
     'admin/actualite/ajouter' => ['AdminActualityController', 'add'],
     'urbanism' => ['UrbanismController', 'index'],
     'items' => ['ItemController', 'index',],
-    'municipalite' => ['AdminMunicipaliteTeamController', 'index',],
+    'municipalite' => ['MunicipaliteTeamController', 'index',],
     'admin/municipalite' => ['AdminMunicipaliteTeamController', 'index',],
     'admin/municipalite/ajouter' => ['AdminMunicipaliteTeamController', 'add'],
     'items/edit' => ['ItemController', 'edit', ['id']],
