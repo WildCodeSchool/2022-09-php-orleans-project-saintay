@@ -1,32 +1,32 @@
-
 <section class="association">
 
-	<div class="association container-fluid text-wrap">
+	<div class="container-fluid wrap">
 
-			<h1 class="title m-3">Annuaire des association</h3>
+		<h1 class="title mb-3">Annuaire des association</h3>
+		<hr class="w-100">
 
-			{% for association in associations %}
-            <div class="coll justify-content-md-start">
-				<div class="coll-sm-3">
-					<div class="card" style="width: 24rem;">
-						<div class="card body">
-						<div class="row">
-						<div class ="coll">
-						<img card="card rounded float-start w-30" src="{{ association.image }}">
-							<h3 class="card-text end">{{ association.associationName }}</h3>
-							</div>
-							</div>
-							<h5 class="card-text">{{ association.categoryName }}</h5>
-							<p class="card-text">{{ association.description }}</p>
-							<div class="d-flex justify-content-center mb-5 mt-3">
-								<button>{{ association.phone_number }}</button>
-							</div>
+		{% for association in associations %}
+		<div class="container justify-center">
+			<div class="card mt-3" style="width: 60rem;">
+				<div class="row">
+					<div class="col-sm-3 m-3 g-3">
+						<img card="card rounded float-start w-20 mt-3 g-3" src="{{ association.image }}" width="100px" height="100px">
+						<h5 class="card-text mt-3 g-3">{{ association.categoryName }}</h5>
+					</div>
+					<div class="col-md-8 mt-3">
+						<h3 class="card-text end">{{ association.associationName }}</h3>
+						<p class="card-text">{{ association.description }}</p>
+						<div class="d-flex justify-content-start">
+							<h3><button type="button" class="btn btn-outline-primary mt-1 mb-3">
+							<img src="assets/images/association_images/telephon.png" class="rounded my-3 mw-100" alt="Telephone"/>{{ association.phone_number }}
+							</button></h3>
+						</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			{% endfor %}
+	{% endfor %}
 
-	</div>
-</section>
+</div></section>
