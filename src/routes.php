@@ -13,6 +13,7 @@ return [
     'contact' => ['ContactController', 'index'],
     'login' => ['LoginController', 'login'],
     'logout' => ['LoginController', 'logout'],
+    'admin/actualite/ajouter' => ['AdminActualityController', 'add'],
     'urbanism' => ['UrbanismController', 'index'],
     'items' => ['ItemController', 'index',],
     'municipalite' => ['MunicipaliteTeamController','index',],
