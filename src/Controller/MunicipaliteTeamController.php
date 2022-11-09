@@ -3,17 +3,33 @@
 namespace App\Controller;
 
 use App\Model\MunicipaliteTeamManager;
-use PDO;
 
 class MunicipaliteTeamController extends AbstractController
 {
     public function index(): string
     {
         $municipaliteManager = new MunicipaliteTeamManager();
+        $employees = $municipaliteManager->selectAll('lastname');
+
+
         return $this->twig->render(
             'Municipalite/index.html.twig',
             [
-                'employees' => $municipaliteManager->selectAll('lastname'),
+                'employees' => $employees,
+            ],
+        );
+    }
+
+    public function isIndex(): string
+    {
+        $municipaliteManager = new MunicipaliteTeamManager();
+        $isEmployees = $municipaliteManager->selectIsEmployee('lastname');
+
+
+        return $this->twig->render(
+            'Home/municipalService.html.twig',
+            [
+                'isEmployees' => $isEmployees,
             ],
         );
     }

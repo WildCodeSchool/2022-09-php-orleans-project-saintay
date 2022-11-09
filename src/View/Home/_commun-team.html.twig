@@ -1,0 +1,27 @@
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/municipalite.css">
+{% endblock %}
+
+	<div class="container communalTeam">
+		<h3 class="border-bottom">Le personnel communal à votre service à la mairie</h3>
+		<div class="row justify-content-center g-3">
+			
+			{% for isEmployee in isEmployees %}
+				<div class="col-sm-3">
+				<div class="employe">
+					<div class="card">
+						<img class="card-img-top" src="{{ isEmployee.image }}" alt="Card image cap">
+						<div class="card-body">
+							<h4 class="card-text">{{ isEmployee.firstname }}
+								{{isEmployee.lastname}}
+							</h4>
+							<p class="card-text">{{ isEmployee.role }}
+							</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	

@@ -1,8 +1,20 @@
- .municipalityTeam .card-img-top {
-    height: 360px;
+ .communalTeam .card-img-top {
+    margin: 1rem;
+    width: 10em;
+    height: 10rem;
     object-fit: cover;
-    object-position: top;
+
 }
+
+.communalTeam .card-body{
+    margin: 1rem;
+    width: 10em;
+    height: 10rem;
+    object-fit: cover;
+}
+
+
+
 
 
 

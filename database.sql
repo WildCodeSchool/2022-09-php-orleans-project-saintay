@@ -48,7 +48,7 @@ VALUES (
         'Cecile',
         'TULIPE',
         'Accueil, état civil, listes electorales, cimetiere. ',
-        '/../upload/cecile.jpg.png',
+        '/../upload/cecile.jpg',
         true
     ), (
         'Isabelle',
@@ -60,7 +60,7 @@ VALUES (
         'Anais',
         'MAIS',
         'Comptabilite.',
-        '/../upload/Robin-Anais.jpg.png',
+        '/../upload/Robin-Anais.jpg',
         true
     ), (
         'Melanie',
@@ -194,3 +194,4 @@ VALUES (
         "Les Marcheurs agyliens sont en forme. Les Marcheurs agyliens ont tenu leur assemblée générale, mardi, à laquelle a assisté Joël Girard, conseiller délégué aux sports.",
         "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/a-saint-ay-apres-l-incendie-du-mois-de-janvier-l-usine-ciretec-ne-sera-pas-reconstruite_14203826/"
     );
+
