@@ -3,22 +3,24 @@
 	<div class="container-fluid wrap">
 
 		<h1 class="title mb-3">Annuaire des association</h3>
-		<hr class="w-100">
+		<hr class="w-100 mb-5">
 
 		{% for association in associations %}
 		<div class="container justify-center">
-			<div class="card mt-3" style="width: 60rem;">
-				<div class="row">
-					<div class="col-sm-3 m-3 g-3">
-						<img card="card rounded float-start w-20 mt-3 g-3" src="{{ association.image }}" width="100px" height="100px">
-						<h5 class="card-text mt-3 g-3">{{ association.categoryName }}</h5>
+			<div class="card m-3">
+				<div class="row justify-center">
+					<div class="col-sm-3 mt-5 ms-4">
+						<img card="card" src="{{ association.image }}" width="80px" height="80px">
+						<h5 class="card-text mt-5">{{ association.categoryName }}</h5>
 					</div>
-					<div class="col-md-8 mt-3">
-						<h3 class="card-text end">{{ association.associationName }}</h3>
-						<p class="card-text">{{ association.description }}</p>
-						<div class="d-flex justify-content-start">
+					<div class="col-md-8">
+						<h3 class="card-text mt-5">{{ association.associationName }}</h3>
+						<hr class="w-100">
+						<p class="card-text mt-5">{{ association.description }}</p>
+						<div class="d-flex justify-content-end">
 							<h3><button type="button" class="btn btn-outline-primary mt-1 mb-3">
-							<img src="assets/images/association_images/telephon.png" class="rounded my-3 mw-100" alt="Telephone"/>{{ association.phone_number }}
+							<img class="btn-outline-primary m-1" src="assets/images/association_images/telephon.png" alt="Telephone" width="20px" height="20px"/>
+							{{ association.phone_number }}
 							</button></h3>
 						</div>
 						</div>

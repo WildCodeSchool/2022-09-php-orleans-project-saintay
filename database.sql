@@ -1,4 +1,4 @@
--- Active: 1666773360795@@127.0.0.1@3306@saint_ay
+-- Active: 1666785953847@@127.0.0.1@3306@saint_ay
 
 CREATE TABLE
     municipalityTeam (
@@ -98,14 +98,18 @@ VALUES (
         'password'
     );
 
+DROP TABLE Association;
+
 CREATE TABLE
     Association (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         name VARCHAR(120) NOT NULL,
         category_id INT NOT NULL,
         description TEXT NOT NULL,
-        phone_number NOT NULL
+        phone_number TEXT NOT NULL
     );
+
+DROP TABLE Category;
 
 CREATE TABLE
     Category (
@@ -242,11 +246,6 @@ VALUES (
         'Le club de Badminton est ouvert à tous à partir de 16 ans pour les « adultes » et 7 ans pour le créneau jeunes. En compétition et en loisir.',
         '0623232344'
     ), (
-        'Danse Country',
-        '8',
-        'Vous aimez la musique country ? Vous aimez danser ? Alors n\'hésitez pas, venez nous rejoindre!',
-        '0660797548'
-    ), (
         'Ecole de rugby O\'Val des Mauves',
         '8',
         'Une vingtaine de parents et enfants ont répondu à l\'invitation du nouveau club de rugby de l\'ouest Orléanais, « l\'O\'val des Mauves », pour la réunion de présentation du projet.',
@@ -293,7 +292,7 @@ VALUES (
         'Communaute',
         "/assets/images/association_images/amicale.png"
     ), (
-        'Associations patriotiques et d\'Anciens Combattants',
+        'Associations patriotiques',
         "/assets/images/association_images/patriotique.png"
     ), (
         'Aide mutuelle',
