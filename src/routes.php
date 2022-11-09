@@ -9,7 +9,7 @@
 return [
     '' => ['HomeController', 'index',],
     'toutes-les-actus' => ['HomeController', 'displayAllActualities'],
-    'services-munipaux' => ['MunicipalServiceController', 'index',],
+    'services-municipaux' => ['MunicipalServiceController', 'index',],
     'contact' => ['ContactController', 'index'],
     'histoire' => ['HistoryController', 'index'],
     'connexion' => ['LoginController', 'login'],
