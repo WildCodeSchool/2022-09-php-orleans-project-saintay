@@ -18,7 +18,6 @@ class ActualityManager extends AbstractManager
     }
     public function insert(array $actuality)
     {
-
         $query = "INSERT INTO " . self::TABLE . "(title, description, link, date, image) 
         VALUES (:title, :description, :link, :date, :image)";
         $statement = $this->pdo->prepare($query);

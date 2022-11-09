@@ -8,6 +8,12 @@ use App\Controller\AbstractController;
 
 class AdminActualityController extends AbstractController
 {
+    public function index()
+    {
+        $actuManager = new ActualityManager();
+        $actualities = $actuManager->selectActualities(60);
+        return $this->twig->render('Admin/admin-actuality.html.twig', ['actualities' => $actualities]);
+    }
     public function validate(array $actuality, array $errors): array
     {
         if (DateTime::createFromFormat('Y-m-d', $actuality['date']) === false) {
