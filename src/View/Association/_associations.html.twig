@@ -1,21 +1,32 @@
 
 <section class="association">
 
-	<div class="container-fluid text-wrap">
-		<div class="row justify-content-md-start">
+	<div class="association container-fluid text-wrap">
 
 			<h1 class="title m-3">Annuaire des association</h3>
 
 			{% for association in associations %}
-
-				<p>{{ association.associationName }}</p>
-				<p>{{ association.categoryName }}</p>
-				<p>{{ association.description }}</p>
-				<p>{{ association.phone_number }}</p>
-				<img src="{{ association.image }}">
+            <div class="coll justify-content-md-start">
+				<div class="coll-sm-3">
+					<div class="card" style="width: 24rem;">
+						<div class="card body">
+						<div class="row">
+						<div class ="coll">
+						<img card="card rounded float-start w-30" src="{{ association.image }}">
+							<h3 class="card-text end">{{ association.associationName }}</h3>
+							</div>
+							</div>
+							<h5 class="card-text">{{ association.categoryName }}</h5>
+							<p class="card-text">{{ association.description }}</p>
+							<div class="d-flex justify-content-center mb-5 mt-3">
+								<button>{{ association.phone_number }}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			{% endfor %}
 
-		</div>
 	</div>
 </section>
