@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use DateTime;
 use App\Model\ActualityManager;
 use App\Controller\AbstractController;
@@ -64,6 +63,5 @@ class AdminActualityController extends AbstractController
             'errors' => $errors,
             'actuality' => $actuality ?? ''
         ]);
-
     }
 }
