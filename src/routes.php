@@ -18,6 +18,7 @@ return [
     'admin' => ['AdminController', 'index'],
     'admin/actualite' => ['AdminActualityController', 'index'],
     'admin/actualite/ajouter' => ['AdminActualityController', 'add'],
+    'admin/actualite/supprimer' => ['AdminActualityController', 'delete'],
     'urbanisme' => ['UrbanismController', 'index'],
     'municipalite' => ['MunicipaliteTeamController', 'index',],
     'items' => ['ItemController', 'index',],
