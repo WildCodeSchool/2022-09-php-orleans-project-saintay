@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="/assets/css/actuality-cards.css">
+<link rel="stylesheet" href="/assets/css/report-card.css">
 {% endblock %}
 
 {% block sidebar %}
@@ -24,17 +24,17 @@
 <div class="d-flex flex-wrap gap-3 mx-2 mx-lg-0">
 
     {% for report in reports %}
-    <div class="actuality-card card my-2 my-lg-3">
+    <div class="report-card card my-2 my-lg-3">
 
-<img src="{{ report.image }}" class="card-img-top" alt="image_reunion">
+<img src="{{ report.image }}" class="card-img-top" alt="image concernant l'actualité">
 <div class="d-flex flex-column justify-content-between h-100">
     <div class="p-3">
         <h5 class="card-title d-flex pt-4"> {{report.title}} </h5>
-        <p class="card-text"><b> Le {{ report.date|date("d-m-y") }}, </b></p>
-        <p class="report-card-description card-text blockquote-footer pt-3"> {{ report.description|u.truncate(150, '...', false) }}</p>    
+        <p class="card-text"><strong> Le {{ report.date|date("d-m-y") }}, </strong></p>
+        <p class="report-card-description card-text blockquote-footer pt-3"> {{ report.description|u.truncate(350, '...', false) }}</p>    
     </div>
     <div>
-        <a href="{{ report.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'infos</a>
+        <a href="{{ report.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'info</a>
     </div>
 </div>
 </div>
