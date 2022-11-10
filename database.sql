@@ -20,6 +20,7 @@ INSERT INTO
         image,
         communal
     )
+
 VALUES (
         'Frédéric',
         'CUILLERIER',
@@ -140,6 +141,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 
 SET time_zone = "+00:00";
 
+
 CREATE TABLE
     actuality (
         `id` INT NOT NULL AUTO_INCREMENT,
@@ -164,6 +166,7 @@ VALUES (
         'admin@saintay.fr',
         'password'
     );
+
 
 INSERT INTO actuality
 VALUES (
@@ -194,4 +197,18 @@ VALUES (
         "Les Marcheurs agyliens sont en forme. Les Marcheurs agyliens ont tenu leur assemblée générale, mardi, à laquelle a assisté Joël Girard, conseiller délégué aux sports.",
         "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/a-saint-ay-apres-l-incendie-du-mois-de-janvier-l-usine-ciretec-ne-sera-pas-reconstruite_14203826/"
     );
+
+
+CREATE TABLE user (
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `email` VARCHAR(255) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO user ('email', 'password')
+VALUES (
+    'admin@saintay.fr',
+    'password'
+);
 
