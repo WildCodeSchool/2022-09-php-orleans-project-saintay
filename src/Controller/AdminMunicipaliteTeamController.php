@@ -26,8 +26,8 @@ class AdminMunicipaliteTeamController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteManager = array_map('trim', $_POST);
             $errors = $this->validate($municipaliteManager);
-            $uploadDir = '/upload';
-            $uploadFile = " /.." . $uploadDir . basename($_FILES['avatar']['name']);
+            $uploadDir = __DIR__ . '/../../public/uploads/';
+            $uploadFile =  $uploadDir . basename($_FILES['avatar']['name']);
             $municipaliteManager['avatar'] = $uploadFile;
 
             if (empty($errors)) {
