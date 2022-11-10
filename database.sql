@@ -72,7 +72,7 @@ PRIMARY KEY (`id`)
 );
 
 INSERT INTO report
-VALUES (1, "Réunion du 19 Septembre 2022", 20220919, "/assets/images/reunion_conseil.png", "Voir l'ordre du jour en cliquant ci-dessus.", "http://www.ville-saint-ay.fr/docs/annonces/20220919_cm.pdf");
+VALUES (1, "Réunion du 19 Septembre 2022", 20220919, "/assets/images/reunion-conseil.png", "Voir l'ordre du jour en cliquant ci-dessus.", "http://www.ville-saint-ay.fr/docs/annonces/20220919_cm.pdf");
 
 CREATE TABLE user (
     `id` INT NOT NULL AUTO_INCREMENT ,
