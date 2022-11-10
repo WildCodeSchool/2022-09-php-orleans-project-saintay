@@ -20,7 +20,7 @@ class MunicipaliteTeamController extends AbstractController
         );
     }
 
-    public function isIndex(): string
+    public function showCommunal(): string
     {
         $municipaliteManager = new MunicipaliteTeamManager();
         $isEmployees = $municipaliteManager->selectIsEmployee('lastname');

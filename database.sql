@@ -83,7 +83,7 @@ VALUES (
     ), (
         'Meline',
         'MALIGNE',
-        'Assistante Ressources Humaines, Agence postale communale .',
+        'Assistante Ressources Humaines.',
         '/../upload/meline.jpeg',
         true
     ), (
@@ -95,13 +95,13 @@ VALUES (
     ), (
         'Adeline',
         'LINE',
-        'Directrice Générale Adjointe/Directrice Pole Enfance, Jeunesse et Social.',
+        'Directrice Générale Adjointe.',
         '/../upload/adeline.jpg',
         true
     ), (
         'Hanane',
         'PIONNER',
-        'Directrice des Ressources Humaines.',
+        'Directrice des Ressources Humaines, Agence postale communale.',
         '/../upload/Hanane.jpeg',
         true
     ), (
