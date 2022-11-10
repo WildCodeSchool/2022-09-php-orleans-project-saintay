@@ -10,15 +10,15 @@ class ActualityManager extends AbstractManager
 
     public function selectActualities(int $limit): array
     {
-        $query = "SELECT id, title, description, link, date, image 
-        FROM " . self::TABLE . " 
+        $query = "SELECT id, title, description, link, date, image
+        FROM " . self::TABLE . "
         ORDER BY date DESC LIMIT " . $limit;
 
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
     public function insert(array $actuality)
     {
-        $query = "INSERT INTO " . self::TABLE . "(title, description, link, date, image) 
+        $query = "INSERT INTO " . self::TABLE . "(title, description, link, date, image)
         VALUES (:title, :description, :link, :date, :image)";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('title', $actuality['title'], PDO::PARAM_STR);

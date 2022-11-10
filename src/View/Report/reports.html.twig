@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/actuality-cards.css">
+{% endblock %}
+
+{% block sidebar %}
+{% set sideNav = [
+    {
+        'title' : '', 
+        'link' : ''
+    }
+]      
+%}
+
+{% include './Item/_sidebar.html.twig' %}
+{% endblock %} 
+
+{% block content %}
+
+
+<div class="p-1 p-lg-5 my-3 m-1">
+<h2 class="mb-3">Les réunions du conseil</h2>
+<div class="d-flex flex-wrap gap-3 mx-2 mx-lg-0">
+
+    {% for report in reports %}
+    <div class="actuality-card card my-2 my-lg-3">
+
+<img src="{{ report.image }}" class="card-img-top" alt="image concernant l'actualité">
+<div class="d-flex flex-column justify-content-between h-100">
+    <div class="p-3">
+        <h5 class="card-title d-flex pt-4"> {{report.title}} </h5>
+        <p class="card-text"><b> Le {{ report.date|date("d-m-y") }}, </b></p>
+        <p class="report-card-description card-text blockquote-footer pt-3"> {{ report.description|u.truncate(150, '...', false) }}</p>    
+    </div>
+    <div>
+        <a href="{{ report.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'info</a>
+    </div>
+</div>
+</div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %} 
