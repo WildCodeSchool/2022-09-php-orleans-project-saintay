@@ -10,8 +10,8 @@ class ReportManager extends AbstractManager
 
     public function selectReports(int $limit): array
     {
-        $query = "SELECT id, title, description, link, date, image
-        FROM " . self::TABLE . "
+        $query = "SELECT image, title, description, link, date, image
+        FROM " . self::TABLE . " INNER JOIN report_category ON report.category_id =report_category.id
         ORDER BY date DESC LIMIT " . $limit;
 
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);

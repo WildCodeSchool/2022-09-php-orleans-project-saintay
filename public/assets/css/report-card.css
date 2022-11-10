@@ -9,7 +9,7 @@
 .card-img-top {
     width: 100%;
     height: 40%;
-    object-fit: cover;
+    object-fit:fill;
     border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
 
 }
