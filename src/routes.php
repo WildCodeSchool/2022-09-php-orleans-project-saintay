@@ -14,7 +14,7 @@ return [
     'login' => ['LoginController', 'login'],
     'logout' => ['LoginController', 'logout'],
     'urbanism' => ['UrbanismController', 'index'],
-    'association' => ['AssociationController', 'index'],
+    'vie-associative/annuaire-association' => ['AssociationController', 'index'],
     'items' => ['ItemController', 'index',],
     'municipalite' => ['MunicipaliteTeamController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
