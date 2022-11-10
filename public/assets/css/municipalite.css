@@ -4,9 +4,7 @@
     object-position: top;
 }
 
-
-
-.AdminFormTeam {
-    color: white;
+.adminFormTeam {
+    color: var(--bs-white);
 }
 

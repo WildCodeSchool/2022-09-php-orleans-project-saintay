@@ -26,8 +26,8 @@ class AdminMunicipaliteTeamController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteManager = array_map('trim', $_POST);
             $errors = $this->validate($municipaliteManager);
-            $uploadDir = 'upload/';
-            $uploadFile = " /../" . $uploadDir . basename($_FILES['avatar']['name']);
+            $uploadDir = '/upload';
+            $uploadFile = " /.." . $uploadDir . basename($_FILES['avatar']['name']);
             $municipaliteManager['avatar'] = $uploadFile;
 
             if (empty($errors)) {
@@ -50,17 +50,11 @@ class AdminMunicipaliteTeamController extends AbstractController
 
     private function validate(array $municipaliteManager): array
     {
-
         $errors = [];
-
         $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-
         $authorizedExtensions = ['jpg', 'jpeg', 'png'];
-
-        $maxFileSize = 2000000;
-
+        $maxFileSize = 200000;
         $maxLenghtCaracteres = 79;
-
 
         if (empty($municipaliteManager["firstname"])) {
             $errors[] = "Le prenom est obligatoire";
@@ -74,21 +68,20 @@ class AdminMunicipaliteTeamController extends AbstractController
         }
 
         if (strlen($municipaliteManager["firstname"]) >= $maxLenghtCaracteres) {
-            $errors[] = "Le prenom doit faire moin de 80 caracteres";
+            $errors[] = "Le prenom doit faire moins de $maxLenghtCaracteres caracteres";
         }
 
         if (strlen($municipaliteManager["lastname"]) >= $maxLenghtCaracteres) {
-            $errors[] = "Le nom doit faire moin de 80caracteres";
+            $errors[] = "Le nom doit faire moins de $maxLenghtCaracteres caracteres";
         }
 
         if ((!in_array($extension, $authorizedExtensions))) {
-            $errors[] = 'Veuillez sélectionner une image de type Jpg ou Jpeg ou Png !';
+            $errors[] = 'Veuillez sélectionner une image de type ' . implode(', ', $authorizedExtensions);
         }
 
         if (file_exists($_FILES['avatar']['tmp_name']) && filesize($_FILES['avatar']['tmp_name']) > $maxFileSize) {
-            $errors[] = "Votre fichier doit faire moins de 2M !";
+            $errors[] = 'Votre fichier doit faire moins de ' . $maxFileSize / 1000000;
         }
-
         return $errors;
     }
 }
