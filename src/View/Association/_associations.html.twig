@@ -1,34 +1,33 @@
-<section class="association">
+<section>
 
-	<div class="container-fluid wrap">
-
-		<h1 class="title mb-3">Annuaire des association</h3>
-		<hr class="w-100 mb-5">
-
+	<h1 class="title mb-3">Annuaire des association</h3>
+	<hr class="w-100 mb-5">
+	<div class="d-flex flex-wrap gap-3 p-2 p-lg-4">
 		{% for association in associations %}
-		<div class="container justify-center">
-			<div class="card m-3">
-				<div class="row justify-center">
-					<div class="col-sm-3 mt-5 ms-4">
-						<img card="card" src="{{ association.image }}" width="80px" height="80px">
-						<h5 class="card-text mt-5">{{ association.categoryName }}</h5>
+
+			<div class="association-card d-flex justify-content-between flex-column">
+
+				<div class="card-content p-4">
+					<div class="card-title d-flex justify-content-evenly align-items-center p-3">
+						<img class="card-img p-2" src="{{ association.image }}">
+						<h3 class="text-center fs-4 p-0">{{ association.associationName }}</h3>
 					</div>
-					<div class="col-md-8">
-						<h3 class="card-text mt-5">{{ association.associationName }}</h3>
-						<hr class="w-100">
-						<p class="card-text mt-5">{{ association.description }}</p>
-						<div class="d-flex justify-content-end">
-							<h3><button type="button" class="btn btn-outline-primary mt-1 mb-3">
-							<img class="btn-outline-primary m-1" src="assets/images/association_images/telephon.png" alt="Telephone" width="20px" height="20px"/>
-							{{ association.phone_number }}
-							</button></h3>
-						</div>
-						</div>
+
+					<div class="d-flex flex-column">
+						<h5 class="fs-5">{{ association.categoryName }}</h5>
+						<p class="">{{ association.description }}</p>
 					</div>
 				</div>
+
+				<div class="d-flex justify-content-center w-100">
+					<button type="button" class="btn bg-primary w-100">
+						<img class="bg-primary" src="assets/images/association_images/telephon.png" alt="Telephone" width="20px" height="20px"/>
+						<span class="text-secondary">{{ association.phone_number }}</span>
+					</button>
+				</div>
 			</div>
-		</div>
 
-	{% endfor %}
 
-</div></section>
+		{% endfor %}
+	</div>
+</section>

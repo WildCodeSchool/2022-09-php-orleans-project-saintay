@@ -15,7 +15,7 @@ class AssociationManager extends AbstractManager
         FROM " . self::TABLE . " 
         INNER JOIN Category
         ON Category.id = Association.category_id
-        ORDER BY Association.name DESC ";
+        ORDER BY Category.id DESC ";
 
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
