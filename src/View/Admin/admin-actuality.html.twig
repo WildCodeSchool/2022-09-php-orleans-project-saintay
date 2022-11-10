@@ -28,7 +28,7 @@
 
                 <li class="my-2 d-flex align-items-center">
 
-             <p class="w-25 p-0 m-0">{{ actuality.date }}</p>
+             <p class="w-25 p-0 m-0">{{ actuality.date|date("d-m-y") }}</p>
              <p class="w-50 p-0 m-0"> {{ actuality.title }} </p>
              
              <a href="/admin/actualite/modifier?id={{ actuality.id }}" class="btn bg-primary text-secondary mx-2 px-3 d-flex justify-content-center align-items-center admin-btn-edit p-2">
