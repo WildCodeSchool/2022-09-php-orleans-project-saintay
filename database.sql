@@ -98,7 +98,6 @@ VALUES (
         'password'
     );
 
-DROP TABLE Association;
 
 CREATE TABLE
     Association (
@@ -109,7 +108,6 @@ CREATE TABLE
         phone_number TEXT NOT NULL
     );
 
-DROP TABLE Category;
 
 CREATE TABLE
     Category (
