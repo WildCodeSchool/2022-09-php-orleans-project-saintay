@@ -10,3 +10,12 @@
 .municipal-services .bi-telephone-fill {
     fill: rgb(var(--bs-danger-rgb));
 }
+
+.municipal-services-home-wrapper {
+    height: 40vh; 
+    overflow: hidden;
+}
+
+.municipal-services-home-image {
+    object-fit: cover;
+}
