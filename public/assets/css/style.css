@@ -101,7 +101,8 @@ main{
 
     .sidebar .sidebar-back-home {
         position: relative;
-        text-align: center;
+        z-index: 1;
+        justify-content: center;
 }
     main {
         margin-inline-start: 0px;
