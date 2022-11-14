@@ -23,12 +23,9 @@ class ReportManager extends AbstractManager
         $query = "INSERT INTO " . self::TABLE . "(image, title, description, link, date, file, report_category)
         VALUES (:image, :title, :description, :link, :date, :file, :report_category)";
         $statement = $this->pdo->prepare($query);
-        $statement->bindValue('image', $report['image'], PDO::PARAM_STR);
         $statement->bindValue('title', $report['title'], PDO::PARAM_STR);
         $statement->bindValue('description', $report['description'], PDO::PARAM_STR);
-        $statement->bindValue('link', $report['link'], PDO::PARAM_STR);
         $statement->bindValue('date', $report['date'], PDO::PARAM_STR);
         $statement->bindValue('file', $report['file'], PDO::PARAM_STR);
-        $statement->bindValue('report_category', $report['report_category'], PDO::PARAM_STR);
     }
 }

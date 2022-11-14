@@ -1,103 +1,70 @@
 {% extends 'layout.html.twig' %}
 
 {% block sidebar %}
-    {% set sideNav = [
-            {
-                'title' : 'Retour', 
-                'link' : '/admin/report'
-            }
-        ]      
-    %}
-    {% include './Item/_sidebar.html.twig' %}
+	{% set sideNav = [
+        {
+            'title' : 'Retour', 
+            'link' : '/admin/report'
+        }
+    ]      
+%}
+	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}
 
-    <h2>Ajouter un document</h2>
+	<h2>Ajouter un document</h2>
 
-    <ul class="p-0 d-flex flex-column">
-        {% for error in errors %}
+	<ul class="p-0 d-flex flex-column">
+		{% for error in errors %}
 
-            <li class="bg-danger text-secondary p-2 my-1 w-75">{{ error }}</li>
+			<li class="bg-danger text-secondary p-2 my-1 w-75">{{ error }}</li>
 
-        {% endfor %}
-    </ul>
-
-
-    <form class="w-75" method="POST" novalidate>
-        <div class="form-group my-2">
-
-            <label for="title">Titre du document</label>
-            <input 
-                name="title" 
-                type="text" 
-                class="form-control" 
-                id="title" 
-                aria-describedby="Titre du document"
-                value="{% if report.title is defined %}{{report.title}}{% endif %}" 
-                required 
-            />
-
-        </div>
-
-        <div class="form-group my-2">
-            <label for="date">Date</label>
-            <input 
-                name="date" 
-                type="date" 
-                class="form-control" 
-                id="date" 
-                aria-describedby="Date du document"
-                value="{% if report.date is defined %}{{report.date}}{% endif %}" 
-                required
-            />
-        </div>
-
-        <div class="form-group my-2">
-            <label for="description">Description</label>
-            <textarea 
-                name="description" 
-                class="form-control" 
-                id="description" 
-                aria-describedby="Description du document"
-                rows="3"
-                required
-            >{% if report.description is defined %}{{report.description}}{% endif %}</textarea>
-
-        </div>
-
-    <div class="form-group my-2">
-            <label for="category">Selectionnez une catégorie<sup>*</sup></label>
-            <
-                name="report_category" 
-                type="select" 
-                class="form-control" 
-                id="report_category" 
-                aria-describedby="Votre catégorie" 
-                value="{% if report.report_category is defined %}{{report.report_category}}{% endif %}"
-                required
-            />
-        </div>
-
-        
-        <div class="form-group my-2">
-            <label for="file">Insérez votre fichier</label>
-            <input 
-                name="file" 
-                type="file" 
-                class="form-control"  
-                id="file" 
-                aria-describedby="Insérez votre fichier" 
-                placeholder="Choissisez un fichier"
-                value="{% if actuality.image is defined %}{{actuality.image}}{% endif %}"
-                required
-            />
-        </div>
+		{% endfor %}
+	</ul>
 
 
+	<form class="w-75" method="POST" novalidate>
+		<div class="form-group my-2">
 
-        <button type="submit" class="btn bg-primary text-secondary p-2 mt-3">Publiez votre document</button>
-    </form>
+			<label for="title">Titre du document</label>
+			<input name="title" type="text" class="form-control" id="title" aria-describedby="Titre du document" value="{% if report.title is defined %}{{report.title}}{% endif %}" required/>
+
+		</div>
+
+		<div class="form-group my-2">
+			<label for="date">Date</label>
+			<input name="date" type="date" class="form-control" id="date" aria-describedby="Date du document" value="{% if report.date is defined %}{{report.date}}{% endif %}" required/>
+		</div>
+
+		<div class="form-group my-2">
+			<label for="description">Description</label>
+			<textarea name="description" class="form-control" id="description" aria-describedby="Description du document" rows="3" required>
+				{% if report.description is defined %}
+					{{report.description}}
+				{% endif %}
+			</textarea>
+
+		</div>
+
+		<div class="form-group my-2">
+			<label for="report_category">Selectionnez une catégorie</label>
+			<select type="report_category" id="report_category" required>
+				<option value="Les reunions du conseil" selected="{% if name == "Les reunions du conseil"%}{{ selected }}{% endif %}">Les réunions du conseil</option>
+				<option value="Les bulletins municipaux" selected="{% if name == "Les bulletins municipaux"%}{{ selected }}{% endif %}">Les bulletins municipaux</option>
+				<option value="Les arrêtés municipaux" selected="{% if name == "Les arrêtés municipaux"%}{{ selected }}{% endif %}">Les arrêtés municipaux</option>
+			</select>
+		</div>
+
+
+		<div class="form-group my-2">
+			<label for="file">Insérez votre fichier</label>
+			<input name="file" type="file" class="form-control" id="file" aria-describedby="Insérez votre fichier" placeholder="Choissisez un fichier" value="{% if actuality.image is defined %}{{actuality.image}}{% endif %}" required/>
+		</div>
+
+
+		<button type="submit" class="btn bg-primary text-secondary p-2 mt-3">Publiez votre document</button>
+	</form>
 
 
 {% endblock %}
