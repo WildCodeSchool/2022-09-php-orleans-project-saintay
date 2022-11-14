@@ -8,6 +8,6 @@ class MunicipalServiceController extends AbstractController
 {
     public function index(): string
     {
-        return $this->twig->render('Home/municipalService.html.twig');
+        return $this->twig->render('Municipal-services/municipalService.html.twig');
     }
 }

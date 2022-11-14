@@ -1,18 +1,21 @@
-.municipal-service,
-.kindergarten {
-    border-bottom: 1px solid var(--bs-dark);
-    padding: 3px;
-    margin: 3%;
-}
-
-
-.municipal-service-postal {
+.municipal-services .municipal-service-postal {
     height: 20rem;
 }
 
-.municipal-service-library-img {
+.municipal-services .municipal-service-library-img {
     height: 10rem;
     object-fit: cover;
 }
 
+.municipal-services .bi-telephone-fill {
+    fill: rgb(var(--bs-danger-rgb));
+}
 
+.municipal-services-home-wrapper {
+    height: 40vh; 
+    overflow: hidden;
+}
+
+.municipal-services-home-image {
+    object-fit: cover;
+}
