@@ -12,3 +12,13 @@
     height: 50px;
     cursor: pointer;
 }
+
+.navbar .nav-link {
+    color: var(--bs-primary);
+    transition: color .5s ease-in-out, box-shadow .5s ease-in-out;
+    border-radius: var(--border-radius-card);
+}
+.navbar .nav-link:hover {
+    color: var(--bs-secondary);
+    box-shadow: inset  0 -200px 0 0 var(--bs-primary);
+}
