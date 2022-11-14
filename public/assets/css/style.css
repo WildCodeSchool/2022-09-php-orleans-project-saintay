@@ -40,7 +40,7 @@ background-color: var(--bs-primary-rgb);
 }
 
 main{
-    margin-block-start: 12rem;
+    margin-block-start: 10rem;
     margin-inline-start: 350px;
 }
 
@@ -78,8 +78,7 @@ main{
 }
 
 .nav-anchor:target {
-    padding-top: 10rem;
-    margin-top: -10rem;
+    scroll-margin-top: 8rem;
 }
 
 
