@@ -1,4 +1,6 @@
--- Active: 1666785953847@@127.0.0.1@3306@saint_ay
+-- Active: 1665745572078@@127.0.0.1@3306@saint_ay
+
+DROP TABLE `municipalityTeam`;
 
 CREATE TABLE
     municipalityTeam (
@@ -6,7 +8,8 @@ CREATE TABLE
         firstname VARCHAR(80) NOT NULL,
         lastname VARCHAR(80) NOT NULL,
         role TEXT NOT NULL,
-        image TEXT NOT NULL
+        image TEXT NOT NULL,
+        communal BOOLEAN NOT NULL
     );
 
 INSERT INTO
@@ -14,28 +17,123 @@ INSERT INTO
         firstname,
         lastname,
         role,
-        image
+        image,
+        communal
     )
 VALUES (
         'Frédéric',
         'CUILLERIER',
         'Compétence générale - Police - Sécurité - Etat Civil',
-        '/../assets/images/MairePortrait.png'
+        '/../assets/images/MairePortrait.png',
+        false
     ), (
         'Marie-Françoise ',
         'QUERE',
         'Adjointe aux bâtiments et au développement durable - biodiversité',
-        '/../assets/images/Marie-francoisePortrait.png'
+        '/../assets/images/Marie-francoisePortrait.png',
+        false
     ), (
         'Pascal ',
         'FOULON',
         'Adjoint aux affaires scolaires, culture, communication et gestion des salles',
-        '/../assets/images/PascalPortrait.png'
+        '/../assets/images/PascalPortrait.png',
+        false
     ), (
         'Dominique',
         'RENAULT',
         'Adjoint aux travaux, voirie et traitement des eaux.',
-        '/../assets/images/DominiquePortrait.png'
+        '/../assets/images/DominiquePortrait.png',
+        false
+    ), (
+        'Cecile',
+        'TULIPE',
+        'Accueil, état civil, listes electorales, cimetiere. ',
+        '/../upload/cecile.jpg',
+        true
+    ), (
+        'Isabelle',
+        'PANEL',
+        'Urbanisme.',
+        '/../upload/isabelle.jpg',
+        true
+    ), (
+        'Anais',
+        'MAIS',
+        'Comptabilite.',
+        '/../upload/Robin-Anais.jpg',
+        true
+    ), (
+        'Melanie',
+        'PALVINE',
+        'Vie associative et Reservation de salles .',
+        '/../upload/images.jpeg',
+        true
+    ), (
+        'Justine',
+        'BLANDINE',
+        'Vie associative et Reservation de salles .',
+        '/../upload/Justine-Cesari(1).jpg',
+        true
+    ), (
+        'Justine',
+        'POURADIER',
+        'Assistante du Maire et Direction Generale/Culture et Communication .',
+        '/../upload/thumbnail.jpeg',
+        true
+    ), (
+        'Meline',
+        'MALIGNE',
+        'Assistante Ressources Humaines.',
+        '/../upload/meline.jpeg',
+        true
+    ), (
+        'Aurelie',
+        'JOLIE',
+        'Directrice Generale des Services .',
+        '/../upload/aurelie.jpg',
+        true
+    ), (
+        'Adeline',
+        'LINE',
+        'Directrice Générale Adjointe.',
+        '/../upload/adeline.jpg',
+        true
+    ), (
+        'Hanane',
+        'PIONNER',
+        'Directrice des Ressources Humaines, Agence postale communale.',
+        '/../upload/Hanane.jpeg',
+        true
+    ), (
+        'David',
+        'DOUILLER',
+        'Directeur des Services Techniques.',
+        '/../upload/David.jpg',
+        true
+    ), (
+        'Zakya',
+        'MANDAYA',
+        'Charge des projets.',
+        '/../upload/zakia.jpeg',
+        true
+    ), (
+        'Adeline',
+        'JUVANILE',
+        'CCAS.',
+        '/../upload/adeline2.jpeg',
+        true
+    ), (
+        'Thierry',
+        'MICHON',
+        'Police municipale.',
+        '/../upload/Thierry_Bollore(1).jpg',
+        true
+    ), (
+        'Karine',
+        'FARINE',
+        'Police municipale.',
+        '/../upload/karine.jpeg',
+        true
     );
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -98,7 +196,6 @@ VALUES (
         'password'
     );
 
-
 CREATE TABLE
     association (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -107,7 +204,6 @@ CREATE TABLE
         description TEXT NOT NULL,
         phone_number TEXT NOT NULL
     );
-
 
 CREATE TABLE
     category (
