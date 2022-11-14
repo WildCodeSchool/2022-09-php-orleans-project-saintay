@@ -25,6 +25,7 @@ return [
     'urbanisme' => ['UrbanismController', 'index'],
     'municipalite' => ['MunicipaliteTeamController', 'index',],
     'vie-associative/annuaire-association' => ['AssociationController', 'index'],
+    'vie-associative' => ['AssociationController', 'home'],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
