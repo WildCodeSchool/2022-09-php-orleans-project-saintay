@@ -2,7 +2,9 @@
 
 @font-face {
     font-family: 'Marianne';
-    src: url(../font/Marianne-Bold.woff) url(../font/Marianne-Medium.woff);
+    src: 
+    url(../font/Marianne-Bold.woff) 
+    url(../font/Marianne-Medium.woff);
 }
 
 :root {
