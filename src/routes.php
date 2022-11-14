@@ -12,6 +12,7 @@ return [
     'services-municipaux' => ['MunicipalServiceController', 'index',],
     'contact' => ['ContactController', 'index'],
     'histoire' => ['HistoryController', 'index'],
+    'reunions-et-arretes' => ['ReportController', 'displayAllReports'],
     'connexion' => ['LoginController', 'login'],
     'plan-ville' => ['CityMapController','index'],
     'deconnexion' => ['LoginController', 'logout'],
