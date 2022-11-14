@@ -29,14 +29,6 @@ class ActualityManager extends AbstractManager
 
         $statement->execute();
     }
-    public function selectOneById(int $id): array|false
-    {
-        $query = "SELECT id, title, description, link, date, image 
-        FROM " . self::TABLE . " 
-        WHERE id=" . $id;
-
-        return $this->pdo->query($query)->fetch();
-    }
     public function update(int $id, array $actuality)
     {
         $query = "UPDATE " . self::TABLE . "

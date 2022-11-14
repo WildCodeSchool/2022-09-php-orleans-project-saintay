@@ -1,11 +1,14 @@
-<ul class="p-0 d-flex flex-column">
-        {% for error in errors %}
+{% if errors is not empty %}
 
-            <li class="bg-danger text-secondary p-2 my-1 w-75">{{ error }}</li>
+    <ul class="p-0 d-flex flex-column alert alert-danger list-unstyled" role="alert">
+            {% for error in errors %}
 
-        {% endfor %}
-</ul>
+                <li class="p-2 my-1 w-75">{{ error }}</li>
 
+            {% endfor %}
+    </ul>
+
+{% endif %}
 
 <form class="w-75" method="POST">
     <div class="form-group my-2">
