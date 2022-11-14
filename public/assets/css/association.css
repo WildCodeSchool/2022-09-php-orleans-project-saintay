@@ -23,3 +23,7 @@
     width: 20px;
     height: 20px;
 }
+
+.association-phone-svg {
+    fill: var(--bs-secondary)
+}

@@ -10,12 +10,12 @@ class AssociationManager extends AbstractManager
 
     public function selectAllAssociation(): array
     {
-        $query = "SELECT Association.name as associationName, 
-        Category.name as categoryName, description, phone_number, image 
+        $query = "SELECT association.name as associationName, 
+        category.name as categoryName, description, phone_number, image 
         FROM " . self::TABLE . " 
-        INNER JOIN Category
-        ON Category.id = Association.category_id
-        ORDER BY Category.id DESC ";
+        INNER JOIN category
+        ON category.id = association.category_id
+        ORDER BY category.id DESC ";
 
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
