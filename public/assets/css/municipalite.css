@@ -1,8 +1,28 @@
  .municipalityTeam .card-img-top {
-    height: 360px;
-    object-fit: cover;
-    object-position: top;
-}
+     height: 360px;
+     object-fit: cover;
+     object-position: top;
+ }
+
+ .communalTeam .card-img-top {
+     width: 70%;
+     height: 250px;
+     box-shadow: inset var(--box-shadow-card);
+     border: none;
+     object-fit: cover;
+     margin: auto;
 
 
+ }
 
+ .communalTeam .card-body {
+     width: 100%;
+     height: 40%;
+     object-fit: cover;
+     border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+ }
+
+ .employe {
+     margin: auto;
+     width: 70%;
+ }

@@ -1,10 +1,11 @@
-<div id="employes" class="container communalTeam">
-	<h3 class="border-bottom">Le personnel communal à votre service à la mairie</h3>
+<div id="employes" class="communalTeam">
+	<h3 class=" mt-5">Le personnel communal à votre service à la mairie</h3>
+	<hr>
 	<div class="row justify-content-center g-3">
 		{% for isEmployee in isEmployees %}
 			<div class="col-sm-3">
 				<div class="d-flex align-items-center justify-content-center flex-column p-4">
-					<img class="card-img-top" src="{{ isEmployee.image }}" alt="Card image cap">
+					<img class="card-img-top" src="{{ isEmployee.image }}" alt="Card image communal">
 					<div class="card-body">
 						<h4 class="card-text text-center p-2 employe">{{ isEmployee.firstname }}
 							{{isEmployee.lastname}}
