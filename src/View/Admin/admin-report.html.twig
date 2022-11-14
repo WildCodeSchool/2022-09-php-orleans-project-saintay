@@ -1,0 +1,40 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block sidebar %}
+{% set sideNav = [
+        {
+            'title' : 'Tutoriel', 
+            'link' : '/admin'
+        },
+        {
+            'title' : 'Documents officiels', 
+            'link' : '/admin/report'
+        }
+    ]      
+%}
+
+{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+<h2>Tous vos documents : </h2>
+
+<ul>
+
+    {% for report in reports %}
+
+            <li class="my-2 d-flex align-items-center">
+
+            <p class="w-25 p-0 m-0">{{ report.date }}</p>
+            <p class="w-50 p-0 m-0"> {{ report.title }} </p>
+
+    
+
+    </li>
+
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

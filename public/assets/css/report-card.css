@@ -1,0 +1,24 @@
+.report-card {
+    width: 350px;
+    height: 450px;
+    box-shadow: inset var(--box-shadow-card);
+    border: none;
+    border-radius: var(--border-radius-card);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 40%;
+    object-fit:fill;
+    border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+
+}
+
+.report-card .btn {
+    border-radius: 0 0 var(--border-radius-card) var(--border-radius-card);
+}
+
+.report-card .card-title {
+    height: 4rem;
+}
+
