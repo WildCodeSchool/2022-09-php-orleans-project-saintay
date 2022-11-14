@@ -21,6 +21,7 @@ return [
     'admin/actualite/supprimer' => ['AdminActualityController', 'delete'],
     'urbanisme' => ['UrbanismController', 'index'],
     'municipalite' => ['MunicipaliteTeamController', 'index',],
+    'vie-associative/annuaire-association' => ['AssociationController', 'index'],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
