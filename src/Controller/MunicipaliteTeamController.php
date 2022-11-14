@@ -17,4 +17,17 @@ class MunicipaliteTeamController extends AbstractController
             ],
         );
     }
+
+    public function showCommunal(): string
+    {
+        $municipaliteManager = new MunicipaliteTeamManager();
+        $isEmployees = $municipaliteManager->selectIsEmployee('lastname');
+
+        return $this->twig->render(
+            'Home/municipalService.html.twig',
+            [
+                'isEmployees' => $isEmployees,
+            ],
+        );
+    }
 }
