@@ -81,7 +81,7 @@ INSERT INTO report_category
 VALUES (1, "Les réunions du conseil", "/assets/images/reunion-conseil.png");
 
 INSERT INTO report_category
-VALUES (2, "Les bulletins municipaux", "/assets/images/bulletin-info.jpg");
+VALUES (2, "Les bulletins municipaux", "/assets/images/logo-conseil-municipal.png");
 
 INSERT INTO report_category
 VALUES (3, "Les arrêtés municipaux", "/assets/images/arrete-municipal.jpg");
