@@ -7,4 +7,6 @@ use PDO;
 class MunicipaliteTeamManager extends AbstractManager
 {
     public const TABLE = 'municipalityTeam';
+
+    
 }
