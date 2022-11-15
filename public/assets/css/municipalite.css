@@ -11,9 +11,11 @@
      border: none;
      object-fit: cover;
      margin: auto;
-
-
  }
+
+.adminFormTeam {
+    color: var(--bs-white);
+}
 
  .communalTeam .card-body {
      width: 100%;

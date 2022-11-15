@@ -181,6 +181,38 @@ VALUES (
         "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/a-saint-ay-apres-l-incendie-du-mois-de-janvier-l-usine-ciretec-ne-sera-pas-reconstruite_14203826/"
     );
 
+
+CREATE TABLE report (
+`id` INT NOT NULL AUTO_INCREMENT,
+`title` varchar(255) NOT NULL,
+`date` DATE NOT NULL,
+`description` TEXT NOT NULL,
+`link` TEXT NULL,
+`category_id` INT NOT NULL,
+PRIMARY KEY (`id`)
+);
+
+CREATE TABLE report_category (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL, 
+    `image` TEXT NOT NULL,
+    PRIMARY KEY (`id`)
+);
+INSERT INTO report_category
+VALUES (1, "Les réunions du conseil", "/assets/images/reunion-conseil.png");
+
+INSERT INTO report_category
+VALUES (2, "Les bulletins municipaux", "/assets/images/logo-conseil-municipal.png");
+
+INSERT INTO report_category
+VALUES (3, "Les arrêtés municipaux", "/assets/images/arrete-municipal.jpg");
+
+INSERT INTO report
+VALUES (1, "Réunion du 19 Septembre 2022", 20220919,"Voir l'ordre du jour en cliquant ci-dessus.", "http://www.ville-saint-ay.fr/docs/annonces/20220919_cm.pdf", 1);
+
+INSERT INTO report
+VALUES (2, "Réunion du 11 Avril 2022", 20220411, "Urbanisme, Vente des parcelles cadastrées. Ressources Humaines. Finances - Budgets, Subventions. Approbations des comptes. Vie associative. Voir le PV ci-dessous.", "http://www.ville-saint-ay.fr/docs/CR_20220411.pdf", 2);
+=======
 CREATE TABLE
     user (
         `id` INT NOT NULL AUTO_INCREMENT,
