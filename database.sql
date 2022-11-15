@@ -114,7 +114,7 @@ VALUES (1, "Réunion du 19 Septembre 2022", 20220919,"Voir l'ordre du jour en cl
 
 INSERT INTO report
 VALUES (2, "Réunion du 11 Avril 2022", 20220411, "Urbanisme, Vente des parcelles cadastrées. Ressources Humaines. Finances - Budgets, Subventions. Approbations des comptes. Vie associative. Voir le PV ci-dessous.", "http://www.ville-saint-ay.fr/docs/CR_20220411.pdf", 2);
-=======
+
 CREATE TABLE
     user (
         `id` INT NOT NULL AUTO_INCREMENT,
