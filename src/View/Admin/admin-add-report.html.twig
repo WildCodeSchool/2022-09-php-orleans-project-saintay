@@ -4,7 +4,7 @@
 	{% set sideNav = [
         {
             'title' : 'Retour', 
-            'link' : '/admin/report'
+            'link' : '/admin/documents'
         }
     ]      
 %}
@@ -14,19 +14,16 @@
 {% block content %}
 
 	<h2>Ajouter un document</h2>
+	{% if errors is not empty %}
 
-	<ul class="p-0 d-flex flex-column">
+	<ul class="p-0 d-flex flex-column alert alert-danger list-unstyled" role="alert">
 		{% for error in errors %}
 
-			<li class="bg-danger text-secondary p-2 my-1 w-75">{{ error }}</li>
-
-		{% endfor %}
-		{% for filesError in filesErrors %}
-
-			<li class="bg-danger text-secondary p-2 my-1 w-75">{{ filesError }}</li>
+			<li class="p-2 my-1 w-75">{{ error }}</li>
 
 		{% endfor %}
 	</ul>
+	{% endif %}
 
 
 	<form class="w-75" method="POST" enctype="multipart/form-data" novalidate>

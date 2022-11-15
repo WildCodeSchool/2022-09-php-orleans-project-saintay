@@ -8,9 +8,12 @@ use App\Controller\AbstractController;
 
 class AdminReportController extends AbstractController
 {
-    public const UPLOAD_DIR = './report_uploads/';
+    public const UPLOAD_DIR = './uploads/report_uploads/';
     public const AUTH_EXTENSION = ['pdf', 'PDF'];
     public const MAX_FILE_SIZE = 20000000;
+    public const CATEGORY = [
+        'Les réunions du conseil', 'Les bulletins municipaux', 'Les arrêtés municipaux'
+    ];
 
     public function index()
     {
@@ -37,6 +40,9 @@ class AdminReportController extends AbstractController
         if (empty($report['description'])) {
             $errors[] = 'Erreur, le champ description est requis';
         }
+        if (in_array($report['category'], self::CATEGORY)) {
+            $errors[] = "Erreur, la catégorie n\'est pas valide.";
+        }
 
         return $errors;
     }
@@ -48,7 +54,7 @@ class AdminReportController extends AbstractController
 
         if (!empty($files['file']['name'])) {
             $extension = pathinfo($files['file']['name'], PATHINFO_EXTENSION);
-            $uniqName = uniqid('', true) . '.' . $extension;
+            $uniqName = uniqid('', true) . $files['file']['name'] . $extension;
             $uploadFile = self::UPLOAD_DIR . $uniqName;
             $errors = $this->validateUpload($files, $errors);
 
