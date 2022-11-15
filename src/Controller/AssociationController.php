@@ -16,4 +16,11 @@ class AssociationController extends AbstractController
     {
         return $this->twig->render('Association/home-association.html.twig');
     }
+    public function filterByCategory(int $category)
+    {
+        $associationManager = new AssociationManager();
+        $associations = $associationManager->selectByCategory($category);
+
+        return $this->twig->render('Association/association.html.twig', ['associations' => $associations]);
+    }
 }
