@@ -6,7 +6,7 @@ use PDO;
 
 class AssociationManager extends AbstractManager
 {
-    public const TABLE = " Association ";
+    public const TABLE = "association";
 
     public function selectAllAssociation(): array
     {
