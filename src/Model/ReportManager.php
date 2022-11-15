@@ -17,15 +17,17 @@ class ReportManager extends AbstractManager
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function add(array $report)
+    public function add(array $report, string $uniqName, int $categoryId)
     {
-
-        $query = "INSERT INTO " . self::TABLE . "(image, title, description, link, date, file, report_category)
-        VALUES (:image, :title, :description, :link, :date, :file, :report_category)";
+        $query = "INSERT INTO " . self::TABLE . "(title, description, date, link, category_id)
+        VALUES (:title, :description, :date, :link, :report_category)";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('title', $report['title'], PDO::PARAM_STR);
         $statement->bindValue('description', $report['description'], PDO::PARAM_STR);
         $statement->bindValue('date', $report['date'], PDO::PARAM_STR);
-        $statement->bindValue('file', $report['file'], PDO::PARAM_STR);
+        $statement->bindValue('link', $uniqName, PDO::PARAM_STR);
+        $statement->bindValue('report_category', $categoryId, PDO::PARAM_INT);
+
+        $statement->execute();
     }
 }

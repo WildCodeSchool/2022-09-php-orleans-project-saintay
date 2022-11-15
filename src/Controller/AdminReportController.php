@@ -8,9 +8,9 @@ use App\Controller\AbstractController;
 
 class AdminReportController extends AbstractController
 {
-    public const UPLOAD_DIR = './public/report_uploads';
+    public const UPLOAD_DIR = './report_uploads/';
     public const AUTH_EXTENSION = ['pdf', 'PDF'];
-    public const MAX_FILE_SIZE = "20000000";
+    public const MAX_FILE_SIZE = 20000000;
 
     public function index()
     {
@@ -22,7 +22,6 @@ class AdminReportController extends AbstractController
     public function validate($report)
     {
         $errors = [];
-
         if (DateTime::createFromFormat('Y-m-d', $report['date']) === false) {
             $errors[] = "Le format de la date est incorrect";
         }
@@ -39,54 +38,40 @@ class AdminReportController extends AbstractController
             $errors[] = 'Erreur, le champ description est requis';
         }
 
-        if (empty($report['link'])) {
-            $errors[] = 'Erreur, le lien de l\'actualité est requis';
-        }
+        return $errors;
     }
 
-    private function upload(): array
+    private function upload($files)
     {
         $errors = [];
-        $files = $_FILES;
-        $uploadFile = '';
         $uniqName = '';
-        $fileName = '';
 
         if (!empty($files['file']['name'])) {
-            $errorsUpload = $this->validateUpload($files);
+            $extension = pathinfo($files['file']['name'], PATHINFO_EXTENSION);
+            $uniqName = uniqid('', true) . '.' . $extension;
+            $uploadFile = self::UPLOAD_DIR . $uniqName;
+            $errors = $this->validateUpload($files, $errors);
 
-            if (empty($errorsUpload)) {
-                $extension = pathinfo($files['file']['name'], PATHINFO_EXTENSION);
-                $uniqName = uniqid('', true) . '.' . $extension;
-                $uploadFile = self::UPLOAD_DIR . $uniqName;
-            }
-
-            if (!empty($errorsUpload) || !move_uploaded_file($files['file']['tmp_name'], $uploadFile)) {
+            if (!empty($errors) || !move_uploaded_file($files['file']['tmp_name'], $uploadFile)) {
                 $errors[] = $files['file']['name'] . ' n\'a pu être chargé. Veuillez réessayer.';
-            } else {
-                $fileName = $uniqName;
             }
-
-            $errors = array_merge($errorsUpload, $errors);
+        } else {
+            $errors[] = 'Erreur';
         }
-
-        return [$errors, $fileName];
+        return [$errors, $uniqName];
     }
 
-    private function validateUpload($files)
+    public function validateUpload($files, $errors)
     {
-        $errors = [];
-
         if (
-            file_exists($files['photo']['tmp_name']) &&
-            filesize($files['photo']['tmp_name']) > self::MAX_FILE_SIZE
+            file_exists($files['file']['tmp_name']) &&
+            filesize($files['file']['tmp_name']) > self::MAX_FILE_SIZE
         ) {
-            $errors[] = 'Votre fichier doit être inférieur à ' . self::MAX_FILE_SIZE / 1000000 . 'Mo.';
+            $errors[] = 'Votre fichier doit être inférieur à ' . self::MAX_FILE_SIZE / 20000000 . 'Mo.';
         }
-
-        if ((!in_array(pathinfo($files['photo']['name'], PATHINFO_EXTENSION), self::AUTH_EXTENSION))) {
+        if ((!in_array(pathinfo($files['file']['name'], PATHINFO_EXTENSION), self::AUTH_EXTENSION))) {
             $extString = implode(', ', self::AUTH_EXTENSION);
-            $errors[] = 'Veuillez sélectionner une image de type ' . $extString . '.';
+            $errors[] = 'Veuillez sélectionner un fichier de type ' . $extString . '.';
         }
 
         if (!empty($files['error'])) {
@@ -95,24 +80,50 @@ class AdminReportController extends AbstractController
 
         return $errors;
     }
+    public function toCategoryId($categoryName): int
+    {
+        if ($categoryName === 'Les reunions du conseil') {
+            return 1;
+        }
+        if ($categoryName === 'Les bulletins municipaux') {
+            return  2;
+        }
+        if ($categoryName === 'Les arrêtés municipaux') {
+            return 3;
+        }
+        return $categoryName;
+    }
 
     public function add()
     {
         $errors = [];
+        $filesErrors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $files = $_FILES;
             $report = array_map('trim', $_POST);
-            $uploadResult = $this->upload();
-            $errors = array_merge($uploadResult[0], $errors);
+
+            $errors = $this->validate($report);
+            $filesMethod = $this->upload($files);
+            $filesErrors = $filesMethod[0];
+            $uniqName = $filesMethod[1];
+
+            $errors = array_merge($errors, $filesErrors);
+
 
             if (empty($errors)) {
+                $categoryId = $this->toCategoryId($report['category']);
                 $reportManager = new ReportManager();
-                $reportManager->add($report);
-                header('Location: /admin/report');
+                $reportManager->add($report, $uniqName, $categoryId);
+
+                header('Location: /admin/documents');
 
                 return '';
             }
         }
 
-        return $this->twig->render('Admin/admin-add-report.html.twig', ['errors' => $errors]);
+        return $this->twig->render('Admin/admin-add-report.html.twig', [
+            'errors' => $errors,
+            'report' => $report ?? ''
+        ]);
     }
 }
