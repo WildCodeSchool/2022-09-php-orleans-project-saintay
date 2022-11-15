@@ -48,91 +48,91 @@ VALUES (
         'Cecile',
         'TULIPE',
         'Accueil, état civil, listes electorales, cimetiere. ',
-        '/../upload/cecile.jpg',
+        '/../uploads/cecile.jpg',
         true
     ), (
         'Isabelle',
         'PANEL',
         'Urbanisme.',
-        '/../upload/isabelle.jpg',
+        '/../uploads/isabelle.jpg',
         true
     ), (
         'Anais',
         'MAIS',
         'Comptabilite.',
-        '/../upload/Robin-Anais.jpg',
+        '/../uploads/Robin-Anais.jpg',
         true
     ), (
         'Melanie',
         'PALVINE',
         'Vie associative et Reservation de salles .',
-        '/../upload/images.jpeg',
+        '/../uploads/images.jpeg',
         true
     ), (
         'Justine',
         'BLANDINE',
         'Vie associative et Reservation de salles .',
-        '/../upload/Justine-Cesari(1).jpg',
+        '/../uploads/Justine-Cesari(1).jpg',
         true
     ), (
         'Justine',
         'POURADIER',
         'Assistante du Maire et Direction Generale/Culture et Communication .',
-        '/../upload/thumbnail.jpeg',
+        '/../uploads/thumbnail.jpeg',
         true
     ), (
         'Meline',
         'MALIGNE',
         'Assistante Ressources Humaines.',
-        '/../upload/meline.jpeg',
+        '/../uploads/meline.jpeg',
         true
     ), (
         'Aurelie',
         'JOLIE',
         'Directrice Generale des Services .',
-        '/../upload/aurelie.jpg',
+        '/../uploads/aurelie.jpg',
         true
     ), (
         'Adeline',
         'LINE',
         'Directrice Générale Adjointe.',
-        '/../upload/adeline.jpg',
+        '/../uploads/adeline.jpg',
         true
     ), (
         'Hanane',
         'PIONNER',
         'Directrice des Ressources Humaines, Agence postale communale.',
-        '/../upload/Hanane.jpeg',
+        '/../uploads/Hanane.jpeg',
         true
     ), (
         'David',
         'DOUILLER',
         'Directeur des Services Techniques.',
-        '/../upload/David.jpg',
+        '/../uploads/David.jpg',
         true
     ), (
         'Zakya',
         'MANDAYA',
         'Charge des projets.',
-        '/../upload/zakia.jpeg',
+        '/../uploads/zakia.jpeg',
         true
     ), (
         'Adeline',
         'JUVANILE',
         'CCAS.',
-        '/../upload/adeline2.jpeg',
+        '/../uploads/adeline2.jpeg',
         true
     ), (
         'Thierry',
         'MICHON',
         'Police municipale.',
-        '/../upload/Thierry_Bollore(1).jpg',
+        '/../uploads/Thierry_Bollore(1).jpg',
         true
     ), (
         'Karine',
         'FARINE',
         'Police municipale.',
-        '/../upload/karine.jpeg',
+        '/../uploads/karine.jpeg',
         true
     );
 
@@ -212,7 +212,7 @@ VALUES (1, "Réunion du 19 Septembre 2022", 20220919,"Voir l'ordre du jour en cl
 
 INSERT INTO report
 VALUES (2, "Réunion du 11 Avril 2022", 20220411, "Urbanisme, Vente des parcelles cadastrées. Ressources Humaines. Finances - Budgets, Subventions. Approbations des comptes. Vie associative. Voir le PV ci-dessous.", "http://www.ville-saint-ay.fr/docs/CR_20220411.pdf", 2);
-=======
+
 CREATE TABLE
     user (
         `id` INT NOT NULL AUTO_INCREMENT,
