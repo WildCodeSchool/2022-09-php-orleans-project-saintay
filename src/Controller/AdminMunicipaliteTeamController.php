@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Model\MunicipaliteTeamManager;
 use PDO;
 
-class AdminMunicipaliteTeamController extends AbstractController
+class AdminMunicipaliteTeamController extends AdminController
 {
     public function index(): string
     {
