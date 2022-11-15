@@ -98,10 +98,8 @@ VALUES (
         'password'
     );
 
-DROP TABLE Association;
-
 CREATE TABLE
-    Association (
+    association (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         name VARCHAR(120) NOT NULL,
         category_id INT NOT NULL,
@@ -109,17 +107,15 @@ CREATE TABLE
         phone_number TEXT NOT NULL
     );
 
-DROP TABLE Category;
-
 CREATE TABLE
-    Category (
+    category (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         name VARCHAR(100) NOT NULL,
         image TEXT NOT NULL
     );
 
 INSERT INTO
-    `Association` (
+    `association` (
         name,
         category_id,
         description,
@@ -278,7 +274,7 @@ VALUES (
     );
 
 INSERT INTO
-    `Category` (name, image)
+    `category` (name, image)
 VALUES (
         'Culture',
         "/assets/images/association_images/culturelles.png"
