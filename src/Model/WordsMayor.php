@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Model\MunicipaliteTeamManager;
 
-
 class WordsMayorController extends AbstractController
 {
     public function index(): string
