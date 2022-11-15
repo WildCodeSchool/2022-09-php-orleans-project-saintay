@@ -12,4 +12,8 @@ class AssociationController extends AbstractController
         $associations = $associationManager->selectAllAssociation();
         return $this->twig->render('Association/association.html.twig', ['associations' => $associations]);
     }
+    public function home(): string
+    {
+        return $this->twig->render('Association/home-association.html.twig');
+    }
 }

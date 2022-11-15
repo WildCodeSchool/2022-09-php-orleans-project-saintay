@@ -1,0 +1,21 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block sidebar %}
+    {% set sideNav = [
+            {
+                'title' : 'Retour', 
+                'link' : '/admin/actualite'
+            }
+        ]      
+    %}
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Ajouter une actualité</h2>
+
+    {% include './Admin/_form-admin-actuality.html.twig' %}
+
+
+{% endblock %}

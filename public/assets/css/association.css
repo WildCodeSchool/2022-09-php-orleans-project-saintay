@@ -23,3 +23,16 @@
     width: 20px;
     height: 20px;
 }
+
+.association-phone-svg {
+    fill: var(--bs-secondary)
+}
+
+.associations .association-home-image {
+    height: 40vh;
+    object-fit: cover;
+}
+
+.association-home-button-svg {
+    fill: var(--bs-secondary);
+}
