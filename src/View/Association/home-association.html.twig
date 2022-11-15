@@ -1,0 +1,72 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/association.css">
+{% endblock %}
+
+{% block sidebar %}
+	{% set sideNav = [
+        {
+            'title' : 'Annuaire des associations', 
+            'link' : 'vie-associative/annuaire-association'
+        }
+    ]      
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="associations pb-4 px-2 px-lg-5 w-100">
+
+	<div class="associations-home-wrapper position-relative">
+		<h2 class="position-absolute top-50 start-50 translate-middle bg-primary text-secondary text-center m-0 p-5 rounded">Vie Associative</h2>
+		<img 
+            src="assets/images/association.jpg"  
+            class="association-home-image w-100 my-3" 
+            alt="Bienvenue sur la page des associations de la Mairie de Saint-Ay"
+    />
+</div>
+
+<div class="mb-4">
+    <h2 class="mt-5">Présentation</h2>
+    <hr>
+
+    <p>La commune de Saint-Ay encourage la création et le développement des associations, qui sont un signe de la vitalité de la commune et de ses habitants.</p>
+    <p>Un guide des associations est publié chaque année qui recense toutes les associations agyliennes.</p>
+
+    <h4 class="mt-5">Annuaire des associations</h3>
+    <p>Pour retrouver toutes les associations de la ville, cliquez sur le boutton ci-dessous :</p>
+    <a href='/vie-associative/annuaire-association' class="btn bg-primary text-secondary p-3 px-4 my-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-bookmark-fill association-home-button-svg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"/>
+        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+        </svg>
+        <span class="p-2">Voir l'annuaire</span>
+    </a>
+
+    <h4 class="mt-5">Associations culturelles et sociales</h3>
+    <p>Ecole de musique, concerts, théâtre, cinéma, animations et expositions font vivre Saint-Ay tout au long de l'année.<p>
+    <p>L'équipe de la Bibliothèque Municipale participe activement tous les ans à l'opération nationale de "Lire en Fête".<p>
+    <p>Les "Journées Artistiques Agyliennes" sont depuis 1993 le point fort de la vie culturelle. Elles ont lieu annuellement en Octobre-Novembre.<p>
+
+    <h4 class="mt-5">Associations sportives</h3>
+
+    <p>Pour ses 17 associations sportives qui comptent plus de mille licenciés, la ville de SAINT-AY met à disposition un complexe sportif comprenant :</p>
+    <ul>
+        <li class="lead py-0">- 2 gymnases</li>
+        <li class="lead py-0">- 1 dojo</li>
+        <li class="lead py-0">- 1 terrain de football et un terrain d'entraînement</li>
+        <li class="lead py-0">- 2 courts de tennis</li>
+        <li class="lead py-0">- 1 skate park </li>
+        <li class="lead py-0">- 1 salle de musculation</li>
+        <li class="lead py-0">- 1 terrain multisports en extérieur</li>
+        <li class="lead py-0">- 1 boulodrome</li>
+    </ul>
+
+</div>
+
+{% endblock %}
+
