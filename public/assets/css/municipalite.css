@@ -4,5 +4,7 @@
     object-position: top;
 }
 
-
+.adminFormTeam {
+    color: var(--bs-white);
+}
 

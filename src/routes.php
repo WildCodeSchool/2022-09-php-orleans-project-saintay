@@ -24,6 +24,8 @@ return [
     'admin/documents' => ['AdminReportController', 'index'],
     'urbanisme' => ['UrbanismController', 'index'],
     'municipalite' => ['MunicipaliteTeamController', 'index',],
+    'admin/municipalite' => ['AdminMunicipaliteTeamController', 'index',],
+    'admin/municipalite/ajouter' => ['AdminMunicipaliteTeamController', 'add'],
     'vie-associative/annuaire-association' => ['AssociationController', 'index'],
     'vie-associative' => ['AssociationController', 'home'],
     'items' => ['ItemController', 'index',],
