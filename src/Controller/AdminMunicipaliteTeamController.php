@@ -84,4 +84,22 @@ class AdminMunicipaliteTeamController extends AdminController
         }
         return $errors;
     }
+
+
+    public function edit(int $id): string
+    {
+
+        $errors = [];
+        $municipaliteManager = new MunicipaliteTeamManager();
+        $municipaliteManager->selectOneById($id);
+
+
+        return $this->twig->render(
+            'Municipalite/modifier.html.twig',
+            [
+                'MunicipaliteManager' => $municipaliteManager,
+                'errors' => $errors,
+            ],
+        );
+    }
 }
