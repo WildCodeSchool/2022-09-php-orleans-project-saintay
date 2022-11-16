@@ -18,6 +18,8 @@ return [
     'plan-ville' => ['CityMapController','index'],
     'deconnexion' => ['LoginController', 'logout'],
     'admin' => ['AdminController', 'index'],
+    'admin/mot-du-maire' => ['AdminWordMayorController', 'index'],
+    'admin/mot-du-maire/edition' => ['AdminWordMayorController', 'edit', ['id']],
     'admin/actualite' => ['AdminActualityController', 'index'],
     'admin/actualite/ajouter' => ['AdminActualityController', 'add'],
     'admin/actualite/modifier' => ['AdminActualityController', 'edit', ['id']],
