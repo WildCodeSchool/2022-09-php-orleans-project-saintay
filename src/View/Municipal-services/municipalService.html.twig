@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}<link rel="stylesheet" href="../assets/css/municipalService.css">
+<link rel="stylesheet" href="/assets/css/municipalite.css">
 {% endblock %}
 
 {% block sidebar %}
@@ -57,13 +58,19 @@
             'title' : 'Petite enfance', 
             'link' : '#petite-enfance'
         },
-		{
+        {
             'title' : 'Transports en commun', 
             'link' : '#transport-commun'
         },
+
         {
             'title' : 'Camping', 
             'link' : '#camping'
+        
+		    {
+           'title' : 'Equipe Communal', 
+            'link' : '#employes'
+
         }
       
     ]      
@@ -107,10 +114,13 @@
 
 	{% include 'Municipal-services/_childCare.html.twig' %}
 
-  	{% include './Municipal-services/_babySitting.html.twig' %}
+  {% include './Municipal-services/_babySitting.html.twig' %}
 
-    {% include './Municipal-services/_publicTransport.html.twig' %}
+  {% include './Municipal-services/_publicTransport.html.twig' %}
 
-    {% include './Municipal-services/_camping.html.twig' %}
+  {% include './Municipal-services/_camping.html.twig' %}
+  
+  {% include './Municipal-services/_commun-team.html.twig' %}
+
 
 {% endblock %}

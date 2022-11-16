@@ -60,6 +60,19 @@ main{
     object-fit: cover;
 }
 
+.history-home-wrapper {
+    height: 40vh; 
+    overflow: hidden;
+}
+
+.history-home-image {
+    object-fit: cover;
+}
+
+.history-image {
+    max-width: 300px;
+}
+
 .logo-navbar {
     width: 30px;
     height: 40px;
