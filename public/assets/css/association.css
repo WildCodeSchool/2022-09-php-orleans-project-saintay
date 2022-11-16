@@ -36,28 +36,3 @@
 .association-home-button-svg {
     fill: var(--bs-secondary);
 }
-
-
-.association-card-admin .btn {
-    border-radius: 0 0 var(--border-radius-card-admin) var(--border-radius-card);
-}
-
-.association-card-admin {
-    width: 400px;
-    height: 300px;
-    box-shadow: inset var(--box-shadow-card);
-    border: 1px solid rgba(51, 51, 51, 0.2);
-    border-radius: var(--border-radius-card);
-}
-
-.association-card-admin .card-title {
-    height: 2rem;
-}
-
-.association-phone-svg {
-    fill: var(--bs-secondary)
-}
-
-.association-home-button-svg {
-    fill: var(--bs-secondary);
-}
