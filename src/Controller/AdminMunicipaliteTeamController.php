@@ -84,4 +84,16 @@ class AdminMunicipaliteTeamController extends AdminController
         }
         return $errors;
     }
+
+    public function delete()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $id = (int) trim($_POST['id']);
+
+
+            $municipalite = new MunicipaliteTeamManager();
+            $municipalite->delete($id);
+            header('Location: /admin/municipalite');
+        }
+    }
 }
