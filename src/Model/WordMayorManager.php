@@ -6,7 +6,7 @@ use PDO;
 
 class WordMayorManager extends AbstractManager
 {
-    public const TABLE = 'wordsMayor';
+    public const TABLE = 'wordMayor';
 
     public function selectFirst()
     {
@@ -15,21 +15,24 @@ class WordMayorManager extends AbstractManager
 
         return $this->pdo->query($query)->fetch(PDO::FETCH_ASSOC);
     }
-    public function update(int $id, array $wordMayor)
+    public function update(array $wordMayor)
     {
         $query = "UPDATE " . self::TABLE . "
         SET 
         title = :title, 
         description = :description, 
         image = :image,
-        signature = :signature,
-        WHERE id= :id";
-
+        signature = :signature";
         $statement = $this->pdo->prepare($query);
-        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->bindValue('title', $wordMayor['title'], PDO::PARAM_STR);
         $statement->bindValue('description', $wordMayor['description'], PDO::PARAM_STR);
-        $statement->bindValue('signature', $wordMayor['signature'], PDO::PARAM_STR);
         $statement->bindValue('image', $wordMayor['image'], PDO::PARAM_STR);
+        $statement->bindValue('signature', $wordMayor['signature'], PDO::PARAM_STR);
+    }
+    public function deleteWord()
+    {
+        $query = "DELETE FROM " . self::TABLE;
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
     }
 }

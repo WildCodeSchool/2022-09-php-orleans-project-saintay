@@ -16,12 +16,28 @@ class AdminWordMayorController extends AdminController
             ['wordMayor' => $wordMayor]
         );
     }
+    public function validate(array $wordMayor, array $errors): array
+    {
+        if (empty($wordMayor['title'])) {
+            $errors[] = 'Erreur, le champ titre est requis';
+        }
+        if (empty($wordMayor['description'])) {
+            $errors[] = 'Erreur, le champ description est requis';
+        }
+        if (empty($wordMayor['image'])) {
+            $errors[] = 'Erreur, le lien de l\'image est requis';
+        }
+        if (empty($wordMayor['signature'])) {
+            $errors[] = 'Erreur, la signature est requis';
+        }
 
-    public function edit(int $id): string
+        return $errors;
+    }
+    public function edit(): string
     {
         $errors = [];
         $wordManager = new WordMayorManager();
-        $wordMayor = $wordManager->selectOneById($id);
+        $wordMayor = $wordManager->selectFirst();
 
 
 
@@ -32,5 +48,14 @@ class AdminWordMayorController extends AdminController
                 'wordMayor' => $wordMayor
             ]
         );
+    }
+    public function deleteWord()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $wordManager = new WordMayorManager();
+            $wordManager->deleteWord();
+
+            header('Location: Admin/adminWordsMayor.html.twig');
+        }
     }
 }
