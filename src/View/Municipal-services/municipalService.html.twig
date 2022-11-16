@@ -1,0 +1,127 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}<link rel="stylesheet" href="../assets/css/municipalService.css">
+	<link rel="stylesheet" href="/assets/css/municipalite.css">
+{% endblock %}
+
+{% block sidebar %}
+{% set sideNav = [
+		{
+            'title' : 'Réception', 
+            'link' : '#reception-maire'
+        },
+		{
+            'title' : 'Agence postale', 
+            'link' : '#agence-postale'
+        },
+		{
+            'title' : 'Bibliothèque', 
+            'link' : '#bibliotheque'
+        },
+		{
+            'title' : 'Marché', 
+            'link' : '#marche'
+        },
+		{
+            'title' : 'Cinéma', 
+            'link' : '#cinema'
+        },
+		{
+            'title' : 'Ordures & déchetterie', 
+            'link' : '#ordures-dechetterie'
+        },
+		{
+            'title' : 'Periscolaire', 
+            'link' : '#periscolaire'
+        },
+		{
+            'title' : 'Vie scolaire', 
+            'link' : '#vie-scolaire'
+        },
+		{
+            'title' : 'Restaurant Scolaire', 
+            'link' : '#restaurant-scolaire'
+        },
+		{
+            'title' : 'Portail Famille', 
+            'link' : '#portail-famille'
+        },
+        {
+            'title' : 'Service de secours', 
+            'link' : '#pompiers'
+        },
+		{
+            'title' : 'Garde d\'enfant', 
+            'link' : '#garde-enfant'
+        },
+		{
+            'title' : 'Petite enfance', 
+            'link' : '#petite-enfance'
+        },
+        {
+            'title' : 'Transports en commun', 
+            'link' : '#transport-commun'
+        },
+
+        {
+            'title' : 'Camping', 
+            'link' : '#camping'
+        },
+        
+		{
+           'title' : 'Equipe Communale', 
+            'link' : '#employes'
+
+        }
+      
+    ]      
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="municipal-services pb-4 px-2 px-lg-5 w-100">
+
+	<div class="municipal-services-home-wrapper position-relative">
+		<h2 class="position-absolute top-50 start-50 translate-middle bg-primary text-secondary text-center m-0 p-5 rounded">Services municipaux</h2>
+		<img 
+            src="assets/images/services.jpg"  
+            class="municipal-services-home-image w-100 my-3" 
+            alt="Bienvenue sur la page des services municipaux de la Mairie de Saint-Ay"
+        />
+	</div>
+
+	{% include './Municipal-services/_mayorReception.html.twig' %}
+
+	{% include './Municipal-services/_postalAgency.html.twig' %}
+
+	{% include './Municipal-services/_library.html.twig' %}
+
+	{% include './Municipal-services/_market.html.twig' %}
+
+	{% include './Municipal-services/_cinema.html.twig' %}
+
+	{% include './Municipal-services/_landfill.html.twig' %}
+
+	{% include './Municipal-services/_periscolar.html.twig'%}
+
+	{% include './Municipal-services/_school.html.twig' %}
+
+	{% include './Municipal-services/_family_portal.html.twig' %}
+
+	{% include './Municipal-services/_firemens.html.twig' %}
+
+	{% include 'Municipal-services/_childCare.html.twig' %}
+
+  {% include './Municipal-services/_babySitting.html.twig' %}
+
+  {% include './Municipal-services/_publicTransport.html.twig' %}
+
+  {% include './Municipal-services/_camping.html.twig' %}
+  
+  {% include './Municipal-services/_commun-team.html.twig' %}
+
+
+{% endblock %}

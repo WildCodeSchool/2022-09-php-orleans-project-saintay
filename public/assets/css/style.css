@@ -40,7 +40,7 @@ background-color: var(--bs-primary-rgb);
 }
 
 main{
-    margin-block-start: 12rem;
+    margin-block-start: 10rem;
     margin-inline-start: 350px;
 }
 
@@ -58,6 +58,19 @@ main{
     width: 10em;
     height: 10rem;
     object-fit: cover;
+}
+
+.history-home-wrapper {
+    height: 40vh; 
+    overflow: hidden;
+}
+
+.history-home-image {
+    object-fit: cover;
+}
+
+.history-image {
+    max-width: 300px;
 }
 
 .logo-navbar {
@@ -78,8 +91,7 @@ main{
 }
 
 .nav-anchor:target {
-    padding-top: 10rem;
-    margin-top: -10rem;
+    scroll-margin-top: 8rem;
 }
 
 
@@ -101,7 +113,8 @@ main{
 
     .sidebar .sidebar-back-home {
         position: relative;
-        text-align: center;
+        z-index: 1;
+        justify-content: center;
 }
     main {
         margin-inline-start: 0px;

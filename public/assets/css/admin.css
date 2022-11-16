@@ -1,0 +1,8 @@
+.admin-home-wrapper {
+    height: 30vh; 
+    overflow: hidden;
+}
+
+.admin-home-image {
+    object-fit: cover;
+}
