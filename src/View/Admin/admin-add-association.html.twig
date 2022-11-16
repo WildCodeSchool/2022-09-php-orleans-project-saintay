@@ -33,20 +33,31 @@
 
 		<div class="form-group my-2">
 			<label for="title">Titre de l'association :</label>
-			<input name="title" type="text" class="form-control" id="title" aria-describedby="Titre de l'association" value="{% if association.title is defined %}{{association.title}}{% endif %}" required/>
+			<input name="title" type="text" class="form-control" id="title" aria-describedby="Titre de l'association" value="{% if association.associationName is defined %}{{association.associationName}}{% endif %}" required/>
 
 		</div>
 
-		<div class="form-group my-2">
-			<label for="category">Categorie :</label>
-			<input name="category" type="category" class="form-control" id="category" aria-describedby="Date de l'actualité" value="{% if association.category is defined %}{{association.category}}{% endif %}" required/>
+		<div class="form-group my-2"><select class="form-select" aria-label="Default select">
+			<option selected><label for="category" value="{% if association.categoryName is defined %}{{association.categoryName}}{% endif %}" >Categorie :</label></option>
+			    <option value="1">Culture</option>
+  				<option value="2">Education</option>
+  				<option value="3">Parents</option>
+				<option value="3">Communaute</option>
+				<option value="3">Associations patriotiques</option>
+				<option value="3">Aide mutuelle</option>
+				<option value="3">Professionnelles</option>
+				<option value="3">Sport</option>
+
 		</div>
+		 
+
+</select>
 
 		<div class="form-group my-2">
 			<label for="description">Description :</label>
 			<textarea name="description" class="form-control" id="description" aria-describedby="Description de l'association" rows="3" required>
-				{% if actuality.description is defined %}
-					{{actuality.description}}
+				{% if association.description is defined %}
+					{{association.description}}
 				{% endif %}
 			</textarea>
 		</div>
