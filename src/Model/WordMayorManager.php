@@ -4,11 +4,11 @@ namespace App\Model;
 
 use PDO;
 
-class WordsMayorManager extends AbstractManager
+class WordMayorManager extends AbstractManager
 {
-    public const TABLE = 'wordsMayor';
+    public const TABLE = 'wordMayor';
 
-    public function selectWords()
+    public function selectFirst()
     {
         $query = "SELECT id, title, description, image, signature
     FROM " . self::TABLE . "
