@@ -24,29 +24,30 @@
 	</ul>
 
 
-	<form class="w-75" method="POST">
+	<form class="w-75" method="POST" novalidate>
 
 		<div class="form-group my-2">
-			<label for="title">Titre de l'association :</label>
-			<input name="title" type="text" class="form-control" id="title" aria-describedby="Titre de l'association" value="{% if association.associationName is defined %}{{association.associationName}}{% endif %}" required/>
+			<label for="name">Nom de l'association :</label>
+			<input name="name" type="text" class="form-control" id="name" aria-describedby="Nom de l'association" value="{% if association.name is defined %}{{association.name}}{% endif %}" required/>
 
 		</div>
 
-		<div class="form-group my-2"><select class="form-select" aria-label="Default select">
-			<option selected><label for="category" value="{% if association.categoryName is defined %}{{association.categoryName}}{% endif %}" >Categorie :</label></option>
-			    <option value="1"><img src="public/assets/images/association_images/culturelles.png">Culture</option>
-  				<option value="2"><img src="public/assets/images/association_images/education.png">Education</option>
-  				<option value="3"><img src="public/assets/images/association_images/parents.png">Parents</option>
-				<option value="3"><img src="public/assets/images/association_images/amicale.png">Communaute</option>
-				<option value="3"><img src="public/assets/images/association_images/patriotique.png">Associations patriotiques</option>
-				<option value="3"><img src="public/assets/images/association_images/aide.png">Aide mutuelle</option>
-				<option value="3"><img src="public/assets/images/association_images/professionnelles.png">Professionnelles</option>
-				<option value="3"><img src="public/assets/images/association_images/sportives.png">Sport</option>
+		<div class="form-group my-2">
 
-		</div>
-		 
+			<label for="category">Categorie :</label>
+			<select id="category" name="category" class="form-select" aria-label="Default select">
+				<option>Culture</option>
+				<option>Education</option>
+				<option>Parents</option>
+				<option>Communaute</option>
+				<option>Associations patriotiques</option>
+				<option>Aide mutuelle</option>
+				<option>Professionnelles</option>
+				<option>Sport</option>
+			</div>
 
-</select>
+
+		</select>
 
 		<div class="form-group my-2">
 			<label for="description">Description :</label>
@@ -58,17 +59,13 @@
 		</div>
 
 		<div class="form-group my-2">
-			<label for="phone_number">Numero :</label>
-			<input type="number" id="phone_number" name="phone_number" placeholder="+33 22 33 44 55 66" required>
+			<label for="phone_number">Numero pour l'association :</label>
+			<input type="tel" id="phone_number" name="phone_number" placeholder="022233445566" value="{% if association.phone_number is defined %}{{ association.phone_number }}{% endif %}" required>
+
 		</div>
 
-		<div class="d-flex justify-content-center w-100">
-			<button type="button" class="btn bg-primary w-100 p-2">
-				<img class="association-img-phone bg-primary" src="../assets/images/association_images/telephon.png" alt="Telephone"/>
-				<span class="text-secondary">{{ association.phone_number }}</span>
-			</button>
-		</div>
-		<button type="submit" class="btn bg-primary text-secondary p-2 mt-3">Submit</button>
+		<div class="d-flex justify-content-center w-100"></div>
+		<button type="submit" class="btn bg-primary text-secondary p-2 mt-3">Soumettre</button>
 	</form>
 
 	<div>
