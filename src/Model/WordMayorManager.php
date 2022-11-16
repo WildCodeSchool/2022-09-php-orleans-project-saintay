@@ -11,9 +11,8 @@ class WordMayorManager extends AbstractManager
     public function selectFirst()
     {
         $query = "SELECT id, title, description, image, signature
-    FROM " . self::TABLE . "
-    ORDER BY DESC LIMIT ";
+        FROM " . self::TABLE . " LIMIT 1 ";
 
-        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+        return $this->pdo->query($query)->fetch(PDO::FETCH_ASSOC);
     }
 }

@@ -361,10 +361,10 @@ VALUES (
         "/assets/images/association_images/sportives.png"
     );
 
-DROP TABLE wordsMayor;
+DROP TABLE wordMayor;
 
 CREATE TABLE
-    wordsMayor (
+    wordMayor (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         title TEXT NOT NULL,
         description TEXT NOT NULL,
@@ -373,7 +373,7 @@ CREATE TABLE
     );
 
 INSERT INTO
-    wordsMayor (title, description, image, signature)
+    wordMayor (title, description, image, signature)
 VALUES (
         'De la force de la douceur, de la douceur de la force.',
         'La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l indépendance d une grande agglomération, génère le caractère attractif de SAINT-AY.

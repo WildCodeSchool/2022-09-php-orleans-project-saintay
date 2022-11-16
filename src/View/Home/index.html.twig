@@ -42,7 +42,7 @@
 		<h2 class=" mt-5">Mot du maire</h2>
 		<hr>
 		<div class="d-flex flex-column flex-md-row mt-2">
-			{% for wordMayor in wordsMayor %}
+			
 				<div class="card-body">
 					<p class="fs-5 fst-italic">{{ wordMayor.title }}</p>
 					<p>{{ wordMayor.description | nl2br }}</p>
@@ -51,7 +51,7 @@
 						<p class="ps-2 fs-5">{{ wordMayor.signature | nl2br }}</p>
 					</div>
 				</div>
-			{% endfor %}
+			
 		</div>
 
 		<div class="quick-access mt-5">
