@@ -29,6 +29,8 @@ class AdminReportController extends AbstractController
     public function validate($report)
     {
         $errors = [];
+        $maxLength = 255;
+
         if (DateTime::createFromFormat('Y-m-d', $report['date']) === false) {
             $errors[] = "Le format de la date est incorrect";
         }
@@ -37,8 +39,8 @@ class AdminReportController extends AbstractController
             $errors[] = 'Erreur, le champ titre est requis';
         }
 
-        if (empty($report['title']) > 255) {
-            $errors[] = 'Erreur, le nom du titre est trop long';
+        if (empty($report['title']) > $maxLength) {
+            $errors[] = 'Erreur, le titre doit faire moins de ". $maxLength . " caractères.';
         }
 
         if (empty($report['date'])) {
@@ -70,7 +72,7 @@ class AdminReportController extends AbstractController
                 $errors[] = $files['file']['name'] . ' n\'a pu être chargé. Veuillez réessayer.';
             }
         } else {
-            $errors[] = 'Erreur';
+            $errors[] = 'Erreur. Le fichier est obligatoire.';
         }
         return [$errors, $uniqName];
     }
