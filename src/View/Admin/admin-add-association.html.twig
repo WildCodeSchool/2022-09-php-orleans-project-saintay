@@ -27,11 +27,6 @@
 	<form class="w-75" method="POST">
 
 		<div class="form-group my-2">
-			<label for="image">Image :</label>
-			<input name="image" type="text" class="form-control" id="image" aria-describedby="Lien de l'association" value="{% if association.image is defined %}{{association.image}}{% endif %}" required/>
-		</div>
-
-		<div class="form-group my-2">
 			<label for="title">Titre de l'association :</label>
 			<input name="title" type="text" class="form-control" id="title" aria-describedby="Titre de l'association" value="{% if association.associationName is defined %}{{association.associationName}}{% endif %}" required/>
 
@@ -39,14 +34,14 @@
 
 		<div class="form-group my-2"><select class="form-select" aria-label="Default select">
 			<option selected><label for="category" value="{% if association.categoryName is defined %}{{association.categoryName}}{% endif %}" >Categorie :</label></option>
-			    <option value="1">Culture</option>
-  				<option value="2">Education</option>
-  				<option value="3">Parents</option>
-				<option value="3">Communaute</option>
-				<option value="3">Associations patriotiques</option>
-				<option value="3">Aide mutuelle</option>
-				<option value="3">Professionnelles</option>
-				<option value="3">Sport</option>
+			    <option value="1"><img src="public/assets/images/association_images/culturelles.png">Culture</option>
+  				<option value="2"><img src="public/assets/images/association_images/education.png">Education</option>
+  				<option value="3"><img src="public/assets/images/association_images/parents.png">Parents</option>
+				<option value="3"><img src="public/assets/images/association_images/amicale.png">Communaute</option>
+				<option value="3"><img src="public/assets/images/association_images/patriotique.png">Associations patriotiques</option>
+				<option value="3"><img src="public/assets/images/association_images/aide.png">Aide mutuelle</option>
+				<option value="3"><img src="public/assets/images/association_images/professionnelles.png">Professionnelles</option>
+				<option value="3"><img src="public/assets/images/association_images/sportives.png">Sport</option>
 
 		</div>
 		 
@@ -79,6 +74,5 @@
 	<div>
 		<a href="/admin/association" class="btn bg-primary text-secondary mt-3 mb-3 p-2">Retour</a>
 	</div>
-
 
 {% endblock %}
