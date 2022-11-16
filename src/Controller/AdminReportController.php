@@ -64,7 +64,8 @@ class AdminReportController extends AbstractController
 
         if (!empty($files['file']['name'])) {
             $extension = pathinfo($files['file']['name'], PATHINFO_EXTENSION);
-            $uniqName = uniqid('', true) . $files['file']['name'] . $extension;
+            $filesName = explode(".", $files['file']['name'])[0];
+            $uniqName = uniqid('', true) . $filesName . "." . $extension;
             $uploadFile = self::UPLOAD_DIR . $uniqName;
             $errors = $this->validateUpload($files, $errors);
 
