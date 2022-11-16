@@ -222,7 +222,7 @@ CREATE TABLE
     );
 
 INSERT INTO
-    user ('email', 'password')
+    user (`email`, `password`)
 VALUES (
         'admin@saintay.fr',
         'password'
