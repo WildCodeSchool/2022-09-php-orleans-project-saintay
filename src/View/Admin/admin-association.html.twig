@@ -7,13 +7,21 @@
 {% block sidebar %}
 	{% set sideNav = [
             {
-                'title' : 'Admin', 
+                'title' : 'Accueil', 
                 'link' : '/admin'
             },
             {
-                'title' : 'Association', 
+                'title' : 'Actualités', 
+                'link' : '/admin/actualite'
+            },
+			{
+                'title' : 'Associations', 
                 'link' : '/admin/association'
-            }
+            },
+			{
+            'title' : 'Documents officiels', 
+            'link' : '/admin/documents'
+        	}
         ]      
     %}
 	{% include './Item/_sidebar.html.twig' %}

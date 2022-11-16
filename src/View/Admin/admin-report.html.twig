@@ -1,40 +1,50 @@
 {% extends 'layout_admin.html.twig' %}
 
 {% block sidebar %}
-{% set sideNav = [
+	{% set sideNav = [
         {
-            'title' : 'Tutoriel', 
-            'link' : '/admin'
+                'title' : 'Accueil', 
+                'link' : '/admin'
+        },
+        {
+                'title' : 'Actualités', 
+                'link' : '/admin/actualite'
+        },
+		{
+                'title' : 'Associations', 
+                'link' : '/admin/association'
         },
         {
             'title' : 'Documents officiels', 
-            'link' : '/admin/report'
+            'link' : '/admin/documents'
         }
     ]      
 %}
 
-{% include './Item/_sidebar.html.twig' %}
+	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}
 
-<h2>Tous vos documents : </h2>
+	<h2>Tous vos documents :
+	</h2>
 
-<ul>
+	<ul>
 
-    {% for report in reports %}
+		{% for report in reports %}
 
-            <li class="my-2 d-flex align-items-center">
+			<li class="my-2 d-flex align-items-center">
 
-            <p class="w-25 p-0 m-0">{{ report.date }}</p>
-            <p class="w-50 p-0 m-0"> {{ report.title }} </p>
+				<p class="w-25 p-0 m-0">{{ report.date }}</p>
+				<p class="w-50 p-0 m-0">
+					{{ report.title }}
+				</p>
 
-    
 
-    </li>
+			</li>
 
-    {% endfor %}
+		{% endfor %}
 
-</ul>
+	</ul>
 
 {% endblock %}
