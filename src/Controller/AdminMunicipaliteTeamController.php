@@ -91,13 +91,13 @@ class AdminMunicipaliteTeamController extends AdminController
 
         $errors = [];
         $municipaliteManager = new MunicipaliteTeamManager();
-        $municipaliteManager->selectOneById($id);
+        $municipaliteManagers = $municipaliteManager->selectOneById($id);
 
 
         return $this->twig->render(
-            'Municipalite/modifier.html.twig',
+            'Municipalite/edit.html.twig',
             [
-                'MunicipaliteManager' => $municipaliteManager,
+                'municipaliteManager' => $municipaliteManagers,
                 'errors' => $errors,
             ],
         );
