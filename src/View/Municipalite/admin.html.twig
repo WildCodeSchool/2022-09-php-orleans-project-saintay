@@ -25,7 +25,7 @@
 		<div class="row justify-content-center g-3">
 			{% for employee in employees %}
 				<div class="col-sm-3">
-					<form action="/admin/municipalite/delete" method="POST" onsubmit="return confirm('etes vous sur de vouloir suprrimer le membre')">
+					<form action="/admin/municipalite/delete" method="POST" onsubmit="return confirm('Etes vous sûr de vouloir supprimer le membre ?')">
 						<input type="hidden" name="id" value="{{employee.id}}">
 						<button class="adminFormTeam mb-3 mt-4 btn bg-danger">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewbox="0 0 16 16">
