@@ -11,10 +11,7 @@ class AdminReportController extends AbstractController
 {
     public const UPLOAD_DIR = './uploads/report_uploads/';
     public const AUTH_EXTENSION = ['pdf', 'PDF'];
-    public const MAX_FILE_SIZE = 20000000;
-    public const CATEGORY = [
-        'Les réunions du conseil', 'Les bulletins municipaux', 'Les arrêtés municipaux'
-    ];
+    public const MAX_FILE_SIZE = 10000000;
 
     public function index()
     {
@@ -26,7 +23,7 @@ class AdminReportController extends AbstractController
         ]);
     }
 
-    public function validate($report)
+    public function validate($report, $reportCat)
     {
         $errors = [];
         $maxLength = 255;
@@ -50,10 +47,10 @@ class AdminReportController extends AbstractController
         if (empty($report['description'])) {
             $errors[] = 'Erreur, le champ description est requis';
         }
-        if (in_array($report['category'], self::CATEGORY)) {
+
+        if (in_array($report['name'], $reportCat)) {
             $errors[] = "Erreur, la catégorie n\'est pas valide.";
         }
-
         return $errors;
     }
 
@@ -103,11 +100,14 @@ class AdminReportController extends AbstractController
     {
         $errors = [];
         $filesErrors = [];
+        $reportCatManager = new CategoryManager();
+        $reportCat = $reportCatManager->selectAll('name');
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $files = $_FILES;
             $report = array_map('trim', $_POST);
 
-            $errors = $this->validate($report);
+            $errors = $this->validate($report, $reportCat);
             $filesMethod = $this->upload($files);
             $filesErrors = $filesMethod[0];
             $uniqName = $filesMethod[1];
@@ -119,14 +119,13 @@ class AdminReportController extends AbstractController
                 $reportManager = new ReportManager();
                 $reportManager->add($report, $uniqName);
 
+
                 header('Location: /admin/documents');
 
                 return '';
             }
         }
 
-        $reportCatManager = new CategoryManager();
-        $reportCat = $reportCatManager->selectAll();
 
         return $this->twig->render('Admin/admin-add-report.html.twig', [
             'categories' => $reportCat
