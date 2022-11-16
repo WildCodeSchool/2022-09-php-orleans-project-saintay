@@ -19,7 +19,7 @@ class AssociationController extends AbstractController
         if ($category !== null) {
             $associations = $associationManager->selectByCategory($category);
         } else {
-            $associations = $associationManager->selectAllAssociation();
+            $associations = $associationManager->selectByCategory();
         }
 
         $categories = $assoCategoryManager->selectAll();
