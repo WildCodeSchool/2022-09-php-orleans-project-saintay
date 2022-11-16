@@ -1,7 +1,5 @@
 -- Active: 1666785953847@@127.0.0.1@3306@saint_ay
 
-DROP TABLE `municipalityTeam`;
-
 CREATE TABLE
     municipalityTeam (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
