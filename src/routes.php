@@ -10,6 +10,7 @@ return [
     '' => ['HomeController', 'index',],
     'toutes-les-actus' => ['HomeController', 'displayAllActualities'],
     'services-municipaux' => ['MunicipalServiceController', 'index',],
+    'municipalService' => ['MunicipaliteTeamController', 'showCommunal',],
     'contact' => ['ContactController', 'index'],
     'histoire' => ['HistoryController', 'index'],
     'reunions-et-arretes' => ['ReportController', 'displayAllReports'],
