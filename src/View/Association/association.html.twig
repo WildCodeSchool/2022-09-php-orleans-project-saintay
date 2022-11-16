@@ -5,47 +5,27 @@
 {% endblock %}
 
 {% block sidebar %}
-	{% set sideNav = [
-        {
-            'title' : 'Toutes les associations', 
-            'link' : '/vie-associative/annuaire-association'
-        },
-        {
-            'title' : 'Association Culturelles', 
-            'link' : '/vie-associative/annuaire-association/filtre?categorie=1'
-        },
-        {
-            'title' : 'Éducation', 
-            'link' : '/vie-associative/annuaire-association/filtre?categorie=2'
-        },
-        {
-            'title' : 'Parents', 
-            'link' : '/vie-associative/annuaire-association/filtre?categorie=3'
-        },
-        {
-            'title' : 'Communauté', 
-            'link' : '/vie-associative/annuaire-association/filtre?categorie=4'
-        },
-        {
-            'title' : 'Associations Patriotiques', 
-            'link' : '/vie-associative/annuaire-association/filtre?categorie=5'
-        },
-        {
-            'title' : 'Aide Mutuelle', 
-            'link' : '/vie-associative/annuaire-association/filtre?categorie=6'
-        },
-        {
-            'title' : 'Associations Professionnelles', 
-            'link' : '/vie-associative/annuaire-association/filtre?categorie=7'
-        },
-        {
-            'title' : 'Associations Sportives', 
-            'link' : '/vie-associative/annuaire-association/filtre?categorie=8'
-        },
-    ]      
-    %}
+
+    	{% set sideNav = [
+            {
+                'title' : 'Toutes les associations', 
+                'link' : '/vie-associative/annuaire-association'
+            }
+        ]      
+        %}
+
+    {% for category in categories %}
+	    {% set sideNav = sideNav|merge([
+            {
+                'title' : category.name, 
+                'link' : '/vie-associative/annuaire-association/filtre?categorie=' ~ category.id
+            }
+        ])
+        %}
+    {% endfor %}
 
 	{% include './Item/_sidebar.html.twig' %}
+
 {% endblock %}
 
 {% block content %}

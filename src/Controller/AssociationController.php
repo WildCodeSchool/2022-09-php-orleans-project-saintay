@@ -2,25 +2,31 @@
 
 namespace App\Controller;
 
+use App\Model\AssoCategoryManager;
 use App\Model\AssociationManager;
 
 class AssociationController extends AbstractController
 {
-    public function index(): string
-    {
-        $associationManager = new AssociationManager();
-        $associations = $associationManager->selectAllAssociation();
-        return $this->twig->render('Association/association.html.twig', ['associations' => $associations]);
-    }
     public function home(): string
     {
         return $this->twig->render('Association/home-association.html.twig');
     }
-    public function filterByCategory(int $category)
+    public function filterByCategory(int $category = null)
     {
         $associationManager = new AssociationManager();
-        $associations = $associationManager->selectByCategory($category);
+        $assoCategoryManager = new AssoCategoryManager();
 
-        return $this->twig->render('Association/association.html.twig', ['associations' => $associations]);
+        if ($category !== null) {
+            $associations = $associationManager->selectByCategory($category);
+        } else {
+            $associations = $associationManager->selectAllAssociation();
+        }
+
+        $categories = $assoCategoryManager->selectAll();
+
+        return $this->twig->render('Association/association.html.twig', [
+            'associations' => $associations,
+            'categories' => $categories
+        ]);
     }
 }
