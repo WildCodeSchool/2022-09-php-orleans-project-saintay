@@ -63,7 +63,7 @@
 			<label for="report_category">Selectionnez une catégorie</label>
 			<select type="report_category" id="report_category" name='category' required>
 				{% for category in categories %}
-            <option value="{{ category.name }}">{{ category.name }}</option>
+            <option value="{{ category.id }}">{{ category.name }}</option>
         {% endfor %}
 			</select>
 		</div>

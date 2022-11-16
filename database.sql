@@ -93,7 +93,7 @@ CREATE TABLE report (
 `category_id` INT NOT NULL,
 PRIMARY KEY (`id`)
 CONSTRAINT `fk_report_category`
-FOREIGN KEY (`report_category_name`) REFERENCES report_category (`name`)
+FOREIGN KEY (`report_category_id`) REFERENCES report_category (`id`)
 );
 
 CREATE TABLE report_category (

@@ -94,19 +94,6 @@ class AdminReportController extends AbstractController
 
         return $errors;
     }
-    public function toCategoryId($categoryName): int
-    {
-        if ($categoryName === 'Les reunions du conseil') {
-            return 1;
-        }
-        if ($categoryName === 'Les bulletins municipaux') {
-            return  2;
-        }
-        if ($categoryName === 'Les arrêtés municipaux') {
-            return 3;
-        }
-        return $categoryName;
-    }
 
 
     public function add()
@@ -126,9 +113,8 @@ class AdminReportController extends AbstractController
 
 
             if (empty($errors)) {
-                $categoryId = $this->toCategoryId($report['category']);
                 $reportManager = new ReportManager();
-                $reportManager->add($report, $uniqName, $categoryId);
+                $reportManager->add($report, $uniqName);
 
                 header('Location: /admin/documents');
 
