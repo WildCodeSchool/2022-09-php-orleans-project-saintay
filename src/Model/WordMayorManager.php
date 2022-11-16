@@ -29,10 +29,11 @@ class WordMayorManager extends AbstractManager
         $statement->bindValue('image', $wordMayor['image'], PDO::PARAM_STR);
         $statement->bindValue('signature', $wordMayor['signature'], PDO::PARAM_STR);
     }
-    public function deleteWord()
+    public function deleteWord(int $id)
     {
         $query = "DELETE FROM " . self::TABLE;
         $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->execute();
     }
 }

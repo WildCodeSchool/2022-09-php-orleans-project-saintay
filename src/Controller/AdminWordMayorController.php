@@ -52,8 +52,9 @@ class AdminWordMayorController extends AdminController
     public function deleteWord()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
             $wordManager = new WordMayorManager();
-            $wordManager->deleteWord();
+            $wordManager->delete((int)$id);
 
             header('Location: Admin/adminWordsMayor.html.twig');
         }
