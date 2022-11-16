@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use DateTime;
 use App\Model\ReportManager;
+use App\Model\CategoryManager;
 use App\Controller\AbstractController;
 
 class AdminReportController extends AbstractController
@@ -19,7 +20,10 @@ class AdminReportController extends AbstractController
     {
         $reportManager = new ReportManager();
         $allReports = $reportManager->selectReports();
-        return $this->twig->render('Admin/admin-report.html.twig', ['reports' => $allReports]);
+
+        return $this->twig->render('Admin/admin-report.html.twig', [
+            'reports' => $allReports,
+        ]);
     }
 
     public function validate($report)
@@ -31,6 +35,10 @@ class AdminReportController extends AbstractController
 
         if (empty($report['title'])) {
             $errors[] = 'Erreur, le champ titre est requis';
+        }
+
+        if (empty($report['title']) > 255) {
+            $errors[] = 'Erreur, le nom du titre est trop long';
         }
 
         if (empty($report['date'])) {
@@ -100,6 +108,7 @@ class AdminReportController extends AbstractController
         return $categoryName;
     }
 
+
     public function add()
     {
         $errors = [];
@@ -127,9 +136,11 @@ class AdminReportController extends AbstractController
             }
         }
 
+        $reportCatManager = new CategoryManager();
+        $reportCat = $reportCatManager->selectAll();
+
         return $this->twig->render('Admin/admin-add-report.html.twig', [
-            'errors' => $errors,
-            'report' => $report ?? ''
+            'categories' => $reportCat
         ]);
     }
 }

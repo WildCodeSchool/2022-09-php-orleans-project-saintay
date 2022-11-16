@@ -92,6 +92,8 @@ CREATE TABLE report (
 `link` TEXT NULL,
 `category_id` INT NOT NULL,
 PRIMARY KEY (`id`)
+CONSTRAINT `fk_report_category`
+FOREIGN KEY (`report_category_name`) REFERENCES report_category (`name`)
 );
 
 CREATE TABLE report_category (
