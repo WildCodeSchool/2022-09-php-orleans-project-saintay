@@ -44,33 +44,18 @@
 
 .association-card-admin {
     width: 400px;
-    height: 550px;
+    height: 300px;
     box-shadow: inset var(--box-shadow-card);
     border: 1px solid rgba(51, 51, 51, 0.2);
     border-radius: var(--border-radius-card);
 }
 
 .association-card-admin .card-title {
-    height: 10rem;
-}
-
-.association-card-admin .card-img {
-    width: 50px;
-    height: 50px;
-}
-
-.association-card-admin .association-img-phone {
-    width: 20px;
-    height: 20px;
+    height: 2rem;
 }
 
 .association-phone-svg {
     fill: var(--bs-secondary)
-}
-
-.associations .association-home-image {
-    height: 40vh;
-    object-fit: cover;
 }
 
 .association-home-button-svg {

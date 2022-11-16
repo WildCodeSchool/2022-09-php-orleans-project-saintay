@@ -26,25 +26,29 @@
 
 {% block content %}
 
-	<h2>Tous vos documents :
-	</h2>
+	<section class="p-2 p-lg-5">
 
-	<ul>
+		<h2>Tous vos documents :
+		</h2>
+		<hr class="w-100 mb-5">
 
-		{% for report in reports %}
+		<ul>
 
-			<li class="my-2 d-flex align-items-center">
+			{% for report in reports %}
 
-				<p class="w-25 p-0 m-0">{{ report.date }}</p>
-				<p class="w-50 p-0 m-0">
-					{{ report.title }}
-				</p>
+				<li class="my-2 d-flex align-items-center">
+
+					<p class="w-25 p-0 m-0">{{ report.date }}</p>
+					<p class="w-50 p-0 m-0">
+						{{ report.title }}
+					</p>
 
 
-			</li>
+				</li>
 
-		{% endfor %}
+			{% endfor %}
 
-	</ul>
+		</ul>
+	</section>
 
 {% endblock %}
