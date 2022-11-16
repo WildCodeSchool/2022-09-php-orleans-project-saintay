@@ -62,10 +62,15 @@
             'title' : 'Transports en commun', 
             'link' : '#transport-commun'
         },
+
+        {
+            'title' : 'Camping', 
+            'link' : '#camping'
         
-		{
+		    {
            'title' : 'Equipe Communal', 
             'link' : '#employes'
+
         }
       
     ]      
@@ -109,10 +114,13 @@
 
 	{% include 'Municipal-services/_childCare.html.twig' %}
 
-  	{% include './Municipal-services/_babySitting.html.twig' %}
+  {% include './Municipal-services/_babySitting.html.twig' %}
 
-    {% include './Municipal-services/_publicTransport.html.twig' %}
+  {% include './Municipal-services/_publicTransport.html.twig' %}
 
-    {% include './Municipal-services/_commun-team.html.twig' %}
+  {% include './Municipal-services/_camping.html.twig' %}
+  
+  {% include './Municipal-services/_commun-team.html.twig' %}
+
 
 {% endblock %}
