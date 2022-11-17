@@ -1,0 +1,46 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/municipalite.css">
+{% endblock %}
+
+{% block sidebar %}
+	{% set sideNav = [
+        {
+        }
+    ]      
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+	{%if errors%}
+		<ul class="alert alert-danger">
+			{% for error in errors %}
+				<li>{{error}}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+
+	<form action="" method="post" enctype="multipart/form-data">
+		<label class="form-label mt-3" for="firstname">Prenom :</label>
+		<input class="form-control" type="text" id="firstname" name="firstname" value="{{ municipaliteManager.firstname }}" required>
+		<label class="form-label mt-3" for="lastname">Nom :</label>
+		<input class="form-control" type="text" id="lastname" name="lastname" value="{{ municipaliteManager.lastname }}" required>
+		<label class="form-label mt-3" for="role">Role :</label>
+		<input class="form-control" type="text" id="role" name="role" value="{{ municipaliteManager.role }}" required>
+		<label class="form-label mt-3" for="avatar">Image :</label>
+		<input class="form-control" type="file" name="avatar" id="avatar" required/>
+		<button class="adminFormTeam mt-4 btn bg-success" name="send">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewbox="0 0 16 16">
+				<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+			</svg>Modifier
+			{{ municipaliteManager.firstname }}
+			{{ municipaliteManager.lastname }}
+		</button>
+	</form>
+
+{% endblock %}

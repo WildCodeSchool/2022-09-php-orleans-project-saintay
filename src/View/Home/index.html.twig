@@ -80,5 +80,50 @@
 					</div>
 				</div>
 			</div>
+				<ul>
+					<li class="lead">Le lundi de 15 à 19 heures (17 heures en août)</li>
+					<li class="lead">Le mardi de 9 à 12 et de 15 à 17 heures</li>
+					<li class="lead">Le mercredi de 15 à 17 heures</li>
+					<li class="lead">Le jeudi de 9 à 12 heures</li>
+					<li class="lead">Le vendredi de 9 à 12 et de 15 à 17 heures</li>
+					<li class="lead">Le samedi de 9 à 12 heures les semaines paires uniquement</li>
+					<li class="lead">(fermé tous les samedis en août)</li>
+				</ul>
+			</div>
+		</div>
+		<div class="d-flex flex-column">
+			<h3>Coordonnées</h3>
+			<ul class="contact-info">
+				<li class="lead">Adresse: Place de la Mairie - 45130 Saint-Ay</li>
+				<li class="lead">Tél. 02 38 88 44 44 - Fax 02 38 88 82 14</li>
+				<li class="lead">accueil@ville-saint-ay.fr</li>
+			</ul>
+		</div>
 
-		{% endblock %}
+		<h2 class=" mt-5">Mot du maire</h2>
+		<hr>
+		<div class="d-flex flex-column flex-md-row mt-2">
+			
+				<div class="card-body">
+					<p class="fs-5 fst-italic">{{ wordMayor.title }}</p>
+					<p>{{ wordMayor.description | nl2br }}</p>
+					<div class="d-flex">
+						<img class="float-start" src="{{ wordMayor.image }}" alt="Card image mayor" height="170" width="125px">
+						<p class="ps-2 fs-5">{{ wordMayor.signature | nl2br }}</p>
+					</div>
+				</div>
+			
+		</div>
+
+		<div class="quick-access mt-5">
+			<h2>Accès rapide</h2>
+			<div class="quick-access-buttons">
+				<a href="/plan-ville" class="btn bg-primary text-secondary my-4 p-3">Plan de la ville</a>
+				<a href="/services-municipaux#vie-scolaire" class="btn bg-primary text-secondary my-4 p-3">Vie scolaire</a>
+				<a href="/vie-associative/annuaire-association" class="btn bg-primary text-secondary my-4 p-3">Annuaire des associations</a>
+				<a href="/contact" class="btn bg-primary text-secondary my-4 p-3">Contact</a>
+				<a href="/mentions-legales" class="btn bg-primary text-secondary my-4 p-3">Mentions légales</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

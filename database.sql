@@ -1,4 +1,10 @@
+
 -- Active: 1666773360795@@127.0.0.1@3306@saint_ay
+
+-- Active: 1665745572078@@127.0.0.1@3306@saint_ay
+
+-- Active: 1666773360795@@127.0.0.1@3306@saint_ay
+
 
 CREATE TABLE
     municipalityTeam (
@@ -179,36 +185,60 @@ VALUES (
         "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/a-saint-ay-apres-l-incendie-du-mois-de-janvier-l-usine-ciretec-ne-sera-pas-reconstruite_14203826/"
     );
 
+CREATE TABLE report_category (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `image` TEXT NOT NULL,
+    PRIMARY KEY(`id`)
+);
 
 CREATE TABLE report (
-`id` INT NOT NULL AUTO_INCREMENT,
+`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 `title` varchar(255) NOT NULL,
 `date` DATE NOT NULL,
 `description` TEXT NOT NULL,
 `link` TEXT NULL,
 `category_id` INT NOT NULL,
-PRIMARY KEY (`id`)
+CONSTRAINT `fk_report_report_category`
+FOREIGN KEY (`category_id`) 
+REFERENCES `report_category`(`id`)
 );
 
-CREATE TABLE report_category (
-    `id` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(255) NOT NULL, 
-    `image` TEXT NOT NULL,
-    PRIMARY KEY (`id`)
-);
-INSERT INTO report_category
-VALUES (1, "Les réunions du conseil", "/assets/images/reunion-conseil.png");
+
 
 INSERT INTO report_category
-VALUES (2, "Les bulletins municipaux", "/assets/images/logo-conseil-municipal.png");
+VALUES (
+        1,
+        "Les réunions du conseil",
+        "/assets/images/reunion-conseil.png"
+    );
 
 INSERT INTO report_category
-VALUES (3, "Les arrêtés municipaux", "/assets/images/arrete-municipal.jpg");
+VALUES (
+        2,
+        "Les bulletins municipaux",
+        "/assets/images/logo-conseil-municipal.png"
+    );
+
+INSERT INTO report_category
+VALUES (
+        3,
+        "Les arrêtés municipaux",
+        "/assets/images/arrete-municipal.jpg"
+    );
 
 INSERT INTO report
-VALUES (1, "Réunion du 19 Septembre 2022", 20220919,"Voir l'ordre du jour en cliquant ci-dessus.", "http://www.ville-saint-ay.fr/docs/annonces/20220919_cm.pdf", 1);
+VALUES (
+        1,
+        "Réunion du 19 Septembre 2022",
+        20220919,
+        "Voir l'ordre du jour en cliquant ci-dessus.",
+        "http://www.ville-saint-ay.fr/docs/annonces/20220919_cm.pdf",
+        1
+    );
 
 INSERT INTO report
+
 VALUES (2, "Réunion du 11 Avril 2022", 20220411, "Urbanisme, Vente des parcelles cadastrées. Ressources Humaines. Finances - Budgets, Subventions. Approbations des comptes. Vie associative. Voir le PV ci-dessous.", "http://www.ville-saint-ay.fr/docs/CR_20220411.pdf", 2);
 
 CREATE TABLE
@@ -431,6 +461,7 @@ VALUES (
 
 
 CREATE TABLE
+
     schedule (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         day VARCHAR(80) NOT NULL,
@@ -485,3 +516,31 @@ VALUES (
     );
         
     
+    wordMayor (
+        id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        title TEXT NOT NULL,
+        description TEXT NOT NULL,
+        image TEXT NOT NULL,
+        signature TEXT NOT NULL
+    );
+
+INSERT INTO
+    wordMayor (title, description, image, signature)
+VALUES (
+        'De la force de la douceur, de la douceur de la force.',
+        'La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l indépendance d une grande agglomération, génère le caractère attractif de SAINT-AY.
+Le dynamisme de ses habitants à travers la vie associative, scolaire et économique, constitue sa principale richesse.
+Ses bords de Loire et de Mauve et ses terres champêtres dégagent une impression de douceur et de bien-être.
+
+Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces atouts agyliens, en fondant son action sur trois principes directeurs :
+    Développer et moderniser les équipements et les infrastructures,
+    Favoriser le plein épanouissement de la vie associative, scolaire et économique,
+    Protéger et mettre en valeur le patrimoine naturel et architectural. 
+
+Ainsi, d agréable village de vignerons du début du XXème siècle, SAINT - AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n a d égal que la douceur de vivre.',
+        "/../uploads/MairePortrait.png",
+        ' Fréderic CUILLERIER
+        Maire de Saint-AY 
+        Président du Pays Loire-Beauce '
+    );
+
