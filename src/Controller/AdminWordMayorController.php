@@ -49,8 +49,12 @@ class AdminWordMayorController extends AdminController
             $errors[] = 'Le fichier doit faire moins de ' . $maxFileSize / 1000000 . 'Mo';
         }
 
-        /* $authorizedExtension = ['jpg', 'jpeg', 'png',];
-        return $errors; */
+        $authorizedMimes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        $mime = mime_content_type($file['tmp_name']);
+        if (in_array($mime, $authorizedMimes)) {
+            $errors[] = "Le fichier doit être de type " . implode(',', $authorizedMimes);
+        }
+        return $errors;
     }
 
     public function edit(): string
