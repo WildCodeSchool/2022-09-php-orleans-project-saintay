@@ -1,0 +1,54 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/association.css">
+{% endblock %}
+
+{% block sidebar %}
+	{% set sideNav = [
+            {
+                'title' : 'Accueil', 
+                'link' : '/admin'
+            },
+            {
+                'title' : 'Actualités', 
+                'link' : '/admin/actualite'
+            },
+			{
+                'title' : 'Associations', 
+                'link' : '/admin/association'
+            },
+			{
+            'title' : 'Documents officiels', 
+            'link' : '/admin/documents'
+        	}
+        ]      
+    %}
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+<a href="/admin/association/ajouter" class="btn bg-primary text-secondary mb-4 p-3">Ajouter une association</a>
+
+	<section class="p-2 p-lg-5">
+
+		<h2 class="title mb-3">Toutes vos associations :</h2>
+		<hr class="w-100 mb-5">
+		<ul class="p-0 d-flex flex-column gap-2">
+
+			{% for association in associations %}
+
+				<li class="my-2 d-flex align-items-center">
+
+					<p class="w-25 p-0 m-0">{{ association.associationName }}</p>
+					<p class="w-50 p-0 m-0">{{ association.categoryName }}</p>
+				</li>
+
+			{% endfor %}
+
+		</ul>
+	</section>
+
+{% endblock %}
+
