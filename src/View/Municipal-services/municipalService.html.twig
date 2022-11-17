@@ -1,11 +1,11 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}<link rel="stylesheet" href="../assets/css/municipalService.css">
-<link rel="stylesheet" href="/assets/css/municipalite.css">
+	<link rel="stylesheet" href="/assets/css/municipalite.css">
 {% endblock %}
 
 {% block sidebar %}
-	{% set sideNav = [
+{% set sideNav = [
 		{
             'title' : 'Réception', 
             'link' : '#reception-maire'
@@ -66,9 +66,10 @@
         {
             'title' : 'Camping', 
             'link' : '#camping'
+        },
         
-		    {
-           'title' : 'Equipe Communal', 
+		{
+           'title' : 'Equipe Communale', 
             'link' : '#employes'
 
         }
