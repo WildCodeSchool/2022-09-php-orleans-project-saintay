@@ -23,7 +23,18 @@
 
 {% block content %}
 
-	<form action="" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
+{% if errors is not empty %}
+
+    <ul class="p-0 d-flex flex-column alert alert-danger list-unstyled" role="alert">
+            {% for error in errors %}
+
+                <li class="p-2 my-1 w-75">{{ error }}</li>
+
+            {% endfor %}
+    </ul>
+
+{% endif %}
 		<label class="form-label mt-3" for="title">Titre :</label>
 		<input class="form-control" type="text" id="title" name="title" value="{{ wordMayor.title }}" required>
 		<label class="form-label mt-3" for="lastname">Description :</label>
@@ -38,4 +49,6 @@
 			</svg>Modifier le mot du maire
 		</button>
 	</div>
-</form>{% endblock %}
+</form>
+
+{% endblock %}

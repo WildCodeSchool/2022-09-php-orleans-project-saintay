@@ -7,7 +7,7 @@ use App\Controller\AdminController;
 
 class AdminWordMayorController extends AdminController
 {
-    public function index()
+    public function index(): string
     {
         $wordManager = new WordMayorManager();
         $wordMayor = $wordManager->selectFirst();
@@ -16,8 +16,10 @@ class AdminWordMayorController extends AdminController
             ['wordMayor' => $wordMayor]
         );
     }
-    public function validate(array $wordMayor, array $errors): array
+    private function validate(array $wordMayor): array
     {
+        $errors = [];
+
         if (empty($wordMayor['title'])) {
             $errors[] = 'Erreur, le champ titre est requis';
         }
@@ -31,14 +33,26 @@ class AdminWordMayorController extends AdminController
             $errors[] = 'Erreur, la signature est requis';
         }
 
-        return $errors;
+            return $errors;
     }
+
     public function edit(): string
     {
         $errors = [];
         $wordManager = new WordMayorManager();
         $wordMayor = $wordManager->selectFirst();
 
+        if ($wordMayor && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $wordMayor = array_map('trim', $_POST);
+            $errors = $this->validate($wordMayor);
+
+            if (empty($errors)) {
+                $wordManager = new WordMayorManager();
+                $wordManager->update($wordMayor);
+
+                header('Location: Admin/adminWordsMayor.html.twig');
+            }
+        };
 
 
         return $this->twig->render(
@@ -48,15 +62,5 @@ class AdminWordMayorController extends AdminController
                 'wordMayor' => $wordMayor
             ]
         );
-    }
-    public function deleteWord()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $id = trim($_POST['id']);
-            $wordManager = new WordMayorManager();
-            $wordManager->delete((int)$id);
-
-            header('Location: Admin/adminWordsMayor.html.twig');
-        }
     }
 }

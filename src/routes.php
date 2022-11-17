@@ -20,7 +20,6 @@ return [
     'admin' => ['AdminController', 'index'],
     'admin/mot-du-maire' => ['AdminWordMayorController', 'index'],
     'admin/mot-du-maire/edition' => ['AdminWordMayorController', 'edit', ['id']],
-    'admin/mot-du-maire/supprimer' => ['AdminWordMayorController', 'deleteWord'],
     'admin/actualite' => ['AdminActualityController', 'index'],
     'admin/actualite/ajouter' => ['AdminActualityController', 'add'],
     'admin/actualite/modifier' => ['AdminActualityController', 'edit', ['id']],
