@@ -1,4 +1,3 @@
-Active: 1666785953847@@127.0.0.1@3306@saint_ay
 
 CREATE TABLE
     municipalityTeam (
