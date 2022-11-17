@@ -7,6 +7,12 @@ use App\Model\AssociationManager;
 
 class AssociationController extends AbstractController
 {
+    public function index(): string
+    {
+        $associationManager = new AssociationManager();
+        $associations = $associationManager->selectByCategory();
+        return $this->twig->render('Admin/admin-association.html.twig', ['associations' => $associations]);
+    }
     public function home(): string
     {
         return $this->twig->render('Association/home-association.html.twig');

@@ -30,6 +30,7 @@ return [
     'municipalite' => ['MunicipaliteTeamController', 'index',],
     'admin/municipalite' => ['AdminMunicipaliteTeamController', 'index',],
     'admin/municipalite/ajouter' => ['AdminMunicipaliteTeamController', 'add'],
+    'admin/association' => ['AssociationController', 'index'],
     'admin/municipalite/modifier' => ['AdminMunicipaliteTeamController', 'edit', ['id']],
     'vie-associative' => ['AssociationController', 'home'],
     'vie-associative/annuaire-association' => ['AssociationController', 'filterByCategory'],
