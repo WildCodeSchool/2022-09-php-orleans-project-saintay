@@ -11,23 +11,25 @@ class HomeController extends AbstractController
 {
     public function index(): string
     {
-        $contactInformation = new ContactInformationManager();
-        $contact = $contactInformation->selectContactInformation();
-        $openingTime = new ScheduleManager();
-        $openingTimes = $openingTime->selectOpeningTime();
-        $actuManager = new ActualityManager();
-        $homeActualities = $actuManager->selectActualities(2);
-        return $this->twig->render('Home/index.html.twig', ['actualities' => $homeActualities,
-        'openingTimes' => $openingTimes, 'contacts' => $contact]);
         $wordManager = new WordMayorManager();
         $wordMayor = $wordManager->selectFirst();
         $actuManager = new ActualityManager();
         $homeActualities = $actuManager->selectActualities(2);
-        return $this->twig->render(
-            'Home/index.html.twig',
-            ['actualities' => $homeActualities, 'wordMayor' => $wordMayor]
-        );
+
+        $contactInformation = new ContactInformationManager();
+        $contact = $contactInformation->selectContactInformation();
+        $openingTime = new ScheduleManager();
+        $openingTimes = $openingTime->selectOpeningTime();
+
+        $actuManager = new ActualityManager();
+        $homeActualities = $actuManager->selectActualities(2);
+        return $this->twig->render('Home/index.html.twig', [
+            'actualities' => $homeActualities,
+            'openingTimes' => $openingTimes, 'contacts' => $contact,
+            'wordMayor' => $wordMayor
+        ]);
     }
+
     public function displayAllActualities(): string
     {
         $actuManager = new ActualityManager();
