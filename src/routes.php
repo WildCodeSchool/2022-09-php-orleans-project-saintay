@@ -12,6 +12,7 @@ return [
     'services-municipaux' => ['MunicipalServiceController', 'index',],
     'municipalService' => ['MunicipaliteTeamController', 'showCommunal',],
     'contact' => ['ContactController', 'index'],
+    'mentions-legales' => ['HomeController', 'LegalNotice'],
     'histoire' => ['HistoryController', 'index'],
     'reunions-et-arretes' => ['ReportController', 'displayAllReports'],
     'connexion' => ['LoginController', 'login'],

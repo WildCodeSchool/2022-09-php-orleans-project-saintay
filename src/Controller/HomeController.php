@@ -18,4 +18,9 @@ class HomeController extends AbstractController
         $allActualities = $actuManager->selectActualities(40);
         return $this->twig->render('Home/all-actualities.html.twig', ['actualities' => $allActualities]);
     }
+
+    public function legalNotice(): string
+    {
+        return $this->twig->render('Home/mentions-legales.html.twig');
+    }
 }
