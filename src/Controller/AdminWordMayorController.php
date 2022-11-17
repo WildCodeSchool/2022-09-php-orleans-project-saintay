@@ -33,7 +33,24 @@ class AdminWordMayorController extends AdminController
             $errors[] = 'Erreur, la signature est requis';
         }
 
+        return $errors;
+    }
+    private function validateUpload(array $file)
+    {
+        $errors = [];
+
+        if ($file['error'] != 0) {
+            $errors[] = 'l\'image est trop grande';
             return $errors;
+        }
+
+        $maxFileSize = 1000000;
+        if ($file['size'] > $maxFileSize) {
+            $errors[] = 'Le fichier doit faire moins de ' . $maxFileSize / 1000000 . 'Mo';
+        }
+
+        /* $authorizedExtension = ['jpg', 'jpeg', 'png',];
+        return $errors; */
     }
 
     public function edit(): string
@@ -44,7 +61,10 @@ class AdminWordMayorController extends AdminController
 
         if ($wordMayor && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $wordMayor = array_map('trim', $_POST);
-            $errors = $this->validate($wordMayor);
+            $wordErrors = $this->validate($wordMayor);
+            $uploadErrors = $this->validateUpload($_FILES['image']);
+
+            $errors = array_merge($wordErrors, $uploadErrors);
 
             if (empty($errors)) {
                 $wordManager = new WordMayorManager();
