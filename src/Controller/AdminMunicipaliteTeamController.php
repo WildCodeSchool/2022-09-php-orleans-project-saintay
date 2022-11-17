@@ -94,37 +94,39 @@ class AdminMunicipaliteTeamController extends AdminController
             $municipalite->delete($id);
             header('Location: /admin/municipalite');
         }
+    }
 
     public function edit(int $id): string
     {
 
         $errors = [];
-        $municipaliteManager = new MunicipaliteTeamManager();
-        $municipaliteManagers = $municipaliteManager->selectOneById($id);
+        $municipaliteMember = new MunicipaliteTeamManager();
+        $municipaliteMembers = $municipaliteMember->selectOneById($id);
 
-        if ($municipaliteManagers && $_SERVER["REQUEST_METHOD"] === "POST") {
-            $municipaliteManager = array_map('trim', $_POST);
-            $municipaliteManager['id'] = $id;
-            $errors = $this->validate($municipaliteManager);
+        if ($municipaliteMembers && $_SERVER["REQUEST_METHOD"] === "POST") {
+            $municipaliteMember = array_map('trim', $_POST);
+            $municipaliteMember['id'] = $id;
+            $errors = $this->validate($municipaliteMember);
             $fileName = uniqid() . $_FILES['avatar']['name'];
             $uploadDir = ' /../uploads/';
             $uploadFile =  $uploadDir . $fileName;
-            $municipaliteManager['avatar'] = $fileName;
+            $municipaliteMember['avatar'] = $fileName;
 
             if (empty($errors)) {
                 $municipalite = new MunicipaliteTeamManager();
-                $municipalite->update($municipaliteManager);
+                $municipalite->update($municipaliteMember);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
 
                 header('Location: /admin/municipalite');
             }
         }
+
         return $this->twig->render(
             'Municipalite/edit.html.twig',
             [
-                'municipaliteManager' => $municipaliteManagers,
-                'errors' => $errors,
-            ],
+                'municipaliteManager' => $municipaliteMember,
+                'errors' => $errors
+            ]
         );
     }
 }
