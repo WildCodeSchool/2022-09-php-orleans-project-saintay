@@ -47,6 +47,8 @@ class ActualityManager extends AbstractManager
         $statement->bindValue('link', $actuality['link'], PDO::PARAM_STR);
         $statement->bindValue('date', $actuality['date'], PDO::PARAM_STR);
         $statement->bindValue('image', $actuality['image'], PDO::PARAM_STR);
+
+        $statement->execute();
     }
     public function deleteActuality(int $id)
     {

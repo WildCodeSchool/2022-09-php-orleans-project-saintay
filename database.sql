@@ -3,7 +3,7 @@
 
 -- Active: 1665745572078@@127.0.0.1@3306@saint_ay
 
-DROP TABLE `municipalityTeam`;
+-- Active: 1666773360795@@127.0.0.1@3306@saint_ay
 
 
 CREATE TABLE
@@ -194,6 +194,8 @@ CREATE TABLE report (
 `link` TEXT NULL,
 `category_id` INT NOT NULL,
 PRIMARY KEY (`id`)
+CONSTRAINT `fk_report_category`
+FOREIGN KEY (`report_category_id`) REFERENCES report_category (`id`)
 );
 
 CREATE TABLE report_category (
