@@ -461,6 +461,61 @@ VALUES (
 
 
 CREATE TABLE
+
+    schedule (
+        id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        day VARCHAR(80) NOT NULL,
+        hour VARCHAR(255) NOT NULL
+        
+    );
+
+    INSERT INTO
+    `schedule` (day, hour)
+VALUES (
+        'Le lundi de',
+        "15 à 19 heures (17 heures en août)"
+    ), (
+        'Le mardi de ',
+        "9 à 12 et de 15 à 17 heures"
+    ), (
+        'Le mercredi de',
+        "15 à 17 heures"
+    ), (
+        'Le jeudi de',
+        "9 à 12 heures"
+    ), (
+        'Le vendredi de',
+        "9 à 12 et de 15 à 17 heures"
+    ), (
+        'Le samedi de ',
+        "9 à 12 heures les semaines paires uniquement"
+    ), (
+        'fermé',
+        "tous les samedis en août"
+    );
+
+    CREATE TABLE
+    contactInformation (
+        id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        title VARCHAR(80) NOT NULL,
+        info VARCHAR(255) NOT NULL
+        
+    );
+
+    INSERT INTO
+    `contactInformation` (title, info)
+VALUES (
+        'Adresse:',
+        "Place de la Mairie - 45130 Saint-Ay"
+    ), (
+        'Tél: 02 38 88 44 44',
+        "Fax: 02 38 88 82 14"
+    ), (
+        'Site web:',
+        "accueil@ville-saint-ay.fr"
+    );
+        
+    
     wordMayor (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         title TEXT NOT NULL,
@@ -488,3 +543,4 @@ Ainsi, d agréable village de vignerons du début du XXème siècle, SAINT - AY 
         Maire de Saint-AY 
         Président du Pays Loire-Beauce '
     );
+

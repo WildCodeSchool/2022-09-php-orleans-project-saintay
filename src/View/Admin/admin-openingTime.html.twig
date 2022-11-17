@@ -1,0 +1,53 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="../assets/css/admin.css">
+{% endblock %}
+
+{% block sidebar %}
+	{% set sideNav = [
+            {
+                'title' : 'Accueil', 
+                'link' : '/admin'
+            },
+            {
+                'title' : 'Actualités', 
+                'link' : '/admin/actualite'
+            },
+            {
+                'title' : 'Horraire de la mairie', 
+                'link' : '/admin/horraire'
+            },
+            
+            {
+                'title' : 'Equipe Municipale', 
+                'link' : 'admin/municipalite'
+            }        
+        ]      
+    %}
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+{% block content %}
+	<div class="d-flex flex-column">
+		<h2>Infos pratiques</h2>
+		<h3>Horaires d'ouverture au public</h3>
+		<ul>
+			<li class="lead">Le lundi de 15 à 19 heures (17 heures en août)</li>
+			<li class="lead">Le mardi de 9 à 12 et de 15 à 17 heures</li>
+			<li class="lead">Le mercredi de 15 à 17 heures</li>
+			<li class="lead">Le jeudi de 9 à 12 heures</li>
+			<li class="lead">Le vendredi de 9 à 12 et de 15 à 17 heures</li>
+			<li class="lead">Le samedi de 9 à 12 heures les semaines paires uniquement</li>
+			<li class="lead">(fermé tous les samedis en août)</li>
+		</ul>
+	</div>
+
+<div class="d-flex flex-column mt-5">
+			<h3>Coordonnées</h3>
+			<ul class="contact-info">
+				<li class="lead">Adresse: Place de la Mairie - 45130 Saint-Ay</li>
+				<li class="lead">Tél. 02 38 88 44 44 - Fax 02 38 88 82 14</li>
+				<li class="lead">accueil@ville-saint-ay.fr</li>
+			</ul>
+		</div>
+{% endblock %}
