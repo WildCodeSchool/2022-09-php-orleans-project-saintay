@@ -5,13 +5,27 @@
 {% endblock %}
 
 {% block sidebar %}
-	{% set sideNav = [
-        {
-        }
-    ]      
-    %}
+
+    	{% set sideNav = [
+            {
+                'title' : 'Toutes les associations', 
+                'link' : '/vie-associative/annuaire-association'
+            }
+        ]      
+        %}
+
+    {% for category in categories %}
+	    {% set sideNav = sideNav|merge([
+            {
+                'title' : category.name, 
+                'link' : '/vie-associative/annuaire-association/filtre?categorie=' ~ category.id
+            }
+        ])
+        %}
+    {% endfor %}
 
 	{% include './Item/_sidebar.html.twig' %}
+
 {% endblock %}
 
 {% block content %}

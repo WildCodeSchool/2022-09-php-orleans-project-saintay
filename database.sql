@@ -1,4 +1,4 @@
--- Active: 1666785953847@@127.0.0.1@3306@saint_ay
+-- Active: 1666773360795@@127.0.0.1@3306@saint_ay
 
 CREATE TABLE
     municipalityTeam (
@@ -6,7 +6,8 @@ CREATE TABLE
         firstname VARCHAR(80) NOT NULL,
         lastname VARCHAR(80) NOT NULL,
         role TEXT NOT NULL,
-        image TEXT NOT NULL
+        image TEXT NOT NULL,
+        communal BOOLEAN NOT NULL
     );
 
 INSERT INTO
@@ -14,28 +15,123 @@ INSERT INTO
         firstname,
         lastname,
         role,
-        image
+        image,
+        communal
     )
 VALUES (
         'Frédéric',
         'CUILLERIER',
         'Compétence générale - Police - Sécurité - Etat Civil',
-        '/../assets/images/MairePortrait.png'
+        '/../assets/images/MairePortrait.png',
+        false
     ), (
         'Marie-Françoise ',
         'QUERE',
         'Adjointe aux bâtiments et au développement durable - biodiversité',
-        '/../assets/images/Marie-francoisePortrait.png'
+        '/../assets/images/Marie-francoisePortrait.png',
+        false
     ), (
         'Pascal ',
         'FOULON',
         'Adjoint aux affaires scolaires, culture, communication et gestion des salles',
-        '/../assets/images/PascalPortrait.png'
+        '/../assets/images/PascalPortrait.png',
+        false
     ), (
         'Dominique',
         'RENAULT',
         'Adjoint aux travaux, voirie et traitement des eaux.',
-        '/../assets/images/DominiquePortrait.png'
+        '/../assets/images/DominiquePortrait.png',
+        false
+    ), (
+        'Cecile',
+        'TULIPE',
+        'Accueil, état civil, listes electorales, cimetiere. ',
+        '/../uploads/cecile.jpg',
+        true
+    ), (
+        'Isabelle',
+        'PANEL',
+        'Urbanisme.',
+        '/../uploads/isabelle.jpg',
+        true
+    ), (
+        'Anais',
+        'MAIS',
+        'Comptabilite.',
+        '/../uploads/Robin-Anais.jpg',
+        true
+    ), (
+        'Melanie',
+        'PALVINE',
+        'Vie associative et Reservation de salles .',
+        '/../uploads/images.jpeg',
+        true
+    ), (
+        'Justine',
+        'BLANDINE',
+        'Vie associative et Reservation de salles .',
+        '/../uploads/Justine-Cesari(1).jpg',
+        true
+    ), (
+        'Justine',
+        'POURADIER',
+        'Assistante du Maire et Direction Generale/Culture et Communication .',
+        '/../uploads/thumbnail.jpeg',
+        true
+    ), (
+        'Meline',
+        'MALIGNE',
+        'Assistante Ressources Humaines.',
+        '/../uploads/meline.jpeg',
+        true
+    ), (
+        'Aurelie',
+        'JOLIE',
+        'Directrice Generale des Services .',
+        '/../uploads/aurelie.jpg',
+        true
+    ), (
+        'Adeline',
+        'LINE',
+        'Directrice Générale Adjointe.',
+        '/../uploads/adeline.jpg',
+        true
+    ), (
+        'Hanane',
+        'PIONNER',
+        'Directrice des Ressources Humaines, Agence postale communale.',
+        '/../uploads/Hanane.jpeg',
+        true
+    ), (
+        'David',
+        'DOUILLER',
+        'Directeur des Services Techniques.',
+        '/../uploads/David.jpg',
+        true
+    ), (
+        'Zakya',
+        'MANDAYA',
+        'Charge des projets.',
+        '/../uploads/zakia.jpeg',
+        true
+    ), (
+        'Adeline',
+        'JUVANILE',
+        'CCAS.',
+        '/../uploads/adeline2.jpeg',
+        true
+    ), (
+        'Thierry',
+        'MICHON',
+        'Police municipale.',
+        '/../uploads/Thierry_Bollore(1).jpg',
+        true
+    ), (
+        'Karine',
+        'FARINE',
+        'Police municipale.',
+        '/../uploads/karine.jpeg',
+        true
     );
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -116,7 +212,7 @@ VALUES (1, "Réunion du 19 Septembre 2022", 20220919,"Voir l'ordre du jour en cl
 
 INSERT INTO report
 VALUES (2, "Réunion du 11 Avril 2022", 20220411, "Urbanisme, Vente des parcelles cadastrées. Ressources Humaines. Finances - Budgets, Subventions. Approbations des comptes. Vie associative. Voir le PV ci-dessous.", "http://www.ville-saint-ay.fr/docs/CR_20220411.pdf", 2);
-=======
+
 CREATE TABLE
     user (
         `id` INT NOT NULL AUTO_INCREMENT,
@@ -126,13 +222,11 @@ CREATE TABLE
     );
 
 INSERT INTO
-    user ('email', 'password')
+    user (`email`, `password`)
 VALUES (
         'admin@saintay.fr',
         'password'
     );
-
-
 
 CREATE TABLE
     association (
@@ -142,7 +236,6 @@ CREATE TABLE
         description TEXT NOT NULL,
         phone_number TEXT NOT NULL
     );
-
 
 CREATE TABLE
     category (
