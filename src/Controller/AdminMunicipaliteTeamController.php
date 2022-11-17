@@ -83,4 +83,38 @@ class AdminMunicipaliteTeamController extends AdminController
         }
         return $errors;
     }
+
+
+    public function edit(int $id): string
+    {
+
+        $errors = [];
+        $municipaliteManager = new MunicipaliteTeamManager();
+        $municipaliteManagers = $municipaliteManager->selectOneById($id);
+
+        if ($municipaliteManagers && $_SERVER["REQUEST_METHOD"] === "POST") {
+            $municipaliteManager = array_map('trim', $_POST);
+            $municipaliteManager['id'] = $id;
+            $errors = $this->validate($municipaliteManager);
+            $fileName = uniqid() . $_FILES['avatar']['name'];
+            $uploadDir = ' /../uploads/';
+            $uploadFile =  $uploadDir . $fileName;
+            $municipaliteManager['avatar'] = $fileName;
+
+            if (empty($errors)) {
+                $municipalite = new MunicipaliteTeamManager();
+                $municipalite->update($municipaliteManager);
+                move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
+
+                header('Location: /admin/municipalite');
+            }
+        }
+        return $this->twig->render(
+            'Municipalite/edit.html.twig',
+            [
+                'municipaliteManager' => $municipaliteManagers,
+                'errors' => $errors,
+            ],
+        );
+    }
 }
