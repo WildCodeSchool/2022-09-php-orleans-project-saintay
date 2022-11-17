@@ -22,14 +22,9 @@
 
 		<label for="category">Categorie :</label>
 		<select id="category" name="category" class="form-select" aria-label="Default select">
-			<option>Culture</option>
-			<option>Education</option>
-			<option>Parents</option>
-			<option>Communaute</option>
-			<option>Associations patriotiques</option>
-			<option>Aide mutuelle</option>
-			<option>Professionnelles</option>
-			<option>Sport</option>
+			{% for category in categories %}
+				<option value="{{ category.id }}">{{category.name}}</option>
+			{% endfor %}
 		</div>
 
 
@@ -50,8 +45,8 @@
 
 	</div>
 
-	
-		<button type="submit" class="btn bg-primary text-secondary p-2 mt-3">Soumettre</button>
-	
+
+	<button type="submit" class="btn bg-primary text-secondary p-2 mt-3">Soumettre</button>
+
 </form>
 

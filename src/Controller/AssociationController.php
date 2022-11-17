@@ -14,7 +14,9 @@ class AssociationController extends AbstractController
     {
         $associationManager = new AssociationManager();
         $associations = $associationManager->selectByCategory();
-        return $this->twig->render('Admin/admin-association.html.twig', ['associations' => $associations]);
+        return $this->twig->render('Admin/admin-association.html.twig', [
+            'associations' => $associations
+        ]);
     }
     public function home(): string
     {
@@ -41,6 +43,8 @@ class AssociationController extends AbstractController
     public function add(): string
     {
         $errors = [];
+        $assoCategoryManager = new AssoCategoryManager();
+        $categories = $assoCategoryManager->selectAll();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $association = array_map('trim', $_POST);
 
@@ -51,7 +55,7 @@ class AssociationController extends AbstractController
 
             if (empty($errors)) {
                 $associationManager = new AssociationManager();
-                $associationManager->insert($association, $assoCategoryId);
+                $associationManager->insert($association, (int) $assoCategoryId);
 
                 header('Location: /admin/association');
                 return '';
@@ -59,7 +63,8 @@ class AssociationController extends AbstractController
         }
         return $this->twig->render('Admin/admin-add-association.html.twig', [
             'errors' => $errors,
-            'association' => $association ?? ''
+            'association' => $association ?? '',
+            'categories' => $categories
 
         ]);
     }
