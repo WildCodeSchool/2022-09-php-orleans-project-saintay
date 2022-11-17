@@ -185,18 +185,25 @@ VALUES (
         "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/a-saint-ay-apres-l-incendie-du-mois-de-janvier-l-usine-ciretec-ne-sera-pas-reconstruite_14203826/"
     );
 
+CREATE TABLE report_category (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `image` TEXT NOT NULL,
+    PRIMARY KEY(`id`)
+);
 
 CREATE TABLE report (
-`id` INT NOT NULL AUTO_INCREMENT,
+`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 `title` varchar(255) NOT NULL,
 `date` DATE NOT NULL,
 `description` TEXT NOT NULL,
 `link` TEXT NULL,
 `category_id` INT NOT NULL,
-PRIMARY KEY (`id`)
-CONSTRAINT `fk_report_category`
-FOREIGN KEY (`report_category_id`) REFERENCES report_category (`id`)
+CONSTRAINT `fk_report_report_category`
+FOREIGN KEY (`category_id`) 
+REFERENCES `report_category`(`id`)
 );
+
 
 
 INSERT INTO report_category
@@ -452,7 +459,6 @@ VALUES (
         "/assets/images/association_images/sportives.png"
     );
 
-DROP TABLE wordMayor;
 
 CREATE TABLE
     wordMayor (
