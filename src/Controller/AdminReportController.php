@@ -161,4 +161,16 @@ class AdminReportController extends AbstractController
             'categories' => $reportCategory
         ]);
     }
+
+    public function delete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = (int) trim($_POST['id']);
+
+            $reportManager = new ReportManager();
+            $reportManager->delete($id);
+        }
+
+        header('Location: /admin/documents');
+    }
 }
