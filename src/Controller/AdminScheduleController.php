@@ -3,13 +3,13 @@
 namespace App\Controller;
 
 use App\Controller\AdminController;
-use App\Model\OpeningTimeManager;
+use App\Model\ScheduleManager;
 
-class AdminTimeController extends AdminController
+class AdminScheduleController extends AdminController
 {
     public function indexAdmin(): string
     {
-        $openingTime = new OpeningTimeManager();
+        $openingTime = new ScheduleManager();
         $openingTimes = $openingTime->selectOpeningTime();
         return $this->twig->render('Admin/admin-openingTime.html.twig', ['openingTime' => $openingTimes]);
     }

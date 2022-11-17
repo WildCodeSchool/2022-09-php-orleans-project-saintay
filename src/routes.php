@@ -18,7 +18,7 @@ return [
     'plan-ville' => ['CityMapController','index'],
     'deconnexion' => ['LoginController', 'logout'],
     'admin' => ['AdminController', 'index'],
-    'admin/horraire' => ['AdminTimeController', 'index'],
+    'admin/horaires' => ['AdminTimeController', 'index'],
     'admin/actualite' => ['AdminActualityController', 'index'],
     'admin/actualite/ajouter' => ['AdminActualityController', 'add'],
     'admin/actualite/modifier' => ['AdminActualityController', 'edit', ['id']],

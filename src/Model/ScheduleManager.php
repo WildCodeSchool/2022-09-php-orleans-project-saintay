@@ -4,9 +4,9 @@ namespace App\Model;
 
 use PDO;
 
-class OpeningTimeManager extends AbstractManager
+class ScheduleManager extends AbstractManager
 {
-    public const TABLE = "openingTime";
+    public const TABLE = "schedule";
 
     public function selectOpeningTime(string $orderBy = '', string $direction = 'ASC'): array
     {

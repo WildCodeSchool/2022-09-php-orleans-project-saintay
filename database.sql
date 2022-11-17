@@ -431,7 +431,7 @@ VALUES (
 
 
 CREATE TABLE
-    openingTime (
+    schedule (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         day VARCHAR(80) NOT NULL,
         hour VARCHAR(255) NOT NULL
@@ -439,7 +439,7 @@ CREATE TABLE
     );
 
     INSERT INTO
-    `openingTime` (day, hour)
+    `schedule` (day, hour)
 VALUES (
         'Le lundi de',
         "15 à 19 heures (17 heures en août)"

@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\ActualityManager;
 use App\Model\ContactInformationManager;
-use App\Model\OpeningTimeManager;
+use App\Model\ScheduleManager;
 
 class HomeController extends AbstractController
 {
@@ -13,7 +13,7 @@ class HomeController extends AbstractController
 
         $contactInformation = new ContactInformationManager();
         $contact = $contactInformation->selectContactInformation();
-        $openingTime = new OpeningTimeManager();
+        $openingTime = new ScheduleManager();
         $openingTimes = $openingTime->selectOpeningTime();
         $actuManager = new ActualityManager();
         $homeActualities = $actuManager->selectActualities(2);
