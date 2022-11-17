@@ -103,16 +103,16 @@
 		<h2 class=" mt-5">Mot du maire</h2>
 		<hr>
 		<div class="d-flex flex-column flex-md-row mt-2">
-			
-				<div class="card-body">
-					<p class="fs-5 fst-italic">{{ wordMayor.title }}</p>
-					<p>{{ wordMayor.description | nl2br }}</p>
-					<div class="d-flex">
-						<img class="float-start" src="{{ wordMayor.image }}" alt="Card image mayor" height="170" width="125px">
-						<p class="ps-2 fs-5">{{ wordMayor.signature | nl2br }}</p>
-					</div>
+
+			<div class="card-body">
+				<p class="fs-3 text-muted fst-italic">{{ wordMayor.title }}</p>
+				<p class="h5">{{ wordMayor.description | nl2br }}</p>
+				<div class="d-flex">
+					<img class="float-start mt-3" src="{{ wordMayor.image is null ? './assets/images/fredo.png' : '../uploads' ~ wordMayor.image }}" alt="Card image mayor" height="170">
+					<p class="ps-2 fs-5 mt-3">{{ wordMayor.signature | nl2br }}</p>
 				</div>
-			
+			</div>
+
 		</div>
 
 		<div class="quick-access mt-5">
