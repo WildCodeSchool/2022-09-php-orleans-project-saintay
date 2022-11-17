@@ -2,26 +2,31 @@
 
 {% block sidebar %}
 {% set sideNav = [
-        {
+            {
                 'title' : 'Accueil', 
                 'link' : '/admin'
-            },
-            {
-            'title' : 'Documents officiels', 
-            'link' : '/admin/documents'
             },
             {
                 'title' : 'Actualités', 
                 'link' : '/admin/actualite'
             },
             {
+                'title' : 'Horaire de la mairie', 
+                'link' : '/admin/horaires'
+            },
+            {
+            
                 'title' : 'Associations', 
                 'link' : '/admin/association'
             },
             {
-                'title' : 'Equipe Municipale', 
-                'link' : 'admin/municipalite'
-            } 
+                'title' : 'Documents officiels', 
+                'link' : '/admin/documents'
+            },
+            {
+                'title' : 'Équipe Municipale', 
+                'link' : '/admin/municipalite'
+            }
 
     ]      
 %}

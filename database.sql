@@ -516,6 +516,7 @@ VALUES (
     );
         
     
+    CREATE TABLE 
     wordMayor (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         title TEXT NOT NULL,
@@ -525,7 +526,7 @@ VALUES (
     );
 
 INSERT INTO
-    wordMayor (title, description, image, signature)
+    wordMayor (title, description, signature)
 VALUES (
         'De la force de la douceur, de la douceur de la force.',
         'La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l indépendance d une grande agglomération, génère le caractère attractif de SAINT-AY.
@@ -538,7 +539,6 @@ Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces a
     Protéger et mettre en valeur le patrimoine naturel et architectural. 
 
 Ainsi, d agréable village de vignerons du début du XXème siècle, SAINT - AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n a d égal que la douceur de vivre.',
-        "/MairePortrait.png",
         ' Fréderic CUILLERIER
         Maire de Saint-AY 
         Président du Pays Loire-Beauce '

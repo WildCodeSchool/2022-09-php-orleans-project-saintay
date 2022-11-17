@@ -11,6 +11,6 @@ class AdminScheduleController extends AdminController
     {
         $openingTime = new ScheduleManager();
         $openingTimes = $openingTime->selectOpeningTime();
-        return $this->twig->render('Admin/admin-openingTime.html.twig', ['openingTime' => $openingTimes]);
+        return $this->twig->render('Admin/admin-schedule.html.twig', ['openingTime' => $openingTimes]);
     }
 }
