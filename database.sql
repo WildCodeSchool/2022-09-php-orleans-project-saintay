@@ -438,7 +438,7 @@ CREATE TABLE
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         title TEXT NOT NULL,
         description TEXT NOT NULL,
-        image TEXT NOT NULL,
+        image VARCHAR(255),
         signature TEXT NOT NULL
     );
 
@@ -456,7 +456,7 @@ Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces a
     Protéger et mettre en valeur le patrimoine naturel et architectural. 
 
 Ainsi, d agréable village de vignerons du début du XXème siècle, SAINT - AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n a d égal que la douceur de vivre.',
-        "/../uploads/MairePortrait.png",
+        "Hanane.jpeg",
         ' Fréderic CUILLERIER
         Maire de Saint-AY 
         Président du Pays Loire-Beauce '
