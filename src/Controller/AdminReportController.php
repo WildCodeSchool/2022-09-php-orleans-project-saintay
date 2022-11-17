@@ -11,7 +11,7 @@ class AdminReportController extends AbstractController
 {
     public const UPLOAD_DIR = './uploads/report_uploads/';
     public const AUTH_EXTENSION = ['pdf', 'PDF'];
-    public const MAX_FILE_SIZE = 10000000;
+    public const MAX_FILE_SIZE = 1000000;
 
     public function index()
     {
@@ -23,7 +23,7 @@ class AdminReportController extends AbstractController
         ]);
     }
 
-    public function validate($report, $reportCat)
+    public function validate($report, $reportCategory)
     {
         $errors = [];
         $maxLength = 255;
@@ -48,7 +48,7 @@ class AdminReportController extends AbstractController
             $errors[] = 'Erreur, le champ description est requis';
         }
 
-        if (in_array($report['name'], $reportCat)) {
+        if (in_array($report['name'], $reportCategory)) {
             $errors[] = "Erreur, la catégorie n\'est pas valide.";
         }
         return $errors;
@@ -81,7 +81,7 @@ class AdminReportController extends AbstractController
             file_exists($files['file']['tmp_name']) &&
             filesize($files['file']['tmp_name']) > self::MAX_FILE_SIZE
         ) {
-            $errors[] = 'Votre fichier doit être inférieur à ' . self::MAX_FILE_SIZE / 20000000 . 'Mo.';
+            $errors[] = 'Votre fichier doit être inférieur à ' . self::MAX_FILE_SIZE / 1000000 . 'Mo.';
         }
         if ((!in_array(pathinfo($files['file']['name'], PATHINFO_EXTENSION), self::AUTH_EXTENSION))) {
             $extString = implode(', ', self::AUTH_EXTENSION);
@@ -101,13 +101,13 @@ class AdminReportController extends AbstractController
         $errors = [];
         $filesErrors = [];
         $reportCatManager = new CategoryManager();
-        $reportCat = $reportCatManager->selectAll('name');
+        $reportCategory = $reportCatManager->selectAll('name');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $files = $_FILES;
             $report = array_map('trim', $_POST);
 
-            $errors = $this->validate($report, $reportCat);
+            $errors = $this->validate($report, $reportCategory);
             $filesMethod = $this->upload($files);
             $filesErrors = $filesMethod[0];
             $uniqName = $filesMethod[1];
@@ -128,7 +128,7 @@ class AdminReportController extends AbstractController
 
 
         return $this->twig->render('Admin/admin-add-report.html.twig', [
-            'categories' => $reportCat
+            'categories' => $reportCategory
         ]);
     }
 }
