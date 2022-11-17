@@ -48,7 +48,7 @@ class AdminReportController extends AbstractController
             $errors[] = 'Erreur, le champ description est requis';
         }
 
-        if (in_array($report['name'], $reportCategory)) {
+        if (in_array($report['category'], $reportCategory)) {
             $errors[] = "Erreur, la catégorie n\'est pas valide.";
         }
         return $errors;
@@ -128,6 +128,36 @@ class AdminReportController extends AbstractController
 
 
         return $this->twig->render('Admin/admin-add-report.html.twig', [
+            'categories' => $reportCategory
+        ]);
+    }
+
+    public function edit($id)
+    {
+            $errors = [];
+            $reportManager = new ReportManager();
+            $report = $reportManager->SelectOneById($id);
+            $reportCatManager = new CategoryManager();
+            $reportCategory = $reportCatManager->selectAll('name');
+
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $report = array_map('trim', $_POST);
+            $report['id'] = $id;
+            $errors = $this->validate($report, $errors);
+            $fileName = uniqid() . $_FILES['file']['name'];
+            $uploadFile = self::UPLOAD_DIR . $fileName;
+            $report['file'] = $fileName;
+
+            if (empty($errors)) {
+                $reportManager->update($id, $report, $fileName);
+                move_uploaded_file($_FILES['file']['tmp_name'], $uploadFile);
+
+                header('Location: /admin/documents');
+            }
+        }
+        return $this->twig->render('Admin/admin-edit-report.html.twig', [
+            'report' => $report,
             'categories' => $reportCategory
         ]);
     }
