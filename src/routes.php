@@ -22,6 +22,7 @@ return [
     'admin/actualite/ajouter' => ['AdminActualityController', 'add'],
     'admin/actualite/modifier' => ['AdminActualityController', 'edit', ['id']],
     'admin/actualite/supprimer' => ['AdminActualityController', 'delete'],
+    'admin/association/modifier' => ['AdminAssociationController', 'edit', ['id']],
     'admin/documents' => ['AdminReportController', 'index'],
     'urbanisme' => ['UrbanismController', 'index'],
     'municipalite' => ['MunicipaliteTeamController', 'index',],
