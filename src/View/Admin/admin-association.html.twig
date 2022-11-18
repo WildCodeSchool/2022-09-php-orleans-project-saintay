@@ -6,7 +6,7 @@
 
 {% block sidebar %}
 	{% set sideNav = [
-            {
+			{
                 'title' : 'Accueil', 
                 'link' : '/admin'
             },
@@ -14,14 +14,23 @@
                 'title' : 'Actualités', 
                 'link' : '/admin/actualite'
             },
-			{
+            {
+                'title' : 'Horaire de la mairie', 
+                'link' : '/admin/horaires'
+            },
+            {
+            
                 'title' : 'Associations', 
                 'link' : '/admin/association'
             },
-			{
-            'title' : 'Documents officiels', 
-            'link' : '/admin/documents'
-        	}
+            {
+                'title' : 'Documents officiels', 
+                'link' : '/admin/documents'
+            },
+            {
+                'title' : 'Équipe Municipale', 
+                'link' : '/admin/municipalite'
+            }
         ]      
     %}
 	{% include './Item/_sidebar.html.twig' %}
