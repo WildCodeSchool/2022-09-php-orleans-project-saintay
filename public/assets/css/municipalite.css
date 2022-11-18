@@ -28,3 +28,11 @@
      margin: auto;
      width: 70%;
  }
+
+ .municipalite-home-image {
+    object-fit: cover;
+ }
+ .municipalite-home-wrapper {
+    height: 30vh; 
+    overflow: hidden;
+}

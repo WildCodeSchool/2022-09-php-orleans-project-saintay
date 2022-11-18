@@ -30,6 +30,7 @@ return [
     'admin/documents/supprimer' => ['AdminReportController', 'delete'],
     'urbanisme' => ['UrbanismController', 'index'],
     'municipalite' => ['MunicipaliteTeamController', 'index',],
+    'municipalite/equipe-municipale' => ['MunicipaliteTeamController', 'municipalTeam',],
     'admin/municipalite' => ['AdminMunicipaliteTeamController', 'index',],
     'admin/municipalite/ajouter' => ['AdminMunicipaliteTeamController', 'add'],
     'admin/municipalite/delete' => ['AdminMunicipaliteTeamController', 'delete'],
