@@ -27,11 +27,11 @@
 	{% endif %}
 	<form action="" method="post" enctype="multipart/form-data">
 		<label class="form-label mt-3" for="firstname">Prenom :</label>
-		<input class="form-control" type="text" id="firstname" name="firstname" value="{{ addMunicipaliteManager.firstname }}" required>
+		<input class="form-control" type="text" id="firstname" name="firstname" value="{{ municipaliteManager.firstname }}" required>
 		<label class="form-label mt-3" for="lastname">Nom :</label>
-		<input class="form-control" type="text" id="lastname" name="lastname" value="{{ addMunicipaliteManager.lastname }}" required>
+		<input class="form-control" type="text" id="lastname" name="lastname" value="{{ municipaliteManager.lastname }}" required>
 		<label class="form-label mt-3" for="role">Role :</label>
-		<input class="form-control" type="text" id="role" name="role" value="{{ addMunicipaliteManager.role }}" required>
+		<input class="form-control" type="text" id="role" name="role" value="{{ municipaliteManager.role }}" required>
 		<label class="form-label mt-3" for="avatar">Image :</label>
 		<input class="form-control" type="file" name="avatar" id="avatar" required/>
 		<button class="adminFormTeam mt-3 btn bg-primary" name="send">
