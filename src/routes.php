@@ -33,7 +33,6 @@ return [
     'admin/municipalite' => ['AdminMunicipaliteTeamController', 'index',],
     'admin/municipalite/ajouter' => ['AdminMunicipaliteTeamController', 'add'],
     'admin/municipalite/delete' => ['AdminMunicipaliteTeamController', 'delete'],
-    'admin/association' => ['AssociationController', 'index'],
     'admin/municipalite/modifier' => ['AdminMunicipaliteTeamController', 'edit', ['id']],
     'vie-associative' => ['AssociationController', 'home'],
     'admin/association/ajouter' => ['AssociationController', 'add'],
