@@ -50,7 +50,7 @@ class AssociationController extends AbstractController
 
             $errors = $this->validate($association);
 
-
+            
             $assoCategoryId = $this->toCategorie($association['category']);
 
             if (empty($errors)) {
