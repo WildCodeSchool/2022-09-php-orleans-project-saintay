@@ -45,17 +45,15 @@ class AssociationController extends AbstractController
         $errors = [];
         $assoCategoryManager = new AssoCategoryManager();
         $categories = $assoCategoryManager->selectAll();
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $association = array_map('trim', $_POST);
 
             $errors = $this->validate($association);
 
-            
-            $assoCategoryId = $this->toCategorie($association['category']);
-
             if (empty($errors)) {
                 $associationManager = new AssociationManager();
-                $associationManager->insert($association, (int) $assoCategoryId);
+                $associationManager->insert($association);
 
                 header('Location: /admin/association');
                 return '';
@@ -95,15 +93,5 @@ class AssociationController extends AbstractController
             $errors[] = 'Le titre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères';
         }
         return $errors;
-    }
-    private function toCategorie(string $categoryInput)
-    {
-        $categoryManager = new AssoCategoryManager();
-        $categories = $categoryManager->selectAll();
-        foreach ($categories as $category) {
-            if ($categoryInput === $category['name']) {
-                return $category['id'];
-            }
-        }
     }
 }
