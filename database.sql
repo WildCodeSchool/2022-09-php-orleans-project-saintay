@@ -253,7 +253,7 @@ INSERT INTO
     user (`email`, `password`)
 VALUES (
         'admin@saintay.fr',
-        'password'
+        '$2y$10$i48/UEH3zLEZcRwxeN7ND.qY1XH8e90OB.lC96gsBFEZFQ15rkzXO'
     );
 
 CREATE TABLE
