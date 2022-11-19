@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Model\WordMayorManager;
-use App\Controller\AdminController;
 
 class AdminWordMayorController extends AdminController
 {
@@ -16,67 +15,59 @@ class AdminWordMayorController extends AdminController
             ['wordMayor' => $wordMayor]
         );
     }
+
+
     private function validate(array $wordMayor): array
     {
         $errors = [];
+        $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+        $authorizedExtensions = ['jpg', 'jpeg', 'png'];
+        $maxFileSize = 200000;
 
-        if (empty($wordMayor['title'])) {
-            $errors[] = 'Erreur, le champ titre est requis';
+        if (empty($wordMayor["title"])) {
+            $errors[] = "Le titre est obligatoire";
         }
-        if (empty($wordMayor['description'])) {
-            $errors[] = 'Erreur, le champ description est requis';
-        }
-        if (empty($wordMayor['image'])) {
-            $errors[] = 'Erreur, le lien de l\'image est requis';
-        }
-        if (empty($wordMayor['signature'])) {
-            $errors[] = 'Erreur, la signature est requis';
+        if (empty($wordMayor["description"])) {
+            $errors[] = "La description est obligatoire";
         }
 
-        return $errors;
-    }
-    private function validateUpload(array $file)
-    {
-        $errors = [];
-
-        if ($file['error'] != 0) {
-            $errors[] = 'l\'image est trop grande';
-            return $errors;
+        if (empty($wordMayor["signature"])) {
+            $errors[] = "La signature est obligatoire";
         }
 
-        $maxFileSize = 1000000;
-        if ($file['size'] > $maxFileSize) {
-            $errors[] = 'Le fichier doit faire moins de ' . $maxFileSize / 1000000 . 'Mo';
+        if ((!in_array($extension, $authorizedExtensions))) {
+            $errors[] = 'Veuillez sélectionner une image de type ' . implode(', ', $authorizedExtensions);
         }
 
-        $authorizedMimes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-        $mime = mime_content_type($file['tmp_name']);
-        if (in_array($mime, $authorizedMimes)) {
-            $errors[] = "Le fichier doit être de type " . implode(',', $authorizedMimes);
+        if (file_exists($_FILES['image']['tmp_name']) && filesize($_FILES['image']['tmp_name']) > $maxFileSize) {
+            $errors[] = 'Votre fichier doit faire moins de ' . $maxFileSize / 1000000;
         }
         return $errors;
     }
-
-    public function edit(): string
+    public function edit()
     {
+
         $errors = [];
         $wordManager = new WordMayorManager();
         $wordMayor = $wordManager->selectFirst();
 
-        if ($wordMayor && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $wordMayor = array_map('trim', $_POST);
-            $wordErrors = $this->validate($wordMayor);
-            $uploadErrors = $this->validateUpload($_FILES['image']);
+        if ($wordMayor && $_SERVER["REQUEST_METHOD"] === "POST") {
+            $wordManager = array_map('trim', $_POST);
 
-            $errors = array_merge($wordErrors, $uploadErrors);
+            $errors = $this->validate($wordManager);
+            $fileName = uniqid() . $_FILES['image']['name'];
+            $uploadDir = ' /../uploads/';
+            $uploadFile =  $uploadDir . $fileName;
+            $wordManager['image'] = $fileName;
 
             if (empty($errors)) {
-                $wordManager = new WordMayorManager();
-                $wordManager->update($wordMayor);
+                $word = new WordMayorManager();
+                $word->update($wordManager);
+                move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile);
 
-                header('Location: Admin/adminWordsMayor.html.twig');
+                header('Location: ../mot-du-maire');
             }
-        };
+        }
 
 
         return $this->twig->render(

@@ -15,15 +15,17 @@ class WordMayorManager extends AbstractManager
 
         return $this->pdo->query($query)->fetch(PDO::FETCH_ASSOC);
     }
-    public function update(array $wordMayor)
+
+    public function update(array $wordMayor): bool
     {
-        $query = "UPDATE " . self::TABLE . "
+        $statement = "UPDATE " . self::TABLE . "
         SET 
         title = :title, 
         description = :description, 
         image = :image,
         signature = :signature";
-        $statement = $this->pdo->prepare($query);
+
+        $statement = $this->pdo->prepare($statement);
         $statement->bindValue('title', $wordMayor['title'], PDO::PARAM_STR);
         $statement->bindValue('description', $wordMayor['description'], PDO::PARAM_STR);
         $statement->bindValue('image', $wordMayor['image'], PDO::PARAM_STR);

@@ -431,7 +431,7 @@ VALUES (
         "/assets/images/association_images/sportives.png"
     );
 
-    DROP TABLE wordMayor;
+
 
 CREATE TABLE
     wordMayor (
@@ -456,8 +456,8 @@ Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces a
     Protéger et mettre en valeur le patrimoine naturel et architectural. 
 
 Ainsi, d agréable village de vignerons du début du XXème siècle, SAINT - AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n a d égal que la douceur de vivre.',
-        "Hanane.jpeg",
-        ' Fréderic CUILLERIER
+        "MairePortrait.png",
+        'Fréderic CUILLERIER
         Maire de Saint-AY 
         Président du Pays Loire-Beauce '
     );
