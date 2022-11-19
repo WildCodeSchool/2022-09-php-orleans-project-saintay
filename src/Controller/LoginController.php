@@ -29,10 +29,10 @@ class LoginController extends AbstractController
                         $_SESSION['user'] = $user['id'];
                         header('Location: /admin');
                     } else {
-                        $errors[] = 'Le nom d\'utilsateur où mot de passe est incorrect.';
+                        $errors[] = 'Le nom d\'utilsateur où le mot de passe est incorrect.';
                     }
                 } else {
-                    $errors[] = 'Le nom d\'utilsateur où mot de passe est incorrect.';
+                    $errors[] = 'Le nom d\'utilsateur où le mot de passe est incorrect.';
                 }
             }
         }
