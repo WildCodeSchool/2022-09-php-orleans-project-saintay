@@ -238,8 +238,47 @@ VALUES (
     );
 
 INSERT INTO report
-
 VALUES (2, "Réunion du 11 Avril 2022", 20220411, "Urbanisme, Vente des parcelles cadastrées. Ressources Humaines. Finances - Budgets, Subventions. Approbations des comptes. Vie associative. Voir le PV ci-dessous.", "http://www.ville-saint-ay.fr/docs/CR_20220411.pdf", 2);
+
+INSERT INTO report
+VALUES (
+    3,
+    "Réunion du 7 Mars 2022",
+    20220207,
+    "Finances - Mise en oeuvre du Débat d’Orientation Budgétaire 2022; Ligne de trésorerie 2022 - Choix de l’organisme prêteur. Centre de gestion - Adhésion à la prestation paie du Centre départemental de gestion du Loiret; Adhésion à la mission chômage du Centre départemental de gestion du Loiret; Service d’aide à l’emploi du Centre départemental de gestion du Loiret.",
+    "http://www.ville-saint-ay.fr/docs/CR_20220207.pdf",
+    1
+);
+
+INSERT INTO report
+VALUES (
+    4,
+    "Arrêté municipal réglementant les activités bruyantes",
+    20070330,
+    "Cet arrêté annule et remplace celui du 12 juin 2001",
+    "http://www.ville-saint-ay.fr/docs/AR_20070330.pdf",
+    3
+);
+
+INSERT INTO report
+VALUES (
+    5,
+    "Bulletin Municipal - 8 Mars 2022",
+    20220308,
+    "Lettre aux Agyliens",
+    "http://www.ville-saint-ay.fr/docs/BM_20220308.pdf",
+    2
+);
+
+INSERT INTO report
+VALUES (
+    2,
+    "Bulletin Municipal - 30 Décembre 2021",
+    20211230,
+    "Album photos 2021 et Voeux 2022",
+    "http://www.ville-saint-ay.fr/docs/BM_20211230.pdf",
+    2
+);
 
 CREATE TABLE
     user (
@@ -251,7 +290,6 @@ CREATE TABLE
 
 INSERT INTO
     user (`email`, `password`)
-VALUES (
         'admin@saintay.fr',
         'password'
     );
