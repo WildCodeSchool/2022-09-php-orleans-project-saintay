@@ -112,10 +112,11 @@ class AdminMunicipaliteTeamController extends AdminController
         if ($municipaliteMembers && $_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMember = array_map('trim', $_POST);
             $errors = $this->validate($municipaliteMember);
+            $fileErrors = $this->validateFile($_FILES);
+            $errors = array_merge($errors, $fileErrors);
             $fileName = uniqid() . $_FILES['avatar']['name'];
-            $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
             $uploadDir = ' /../uploads/';
-            $uploadFile =  $uploadDir . $fileName . "." . $extension;
+            $uploadFile =  $uploadDir . $fileName;
 
             if (empty($errors)) {
                 $municipalite = new MunicipaliteTeamManager();
@@ -156,7 +157,7 @@ class AdminMunicipaliteTeamController extends AdminController
             $communalAgent = array_map('trim', $_POST);
             $errors = $this->validate($communalAgent);
 
-            
+
             $municipaliteManager = new MunicipaliteTeamManager();
 
             if (empty($errors)) {
@@ -164,9 +165,8 @@ class AdminMunicipaliteTeamController extends AdminController
                     $errorsFile = $this->validateFile($_FILES);
                     if (empty($errorsFile)) {
                         $fileName = uniqid() . $_FILES['avatar']['name'];
-                        $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
                         $uploadDir = ' /../uploads/';
-                        $uploadFile =  $uploadDir . $fileName . "." . $extension;
+                        $uploadFile =  $uploadDir . $fileName;
 
                         $municipaliteManager->update($agentID, $communalAgent, $uploadFile);
                         move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
