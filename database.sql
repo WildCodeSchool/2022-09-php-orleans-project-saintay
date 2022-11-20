@@ -431,14 +431,14 @@ VALUES (
         "/assets/images/association_images/sportives.png"
     );
 
-
+DROP TABLE `wordMayor`;
 
 CREATE TABLE
     wordMayor (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         title TEXT NOT NULL,
         description TEXT NOT NULL,
-        image VARCHAR(255),
+        image TEXT NULL,
         signature TEXT NOT NULL
     );
 
