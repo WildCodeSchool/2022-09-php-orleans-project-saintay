@@ -29,7 +29,6 @@ class AdminMunicipaliteTeamController extends AdminController
             $municipaliteMember  = array_map('trim', $_POST);
 
             $errors = $this->validate($municipaliteMember);
-            $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
             $fileError = $this->validateFile($_FILES);
             $errors = array_merge($errors, $fileError);
             $uploadDir = ' /../uploads/';
