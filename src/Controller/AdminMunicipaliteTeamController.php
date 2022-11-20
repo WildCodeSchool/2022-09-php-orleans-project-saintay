@@ -33,7 +33,8 @@ class AdminMunicipaliteTeamController extends AdminController
             $fileError = $this->validateFile($_FILES);
             $errors = array_merge($errors, $fileError);
             $uploadDir = ' /../uploads/';
-            $uploadFile =  $uploadDir . basename($_FILES['avatar']['tmp_name'] . "." . $extension);
+            $fileName = uniqid() . $_FILES['avatar']['name'];
+            $uploadFile =  $uploadDir . $fileName;
 
             if (empty($errors)) {
                 $municipaliteManager = new MunicipaliteTeamManager();
@@ -225,8 +226,8 @@ class AdminMunicipaliteTeamController extends AdminController
                     $errorsFile = $this->validateFile($_FILES);
                     if (empty($errorsFile)) {
                         $uploadDir = ' /../uploads/';
-                        $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-                        $uploadFile =  $uploadDir . basename($_FILES['avatar']['tmp_name']) . "." . $extension;
+                        $fileName = uniqid() . $_FILES['avatar']['name'];
+                        $uploadFile =  $uploadDir . $fileName;
                         $municipaliteManager->insert($communalAdgent, self::IS_COMMUNAL, $uploadFile);
 
                         move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
