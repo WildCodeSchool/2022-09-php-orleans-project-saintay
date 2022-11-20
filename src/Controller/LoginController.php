@@ -53,7 +53,7 @@ class LoginController extends AbstractController
 
     public function error(int $error)
     {
-        return $this->twig->render('Error/error.html.twig', [
+        return $this->twig->render('Error404/error404.html.twig', [
             'error' => $error,
         ]);
     }

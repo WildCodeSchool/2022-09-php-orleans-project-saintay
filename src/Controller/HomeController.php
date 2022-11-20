@@ -41,11 +41,4 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Home/mentions-legales.html.twig');
     }
-
-    public function error(int $error)
-    {
-        return $this->twig->render('Error/error.html.twig', [
-            'error' => $error,
-        ]);
-    }
 }
