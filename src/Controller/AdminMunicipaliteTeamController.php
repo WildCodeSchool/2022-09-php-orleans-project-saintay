@@ -52,7 +52,7 @@ class AdminMunicipaliteTeamController extends AdminController
         );
     }
 
-    private function validate(array $municipaliteMember): array
+    public function validate(array $municipaliteMember): array
     {
         $errors = [];
         $maxLenghtCaracteres = 79;
