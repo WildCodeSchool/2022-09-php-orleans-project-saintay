@@ -7,6 +7,9 @@ use PDO;
 
 class AdminMunicipaliteTeamController extends AdminController
 {
+    public const IS_COMMUNAL = 1;
+    public const IS_NOT_COMMUNAL = 0;
+
     public function index(): string
     {
         $municipaliteManager = new MunicipaliteTeamManager();
@@ -21,19 +24,20 @@ class AdminMunicipaliteTeamController extends AdminController
     public function add(): string
     {
         $errors = $municipaliteMember = [];
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMember  = array_map('trim', $_POST);
 
             $errors = $this->validate($municipaliteMember);
+            $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+            $fileError = $this->validateFile($_FILES);
+            $errors = array_merge($errors, $fileError);
             $uploadDir = ' /../uploads/';
-            $uploadFile =  $uploadDir . basename($_FILES['avatar']['tmp_name']);
-            $municipaliteMember['avatar'] = $uploadFile;
+            $uploadFile =  $uploadDir . basename($_FILES['avatar']['tmp_name'] . "." . $extension);
 
             if (empty($errors)) {
-                $municipaliteMember['communal'] = 0;
-                $municipalite = new MunicipaliteTeamManager();
-                $municipalite->insert($municipaliteMember);
-
+                $municipaliteManager = new MunicipaliteTeamManager();
+                $municipaliteManager->insert($municipaliteMember, self::IS_NOT_COMMUNAL, $uploadFile);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                 header('Location: /admin/municipalite');
             }
@@ -194,6 +198,7 @@ class AdminMunicipaliteTeamController extends AdminController
         );
     }
 
+
     public function deleteAgent()
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -204,5 +209,49 @@ class AdminMunicipaliteTeamController extends AdminController
             $municipalite->delete($id);
             header('Location: /admin/equipe-communale');
         }
+    }
+
+    public function showAllCommunalTeam()
+    {
+        $municipaliteManager = new MunicipaliteTeamManager();
+        $communalTeam = $municipaliteManager->selectIsEmployee('lastname');
+        return $this->twig->render(
+            'Admin/admin-communal-team.html.twig',
+            [
+                'communalTeam' => $communalTeam
+            ],
+        );
+    }
+    public function addCommunalAdgent()
+    {
+        $errors = [];
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $communalAdgent  = array_map('trim', $_POST);
+            $errors = $this->validate($communalAdgent);
+
+            if (empty($errors)) {
+                $municipaliteManager = new MunicipaliteTeamManager();
+
+                if (!empty($_FILES['avatar']['name'])) {
+                    $errorsFile = $this->validateFile($_FILES);
+                    if (empty($errorsFile)) {
+                        $uploadDir = ' /../uploads/';
+                        $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+                        $uploadFile =  $uploadDir . basename($_FILES['avatar']['tmp_name']) . "." . $extension;
+                        $municipaliteManager->insert($communalAdgent, self::IS_COMMUNAL, $uploadFile);
+
+                        move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
+                        header('Location: /admin/equipe-communale');
+                    }
+                } else {
+                    $municipaliteManager->insert($communalAdgent, self::IS_COMMUNAL);
+                    header('Location: /admin/equipe-communale');
+                }
+            }
+        }
+        return $this->twig->render('Admin/admin-communal-team-add.html.twig', [
+            'errors' => $errors,
+            'adgent' => $communalAdgent ?? ''
+        ]);
     }
 }

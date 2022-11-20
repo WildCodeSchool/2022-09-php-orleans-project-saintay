@@ -1,5 +1,10 @@
 {% extends 'layout_admin.html.twig' %}
+<<<<<<< HEAD
 {% block stylesheet %}
+=======
+
+ {% block stylesheet %}
+>>>>>>> 233e1c1 (add function done)
  	<link rel="stylesheet" href="/assets/css/association.css">
  {% endblock %}
 
@@ -45,6 +50,16 @@
 
  		<h2 class="title mb-3">Les membres de l'équipe communale :</h2>
  		<hr class="w-100 mb-5">
+<<<<<<< HEAD
+=======
+ 		
+        <a href="/admin/equipe-communale/ajouter" class="btn bg-primary text-secondary mb-4 p-3">Ajouter un agent</a>
+
+        <section class="p-2 p-lg-5">
+
+ 		<h2 class="title mb-3">Les membres de l'équipe communale :</h2>
+ 		<hr class="w-100 mb-5">
+>>>>>>> 233e1c1 (add function done)
  		<ul class="p-0 d-flex flex-column gap-2">
 
                  <li class="my-2 d-flex align-items-center">
@@ -52,6 +67,7 @@
  					<p class="w-50 p-0 m-0 text-decoration-underline">Role</p>
  				</li>
 
+<<<<<<< HEAD
  			{% for agent in communalTeam %}
 
  				<li class="my-2 d-flex align-items-center">
@@ -74,6 +90,13 @@
                             <span>Supprimer</span>
                         </button>
           </form>
+=======
+ 			{% for adjent in communalTeam %}
+
+ 				<li class="my-2 d-flex align-items-center">
+ 					<p class="w-25 p-0 m-0">{{ adjent.lastname }} {{ adjent.firstname }}</p>
+ 					<p class="w-50 p-0 m-0">{{ adjent.role }}</p>
+>>>>>>> 233e1c1 (add function done)
  				</li>
 
  			{% endfor %}
@@ -81,4 +104,10 @@
  		</ul>
  	</section>
 
+<<<<<<< HEAD
  {% endblock %}
+=======
+ 	</section>
+
+ {% endblock %}
+>>>>>>> 233e1c1 (add function done)
