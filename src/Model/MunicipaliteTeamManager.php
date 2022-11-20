@@ -44,15 +44,15 @@ class MunicipaliteTeamManager extends AbstractManager
         $statement->execute();
     }
 
-    public function update(array $municipaliteManager): bool
+    public function update(int $id, array $municipaliteManager, string $uploadFile = null): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
             " SET firstname = :firstname, lastname = :lastname, role = :role, image = :avatar WHERE id=:id");
-        $statement->bindValue('id', $municipaliteManager['id'], PDO::PARAM_INT);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->bindValue('firstname', $municipaliteManager['firstname'], PDO::PARAM_STR);
         $statement->bindValue('lastname', $municipaliteManager['lastname'], PDO::PARAM_STR);
         $statement->bindValue('role', $municipaliteManager['role'], PDO::PARAM_STR);
-        $statement->bindValue('avatar', $municipaliteManager['avatar'], PDO::PARAM_STR);
+        $statement->bindValue('avatar', $uploadFile, PDO::PARAM_STR);
 
         return $statement->execute();
     }
