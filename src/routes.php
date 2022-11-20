@@ -43,5 +43,5 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'error' => ['ErrorController', 'error', ['code']]
+    'error' => ['ErrorController', 'error', ['error']]
 ];
