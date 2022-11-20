@@ -50,4 +50,11 @@ class LoginController extends AbstractController
         }
         header('Location: /');
     }
+
+    public function error(int $error)
+    {
+        return $this->twig->render('Error/error.html.twig', [
+            'error' => $error,
+        ]);
+    }
 }
