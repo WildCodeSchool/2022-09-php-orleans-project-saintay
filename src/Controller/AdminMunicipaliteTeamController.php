@@ -129,4 +129,15 @@ class AdminMunicipaliteTeamController extends AdminController
             ]
         );
     }
+    public function showAllCommunalTeam()
+    {
+        $municipaliteManager = new MunicipaliteTeamManager();
+        $communalTeam = $municipaliteManager->selectIsEmployee('lastname');
+        return $this->twig->render(
+            'Admin/admin-communal-team.html.twig',
+            [
+                'communalTeam' => $communalTeam
+            ],
+        );
+    }
 }

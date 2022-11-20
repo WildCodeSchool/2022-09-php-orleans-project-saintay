@@ -1,0 +1,68 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/association.css">
+{% endblock %}
+
+{% block sidebar %}
+	{% set sideNav = [
+			{
+                'title' : 'Accueil', 
+                'link' : '/admin'
+            },
+            {
+                'title' : 'Actualités', 
+                'link' : '/admin/actualite'
+            },
+            {
+                'title' : 'Horaire de la mairie', 
+                'link' : '/admin/horaires'
+            },
+            {
+            
+                'title' : 'Associations', 
+                'link' : '/admin/association'
+            },
+            {
+                'title' : 'Documents officiels', 
+                'link' : '/admin/documents'
+            },
+            {
+                'title' : 'Équipe Municipale', 
+                'link' : '/admin/municipalite'
+            },
+            {
+                'title' : 'Équipe Communale', 
+                'link' : '/admin/equipe-communale'
+            }  
+        ]      
+    %}
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+	<section class="p-2 p-lg-5">
+
+		<h2 class="title mb-3">Les membres de l'équipe communale :</h2>
+		<hr class="w-100 mb-5">
+		<ul class="p-0 d-flex flex-column gap-2">
+
+                <li class="my-2 d-flex align-items-center">
+					<p class="w-25 p-0 m-0">Nom Prénom</p>
+					<p class="w-50 p-0 m-0">Role</p>
+				</li>
+
+			{% for adjent in communalTeam %}
+
+				<li class="my-2 d-flex align-items-center">
+					<p class="w-25 p-0 m-0">{{ adjent.lastname }} {{ adjent.firstname }}</p>
+					<p class="w-50 p-0 m-0">{{ adjent.role }}</p>
+				</li>
+
+			{% endfor %}
+
+		</ul>
+	</section>
+
+{% endblock %}

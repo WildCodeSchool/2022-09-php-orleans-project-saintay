@@ -35,6 +35,7 @@ return [
     'admin/municipalite/delete' => ['AdminMunicipaliteTeamController', 'delete'],
     'admin/association' => ['AssociationController', 'index'],
     'admin/municipalite/modifier' => ['AdminMunicipaliteTeamController', 'edit', ['id']],
+    'admin/equipe-communale' => ['AdminMunicipaliteTeamController', 'showAllCommunalTeam'],
     'vie-associative' => ['AssociationController', 'home'],
     'vie-associative/annuaire-association' => ['AssociationController', 'filterByCategory'],
     'vie-associative/annuaire-association/filtre' => ['AssociationController', 'filterByCategory', ['categorie']],
