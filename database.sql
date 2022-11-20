@@ -12,7 +12,7 @@ CREATE TABLE
         firstname VARCHAR(80) NOT NULL,
         lastname VARCHAR(80) NOT NULL,
         role TEXT NOT NULL,
-        image TEXT NOT NULL,
+        image TEXT,
         communal BOOLEAN NOT NULL
     );
 
@@ -21,122 +21,102 @@ INSERT INTO
         firstname,
         lastname,
         role,
-        image,
         communal
     )
 VALUES (
         'Frédéric',
         'CUILLERIER',
         'Compétence générale - Police - Sécurité - Etat Civil',
-        '/../assets/images/MairePortrait.png',
         false
     ), (
         'Marie-Françoise ',
         'QUERE',
         'Adjointe aux bâtiments et au développement durable - biodiversité',
-        '/../assets/images/Marie-francoisePortrait.png',
         false
     ), (
         'Pascal ',
         'FOULON',
         'Adjoint aux affaires scolaires, culture, communication et gestion des salles',
-        '/../assets/images/PascalPortrait.png',
         false
     ), (
         'Dominique',
         'RENAULT',
         'Adjoint aux travaux, voirie et traitement des eaux.',
-        '/../assets/images/DominiquePortrait.png',
         false
     ), (
         'Cecile',
         'TULIPE',
         'Accueil, état civil, listes electorales, cimetiere. ',
-        '/../uploads/cecile.jpg',
         true
     ), (
         'Isabelle',
         'PANEL',
         'Urbanisme.',
-        '/../uploads/isabelle.jpg',
         true
     ), (
         'Anais',
         'MAIS',
         'Comptabilite.',
-        '/../uploads/Robin-Anais.jpg',
         true
     ), (
         'Melanie',
         'PALVINE',
         'Vie associative et Reservation de salles .',
-        '/../uploads/images.jpeg',
         true
     ), (
         'Justine',
         'BLANDINE',
         'Vie associative et Reservation de salles .',
-        '/../uploads/Justine-Cesari(1).jpg',
         true
     ), (
         'Justine',
         'POURADIER',
         'Assistante du Maire et Direction Generale/Culture et Communication .',
-        '/../uploads/thumbnail.jpeg',
         true
     ), (
         'Meline',
         'MALIGNE',
         'Assistante Ressources Humaines.',
-        '/../uploads/meline.jpeg',
         true
     ), (
         'Aurelie',
         'JOLIE',
         'Directrice Generale des Services .',
-        '/../uploads/aurelie.jpg',
         true
     ), (
         'Adeline',
         'LINE',
         'Directrice Générale Adjointe.',
-        '/../uploads/adeline.jpg',
         true
     ), (
         'Hanane',
         'PIONNER',
         'Directrice des Ressources Humaines, Agence postale communale.',
-        '/../uploads/Hanane.jpeg',
         true
     ), (
         'David',
         'DOUILLER',
         'Directeur des Services Techniques.',
-        '/../uploads/David.jpg',
         true
     ), (
         'Zakya',
         'MANDAYA',
         'Charge des projets.',
-        '/../uploads/zakia.jpeg',
         true
     ), (
         'Adeline',
         'JUVANILE',
         'CCAS.',
-        '/../uploads/adeline2.jpeg',
         true
     ), (
         'Thierry',
         'MICHON',
         'Police municipale.',
-        '/../uploads/Thierry_Bollore(1).jpg',
         true
     ), (
         'Karine',
         'FARINE',
         'Police municipale.',
-        '/../uploads/karine.jpeg',
         true
     );
 

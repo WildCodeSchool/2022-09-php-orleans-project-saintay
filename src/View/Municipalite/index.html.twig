@@ -26,7 +26,10 @@
 			{% for employee in employees %}
 				<div class="col-sm-3">
 					<div class="card">
-						<img class="card-img-top" src="{{ employee.image }}" alt="Card image cap">
+						<img 
+							class="card-img-top" 
+							src={% if employee.image is not null %}{{ employee.image }}{% else %}{{ './assets/images/placeholder.jpg' }}{% endif %}  
+							alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-text">{{ employee.firstname }}
 								{{employee.lastname}}
