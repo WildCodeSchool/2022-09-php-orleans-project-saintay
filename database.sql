@@ -159,7 +159,7 @@ INSERT INTO actuality
 VALUES (
         1,
         "Nouveau site est en construction",
-        20221020,
+        20221120,
         "/assets/images/homme-devant-ordinateur.jpg",
         "Un nouveau site est actuellement en cours de construction. Tout le contenu n'est pas encore disponible",
         NULL
@@ -178,11 +178,38 @@ VALUES (
 INSERT INTO actuality
 VALUES (
         3,
-        "Les marcheur Agyliens sont en forme !",
-        20220923,
-        "/assets/images/marcheur_agyliens.jpeg",
-        "Les Marcheurs agyliens sont en forme. Les Marcheurs agyliens ont tenu leur assemblée générale, mardi, à laquelle a assisté Joël Girard, conseiller délégué aux sports.",
-        "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/a-saint-ay-apres-l-incendie-du-mois-de-janvier-l-usine-ciretec-ne-sera-pas-reconstruite_14203826/"
+        "Un stage de tennis pour les jeunes",
+        20221101,
+        "https://img.lamontagne.fr/eGTKYbX5144praL4wVelBV5XBrQfIp-pLhaYX1U3zrc/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzIvNDYvMjAwMDAwNjMyNDY3NA.jpg",
+        "Saint-Ay. Le club de tennis a organisé un stage pour les jeunes. Le club de tennis de Saint-Ay a organisé un stage pour les jeunes durant les vacances de la Toussaint. Huit enfants y ont participé, encadrés par Guillaume, l’un des deux enseignants de l’école de tennis. Grâce à la météo clémente, ils ont profité des courts extérieurs.",
+        "https://www.larep.fr/widgetRss/saint-ay-45130/loisirs/un-stage-de-tennis-pour-les-jeunes_14210053/"
+    );
+INSERT INTO actuality
+VALUES (
+        4,
+        "Une pharmacie toute neuve",
+        20221118,
+        "https://img.lamontagne.fr/8Coj9-lGJVjnO5iycZnTelM6YQAzJn9OQTpl8CsCzxo/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzMvNzYvMjAwMDAwNjMzNzY2NA.jpg",
+        "Quelques semaines après l’ouverture, les nouveaux locaux de la pharmacie étaient inaugurés mercredi, en présence d’élus municipaux, de professionnels de santé et de partenaires.",
+        "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/une-pharmacie-toute-neuve_14218356/"
+    );
+INSERT INTO actuality
+VALUES (
+        5,
+        "Robert Placidet, un héros anonyme salué !",
+        20221115,
+        "https://img.lamontagne.fr/pDphg3BxKYVOX6HQiH-rzPtZcsbZocF7UdvQWIKTAKA/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzMvOTAvMjAwMDAwNjMzOTA1Ng.jpg",
+        "Chaque année, lors de la commémoration du 11 novembre sont rappelés les noms des 52 soldats de Saint-Ay tombés au front. L’occasion de mettre en lumière ces héros anonymes, comme Robert Placidet, né à Saint-Ay le 26 septembre 1904. Retour sur son histoire.",
+        "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/robert-placidet-un-heros-anonyme-salue_14219227/"
+    );
+INSERT INTO actuality
+VALUES (
+        6,
+        "Les Journées artistiques sont lancées",
+        2022111,
+        "https://img.lamontagne.fr/k8xgjzC8qpKXG8FVX03kU3JY8Dxj6H8xssS62KTFCoo/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzMvMTkvMjAwMDAwNjMzMTk3OA.jpg",
+        "Les 27e journées artistiques agyliennes se dérouleront du 11 au 19 novembre. Peinture, théâtre, cinéma et musique sont au programme.",
+        "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/les-journees-artistiques-sont-lancees_14214888/"
     );
 
 CREATE TABLE report_category (
