@@ -44,6 +44,10 @@ main{
     margin-inline-start: 350px;
 }
 
+footer{
+    margin-inline-start: var(--side-bar-width);
+}
+
 .home-actualities .btn {
     border-radius: 0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
 }
