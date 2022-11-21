@@ -10,7 +10,7 @@ h5 {
 
 body {
     font-family: var(--font-fam-body);
-
+    font-size: 1.2rem;
     color: var(--font-color-dark);
 }
 
@@ -41,6 +41,10 @@ background-color: var(--bs-primary-rgb);
 
 main{
     margin-block-start: var(--navbar-height);
+    margin-inline-start: var(--side-bar-width);
+}
+
+footer{
     margin-inline-start: var(--side-bar-width);
 }
 
@@ -82,6 +86,7 @@ main{
     --side-pos-top: 90px;
     font-family: var(--font-fam-title);
     width: var(--side-bar-width);
+    font-size: 1rem;
     height: calc(100vh - var(--side-pos-top));
     clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
 
