@@ -15,7 +15,6 @@ class WordMayorManager extends AbstractManager
 
         return $this->pdo->query($query)->fetch(PDO::FETCH_ASSOC);
     }
-
     public function update(array $wordMayor): bool
     {
         $statement = "UPDATE " . self::TABLE . "

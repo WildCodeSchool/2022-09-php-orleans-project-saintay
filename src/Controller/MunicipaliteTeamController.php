@@ -9,11 +9,15 @@ class MunicipaliteTeamController extends AbstractController
 {
     public function index(): string
     {
+        return $this->twig->render('Municipalite/index.html.twig');
+    }
+    public function municipalTeam(): string
+    {
         $municipaliteManager = new MunicipaliteTeamManager();
         return $this->twig->render(
-            'Municipalite/index.html.twig',
+            'Municipalite/municipalTeam.html.twig',
             [
-                'employees' => $municipaliteManager->selectAll('lastname'),
+                'employees' => $municipaliteManager->selectIsTeam('lastname'),
             ],
         );
     }

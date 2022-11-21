@@ -1,6 +1,4 @@
--- Active: 1665745572078@@127.0.0.1@3306@saint_ay
 
-DROP TABLE `municipalityTeam`;
 
 CREATE TABLE
     municipalityTeam (
@@ -155,7 +153,7 @@ INSERT INTO actuality
 VALUES (
         1,
         "Nouveau site est en construction",
-        20221020,
+        20221120,
         "/assets/images/homme-devant-ordinateur.jpg",
         "Un nouveau site est actuellement en cours de construction. Tout le contenu n'est pas encore disponible",
         NULL
@@ -174,44 +172,134 @@ VALUES (
 INSERT INTO actuality
 VALUES (
         3,
-        "Les marcheur Agyliens sont en forme !",
-        20220923,
-        "/assets/images/marcheur_agyliens.jpeg",
-        "Les Marcheurs agyliens sont en forme. Les Marcheurs agyliens ont tenu leur assemblée générale, mardi, à laquelle a assisté Joël Girard, conseiller délégué aux sports.",
-        "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/a-saint-ay-apres-l-incendie-du-mois-de-janvier-l-usine-ciretec-ne-sera-pas-reconstruite_14203826/"
+        "Un stage de tennis pour les jeunes",
+        20221101,
+        "https://img.lamontagne.fr/eGTKYbX5144praL4wVelBV5XBrQfIp-pLhaYX1U3zrc/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzIvNDYvMjAwMDAwNjMyNDY3NA.jpg",
+        "Saint-Ay. Le club de tennis a organisé un stage pour les jeunes. Le club de tennis de Saint-Ay a organisé un stage pour les jeunes durant les vacances de la Toussaint. Huit enfants y ont participé, encadrés par Guillaume, l’un des deux enseignants de l’école de tennis. Grâce à la météo clémente, ils ont profité des courts extérieurs.",
+        "https://www.larep.fr/widgetRss/saint-ay-45130/loisirs/un-stage-de-tennis-pour-les-jeunes_14210053/"
+    );
+INSERT INTO actuality
+VALUES (
+        4,
+        "Une pharmacie toute neuve",
+        20221118,
+        "https://img.lamontagne.fr/8Coj9-lGJVjnO5iycZnTelM6YQAzJn9OQTpl8CsCzxo/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzMvNzYvMjAwMDAwNjMzNzY2NA.jpg",
+        "Quelques semaines après l’ouverture, les nouveaux locaux de la pharmacie étaient inaugurés mercredi, en présence d’élus municipaux, de professionnels de santé et de partenaires.",
+        "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/une-pharmacie-toute-neuve_14218356/"
+    );
+INSERT INTO actuality
+VALUES (
+        5,
+        "Robert Placidet, un héros anonyme salué !",
+        20221115,
+        "https://img.lamontagne.fr/pDphg3BxKYVOX6HQiH-rzPtZcsbZocF7UdvQWIKTAKA/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzMvOTAvMjAwMDAwNjMzOTA1Ng.jpg",
+        "Chaque année, lors de la commémoration du 11 novembre sont rappelés les noms des 52 soldats de Saint-Ay tombés au front. L’occasion de mettre en lumière ces héros anonymes, comme Robert Placidet, né à Saint-Ay le 26 septembre 1904. Retour sur son histoire.",
+        "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/robert-placidet-un-heros-anonyme-salue_14219227/"
+    );
+INSERT INTO actuality
+VALUES (
+        6,
+        "Les Journées artistiques sont lancées",
+        2022111,
+        "https://img.lamontagne.fr/k8xgjzC8qpKXG8FVX03kU3JY8Dxj6H8xssS62KTFCoo/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzMvMTkvMjAwMDAwNjMzMTk3OA.jpg",
+        "Les 27e journées artistiques agyliennes se dérouleront du 11 au 19 novembre. Peinture, théâtre, cinéma et musique sont au programme.",
+        "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/les-journees-artistiques-sont-lancees_14214888/"
     );
 
+CREATE TABLE report_category (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `image` TEXT NOT NULL,
+    PRIMARY KEY(`id`)
+);
 
 CREATE TABLE report (
-`id` INT NOT NULL AUTO_INCREMENT,
+`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 `title` varchar(255) NOT NULL,
 `date` DATE NOT NULL,
 `description` TEXT NOT NULL,
 `link` TEXT NULL,
 `category_id` INT NOT NULL,
-PRIMARY KEY (`id`)
+CONSTRAINT `fk_report_report_category`
+FOREIGN KEY (`category_id`) 
+REFERENCES `report_category`(`id`)
 );
 
-CREATE TABLE report_category (
-    `id` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(255) NOT NULL, 
-    `image` TEXT NOT NULL,
-    PRIMARY KEY (`id`)
-);
-INSERT INTO report_category
-VALUES (1, "Les réunions du conseil", "/assets/images/reunion-conseil.png");
+
 
 INSERT INTO report_category
-VALUES (2, "Les bulletins municipaux", "/assets/images/logo-conseil-municipal.png");
+VALUES (
+        1,
+        "Les réunions du conseil",
+        "/assets/images/reunion-conseil.png"
+    );
 
 INSERT INTO report_category
-VALUES (3, "Les arrêtés municipaux", "/assets/images/arrete-municipal.jpg");
+VALUES (
+        2,
+        "Les bulletins municipaux",
+        "/assets/images/logo-conseil-municipal.png"
+    );
+
+INSERT INTO report_category
+VALUES (
+        3,
+        "Les arrêtés municipaux",
+        "/assets/images/arrete-municipal.jpg"
+    );
 
 INSERT INTO report
-VALUES (1, "Réunion du 19 Septembre 2022", 20220919,"Voir l'ordre du jour en cliquant ci-dessus.", "http://www.ville-saint-ay.fr/docs/annonces/20220919_cm.pdf", 1);
+VALUES (
+        1,
+        "Réunion du 19 Septembre 2022",
+        20220919,
+        "Voir l'ordre du jour en cliquant ci-dessus.",
+        "http://www.ville-saint-ay.fr/docs/annonces/20220919_cm.pdf",
+        1
+    );
 
 INSERT INTO report
 VALUES (2, "Réunion du 11 Avril 2022", 20220411, "Urbanisme, Vente des parcelles cadastrées. Ressources Humaines. Finances - Budgets, Subventions. Approbations des comptes. Vie associative. Voir le PV ci-dessous.", "http://www.ville-saint-ay.fr/docs/CR_20220411.pdf", 2);
+
+INSERT INTO report
+VALUES (
+    3,
+    "Réunion du 7 Mars 2022",
+    20220207,
+    "Finances - Mise en oeuvre du Débat d’Orientation Budgétaire 2022; Ligne de trésorerie 2022 - Choix de l’organisme prêteur. Centre de gestion - Adhésion à la prestation paie du Centre départemental de gestion du Loiret; Adhésion à la mission chômage du Centre départemental de gestion du Loiret; Service d’aide à l’emploi du Centre départemental de gestion du Loiret.",
+    "http://www.ville-saint-ay.fr/docs/CR_20220207.pdf",
+    1
+);
+
+INSERT INTO report
+VALUES (
+    4,
+    "Arrêté municipal réglementant les activités bruyantes",
+    20070330,
+    "Cet arrêté annule et remplace celui du 12 juin 2001",
+    "http://www.ville-saint-ay.fr/docs/AR_20070330.pdf",
+    3
+);
+
+INSERT INTO report
+VALUES (
+    5,
+    "Bulletin Municipal - 8 Mars 2022",
+    20220308,
+    "Lettre aux Agyliens",
+    "http://www.ville-saint-ay.fr/docs/BM_20220308.pdf",
+    2
+);
+
+INSERT INTO report
+VALUES (
+    2,
+    "Bulletin Municipal - 30 Décembre 2021",
+    20211230,
+    "Album photos 2021 et Voeux 2022",
+    "http://www.ville-saint-ay.fr/docs/BM_20211230.pdf",
+    2
+);
 
 CREATE TABLE
     user (
@@ -223,9 +311,8 @@ CREATE TABLE
 
 INSERT INTO
     user (`email`, `password`)
-VALUES (
         'admin@saintay.fr',
-        'password'
+        '$2y$10$i48/UEH3zLEZcRwxeN7ND.qY1XH8e90OB.lC96gsBFEZFQ15rkzXO'
     );
 
 CREATE TABLE
@@ -431,9 +518,65 @@ VALUES (
         "/assets/images/association_images/sportives.png"
     );
 
-DROP TABLE `wordMayor`;
+
 
 CREATE TABLE
+
+    schedule (
+        id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        day VARCHAR(80) NOT NULL,
+        hour VARCHAR(255) NOT NULL
+        
+    );
+
+    INSERT INTO
+    `schedule` (day, hour)
+VALUES (
+        'Le lundi de',
+        "15 à 19 heures (17 heures en août)"
+    ), (
+        'Le mardi de ',
+        "9 à 12 et de 15 à 17 heures"
+    ), (
+        'Le mercredi de',
+        "15 à 17 heures"
+    ), (
+        'Le jeudi de',
+        "9 à 12 heures"
+    ), (
+        'Le vendredi de',
+        "9 à 12 et de 15 à 17 heures"
+    ), (
+        'Le samedi de ',
+        "9 à 12 heures les semaines paires uniquement"
+    ), (
+        'fermé',
+        "tous les samedis en août"
+    );
+
+    CREATE TABLE
+    contactInformation (
+        id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        title VARCHAR(80) NOT NULL,
+        info VARCHAR(255) NOT NULL
+        
+    );
+
+    INSERT INTO
+    `contactInformation` (title, info)
+VALUES (
+        'Adresse:',
+        "Place de la Mairie - 45130 Saint-Ay"
+    ), (
+        'Tél: 02 38 88 44 44',
+        "Fax: 02 38 88 82 14"
+    ), (
+        'Site web:',
+        "accueil@ville-saint-ay.fr"
+    );
+        
+    
+    CREATE TABLE 
     wordMayor (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
         title TEXT NOT NULL,
@@ -444,6 +587,7 @@ CREATE TABLE
 
 INSERT INTO
     wordMayor (title, description, image, signature)
+
 VALUES (
         'De la force de la douceur, de la douceur de la force.',
         'La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l indépendance d une grande agglomération, génère le caractère attractif de SAINT-AY.
@@ -461,3 +605,4 @@ Ainsi, d agréable village de vignerons du début du XXème siècle, SAINT - AY 
         Maire de Saint-AY 
         Président du Pays Loire-Beauce '
     );
+

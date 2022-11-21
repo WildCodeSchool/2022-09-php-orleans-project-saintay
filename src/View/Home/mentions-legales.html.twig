@@ -1,0 +1,121 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/actuality-cards.css">
+{% endblock %}
+
+{% block sidebar %}
+	{% set sideNav = [
+        {
+            'title' : 'Droits dauteur', 
+            'link' : '#legaleNotice'
+        },
+		{
+            'title' : 'Crédits photographiques', 
+            'link' : '#photographies'
+        },
+		{
+            'title' : 'Protection des données personnelles', 
+            'link' : '#dataProtected'
+        },
+		{
+            'title' : 'Absence de garantie', 
+            'link' : '#warranty'
+        },
+		{
+            'title' : 'Liens hypertextes', 
+            'link' : '#link'
+        },
+		{
+            'title' : 'Utilisation de logotypes', 
+            'link' : '#logotypes'
+        },
+		{
+            'title' : 'Plan de la Ville', 
+            'link' : '#maps'
+        }
+		
+    ]      
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+	<div class="p-1 p-lg-5 my-3 m-1 " id="legaleNotice">
+		<section>
+			<h1 class="mb-5">Mentions légales</h1>
+			<div class="mt-5">
+				<h3>Respect des droits d'auteur
+				</h3>
+				<hr>
+				<p>Sauf autorisation écrite de la Direction de l'Information et de la Communication Mairie de Saint-Ay, toute utilisation des œuvres autres que la reproduction et la consultation individuelles et privées, conformes aux articles L122-4 et L122-5 du Code de la propriété intellectuelle, est interdite. En aucun cas, ces reproductions ne sauraient porter préjudice aux droits des tiers.
+				</p>
+			</div>
+		</section>
+		<section class="nav-anchor" id="photographies">
+			<div class="mt-5">
+				<h3>Crédits photographiques
+				</h3>
+				<hr>
+				<p>Toutes les photographies présentées sur ce site sont protégées par le Code de la propriété intellectuelle et artistique. Certaines peuvent être reproduites à condition d'avoir obtenu l'autorisation écrite de la Direction de l'Information et de la Communication Mairie Saint-Ay et d'en indiquer l'auteur et la source. Sauf directement spécifié, les crédits photographiques sont :
+
+					<strong>Jérôme Grelet, Jean Puyo</strong>
+				</p>
+			</div>
+		</section>
+		<section class="nav-anchor" id="dataProtected">
+			<div class="mt-5">
+				<h3>Protection des données personnelles
+				</h3>
+				<hr>
+				<p>Conformément au règlement
+					<strong>
+						UE
+					</strong>
+					2016/679 et à la loi "informatique et libertés" du 6 janvier 1978 modifiée, vous disposez d’un droit d’accès, de rectification, d’opposition du traitement, d’effacement et de la portabilité de vos données. Pour exercer ces droits ou pour toute question sur le traitement de vos données, vous pouvez contacter notre Délégué à la protection des données par voie électronique : dpo@Saint-Ay-metropole.fr ou par courrier postal : Saint-Ay, Secrétariat Général, 5 Place du 6 juin 1944, Saint-Ay. Vous avez également la possibilité d’introduire une réclamation auprès des services de la CNIL.
+				</p>
+			</div>
+		</section>
+		<section class="nav-anchor" id="warranty">
+			<div class="mt-5">
+				<h3>Absence de garantie
+				</h3>
+				<hr>
+				<p>Nous ne garantissons pas que ce site soit exempt de défaut, d'erreur ou d'omission et qu'il corresponde exactement à l'usage auquel l'utilisateur le destine. Nous ne pouvons en aucun cas être tenus responsables des éventuels défauts, erreurs ou omissions. L'équipe du www.Marie-Saint-Ay.fr reste néanmoins ouverte à toute suggestion, réaction ou correction concernant le contenu de ce site.
+				</p>
+			</div>
+		</section>
+		<section class="nav-anchor" id="link">
+			<div class="mt-5">
+				<h3>Liens hypertextes
+				</h3>
+				<hr>
+				<p>L'équipe du www.MairieSaint-Ay.fr n’est pas responsable des contenus des sites tiers vers lesquels sont établis des liens depuis son site. Tout site peut nous demander de supprimer tout ou partie des liens que nous avons créés vers lui.</p>
+	
+				<p>L'équipe du www.MarieSaint-Ay.fr autorise tout site Internet à mettre en place un lien hypertexte pointant vers son contenu, sous réserve 
+																								            que la page atteinte ne soit pas imbriquée à l’intérieur d’autres pages
+																											que l’accès aux pages contenant ces liens soit gratuit. Notez que cette autorisation ne s’applique pas aux sites diffusant des informations à caractère polémique, pornographique, xénophobe ou pouvant, dans une plus large mesure porter atteinte à la sensibilité du plus grand nombre.</p>
+			</div>
+		</section>
+		<section class="nav-anchor" id="logotypes">
+			<div class="mt-5">
+				<h3>Utilisation de logotypes
+				</h3>
+				<hr>
+				<p>Si vous souhaitez utiliser les logos de la Mairie de Saint-Ay , vous devez au préalable demander l’autorisation. Contact
+				</p>
+			</div>
+		</section>
+		<section class="nav-anchor" id="maps">
+			<div class="mt-5">
+				<h3>Plan de la Ville
+				</h3>
+				<hr>
+				<p>Les informations disponibles dans le plan sont fournies à titre indicatif. Elles n’ont pas elles-mêmes de valeur juridique particulière et ne sauraient engager en aucun cas la responsabilité de la Mairie de Saint-Ay.
+				</p>
+			</div>
+		</section>
+	</div>
+{% endblock %}
