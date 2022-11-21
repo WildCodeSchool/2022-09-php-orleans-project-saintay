@@ -13,18 +13,17 @@ class AdminMunicipaliteTeamController extends AdminController
         return $this->twig->render(
             'Municipalite/admin.html.twig',
             [
-                'employees' => $municipaliteManager->selectAll('lastname'),
+                'employees' => $municipaliteManager->selectIsTeam('lastname'),
             ],
         );
     }
 
     public function add(): string
     {
-
-
         $errors = $municipaliteMember = [];
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $municipaliteMember = array_map('trim', $_POST);
+            $municipaliteMember  = array_map('trim', $_POST);
+
             $errors = $this->validate($municipaliteMember);
             $uploadDir = ' /../uploads/';
             $uploadFile =  $uploadDir . basename($_FILES['avatar']['tmp_name']);
@@ -33,8 +32,9 @@ class AdminMunicipaliteTeamController extends AdminController
             if (empty($errors)) {
                 $municipalite = new MunicipaliteTeamManager();
                 $municipalite->insert($municipaliteMember);
-                move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
+                $municipaliteMember['communal'] = 0;
 
+                move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                 header('Location: /admin/municipalite');
             }
         }
@@ -42,13 +42,13 @@ class AdminMunicipaliteTeamController extends AdminController
         return $this->twig->render(
             'Municipalite/add.html.twig',
             [
-                'municipaliteMember' => $municipaliteMember,
+                'municipaliteMember' => $municipaliteMember,        
                 'errors' => $errors,
             ],
         );
     }
 
-    private function validate(array $municipaliteManager): array
+    private function validate(array $municipaliteMember): array
     {
         $errors = [];
         $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
@@ -56,22 +56,22 @@ class AdminMunicipaliteTeamController extends AdminController
         $maxFileSize = 200000;
         $maxLenghtCaracteres = 79;
 
-        if (empty($municipaliteManager["firstname"])) {
+        if (empty($municipaliteMember["firstname"])) {
             $errors[] = "Le prenom est obligatoire";
         }
-        if (empty($municipaliteManager["lastname"])) {
+        if (empty($municipaliteMember["lastname"])) {
             $errors[] = "Le nom est obligatoire";
         }
 
-        if (empty($municipaliteManager["role"])) {
+        if (empty($municipaliteMember["role"])) {
             $errors[] = "Le rôle est obligatoire";
         }
 
-        if (strlen($municipaliteManager["firstname"]) >= $maxLenghtCaracteres) {
+        if (strlen($municipaliteMember["firstname"]) >= $maxLenghtCaracteres) {
             $errors[] = "Le prenom doit faire moins de $maxLenghtCaracteres caracteres";
         }
 
-        if (strlen($municipaliteManager["lastname"]) >= $maxLenghtCaracteres) {
+        if (strlen($municipaliteMember["lastname"]) >= $maxLenghtCaracteres) {
             $errors[] = "Le nom doit faire moins de $maxLenghtCaracteres caracteres";
         }
 
@@ -85,6 +85,17 @@ class AdminMunicipaliteTeamController extends AdminController
         return $errors;
     }
 
+    public function delete()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $id = (int) trim($_POST['id']);
+
+
+            $municipalite = new MunicipaliteTeamManager();
+            $municipalite->delete($id);
+            header('Location: /admin/municipalite');
+        }
+    }
 
     public function edit(int $id): string
     {
@@ -110,12 +121,14 @@ class AdminMunicipaliteTeamController extends AdminController
                 header('Location: /admin/municipalite');
             }
         }
+
         return $this->twig->render(
             'Municipalite/edit.html.twig',
             [
+
                 'municipaliteMember' => $municipaliteMembers,
                 'errors' => $errors,
-            ],
-        );
+
+        ]);
     }
 }
