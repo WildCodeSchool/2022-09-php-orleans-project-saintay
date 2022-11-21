@@ -11,7 +11,8 @@ class AssociationManager extends AbstractManager
     public function selectByCategory(int $categoryId = null): array
     {
         if ($categoryId === null) {
-            $query = "SELECT " . self::TABLE . ".name as associationName, 
+            $query = "SELECT " . self::TABLE . ".name as associationName, "
+                . self::TABLE . ".id,
             category.name as categoryName, description, phone_number, image 
             FROM " . self::TABLE . " 
             INNER JOIN category
@@ -39,6 +40,15 @@ class AssociationManager extends AbstractManager
         $statement->bindValue('category_id', $association['category'], PDO::PARAM_INT);
         $statement->bindValue('description', $association['description'], PDO::PARAM_STR);
         $statement->bindValue('phone_number', $association['phone_number']);
+
+        $statement->execute();
+    }
+
+    public function deleteAssociation(int $id)
+    {
+        $query = "DELETE FROM " . self::TABLE . " WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
 
         $statement->execute();
     }
