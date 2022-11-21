@@ -44,6 +44,29 @@ class AdminWordMayorController extends AdminController
         }
         return $errors;
     }
+    public function add(): ?string
+    {
+        $errors = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $wordMayor = array_map('trim', $_POST);
+
+            $errors = self::validate($wordMayor);
+
+            if (empty($errors)) {
+                $wordManager = new WordMayorManager();
+                $wordManager->insert($wordMayor);
+
+                header('Location: /admin/mot-du-maire');
+                return '';
+            }
+        }
+
+        return $this->twig->render('Admin/admin-add-wordMayor.html.twig', [
+            'errors' => $errors,
+            'wordMayor' => $wordMayor ?? ''
+        ]);
+    }
     public function edit()
     {
 

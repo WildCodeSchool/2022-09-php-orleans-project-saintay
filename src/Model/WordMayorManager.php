@@ -32,4 +32,14 @@ class WordMayorManager extends AbstractManager
 
         return $statement->execute();
     }
+    public function insert(array $wordMayor)
+    {
+        $query = "INSERT INTO " . self::TABLE . "(title, description,  image, signature)
+                VALUES (:title, :description, :image,:signature)";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('title', $wordMayor['title'], PDO::PARAM_STR);
+        $statement->bindValue('description', $wordMayor['description'], PDO::PARAM_STR);
+        $statement->bindValue('image', $wordMayor['image'], PDO::PARAM_STR);
+        $statement->bindValue('signature', $wordMayor['signature'], PDO::PARAM_STR);
+    }
 }

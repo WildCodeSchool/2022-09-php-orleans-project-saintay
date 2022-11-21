@@ -1,0 +1,21 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block sidebar %}
+    {% set sideNav = [
+            {
+            'title' : 'retour', 
+            'link' : '/admin/mot-du-maire'
+        }
+        ]      
+    %}
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Ajouter un mot</h2>
+
+    {% include './Home/_wordMayor.html.twig' %}
+
+
+{% endblock %}
