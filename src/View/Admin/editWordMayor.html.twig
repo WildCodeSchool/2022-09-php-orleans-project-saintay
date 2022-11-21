@@ -1,0 +1,31 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block sidebar %}
+	{% set sideNav = [
+        {
+            'title' : 'Tutoriel', 
+            'link' : '/admin'
+        },
+        {
+            'title' : 'Documents officiels', 
+            'link' : '/admin/report'
+        },
+		 {
+            'title' : 'Mot du maire', 
+            'link' : '/admin/mot-du-maire'
+        }
+		
+    ]      
+%}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+<h2>Modifier le mot du maire </h2>
+
+{% include './Admin/_form-admin-word.html.twig' %}
+
+
+{% endblock %}
