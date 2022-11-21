@@ -2,46 +2,54 @@
 
 {% block sidebar %}
 {% set sideNav = [
-        {
+            {
                 'title' : 'Accueil', 
                 'link' : '/admin'
-            },
-            {
-            'title' : 'Documents officiels', 
-            'link' : '/admin/documents'
             },
             {
                 'title' : 'Actualités', 
                 'link' : '/admin/actualite'
             },
             {
+                'title' : 'Horaire de la mairie', 
+                'link' : '/admin/horaires'
+            },
+            {
+            
                 'title' : 'Associations', 
                 'link' : '/admin/association'
             },
             {
-                'title' : 'Equipe Municipale', 
-                'link' : 'admin/municipalite'
-            } 
+                'title' : 'Documents officiels', 
+                'link' : '/admin/documents'
+            },
+            {
+                'title' : 'Équipe Municipale', 
+                'link' : '/admin/municipalite'
+            }
 
     ]      
 %}
 
-{% include './Item/_sidebar.html.twig' %}
+	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}
 
-<a href="/admin/documents/ajouter" class="btn bg-primary text-secondary mb-4 p-3">Créer un document</a>
+	<a href="/admin/documents/ajouter" class="btn bg-primary text-secondary mb-4 p-3">Créer un document</a>
 
 
-<h2>Tous vos documents : </h2>
+	<h2>Tous vos documents :
+	</h2>
 
-<ul>
-    {% for report in reports %}
-    <li class="my-2 d-flex align-items-center">
+	<ul>
+		{% for report in reports %}
+			<li class="my-2 d-flex align-items-center">
 
-        <p class="w-25 p-0 m-0">{{ report.date }}</p>
-        <p class="w-50 p-0 m-0"> {{ report.title }} </p>
+				<p class="w-25 p-0 m-0">{{ report.date }}</p>
+				<p class="w-50 p-0 m-0">
+					{{ report.title }}
+				</p>
 
         <a href="/admin/documents/modifier?id={{ report.id }}" class="btn bg-primary text-secondary mx-2 px-3 d-flex justify-content-center align-items-center admin-btn-edit p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill me-2" viewBox="0 0 16 16">

@@ -6,7 +6,7 @@
 
 {% block sidebar %}
 	{% set sideNav = [
-            {
+			{
                 'title' : 'Accueil', 
                 'link' : '/admin'
             },
@@ -14,20 +14,31 @@
                 'title' : 'Actualités', 
                 'link' : '/admin/actualite'
             },
-			{
+            {
+                'title' : 'Horaire de la mairie', 
+                'link' : '/admin/horaires'
+            },
+            {
+            
                 'title' : 'Associations', 
                 'link' : '/admin/association'
             },
-			{
-            'title' : 'Documents officiels', 
-            'link' : '/admin/documents'
-        	}
+            {
+                'title' : 'Documents officiels', 
+                'link' : '/admin/documents'
+            },
+            {
+                'title' : 'Équipe Municipale', 
+                'link' : '/admin/municipalite'
+            }
         ]      
     %}
 	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}
+
+<a href="/admin/association/ajouter" class="btn bg-primary text-secondary mb-4 p-3">Ajouter une association</a>
 
 	<section class="p-2 p-lg-5">
 
