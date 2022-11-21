@@ -131,6 +131,7 @@ class AdminMunicipaliteTeamController extends AdminController
             ],
         );
     }
+
     public function showAllCommunalTeam()
     {
         $municipaliteManager = new MunicipaliteTeamManager();
