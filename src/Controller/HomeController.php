@@ -10,7 +10,7 @@ class HomeController extends AbstractController
     public function index(): string
     {
         $wordManager = new WordMayorManager();
-        $wordMayor = $wordManager->selectAll();
+        $wordMayor = $wordManager->selectFirst();
 
         $actuManager = new ActualityManager();
         $homeActualities = $actuManager->selectActualities(2);
