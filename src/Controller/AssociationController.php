@@ -66,6 +66,32 @@ class AssociationController extends AbstractController
 
         ]);
     }
+    public function edit($id)
+    {
+        $errors = [];
+        $categories = [];
+        $associationManager = new AssociationManager();
+        $association = $associationManager->SelectOneById((int)$id);
+        $assoCategoryManager = new AssoCategoryManager();
+        $categories = $assoCategoryManager->selectAll('name');
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $association = array_map('trim', $_POST);
+            $errors = $this->validate($association);
+
+            if (empty($errors)) {
+                $associationManager->update($id, $association);
+
+                header('Location: /admin/association');
+                return '';
+            }
+        }
+        return $this->twig->render('Admin/admin-edit-association.html.twig', [
+            'association' => $association,
+            'categories' => $categories
+        ]);
+    }
+
     private function validate(array $association): array
     {
 

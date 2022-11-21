@@ -6,7 +6,7 @@ CREATE TABLE
         firstname VARCHAR(80) NOT NULL,
         lastname VARCHAR(80) NOT NULL,
         role TEXT NOT NULL,
-        image TEXT NOT NULL,
+        image TEXT,
         communal BOOLEAN NOT NULL
     );
 
@@ -15,122 +15,102 @@ INSERT INTO
         firstname,
         lastname,
         role,
-        image,
         communal
     )
 VALUES (
         'Frédéric',
         'CUILLERIER',
         'Compétence générale - Police - Sécurité - Etat Civil',
-        '/../assets/images/MairePortrait.png',
         false
     ), (
         'Marie-Françoise ',
         'QUERE',
         'Adjointe aux bâtiments et au développement durable - biodiversité',
-        '/../assets/images/Marie-francoisePortrait.png',
         false
     ), (
         'Pascal ',
         'FOULON',
         'Adjoint aux affaires scolaires, culture, communication et gestion des salles',
-        '/../assets/images/PascalPortrait.png',
         false
     ), (
         'Dominique',
         'RENAULT',
         'Adjoint aux travaux, voirie et traitement des eaux.',
-        '/../assets/images/DominiquePortrait.png',
         false
     ), (
         'Cecile',
         'TULIPE',
         'Accueil, état civil, listes electorales, cimetiere. ',
-        '/../uploads/cecile.jpg',
         true
     ), (
         'Isabelle',
         'PANEL',
         'Urbanisme.',
-        '/../uploads/isabelle.jpg',
         true
     ), (
         'Anais',
         'MAIS',
         'Comptabilite.',
-        '/../uploads/Robin-Anais.jpg',
         true
     ), (
         'Melanie',
         'PALVINE',
         'Vie associative et Reservation de salles .',
-        '/../uploads/images.jpeg',
         true
     ), (
         'Justine',
         'BLANDINE',
         'Vie associative et Reservation de salles .',
-        '/../uploads/Justine-Cesari(1).jpg',
         true
     ), (
         'Justine',
         'POURADIER',
         'Assistante du Maire et Direction Generale/Culture et Communication .',
-        '/../uploads/thumbnail.jpeg',
         true
     ), (
         'Meline',
         'MALIGNE',
         'Assistante Ressources Humaines.',
-        '/../uploads/meline.jpeg',
         true
     ), (
         'Aurelie',
         'JOLIE',
         'Directrice Generale des Services .',
-        '/../uploads/aurelie.jpg',
         true
     ), (
         'Adeline',
         'LINE',
         'Directrice Générale Adjointe.',
-        '/../uploads/adeline.jpg',
         true
     ), (
         'Hanane',
         'PIONNER',
         'Directrice des Ressources Humaines, Agence postale communale.',
-        '/../uploads/Hanane.jpeg',
         true
     ), (
         'David',
         'DOUILLER',
         'Directeur des Services Techniques.',
-        '/../uploads/David.jpg',
         true
     ), (
         'Zakya',
         'MANDAYA',
         'Charge des projets.',
-        '/../uploads/zakia.jpeg',
         true
     ), (
         'Adeline',
         'JUVANILE',
         'CCAS.',
-        '/../uploads/adeline2.jpeg',
         true
     ), (
         'Thierry',
         'MICHON',
         'Police municipale.',
-        '/../uploads/Thierry_Bollore(1).jpg',
         true
     ), (
         'Karine',
         'FARINE',
         'Police municipale.',
-        '/../uploads/karine.jpeg',
         true
     );
 
@@ -259,8 +239,47 @@ VALUES (
     );
 
 INSERT INTO report
-
 VALUES (2, "Réunion du 11 Avril 2022", 20220411, "Urbanisme, Vente des parcelles cadastrées. Ressources Humaines. Finances - Budgets, Subventions. Approbations des comptes. Vie associative. Voir le PV ci-dessous.", "http://www.ville-saint-ay.fr/docs/CR_20220411.pdf", 2);
+
+INSERT INTO report
+VALUES (
+    3,
+    "Réunion du 7 Mars 2022",
+    20220207,
+    "Finances - Mise en oeuvre du Débat d’Orientation Budgétaire 2022; Ligne de trésorerie 2022 - Choix de l’organisme prêteur. Centre de gestion - Adhésion à la prestation paie du Centre départemental de gestion du Loiret; Adhésion à la mission chômage du Centre départemental de gestion du Loiret; Service d’aide à l’emploi du Centre départemental de gestion du Loiret.",
+    "http://www.ville-saint-ay.fr/docs/CR_20220207.pdf",
+    1
+);
+
+INSERT INTO report
+VALUES (
+    4,
+    "Arrêté municipal réglementant les activités bruyantes",
+    20070330,
+    "Cet arrêté annule et remplace celui du 12 juin 2001",
+    "http://www.ville-saint-ay.fr/docs/AR_20070330.pdf",
+    3
+);
+
+INSERT INTO report
+VALUES (
+    5,
+    "Bulletin Municipal - 8 Mars 2022",
+    20220308,
+    "Lettre aux Agyliens",
+    "http://www.ville-saint-ay.fr/docs/BM_20220308.pdf",
+    2
+);
+
+INSERT INTO report
+VALUES (
+    2,
+    "Bulletin Municipal - 30 Décembre 2021",
+    20211230,
+    "Album photos 2021 et Voeux 2022",
+    "http://www.ville-saint-ay.fr/docs/BM_20211230.pdf",
+    2
+);
 
 CREATE TABLE
     user (
@@ -272,7 +291,6 @@ CREATE TABLE
 
 INSERT INTO
     user (`email`, `password`)
-VALUES (
         'admin@saintay.fr',
         '$2y$10$i48/UEH3zLEZcRwxeN7ND.qY1XH8e90OB.lC96gsBFEZFQ15rkzXO'
     );

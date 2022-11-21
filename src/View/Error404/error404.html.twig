@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% block sidebar %}
+	{% set sideNav = [
+        {
+            'title' : '',
+            'link' : ''
+        }
+    ]
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+	<div class="home-main-content px-3">
+		<div class="m-auto">
+            <h1>Erreur {{ error }} </h1>
+			<h2>La page demandée n'existe pas. Vous pouvez retourner à la page d'accueil.</h2>
+{% endblock %}

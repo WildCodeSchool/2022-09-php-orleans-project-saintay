@@ -35,7 +35,10 @@ return [
     'admin/municipalite/ajouter' => ['AdminMunicipaliteTeamController', 'add'],
     'admin/municipalite/delete' => ['AdminMunicipaliteTeamController', 'delete'],
     'admin/municipalite/modifier' => ['AdminMunicipaliteTeamController', 'edit', ['id']],
+    'admin/equipe-communale' => ['AdminMunicipaliteTeamController', 'showAllCommunalTeam'],
+    'admin/equipe-communale/delete' => ['AdminMunicipaliteTeamController', 'deleteAgent'],
     'vie-associative' => ['AssociationController', 'home'],
+    'admin/association/modifier' => ['AssociationController', 'edit', ['id']],
     'admin/association/ajouter' => ['AssociationController', 'add'],
     'admin/association' => ['AssociationController', 'index'],
     'admin/association/supprimer' => ['AssociationController', 'delete'],
@@ -46,4 +49,5 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'error' => ['LoginController', 'error', ['error']]
 ];

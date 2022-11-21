@@ -1,5 +1,4 @@
 {% if errors is not empty %}
-
 	<ul class="p-0 d-flex flex-column alert alert-danger list-unstyled" role="alert">
 		{% for error in errors %}
 
@@ -7,11 +6,9 @@
 
 		{% endfor %}
 	</ul>
-
 {% endif %}
 
 <form class="w-75" method="POST">
-
 	<div class="form-group my-2">
 		<label for="name">Nom de l'association :</label>
 		<input name="name" type="text" class="form-control" id="name" aria-describedby="Nom de l'association" value="{% if association.name is defined %}{{association.name}}{% endif %}" required/>
@@ -22,7 +19,7 @@
 		<label for="category">Categorie :</label>
 		<select id="category" name="category" class="form-select" aria-label="Default select">
 			{% for category in categories %}
-				<option value="{{ category.id }}">{{category.name}}</option>
+				<option value="{{ category.id }}" {% if category.id is same as association.category_id %} selected {% endif %}>{{category.name}}</option>
 			{% endfor %}
 		</select>
 	</div>
@@ -30,9 +27,9 @@
 	<div class="form-group my-2">
 		<label for="description">Description :</label>
 		<textarea name="description" class="form-control" id="description" aria-describedby="Description de l'association" rows="3" required>
-			{% if association.description is defined %}
+			{%- if association.description is defined -%}
 				{{association.description}}
-			{% endif %}
+			{%- endif -%}
 		</textarea>
 	</div>
 

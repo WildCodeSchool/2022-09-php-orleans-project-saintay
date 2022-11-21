@@ -129,4 +129,26 @@ class AdminMunicipaliteTeamController extends AdminController
             ]
         );
     }
+    public function showAllCommunalTeam()
+    {
+        $municipaliteManager = new MunicipaliteTeamManager();
+        $communalTeam = $municipaliteManager->selectIsEmployee('lastname');
+        return $this->twig->render(
+            'Admin/admin-communal-team.html.twig',
+            [
+                'communalTeam' => $communalTeam
+            ],
+        );
+    }
+    public function deleteAgent()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $id = (int) trim($_POST['id']);
+
+
+            $municipalite = new MunicipaliteTeamManager();
+            $municipalite->delete($id);
+            header('Location: /admin/equipe-communale');
+        }
+    }
 }
