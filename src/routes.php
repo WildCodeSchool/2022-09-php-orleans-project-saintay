@@ -43,6 +43,7 @@ return [
     'admin/association/modifier' => ['AssociationController', 'edit', ['id']],
     'admin/association/ajouter' => ['AssociationController', 'add'],
     'admin/association' => ['AssociationController', 'index'],
+    'admin/association/supprimer' => ['AssociationController', 'delete'],
     'vie-associative/annuaire-association' => ['AssociationController', 'filterByCategory'],
     'vie-associative/annuaire-association/filtre' => ['AssociationController', 'filterByCategory', ['categorie']],
     'items' => ['ItemController', 'index',],
