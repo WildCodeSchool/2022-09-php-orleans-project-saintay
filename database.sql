@@ -557,7 +557,6 @@ VALUES (
         "accueil@ville-saint-ay.fr"
     );
         
-    DROP TABLE wordMayor;
     CREATE TABLE 
     wordMayor (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,

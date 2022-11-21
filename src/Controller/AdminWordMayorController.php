@@ -109,8 +109,8 @@ class AdminWordMayorController extends AdminController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
-            $actualityManager = new WordMayorManager();
-            $actualityManager->deleteWord((int)$id);
+            $wordManager = new WordMayorManager();
+            $wordManager->deleteWord((int)$id);
 
             header('Location: /admin/mot-du-maire');
         }
