@@ -1,3 +1,4 @@
+-- Active: 1665745572078@@127.0.0.1@3306@saint_ay
 
 
 CREATE TABLE
@@ -556,7 +557,7 @@ VALUES (
         "accueil@ville-saint-ay.fr"
     );
         
-    
+    DROP TABLE wordMayor;
     CREATE TABLE 
     wordMayor (
         id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,

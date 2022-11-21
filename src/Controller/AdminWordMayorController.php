@@ -47,18 +47,24 @@ class AdminWordMayorController extends AdminController
     public function add(): ?string
     {
         $errors = [];
+        $wordManager = new WordMayorManager();
+        $wordMayor = $wordManager->selectFirst();
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $wordMayor = array_map('trim', $_POST);
+        if ($wordMayor && $_SERVER["REQUEST_METHOD"] === "POST") {
+            $wordManager = array_map('trim', $_POST);
 
-            $errors = self::validate($wordMayor);
+            $errors = $this->validate($wordManager);
+            $fileName = uniqid() . $_FILES['image']['name'];
+            $uploadDir = ' /../uploads/';
+            $uploadFile =  $uploadDir . $fileName;
+            $wordManager['image'] = $fileName;
 
             if (empty($errors)) {
-                $wordManager = new WordMayorManager();
-                $wordManager->insert($wordMayor);
+                $word = new WordMayorManager();
+                $word->update($wordManager);
+                move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile);
 
-                header('Location: /admin/mot-du-maire');
-                return '';
+                header('Location: ../mot-du-maire');
             }
         }
 
@@ -100,5 +106,15 @@ class AdminWordMayorController extends AdminController
                 'wordMayor' => $wordMayor
             ]
         );
+    }
+    public function delete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $actualityManager = new WordMayorManager();
+            $actualityManager->deleteWord((int)$id);
+
+            header('Location: /admin/mot-du-maire');
+        }
     }
 }
