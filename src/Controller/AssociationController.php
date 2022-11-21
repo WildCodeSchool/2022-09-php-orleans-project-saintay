@@ -12,6 +12,7 @@ class AssociationController extends AbstractController
 
     public function index(): string
     {
+        $this->authorisedUser();
         $associationManager = new AssociationManager();
         $associations = $associationManager->selectByCategory();
         return $this->twig->render('Admin/admin-association.html.twig', [
@@ -42,6 +43,7 @@ class AssociationController extends AbstractController
     }
     public function add(): string
     {
+        $this->authorisedUser();
         $errors = [];
         $assoCategoryManager = new AssoCategoryManager();
         $categories = $assoCategoryManager->selectAll();
@@ -68,6 +70,7 @@ class AssociationController extends AbstractController
     }
     public function edit($id)
     {
+        $this->authorisedUser();
         $errors = [];
         $categories = [];
         $associationManager = new AssociationManager();

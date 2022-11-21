@@ -9,6 +9,7 @@ class AdminMunicipaliteTeamController extends AdminController
 {
     public function index(): string
     {
+        $this->authorisedUser();
         $municipaliteManager = new MunicipaliteTeamManager();
         return $this->twig->render(
             'Municipalite/admin.html.twig',
@@ -20,6 +21,7 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function add(): string
     {
+        $this->authorisedUser();
         $errors = $municipaliteMember = [];
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMember  = array_map('trim', $_POST);
@@ -99,6 +101,7 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function edit(int $id): string
     {
+        $this->authorisedUser();
 
         $errors = [];
         $municipaliteMembers = new MunicipaliteTeamManager();
