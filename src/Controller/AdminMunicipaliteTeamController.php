@@ -42,7 +42,7 @@ class AdminMunicipaliteTeamController extends AdminController
         return $this->twig->render(
             'Municipalite/add.html.twig',
             [
-                'municipaliteMember' => $municipaliteMember,        
+                'municipaliteMember' => $municipaliteMember,
                 'errors' => $errors,
             ],
         );
@@ -128,7 +128,7 @@ class AdminMunicipaliteTeamController extends AdminController
 
                 'municipaliteMember' => $municipaliteMembers,
                 'errors' => $errors,
-
-        ]);
+            ],
+        );
     }
 }
