@@ -27,6 +27,7 @@ class LoginController extends AbstractController
                 if ($user) {
                     if (password_verify($credentials['password'], $user['password'])) {
                         $_SESSION['user_id'] = $user['id'];
+
                         header('Location: /admin');
                     } else {
                         $errors[] = 'Le nom d\'utilsateur où le mot de passe est incorrect.';
