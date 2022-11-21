@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Model\ActualityManager;
-
 use App\Model\ContactInformationManager;
 use App\Model\ScheduleManager;
 use App\Model\WordMayorManager;
