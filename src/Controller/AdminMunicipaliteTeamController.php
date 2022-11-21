@@ -22,17 +22,17 @@ class AdminMunicipaliteTeamController extends AdminController
     {
 
 
-        $errors = $municipaliteManager = [];
+        $errors = $municipaliteMember = [];
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $municipaliteManager = array_map('trim', $_POST);
-            $errors = $this->validate($municipaliteManager);
+            $municipaliteMember = array_map('trim', $_POST);
+            $errors = $this->validate($municipaliteMember);
             $uploadDir = ' /../uploads/';
             $uploadFile =  $uploadDir . basename($_FILES['avatar']['tmp_name']);
-            $municipaliteManager['avatar'] = $uploadFile;
+            $municipaliteMember['avatar'] = $uploadFile;
 
             if (empty($errors)) {
                 $municipalite = new MunicipaliteTeamManager();
-                $municipalite->insert($municipaliteManager);
+                $municipalite->insert($municipaliteMember);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
 
                 header('Location: /admin/municipalite');
@@ -42,7 +42,7 @@ class AdminMunicipaliteTeamController extends AdminController
         return $this->twig->render(
             'Municipalite/add.html.twig',
             [
-                'addMunicipaliteManager' => $municipaliteManager,
+                'municipaliteMember' => $municipaliteMember,
                 'errors' => $errors,
             ],
         );
@@ -90,21 +90,21 @@ class AdminMunicipaliteTeamController extends AdminController
     {
 
         $errors = [];
-        $municipaliteManager = new MunicipaliteTeamManager();
-        $municipaliteManagers = $municipaliteManager->selectOneById($id);
+        $municipaliteMember = new MunicipaliteTeamManager();
+        $municipaliteMembers = $municipaliteMember->selectOneById($id);
 
-        if ($municipaliteManagers && $_SERVER["REQUEST_METHOD"] === "POST") {
-            $municipaliteManager = array_map('trim', $_POST);
-            $municipaliteManager['id'] = $id;
-            $errors = $this->validate($municipaliteManager);
+        if ($municipaliteMembers && $_SERVER["REQUEST_METHOD"] === "POST") {
+            $municipaliteMember = array_map('trim', $_POST);
+            $municipaliteMember['id'] = $id;
+            $errors = $this->validate($municipaliteMember);
             $fileName = uniqid() . $_FILES['avatar']['name'];
             $uploadDir = ' /../uploads/';
             $uploadFile =  $uploadDir . $fileName;
-            $municipaliteManager['avatar'] = $fileName;
+            $municipaliteMember['avatar'] = $fileName;
 
             if (empty($errors)) {
                 $municipalite = new MunicipaliteTeamManager();
-                $municipalite->update($municipaliteManager);
+                $municipalite->update($municipaliteMember);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
 
                 header('Location: /admin/municipalite');
@@ -113,7 +113,7 @@ class AdminMunicipaliteTeamController extends AdminController
         return $this->twig->render(
             'Municipalite/edit.html.twig',
             [
-                'municipaliteManager' => $municipaliteManagers,
+                'municipaliteMember' => $municipaliteMembers,
                 'errors' => $errors,
             ],
         );
