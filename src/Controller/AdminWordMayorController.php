@@ -15,8 +15,6 @@ class AdminWordMayorController extends AdminController
             ['wordMayor' => $wordMayor]
         );
     }
-
-
     private function validate(array $wordMayor): array
     {
         $errors = [];
