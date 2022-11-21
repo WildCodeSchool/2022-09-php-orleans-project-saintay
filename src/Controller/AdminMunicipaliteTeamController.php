@@ -149,7 +149,6 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function editCommunalAgent(int $agentID): string
     {
-
         $errors = [];
         $municipaliteManager = new MunicipaliteTeamManager();
         $communalAgent = $municipaliteManager->selectOneById($agentID);
@@ -192,7 +191,7 @@ class AdminMunicipaliteTeamController extends AdminController
             ]
         );
     }
-    
+
     public function deleteAgent()
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -203,6 +202,5 @@ class AdminMunicipaliteTeamController extends AdminController
             $municipalite->delete($id);
             header('Location: /admin/equipe-communale');
         }
-
     }
 }
