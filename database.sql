@@ -273,7 +273,7 @@ VALUES (
 
 INSERT INTO report
 VALUES (
-    2,
+    6,
     "Bulletin Municipal - 30 Décembre 2021",
     20211230,
     "Album photos 2021 et Voeux 2022",
@@ -291,6 +291,7 @@ CREATE TABLE
 
 INSERT INTO
     user (`email`, `password`)
+VALUES (
         'admin@saintay.fr',
         '$2y$10$i48/UEH3zLEZcRwxeN7ND.qY1XH8e90OB.lC96gsBFEZFQ15rkzXO'
     );
