@@ -30,9 +30,9 @@ class AdminMunicipaliteTeamController extends AdminController
             $municipaliteMember['avatar'] = $uploadFile;
 
             if (empty($errors)) {
+                $municipaliteMember['communal'] = 0;
                 $municipalite = new MunicipaliteTeamManager();
                 $municipalite->insert($municipaliteMember);
-                $municipaliteMember['communal'] = 0;
 
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                 header('Location: /admin/municipalite');
@@ -101,21 +101,21 @@ class AdminMunicipaliteTeamController extends AdminController
     {
 
         $errors = [];
-        $municipaliteMember = new MunicipaliteTeamManager();
-        $municipaliteMembers = $municipaliteMember->selectOneById($id);
+        $municipaliteMembers = new MunicipaliteTeamManager();
+        $municipaliteMember = $municipaliteMembers->selectOneById($id);
 
-        if ($municipaliteMembers && $_SERVER["REQUEST_METHOD"] === "POST") {
-            $municipaliteMember = array_map('trim', $_POST);
-            $municipaliteMember['id'] = $id;
-            $errors = $this->validate($municipaliteMember);
+        if ($municipaliteMember && $_SERVER["REQUEST_METHOD"] === "POST") {
+            $municipaliteMembers = array_map('trim', $_POST);
+            $municipaliteMembers['id'] = $id;
+            $errors = $this->validate($municipaliteMembers);
             $fileName = uniqid() . $_FILES['avatar']['name'];
             $uploadDir = ' /../uploads/';
             $uploadFile =  $uploadDir . $fileName;
-            $municipaliteMember['avatar'] = $fileName;
+            $municipaliteMembers['avatar'] = $fileName;
 
             if (empty($errors)) {
                 $municipalite = new MunicipaliteTeamManager();
-                $municipalite->update($municipaliteMember);
+                $municipalite->update($municipaliteMembers);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
 
                 header('Location: /admin/municipalite');
@@ -126,7 +126,7 @@ class AdminMunicipaliteTeamController extends AdminController
             'Municipalite/edit.html.twig',
             [
 
-                'municipaliteMember' => $municipaliteMembers,
+                'municipaliteMember' => $municipaliteMember,
                 'errors' => $errors,
             ],
         );
