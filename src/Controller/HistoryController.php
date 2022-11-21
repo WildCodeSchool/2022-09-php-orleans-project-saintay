@@ -8,6 +8,6 @@ class HistoryController extends AbstractController
 {
     public function index(): string
     {
-        return $this->twig->render('History/history.html.twig');
+        return $this->twig->render('Municipalite/history.html.twig');
     }
 }

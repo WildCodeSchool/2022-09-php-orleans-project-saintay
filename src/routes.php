@@ -14,6 +14,7 @@ return [
     'contact' => ['ContactController', 'index'],
     'mentions-legales' => ['HomeController', 'LegalNotice'],
     'histoire' => ['HistoryController', 'index'],
+    'equipe-communale' => ['MunicipaliteTeamController', 'communalTeam'],
     'reunions-et-arretes' => ['ReportController', 'displayAllReports'],
     'connexion' => ['LoginController', 'login'],
     'plan-ville' => ['CityMapController', 'index'],

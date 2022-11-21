@@ -21,4 +21,15 @@ class MunicipaliteTeamController extends AbstractController
             ],
         );
     }
+    public function communalTeam(): string
+    {
+        $municipaliteManager = new MunicipaliteTeamManager();
+        $agents = $municipaliteManager->selectIsEmployee('lastname');
+        return $this->twig->render(
+            'Municipalite/communalTeam.html.twig',
+            [
+                'agents' => $agents,
+            ]
+        );
+    }
 }

@@ -1,0 +1,19 @@
+	<div class="row justify-content-center g-3">
+		{% for agent in agents %}
+			<div class="col-sm-3">
+				<div class="d-flex align-items-center justify-content-center flex-column p-4">
+					<img 
+						class="card-img-top" 
+						src={% if agent.image is not null %}{{ agent.image }}{% else %}{{ './assets/images/placeholder.jpg' }}{% endif %} 
+						alt="Card image communal">
+					<div class="card-body">
+						<h4 class="card-text text-center p-2 employe">{{ agent.firstname }}
+							{{agent.lastname}}
+						</h4>
+						<p class="card-text text-center employe">{{ agent.role }}
+						</p>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>

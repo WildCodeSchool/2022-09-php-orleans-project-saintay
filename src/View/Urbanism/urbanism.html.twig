@@ -2,42 +2,47 @@
 
 {% block sidebar %}
 	{% set sideNav = [
-{
-'title' : 'Le Service',
-'link' : "#service_presentation"
-},
-{
-'title' : 'La démarche',
-'link' : '#the_approach'
-},
-{
-'title' : 'Consulter le PLU',
-'link' : '#consult_the_plu'
-},
-{
-'title' : 'Taxes et participations',
-'link' : '#taxes_and_contributions'
-},
-{
-'title' : 'Compléter le dossier',
-'link' : '#filling_the_file'
-},
-{
-'title' : 'Déposer la demande',
-'link' : '#submit_the_request'
-},
-{
-'title' : 'Formalités de dépot',
-'link' : '#process_delay'
-},
-{
-'title' : 'Finaliser le dossier',
-'link' : '#final_formalities'
-},{
-'title' : 'Lien utiles',
-'link' : '#useful_links'
-},
-]
+
+			{
+			'title' : 'Retour',
+			'link' : '/municipalite'
+			},
+			{
+			'title' : 'Le Service',
+			'link' : "#service_presentation"
+			},
+			{
+			'title' : 'La démarche',
+			'link' : '#the_approach'
+			},
+			{
+			'title' : 'Consulter le PLU',
+			'link' : '#consult_the_plu'
+			},
+			{
+			'title' : 'Taxes et participations',
+			'link' : '#taxes_and_contributions'
+			},
+			{
+			'title' : 'Compléter le dossier',
+			'link' : '#filling_the_file'
+			},
+			{
+			'title' : 'Déposer la demande',
+			'link' : '#submit_the_request'
+			},
+			{
+			'title' : 'Formalités de dépot',
+			'link' : '#process_delay'
+			},
+			{
+			'title' : 'Finaliser le dossier',
+			'link' : '#final_formalities'
+			},{
+			'title' : 'Lien utiles',
+			'link' : '#useful_links'
+			},
+	]
 %}
 
 	{% include './Item/_sidebar.html.twig' %}

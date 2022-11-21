@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block sidebar %}
+	{% set sideNav = [
+        {
+			'title' : 'Histoire',
+			'link' : '/histoire'
+        },
+        {
+			'title' : 'L\'Équipe Municipale',
+			'link' : '/municipalite/equipe-municipale'
+        },
+        {
+			'title' : 'Equipe Communale',
+			'link' : '/equipe-communale'
+        },
+        {
+			'title' : 'Documents Officiels',
+			'link' : '/reunions-et-arretes'
+        },
+        {
+			'title' : 'Urbanisme',
+			'link' : '/urbanisme'
+        },
+        {
+			'title' : 'Plan de la Ville',
+			'link' : '/plan-ville'
+        }
+    ]      
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    <section class="history pb-4 px-2 px-lg-5 w-100">
+    <div id="employes" class="communalTeam">
+	<h2 class=" mt-5">L'équipe Communale</h2>
+	<hr>
+        {% include './Municipalite/_commun-Team.html.twig' %}
+    </section>
+{% endblock %}
