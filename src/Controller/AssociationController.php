@@ -125,6 +125,7 @@ class AssociationController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
+
             $associationManager = new AssociationManager();
             $associationManager->deleteAssociation((int)$id);
 

@@ -49,7 +49,9 @@ class AssociationManager extends AbstractManager
         $query = "DELETE FROM " . self::TABLE . " WHERE id=:id";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('id', $id, PDO::PARAM_INT);
-     }
+
+        $statement->execute();
+    }
     public function update(int $id, array $association)
     {
         $query = "UPDATE " . self::TABLE . "
