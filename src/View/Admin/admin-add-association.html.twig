@@ -1,0 +1,21 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block sidebar %}
+	{% set sideNav = [
+            {
+                'title' : 'Retour', 
+                'link' : '/admin/association'
+            }
+        ]      
+    %}
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+	<section class="p-2 p-lg-5">
+		<h2>Ajouter une association</h2>
+		<hr class="w-100 mb-5">
+		{% include './Admin/_form-admin-association.html.twig' %}
+	</section>
+
+{% endblock %}
