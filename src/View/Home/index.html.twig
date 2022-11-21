@@ -37,21 +37,10 @@
 					{% endfor%}
 			</div>
 
-		<h2 class=" mt-5">Mot du maire</h2>
-		<hr>
-		<div class="d-flex flex-column flex-md-row mt-2">
-			<div class="card-body">
-				<p class="text-muted fst-italic">{{ wordMayor.title }}</p>
-				<p>{{ wordMayor.description | nl2br }}</p>
-				<div class="d-flex">
-					<img class="float-start mt-3" src="{{ wordMayor.image is null ? './assets/images/fredo.png' : '../uploads' ~ wordMayor.image }}" alt="Card image mayor" height="170">
-					<p class="ps-2 mt-3">{{ wordMayor.signature | nl2br }}</p>
-				</div>
-			</div>
-
-		</div>
+		{% include './Home/_wordMayor.html.twig' %}
 
 		<div class="quick-access mt-5">
+
 			<h2>Accès rapide</h2>
 			<div class="quick-access-buttons">
 				<a href="/plan-ville" class="btn bg-primary text-secondary my-4 p-3">Plan de la ville</a>

@@ -273,7 +273,7 @@ VALUES (
 
 INSERT INTO report
 VALUES (
-    2,
+    6,
     "Bulletin Municipal - 30 Décembre 2021",
     20211230,
     "Album photos 2021 et Voeux 2022",
@@ -291,6 +291,7 @@ CREATE TABLE
 
 INSERT INTO
     user (`email`, `password`)
+VALUES (
         'admin@saintay.fr',
         '$2y$10$i48/UEH3zLEZcRwxeN7ND.qY1XH8e90OB.lC96gsBFEZFQ15rkzXO'
     );
@@ -499,6 +500,7 @@ VALUES (
     );
 
 
+
 CREATE TABLE
 
     schedule (
@@ -565,7 +567,8 @@ VALUES (
     );
 
 INSERT INTO
-    wordMayor (title, description, signature)
+    wordMayor (title, description, image, signature)
+
 VALUES (
         'De la force de la douceur, de la douceur de la force.',
         'La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l indépendance d une grande agglomération, génère le caractère attractif de SAINT-AY.
@@ -578,7 +581,8 @@ Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces a
     Protéger et mettre en valeur le patrimoine naturel et architectural. 
 
 Ainsi, d agréable village de vignerons du début du XXème siècle, SAINT - AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n a d égal que la douceur de vivre.',
-        ' Fréderic CUILLERIER
+        "MairePortrait.png",
+        'Fréderic CUILLERIER
         Maire de Saint-AY 
         Président du Pays Loire-Beauce '
     );

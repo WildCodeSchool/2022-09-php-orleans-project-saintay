@@ -13,8 +13,6 @@ class HomeController extends AbstractController
     {
         $wordManager = new WordMayorManager();
         $wordMayor = $wordManager->selectFirst();
-        $actuManager = new ActualityManager();
-        $homeActualities = $actuManager->selectActualities(2);
 
         $contactInformation = new ContactInformationManager();
         $contact = $contactInformation->selectContactInformation();

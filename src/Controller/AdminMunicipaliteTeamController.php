@@ -20,19 +20,20 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function add(): string
     {
-
         $errors = $municipaliteMember = [];
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMember  = array_map('trim', $_POST);
+
             $errors = $this->validate($municipaliteMember);
             $uploadDir = ' /../uploads/';
             $uploadFile =  $uploadDir . basename($_FILES['avatar']['tmp_name']);
             $municipaliteMember['avatar'] = $uploadFile;
-            $municipaliteMember['communal'] = 0;
 
             if (empty($errors)) {
-                $municipaliteManager = new MunicipaliteTeamManager();
-                $municipaliteManager->insert($municipaliteMember);
+                $municipaliteMember['communal'] = 0;
+                $municipalite = new MunicipaliteTeamManager();
+                $municipalite->insert($municipaliteMember);
+
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                 header('Location: /admin/municipalite');
             }
@@ -41,7 +42,7 @@ class AdminMunicipaliteTeamController extends AdminController
         return $this->twig->render(
             'Municipalite/add.html.twig',
             [
-                'addMunicipaliteManager' => $municipaliteMember,
+                'municipaliteMember' => $municipaliteMember,
                 'errors' => $errors,
             ],
         );
@@ -106,8 +107,8 @@ class AdminMunicipaliteTeamController extends AdminController
     {
 
         $errors = [];
-        $municipaliteMember = new MunicipaliteTeamManager();
-        $municipaliteMembers = $municipaliteMember->selectOneById($id);
+        $municipaliteMembers = new MunicipaliteTeamManager();
+        $municipaliteMember = $municipaliteMembers->selectOneById($id);
 
         if ($municipaliteMembers && $_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMember = array_map('trim', $_POST);
@@ -130,9 +131,10 @@ class AdminMunicipaliteTeamController extends AdminController
         return $this->twig->render(
             'Municipalite/edit.html.twig',
             [
-                'municipaliteManager' => $municipaliteMember,
-                'errors' => $errors
-            ]
+
+                'municipaliteMember' => $municipaliteMember,
+                'errors' => $errors,
+            ],
         );
     }
     public function showAllCommunalTeam()

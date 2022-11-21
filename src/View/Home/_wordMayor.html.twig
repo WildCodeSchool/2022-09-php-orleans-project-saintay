@@ -1,0 +1,12 @@
+<h2 class="">Mot du maire</h2>
+<hr>
+<div class="d-flex flex-column flex-md-row mt-2">
+	<div class="card-body">
+		<p class="fs-5 fst-italic">{{ wordMayor.title }}</p>
+		<p>{{ wordMayor.description | nl2br }}</p>
+		<div class="d-flex">
+			<img class="float-start" src="../uploads/{{ wordMayor.image }}" alt="Card image mayor" height="170" width="125px">
+			<p class="ps-2 fs-5">{{ wordMayor.signature | nl2br }}</p>
+		</div>
+	</div>
+</div>
