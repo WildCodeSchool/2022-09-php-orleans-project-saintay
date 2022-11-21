@@ -7,6 +7,20 @@
 {% block sidebar %}
 	{% set sideNav = [
         {
+			'title' : 'L\'Équipe Municipale',
+			'link' : '/municipalite/equipe-municipale'
+        },
+        {
+			'title' : 'Documents Officiels',
+			'link' : '/reunions-et-arretes'
+        },
+        {
+			'title' : 'Urbanisme',
+			'link' : '/urbanisme'
+        },
+        {
+			'title' : 'Plan de la Ville',
+			'link' : '/plan-ville'
         }
     ]      
     %}
@@ -16,6 +30,7 @@
 
 {% block content %}
 
+<section class="history pb-4 px-2 px-lg-5 w-100">
 	<div class="container municipalityTeam">
 		<h1 class="mt-5">L'équipe Municipale</h1>
 		<div class="d-flex justify-content-center mb-5 mt-3">
@@ -23,19 +38,24 @@
 		</div>
 		<h2 class="mb-3">Organigramme de l'équipe Municipale</h2>
 		<div class="row justify-content-center g-3">
-			{% for employee in employees %}
-				<div class="col-sm-3">
-					<div class="card">
-						<img class="card-img-top" src="{{ employee.image }}" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-text">{{ employee.firstname }}
-								{{employee.lastname}}
-							</h5>
-							<p class="card-text">{{ employee.role }}
-							</p>
-						</div>
+
+		{% for employee in employees %}
+			<div class="col-sm-3">
+				<div class="card">
+					<img 
+						class="card-img-top" 
+						src="{% if employee.image is not null %}{{ employee.image }}{% else %}{{ '../assets/images/placeholder.jpg' }}{% endif %}" 
+						alt="Card image cap"
+					>
+					<div class="card-body">
+						<h5 class="card-text">{{ employee.firstname }}{{employee.lastname}}</h5>
+						<p class="card-text">{{ employee.role }}</p>
 					</div>
-				</div>
-			{% endfor %}
+			</div>
 		</div>
-	{% endblock %}
+		{% endfor %}
+		
+	</div>
+</section>
+
+{% endblock %}
