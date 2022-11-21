@@ -1,0 +1,20 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block sidebar %}
+    {% set sideNav = [
+            {
+                'title' : 'Retour', 
+                'link' : '/admin/documents'
+            }
+        ]      
+    %}
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+<h2>Modifier un document</h2>
+
+{% include 'Admin/_form-admin-report.html.twig' %}
+
+{% endblock %}

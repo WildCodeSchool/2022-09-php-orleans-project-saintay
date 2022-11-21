@@ -16,71 +16,50 @@
 
 			{% include './Home/_actuality.html.twig' %}
 
+			<div class="d-flex flex-column justify-content-start">
+				<h3 class="mt-5">Infos pratiques</h3>
+				<h4 class="mt-3">Horaires d'ouverture au public</h4>
+				{% for openingTime in openingTimes %}
+					<ul>
+						<li class="lead">{{openingTime.day}}
+							{{openingTime.hour}}</li>
+					</ul>
+					{% endfor%}
+				</div>
+			</div>
 			<div class="d-flex flex-column">
-				<h2>Infos pratiques</h2>
-				<h3>Horaires d'ouverture au public</h3>
-				<ul>
-					<li class="lead">Le lundi de 15 à 19 heures (17 heures en août)</li>
-					<li class="lead">Le mardi de 9 à 12 et de 15 à 17 heures</li>
-					<li class="lead">Le mercredi de 15 à 17 heures</li>
-					<li class="lead">Le jeudi de 9 à 12 heures</li>
-					<li class="lead">Le vendredi de 9 à 12 et de 15 à 17 heures</li>
-					<li class="lead">Le samedi de 9 à 12 heures les semaines paires uniquement</li>
-					<li class="lead">(fermé tous les samedis en août)</li>
-				</ul>
+				<h2 class="mt-5">Coordonnées</h2>
+				{% for contact in contacts %}
+					<ul class="contact-info">
+						<li class="lead">{{contact.title}}
+							{{contact.info}}</li>
+					</ul>
+					{% endfor%}
 			</div>
+
+		<h2 class=" mt-5">Mot du maire</h2>
+		<hr>
+		<div class="d-flex flex-column flex-md-row mt-2">
+			<div class="card-body">
+				<p class="text-muted fst-italic">{{ wordMayor.title }}</p>
+				<p>{{ wordMayor.description | nl2br }}</p>
+				<div class="d-flex">
+					<img class="float-start mt-3" src="{{ wordMayor.image is null ? './assets/images/fredo.png' : '../uploads' ~ wordMayor.image }}" alt="Card image mayor" height="170">
+					<p class="ps-2 mt-3">{{ wordMayor.signature | nl2br }}</p>
+				</div>
+			</div>
+
 		</div>
-		<div class="d-flex flex-column">
-			<h3>Coordonnées</h3>
-			<ul class="contact-info">
-				<li class="lead">Adresse: Place de la Mairie - 45130 Saint-Ay</li>
-				<li class="lead">Tél. 02 38 88 44 44 - Fax 02 38 88 82 14</li>
-				<li class="lead">accueil@ville-saint-ay.fr</li>
-			</ul>
-		</div>
-		<div class="mayor-speech d-flex flex-column mb-3">
-			<h2>Mot du maire</h2>
-			<div class="p-2">
-				<p class="fst-italic">"De la force de la douceur, de la douceur de la force"</p>
-			</div>
-			<div class="p-2">
-				<p>La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l'indépendance d'une grande agglomération, génère le caractère attractif de SAINT-AY. 
-																								Le dynamisme de ses habitants à travers la vie associative, scolaire et économique, constitue sa principale richesse. 
-																								Ses bords de Loire et de Mauve et ses terres champêtres dégagent une impression de douceur et de bien-être.</p>
-			</div>
-			<div class="p-2">
-				<p>Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces atouts agyliens, en fondant son action sur trois principes directeurs :</p>
-			</div>
-			<div class="p-2">
-				<p>Développer et moderniser les équipements et les infrastructures,
-																					Favoriser le plein épanouissement de la vie associative, scolaire et économique,
-																					Protéger et mettre en valeur le patrimoine naturel et architectural.
-																					Ainsi, d'agréable village de vignerons du début du XXème siècle, SAINT-AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n'a d'égal que la douceur de vivre.</p>
-			</div>
-			<div class="d-flex p-2 flex-md-row mb-3">
-				<img src="./assets/images/fredo.png" class="rounded" alt="maire"/>
-				<ul>
-					<b>
-						<li>Fréderic CUILLERIER</li>
-					</b>
-					<b>
-						<li>Maire de Saint-AY</li>
-					</b>
-					<b>
-						<li>Président du Pays Loire-Beauce</li>
-					</b>
-				</ul>
-			</div>
-		</div>
-		<div class="quick-access">
+
+		<div class="quick-access mt-5">
 			<h2>Accès rapide</h2>
 			<div class="quick-access-buttons">
 				<a href="/plan-ville" class="btn bg-primary text-secondary my-4 p-3">Plan de la ville</a>
 				<a href="/services-municipaux#vie-scolaire" class="btn bg-primary text-secondary my-4 p-3">Vie scolaire</a>
 				<a href="/vie-associative/annuaire-association" class="btn bg-primary text-secondary my-4 p-3">Annuaire des associations</a>
 				<a href="/contact" class="btn bg-primary text-secondary my-4 p-3">Contact</a>
+				<a href="/mentions-legales" class="btn bg-primary text-secondary my-4 p-3">Mentions légales</a>
 			</div>
 		</div>
 	</div>
-
 {% endblock %}

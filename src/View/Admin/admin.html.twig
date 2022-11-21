@@ -1,11 +1,11 @@
 {% extends 'layout_admin.html.twig' %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="../assets/css/admin.css">
+	<link rel="stylesheet" href="../assets/css/admin.css">
 {% endblock %}
 
 {% block sidebar %}
-    {% set sideNav = [
+	{% set sideNav = [
             {
                 'title' : 'Accueil', 
                 'link' : '/admin'
@@ -15,35 +15,45 @@
                 'link' : '/admin/actualite'
             },
             {
-                'title' : 'Equipe Municipale', 
-                'link' : 'admin/municipalite'
+                'title' : 'Horaire de la mairie', 
+                'link' : '/admin/horaires'
+            },
+            {
+            
+                'title' : 'Associations', 
+                'link' : '/admin/associations'
+            },
+            {
+                'title' : 'Documents officiels', 
+                'link' : '/admin/documents'
+
+            },
+            {
+                'title' : 'Équipe Municipale', 
+                'link' : '/admin/municipalite'
             }        
         ]      
     %}
- {% include './Item/_sidebar.html.twig' %}
+	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}
 
-<div class="admin-home-wrapper position-relative">
-    <h2 class="position-absolute top-50 start-50 translate-middle bg-primary text-secondary text-center m-0 p-5 rounded">Espace Administrateur<h2>
-    <img 
-        class="admin-home-image w-100" 
-        src="./assets/images/admin.jpg" 
-        alt="Accueil de l'espace administratueur" 
-    />
-</div>
+	<div class="admin-home-wrapper position-relative">
+		<h2 class="position-absolute top-50 start-50 translate-middle bg-primary text-secondary text-center m-0 p-5 rounded">Espace Administrateur<h2>
+				<img class="admin-home-image w-100" src="./assets/images/admin.jpg" alt="Accueil de l'espace administratueur"/>
+			</div>
 
-<h2 class="mt-4">Bienvenue sur votre espace Administrateur</h2>
-<p class="lead">Vous retrouverez ici toutes les catégories pouvant être modifiables sur ce site.</p>
-<p class="lead">⚠️ Attention, la suppression des données est irréversible ! ⚠️</p>
-<p>Pour naviguer dans votre interface administrateur, utilisez la barre de naviguation située sur la gauche de l'écran.</p>
+			<h2 class="mt-4">Bienvenue sur votre espace Administrateur</h2>
+			<p class="lead">Vous retrouverez ici toutes les catégories pouvant être modifiables sur ce site.</p>
+			<p class="lead">⚠️ Attention, la suppression des données est irréversible ! ⚠️</p>
+			<p>Pour naviguer dans votre interface administrateur, utilisez la barre de naviguation située sur la gauche de l'écran.</p>
 
 
-<h3 class="mt-3">Actualités</h3>
-<p>
-    Dans cette section, vous pourrez créer, modifier, et supprimer toutes les actualités de la ville.<br>
-    Les actualités sont affichées des plus récentes aux plus anciennes.
-</p>
+			<h3 class="mt-3">Actualités</h3>
+			<p>
+				Dans cette section, vous pourrez créer, modifier, et supprimer toutes les actualités de la ville.<br>
+				Les actualités sont affichées des plus récentes aux plus anciennes.
+			</p>
 
-{% endblock %}
+		{% endblock %}
