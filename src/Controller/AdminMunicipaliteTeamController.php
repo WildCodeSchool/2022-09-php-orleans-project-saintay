@@ -110,7 +110,7 @@ class AdminMunicipaliteTeamController extends AdminController
         $municipaliteMembers = new MunicipaliteTeamManager();
         $municipaliteMember = $municipaliteMembers->selectOneById($id);
 
-        if ($municipaliteMembers && $_SERVER["REQUEST_METHOD"] === "POST") {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMember = array_map('trim', $_POST);
             $errors = $this->validate($municipaliteMember);
             $fileErrors = $this->validateFile($_FILES);
