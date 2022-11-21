@@ -7,9 +7,6 @@ use PDO;
 
 class AdminMunicipaliteTeamController extends AdminController
 {
-    public const IS_COMMUNAL = 1;
-    public const IS_NOT_COMMUNAL = 0;
-
     public function index(): string
     {
         $municipaliteManager = new MunicipaliteTeamManager();
@@ -36,8 +33,9 @@ class AdminMunicipaliteTeamController extends AdminController
             $uploadFile =  $uploadDir . $fileName;
 
             if (empty($errors)) {
+                $iscommunal = false;
                 $municipaliteManager = new MunicipaliteTeamManager();
-                $municipaliteManager->insert($municipaliteMember, self::IS_NOT_COMMUNAL, $uploadFile);
+                $municipaliteManager->insert($municipaliteMember, (int)$iscommunal, $uploadFile);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                 header('Location: /admin/municipalite');
             }
@@ -214,6 +212,7 @@ class AdminMunicipaliteTeamController extends AdminController
     public function addCommunalAdgent()
     {
         $errors = [];
+        $isCommunal = true;
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $communalAdgent  = array_map('trim', $_POST);
             $errors = $this->validate($communalAdgent);
@@ -227,13 +226,13 @@ class AdminMunicipaliteTeamController extends AdminController
                         $uploadDir = ' /../uploads/';
                         $fileName = uniqid() . $_FILES['avatar']['name'];
                         $uploadFile =  $uploadDir . $fileName;
-                        $municipaliteManager->insert($communalAdgent, self::IS_COMMUNAL, $uploadFile);
+                        $municipaliteManager->insert($communalAdgent, (int)$isCommunal, $uploadFile);
 
                         move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                         header('Location: /admin/equipe-communale');
                     }
                 } else {
-                    $municipaliteManager->insert($communalAdgent, self::IS_COMMUNAL);
+                    $municipaliteManager->insert($communalAdgent, (int)$isCommunal);
                     header('Location: /admin/equipe-communale');
                 }
             }
