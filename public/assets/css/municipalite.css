@@ -5,11 +5,11 @@
  }
 
  .communalTeam .card-img-top {
-     width: 70%;
-     height: 250px;
+     height: 300px;
      box-shadow: inset var(--box-shadow-card);
      border: none;
      object-fit: cover;
+     object-position: center 20%;
      margin: auto;
  }
 
