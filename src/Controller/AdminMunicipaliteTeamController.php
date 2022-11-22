@@ -155,6 +155,7 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function editCommunalAgent(int $agentID): string
     {
+        $this->authorisedUser();
         $errors = [];
         $municipaliteManager = new MunicipaliteTeamManager();
         $communalAgent = $municipaliteManager->selectOneById($agentID);
