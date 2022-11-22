@@ -29,6 +29,10 @@
     width: 70%;
 }
 
+.municipalityTeam .card-body {
+    height: 180px;
+}
+
 .municipalite-home-image {
     object-fit: cover;
 }
