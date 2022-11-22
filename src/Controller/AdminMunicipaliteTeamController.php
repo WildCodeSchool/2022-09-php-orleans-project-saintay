@@ -110,9 +110,11 @@ class AdminMunicipaliteTeamController extends AdminController
     public function edit(int $id): string
     {
         $this->authorisedUser();
+        
         $errors = [];
         $municipaliteMembers = new MunicipaliteTeamManager();
         $municipaliteMember = $municipaliteMembers->selectOneById($id);
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMembers = array_map('trim', $_POST);
             $municipaliteMembers['id'] = $id;

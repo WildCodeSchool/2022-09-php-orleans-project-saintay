@@ -16,7 +16,7 @@
 		<label class="form-label mt-3" for="lastname">Description :</label>
 		<textarea class="form-control" id="description" name="description" rows="5" cols="33" required>{{ wordMayor.description }}</textarea>
 		<label class="form-label mt-3" for="role">signature :</label>
-		<input class="form-control" type="text" id="signature" name="signature" value="{{ wordMayor.signature }}" required>
+		<textarea class="form-control" type="text" id="signature" name="signature" value="{{ wordMayor.signature }}" required>{{ wordMayor.signature }}</textarea>
 		<label class="form-label mt-3" for="image">Image :</label>
 		<input class="form-control" type="file" name="image" id="image"/>
 		<button class="adminFormTeam mt-4 btn bg-primary text-light" name="send">
