@@ -5,7 +5,7 @@
  }
 
  .communalTeam .card-img-top {
-     width: 70%;
+     width: 140px;
      height: 250px;
      box-shadow: inset var(--box-shadow-card);
      border: none;
