@@ -1,5 +1,5 @@
 
--- Active: 1666773360795@@127.0.0.1@3306@saint_ay
+-- Active: 1665745572078@@127.0.0.1@3306@saint_ay
 
 -- Active: 1665745572078@@127.0.0.1@3306@saint_ay
 
@@ -577,7 +577,7 @@ INSERT INTO
 
 VALUES (
         'De la force de la douceur, de la douceur de la force.',
-        'La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l indépendance d une grande agglomération, génère le caractère attractif de SAINT-AY.
+        'La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l\'indépendance d\'une grande agglomération, génère le caractère attractif de SAINT-AY.
 Le dynamisme de ses habitants à travers la vie associative, scolaire et économique, constitue sa principale richesse.
 Ses bords de Loire et de Mauve et ses terres champêtres dégagent une impression de douceur et de bien-être.
 
@@ -586,7 +586,7 @@ Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces a
     Favoriser le plein épanouissement de la vie associative, scolaire et économique,
     Protéger et mettre en valeur le patrimoine naturel et architectural. 
 
-Ainsi, d agréable village de vignerons du début du XXème siècle, SAINT - AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n a d égal que la douceur de vivre.',
+Ainsi, d\'agréable village de vignerons du début du XXème siècle, SAINT - AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n a d égal que la douceur de vivre.',
         "MairePortrait.png",
         'Fréderic CUILLERIER
         Maire de Saint-AY 
