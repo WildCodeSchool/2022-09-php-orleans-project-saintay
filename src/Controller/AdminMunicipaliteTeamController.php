@@ -136,6 +136,7 @@ class AdminMunicipaliteTeamController extends AdminController
     }
     public function showAllCommunalTeam()
     {
+        $this->authorisedUser();
         $municipaliteManager = new MunicipaliteTeamManager();
         $communalTeam = $municipaliteManager->selectIsEmployee('lastname');
         return $this->twig->render(
