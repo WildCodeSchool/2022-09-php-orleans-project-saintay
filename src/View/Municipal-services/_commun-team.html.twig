@@ -3,9 +3,12 @@
 	<hr>
 	<div class="row justify-content-center g-3">
 		{% for isEmployee in isEmployees %}
-			<div class="col-sm-3">
+			<div class="col-sm-6 col-md-4 col-xl-3">
 				<div class="d-flex align-items-center justify-content-center flex-column p-4">
-					<img class="card-img-top" src="{{ isEmployee.image }}" alt="Card image communal">
+					<img 
+						class="card-img-top" 
+						src={% if isEmployee.image is not null %}{{ isEmployee.image }}{% else %}{{ './assets/images/placeholder.jpg' }}{% endif %} 
+						alt="Card image communal">
 					<div class="card-body">
 						<h4 class="card-text text-center p-2 employe">{{ isEmployee.firstname }}
 							{{isEmployee.lastname}}
