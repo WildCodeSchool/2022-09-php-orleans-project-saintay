@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block sidebar %}
-	{% set sideNav = [
+{% set sideNav = [
         {
 			'title' : 'L\'Équipe Municipale',
 			'link' : '/municipalite/equipe-municipale'
@@ -72,13 +72,8 @@
 		</a>
 	</div>
 </section>
-
 	<div class="container municipalityTeam">
-		<h1 class="mt-5">L'équipe Municipale</h1>
-		<div class="d-flex justify-content-center mb-5 mt-3">
-			<img class="w-100" src="/../assets/images/Lequipe-Municipal.jpg" alt="L'équipe municipal">
-		</div>
-		<h2 class="mb-3">Organigramme de l'équipe Municipale</h2>
+		<h2 class="mb-3 mt-3">Organigramme de l'équipe Municipale</h2>
 		<div class="row justify-content-center g-3">
 			{% for employee in employees %}
 				<div class="col-sm-3">
@@ -98,5 +93,5 @@
 				</div>
 			{% endfor %}
 		</div>
+    </div>
 	{% endblock %}
-
