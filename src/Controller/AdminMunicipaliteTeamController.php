@@ -115,7 +115,7 @@ class AdminMunicipaliteTeamController extends AdminController
         $municipaliteMembers = new MunicipaliteTeamManager();
         $municipaliteMember = $municipaliteMembers->selectOneById($id);
         
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMembers = array_map('trim', $_POST);
             $municipaliteMembers['id'] = $id;
             $errors = $this->validate($municipaliteMembers);
