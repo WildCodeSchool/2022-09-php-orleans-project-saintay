@@ -22,6 +22,8 @@ return [
     'admin/mot-du-maire' => ['AdminWordMayorController', 'index'],
     'admin/mot-du-maire/edition' => ['AdminWordMayorController', 'edit', ['id']],
     'admin/horaires' => ['AdminScheduleController', 'indexAdmin'],
+    'admin/horaires/modifier' => ['AdminScheduleController', 'edit', ['id']],
+    'admin/contact-information-modifier' => ['AdminContactInfoController', 'edit', ['id']],
     'admin/actualite' => ['AdminActualityController', 'index'],
     'admin/actualite/ajouter' => ['AdminActualityController', 'add'],
     'admin/actualite/modifier' => ['AdminActualityController', 'edit', ['id']],

@@ -8,6 +8,7 @@ class AdminWordMayorController extends AdminController
 {
     public function index(): string
     {
+        $this->authorisedUser();
         $wordManager = new WordMayorManager();
         $wordMayor = $wordManager->selectFirst();
         return $this->twig->render(
@@ -46,7 +47,7 @@ class AdminWordMayorController extends AdminController
     }
     public function edit()
     {
-
+        $this->authorisedUser();
         $errors = [];
         $wordManager = new WordMayorManager();
         $wordMayor = $wordManager->selectFirst();

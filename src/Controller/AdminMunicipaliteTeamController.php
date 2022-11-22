@@ -9,6 +9,7 @@ class AdminMunicipaliteTeamController extends AdminController
 {
     public function index(): string
     {
+        $this->authorisedUser();
         $municipaliteManager = new MunicipaliteTeamManager();
         return $this->twig->render(
             'Municipalite/admin.html.twig',
@@ -20,6 +21,7 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function add(): string
     {
+        $this->authorisedUser();
         $errors = $municipaliteMember = [];
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -107,23 +109,24 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function edit(int $id): string
     {
+        $this->authorisedUser();
 
         $errors = [];
         $municipaliteMembers = new MunicipaliteTeamManager();
         $municipaliteMember = $municipaliteMembers->selectOneById($id);
-
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $municipaliteMember = array_map('trim', $_POST);
-            $errors = $this->validate($municipaliteMember);
-            $fileErrors = $this->validateFile($_FILES);
-            $errors = array_merge($errors, $fileErrors);
+        
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $municipaliteMembers = array_map('trim', $_POST);
+            $municipaliteMembers['id'] = $id;
+            $errors = $this->validate($municipaliteMembers);
             $fileName = uniqid() . $_FILES['avatar']['name'];
             $uploadDir = ' /../uploads/';
             $uploadFile =  $uploadDir . $fileName;
+            $municipaliteMembers['avatar'] = $fileName;
 
             if (empty($errors)) {
                 $municipalite = new MunicipaliteTeamManager();
-                $municipalite->update($id, $municipaliteMember, $uploadFile);
+                $municipalite->update($id, $municipaliteMembers);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
 
                 header('Location: /admin/municipalite');
@@ -141,6 +144,7 @@ class AdminMunicipaliteTeamController extends AdminController
     }
     public function showAllCommunalTeam()
     {
+        $this->authorisedUser();
         $municipaliteManager = new MunicipaliteTeamManager();
         $communalTeam = $municipaliteManager->selectIsEmployee('lastname');
         return $this->twig->render(
@@ -153,6 +157,7 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function editCommunalAgent(int $agentID): string
     {
+        $this->authorisedUser();
         $errors = [];
         $municipaliteManager = new MunicipaliteTeamManager();
         $communalAgent = $municipaliteManager->selectOneById($agentID);
