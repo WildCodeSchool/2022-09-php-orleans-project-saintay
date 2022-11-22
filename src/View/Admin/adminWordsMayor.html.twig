@@ -1,22 +1,14 @@
 {% extends 'layout_admin.html.twig' %}
 
 {% block sidebar %}
-	{% set sideNav = [
-        {
-            'title' : 'Tutoriel', 
-            'link' : '/admin'
-        },
-        {
-            'title' : 'Documents officiels', 
-            'link' : '/admin/report'
-        },
-		{
-			'title' : 'Retour', 
-            'link' : '/admin'
-		}
-    ]      
-%}
+	{% set sideNav = [    
+            {
+                'title' : 'Retour',
+                'link' : '/admin'
+            }
 
+        ]      
+    %}
 	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 

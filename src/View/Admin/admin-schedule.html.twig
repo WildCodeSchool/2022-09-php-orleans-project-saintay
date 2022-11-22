@@ -5,41 +5,17 @@
 {% endblock %}
 
 {% block sidebar %}
-	{% set sideNav = [
+	{% set sideNav = [    
             {
-                'title' : 'Accueil', 
+                'title' : 'Retour',
                 'link' : '/admin'
-            },
-            {
-                'title' : 'Actualités', 
-                'link' : '/admin/actualite'
-            },
-            {
-                'title' : 'Horaire de la mairie', 
-                'link' : '/admin/horaires'
-            },
-            {
-            
-                'title' : 'Associations', 
-                'link' : '/admin/association'
-            },
-            {
-                'title' : 'Documents officiels', 
-                'link' : '/admin/documents'
-            },
-			{
-				
-                'title' : 'Mot du maire', 
-                'link' : '/admin/mot-du-maire'
-            },
-            {
-                'title' : 'Équipe Municipale', 
-                'link' : '/admin/municipalite'
-            }        
+            }
+
         ]      
-    %}
+%}
 	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
+
 {% block content %}
 
 	<div class="d-flex flex-column">
