@@ -12,6 +12,7 @@ class AssociationController extends AbstractController
 
     public function index(): string
     {
+        $this->authorisedUser();
         $associationManager = new AssociationManager();
         $associations = $associationManager->selectByCategory();
         return $this->twig->render('Admin/admin-association.html.twig', [
@@ -42,6 +43,7 @@ class AssociationController extends AbstractController
     }
     public function add(): string
     {
+        $this->authorisedUser();
         $errors = [];
         $assoCategoryManager = new AssoCategoryManager();
         $categories = $assoCategoryManager->selectAll();
@@ -68,6 +70,7 @@ class AssociationController extends AbstractController
     }
     public function edit($id)
     {
+        $this->authorisedUser();
         $errors = [];
         $categories = [];
         $associationManager = new AssociationManager();
@@ -119,5 +122,17 @@ class AssociationController extends AbstractController
             $errors[] = 'Le titre doit faire moins de ' . self::INPUT_MAX_LENGTH . ' caractères';
         }
         return $errors;
+    }
+
+    public function delete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+
+            $associationManager = new AssociationManager();
+            $associationManager->deleteAssociation((int)$id);
+
+            header('Location: /admin/association');
+        }
     }
 }
