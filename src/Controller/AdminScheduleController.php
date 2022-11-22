@@ -23,6 +23,7 @@ class AdminScheduleController extends AdminController
 
     public function edit(int $id): string
     {
+        $this->authorisedUser();
         $errors = [];
         $openingTime = new ScheduleManager();
         $openingTimes = $openingTime->selectOneById($id);

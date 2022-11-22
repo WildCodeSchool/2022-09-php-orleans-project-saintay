@@ -9,6 +9,7 @@ class AdminContactInfoController extends AdminController
 {
     public function edit(int $id): string
     {
+        $this->authorisedUser();
         $errors = [];
         $contactInformation = new ContactInformationManager();
         $contactInformations = $contactInformation->selectOneById($id);
