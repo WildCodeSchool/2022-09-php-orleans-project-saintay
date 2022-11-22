@@ -1,5 +1,5 @@
 
--- Active: 1666773360795@@127.0.0.1@3306@saint_ay
+-- Active: 1665745572078@@127.0.0.1@3306@saint_ay
 
 -- Active: 1665745572078@@127.0.0.1@3306@saint_ay
 
@@ -186,7 +186,7 @@ INSERT INTO actuality
 VALUES (
         6,
         "Les Journées artistiques sont lancées",
-        2022111,
+        20221101,
         "https://img.lamontagne.fr/k8xgjzC8qpKXG8FVX03kU3JY8Dxj6H8xssS62KTFCoo/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzMvMTkvMjAwMDAwNjMzMTk3OA.jpg",
         "Les 27e journées artistiques agyliennes se dérouleront du 11 au 19 novembre. Peinture, théâtre, cinéma et musique sont au programme.",
         "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/les-journees-artistiques-sont-lancees_14214888/"
