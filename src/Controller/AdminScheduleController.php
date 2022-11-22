@@ -13,11 +13,12 @@ class AdminScheduleController extends AdminController
         $this->authorisedUser();
         $contactInformation = new ContactInformationManager();
         $contactInformations = $contactInformation->selectAll();
- 
         $openingTime = new ScheduleManager();
         $openingTimes = $openingTime->selectOpeningTime();
-        return $this->twig->render('Admin/admin-schedule.html.twig', ['openingTimes' => $openingTimes,
-        'contactInformations' => $contactInformations]);
+        return $this->twig->render('Admin/admin-schedule.html.twig', [
+            'openingTimes' => $openingTimes,
+            'contactInformations' => $contactInformations
+        ]);
     }
 
     public function edit(int $id): string
