@@ -1,23 +1,14 @@
 {% extends 'layout_admin.html.twig' %}
 
 {% block sidebar %}
-	{% set sideNav = [
-        {
-            'title' : 'Tutoriel', 
-            'link' : '/admin'
-        },
-        {
-            'title' : 'Documents officiels', 
-            'link' : '/admin/report'
-        },
-		 {
-            'title' : 'Mot du maire', 
-            'link' : '/admin/mot-du-maire'
-        }
-		
-    ]      
-%}
+	{% set sideNav = [     
+            {
+                'title' : 'Retour',
+                'link' : '/admin/mot-du-maire'
+            }
 
+        ]      
+    %}
 	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
