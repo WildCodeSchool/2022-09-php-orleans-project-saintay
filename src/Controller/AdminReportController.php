@@ -9,7 +9,7 @@ use App\Controller\AbstractController;
 
 class AdminReportController extends AbstractController
 {
-    public const UPLOAD_DIR = './uploads/report_uploads/';
+    public const UPLOAD_DIR = './uploads/';
     public const AUTH_EXTENSION = ['pdf', 'PDF'];
     public const MAX_FILE_SIZE = 1000000;
 
@@ -130,6 +130,7 @@ class AdminReportController extends AbstractController
 
 
         return $this->twig->render('Admin/admin-add-report.html.twig', [
+            'errors' => $errors,
             'categories' => $reportCategory
         ]);
     }
@@ -160,6 +161,7 @@ class AdminReportController extends AbstractController
             }
         }
         return $this->twig->render('Admin/admin-edit-report.html.twig', [
+            'errors' => $errors,
             'report' => $report,
             'categories' => $reportCategory
         ]);

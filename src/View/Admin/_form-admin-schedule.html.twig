@@ -6,11 +6,13 @@
 
 {% block sidebar %}
 	{% set sideNav = [
-        {
-        }
-    ]      
-    %}
+            {
+                'title' : 'Retour',
+                'link' : '/admin/horaires'
+            }
 
+        ]      
+    %}
 	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 

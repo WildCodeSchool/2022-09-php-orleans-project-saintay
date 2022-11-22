@@ -5,12 +5,14 @@
 {% endblock %}
 
 {% block sidebar %}
-	{% set sideNav = [
-        {
-        }
-    ]      
-    %}
+	{% set sideNav = [     
+            {
+                'title' : 'Retour',
+                'link' : '/admin/municipalite'
+            }
 
+        ]      
+    %}
 	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 

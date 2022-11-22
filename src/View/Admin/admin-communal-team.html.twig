@@ -6,43 +6,49 @@
 
 {% block sidebar %}
 	{% set sideNav = [
- 			{
-                 'title' : 'Accueil', 
-                 'link' : '/admin'
+            {
+                'title' : 'Accueil', 
+                'link' : '/admin'
             },
             {
-                 'title' : 'Actualités', 
-                 'link' : '/admin/actualite'
+                'title' : 'Actualités', 
+                'link' : '/admin/actualite'
             },
-             {
+            {
 
                 'title' : 'Mot du maire', 
                 'link' : '/admin/mot-du-maire'
-             },
+            },
             {
 
-                 'title' : 'Associations', 
-                 'link' : '/admin/association'
+                'title' : 'Horaire de la mairie', 
+                'link' : '/admin/horaires'
             },
             {
-                 'title' : 'Équipe Municipale', 
-                 'link' : '/admin/municipalite'
+            
+                'title' : 'Associations', 
+                'link' : '/admin/association'
             },
             {
-                 'title' : 'Équipe Communale', 
-                 'link' : '/admin/equipe-communale'
-            }, 
-            {
-                 'title' : 'Horaire de la mairie', 
-                 'link' : '/admin/horaires'
+                'title' : 'Documents officiels', 
+                'link' : '/admin/documents'
+
             },
             {
-                 'title' : 'Documents officiels', 
-                 'link' : '/admin/documents'
+                'title' : 'Équipe Municipale', 
+                'link' : '/admin/municipalite'
+            },
+            {
+                'title' : 'Équipe Communale', 
+                'link' : '/admin/equipe-communale'
+            },      
+            {
+                'title' : 'Retour',
+                'link' : '/admin'
             }
-             
-         ]      
-     %}
+
+        ]      
+    %}
 	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
