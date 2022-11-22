@@ -10,6 +10,7 @@ class AdminActualityController extends AbstractController
 {
     public function index()
     {
+        $this->authorisedUser();
         $actuManager = new ActualityManager();
         $actualities = $actuManager->selectActualities(60);
         return $this->twig->render('Admin/admin-actuality.html.twig', ['actualities' => $actualities]);
@@ -43,6 +44,7 @@ class AdminActualityController extends AbstractController
 
     public function add(): ?string
     {
+        $this->authorisedUser();
         $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -67,6 +69,7 @@ class AdminActualityController extends AbstractController
 
     public function edit(int $id): ?string
     {
+        $this->authorisedUser();
         $actualityManager = new ActualityManager();
         $actuality = $actualityManager->selectOneById($id);
 

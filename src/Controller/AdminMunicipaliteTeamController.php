@@ -9,6 +9,7 @@ class AdminMunicipaliteTeamController extends AdminController
 {
     public function index(): string
     {
+        $this->authorisedUser();
         $municipaliteManager = new MunicipaliteTeamManager();
         return $this->twig->render(
             'Municipalite/admin.html.twig',
@@ -20,6 +21,7 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function add(): string
     {
+        $this->authorisedUser();
         $errors = $municipaliteMember = [];
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMember  = array_map('trim', $_POST);
@@ -105,16 +107,18 @@ class AdminMunicipaliteTeamController extends AdminController
 
     public function edit(int $id): string
     {
+        $this->authorisedUser();
 
         $errors = [];
         $municipaliteMembers = new MunicipaliteTeamManager();
         $municipaliteMember = $municipaliteMembers->selectOneById($id);
 
-        if ($municipaliteMembers && $_SERVER["REQUEST_METHOD"] === "POST") {
-            $municipaliteMember = array_map('trim', $_POST);
-            $errors = $this->validate($municipaliteMember);
-            $fileErrors = $this->validateFile($_FILES);
-            $errors = array_merge($errors, $fileErrors);
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $municipaliteMembers = array_map('trim', $_POST);
+            $municipaliteMembers['id'] = $id;
+            $errors = $this->validate($municipaliteMembers);
+
             $fileName = uniqid() . $_FILES['avatar']['name'];
             $uploadDir = ' /../uploads/';
             $uploadFile =  $uploadDir . $fileName;

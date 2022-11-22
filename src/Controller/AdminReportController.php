@@ -15,6 +15,7 @@ class AdminReportController extends AbstractController
 
     public function index()
     {
+        $this->authorisedUser();
         $reportManager = new ReportManager();
         $allReports = $reportManager->selectReports();
 
@@ -98,6 +99,7 @@ class AdminReportController extends AbstractController
 
     public function add()
     {
+        $this->authorisedUser();
         $errors = [];
         $filesErrors = [];
         $reportCatManager = new CategoryManager();
@@ -134,6 +136,7 @@ class AdminReportController extends AbstractController
 
     public function edit($id)
     {
+         $this->authorisedUser();
             $errors = [];
             $reportManager = new ReportManager();
             $report = $reportManager->SelectOneById($id);
