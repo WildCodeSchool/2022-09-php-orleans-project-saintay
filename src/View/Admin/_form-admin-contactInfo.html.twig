@@ -16,7 +16,7 @@
 
 {% block content %}
 
-	{%if errors%}
+	{% if errors %}
 		<ul class="alert alert-danger">
 			{% for error in errors %}
 				<li>{{error}}</li>

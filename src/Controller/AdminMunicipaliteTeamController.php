@@ -113,7 +113,7 @@ class AdminMunicipaliteTeamController extends AdminController
         $municipaliteMembers = new MunicipaliteTeamManager();
         $municipaliteMember = $municipaliteMembers->selectOneById($id);
 
-      if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $municipaliteMembers = array_map('trim', $_POST);
             $municipaliteMembers['id'] = $id;
             $errors = $this->validate($municipaliteMembers);
@@ -124,7 +124,7 @@ class AdminMunicipaliteTeamController extends AdminController
 
             if (empty($errors)) {
                 $municipalite = new MunicipaliteTeamManager();
-                $municipalite->update($municipaliteMembers);
+                $municipalite->update($id, $municipaliteMembers);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
 
                 header('Location: /admin/municipalite');
