@@ -1,0 +1,58 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block sidebar %}
+    {% set sideNav = [
+            {
+                'title' : 'Retour', 
+                'link' : '/admin/equipe-communale'
+            }
+        ]      
+    %}
+    {% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Ajouter un Agent Communal</h2>
+
+    {% if errors is not empty %}
+
+	<ul class="p-0 d-flex flex-column alert alert-danger list-unstyled" role="alert">
+		{% for error in errors %}
+
+			<li class="p-2 my-1 w-75">{{ error }}</li>
+
+		{% endfor %}
+	</ul>
+	{% endif %}
+
+
+	<form action="" method="post" enctype="multipart/form-data" class="w-75">
+		<label class="form-label mt-3" for="firstname">Prenom :</label>
+		<input class="form-control" type="text" id="firstname" name="firstname" value="{{ adgent.firstname }}" required>
+		
+        <label class="form-label mt-3" for="lastname">Nom :</label>
+		<input class="form-control" type="text" id="lastname" name="lastname" value="{{ adgent.lastname }}" required>
+		
+        <label class="form-label mt-3" for="role">Role :</label>
+		<input class="form-control" type="text" id="role" name="role" value="{{ adgent.role }}" required>
+		
+        <label class="form-label mt-3" for="avatar">Image :</label>
+		<input class="form-control" type="file" name="avatar" id="avatar" />
+		
+        <button class="adminFormTeam mt-4 btn bg-primary text-secondary">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewbox="0 0 16 16">
+				<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+			</svg>
+            <span>Ajoutez un membre</span>
+        </button>
+    </form>
+
+{% endblock %}
+
+
+
+
+
+
+

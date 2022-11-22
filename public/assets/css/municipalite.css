@@ -4,14 +4,14 @@
     object-position: top;
 }
 
-.communalTeam .card-img-top {
-    width: 70%;
-    height: 250px;
-    box-shadow: inset var(--box-shadow-card);
-    border: none;
-    object-fit: cover;
-    margin: auto;
-}
+ .communalTeam .card-img-top {
+     height: 300px;
+     box-shadow: inset var(--box-shadow-card);
+     border: none;
+     object-fit: cover;
+     object-position: center 20%;
+     margin: auto;
+ }
 
 .adminFormTeam {
     color: var(--bs-white);

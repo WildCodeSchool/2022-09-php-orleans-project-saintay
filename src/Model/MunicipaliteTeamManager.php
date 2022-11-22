@@ -30,7 +30,7 @@ class MunicipaliteTeamManager extends AbstractManager
         return $this->pdo->query($query)->fetchAll();
     }
 
-    public function insert(array $municipaliteMember): void
+    public function insert(array $municipaliteMember, int $isCommunal = 0, string $uploadFile = null): void
     {
         $query = "INSERT INTO " . self::TABLE . " (firstname, lastname, role, image, communal) 
         VALUES (:firstname, :lastname, :role, :avatar, :communal)";
@@ -38,8 +38,8 @@ class MunicipaliteTeamManager extends AbstractManager
         $statement->bindValue('firstname', $municipaliteMember['firstname'], PDO::PARAM_STR);
         $statement->bindValue('lastname', $municipaliteMember['lastname'], PDO::PARAM_STR);
         $statement->bindValue('role', $municipaliteMember['role'], PDO::PARAM_STR);
-        $statement->bindValue('avatar', $municipaliteMember['avatar'], PDO::PARAM_STR);
-        $statement->bindValue('communal', $municipaliteMember['communal'], PDO::PARAM_STR);
+        $statement->bindValue('avatar', $uploadFile, PDO::PARAM_STR);
+        $statement->bindValue('communal', $isCommunal, PDO::PARAM_INT);
 
         $statement->execute();
     }
