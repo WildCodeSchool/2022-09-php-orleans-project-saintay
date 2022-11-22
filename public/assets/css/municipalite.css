@@ -1,8 +1,8 @@
- .municipalityTeam .card-img-top {
-     height: 360px;
-     object-fit: cover;
-     object-position: top;
- }
+.municipalityTeam .card-img-top {
+    height: 360px;
+    object-fit: cover;
+    object-position: top;
+}
 
  .communalTeam .card-img-top {
      height: 300px;
@@ -17,22 +17,26 @@
     color: var(--bs-white);
 }
 
- .communalTeam .card-body {
-     width: 100%;
-     height: 40%;
-     object-fit: cover;
-     border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
- }
-
- .employe {
-     margin: auto;
-     width: 70%;
- }
-
- .municipalite-home-image {
+.communalTeam .card-body {
+    width: 100%;
+    height: 40%;
     object-fit: cover;
- }
- .municipalite-home-wrapper {
-    height: 40vh; 
+    border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+}
+
+.municipalityTeam .card-body {
+    height: 180px;
+}
+
+.employe {
+    margin: auto;
+    width: 70%;
+}
+
+.municipalite-home-image {
+    object-fit: cover;
+}
+.municipalite-home-wrapper {
+    height: 40vh;
     overflow: hidden;
 }
