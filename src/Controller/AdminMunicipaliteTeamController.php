@@ -117,14 +117,14 @@ class AdminMunicipaliteTeamController extends AdminController
             $municipaliteMembers = array_map('trim', $_POST);
             $municipaliteMembers['id'] = $id;
             $errors = $this->validate($municipaliteMembers);
-
             $fileName = uniqid() . $_FILES['avatar']['name'];
             $uploadDir = ' /../uploads/';
             $uploadFile =  $uploadDir . $fileName;
+            $municipaliteMembers['avatar'] = $fileName;
 
             if (empty($errors)) {
                 $municipalite = new MunicipaliteTeamManager();
-                $municipalite->update($id, $municipaliteMember, $uploadFile);
+                $municipalite->update($id, $municipaliteMembers);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
 
                 header('Location: /admin/municipalite');
