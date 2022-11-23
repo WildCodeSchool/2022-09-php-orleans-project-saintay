@@ -1,6 +1,6 @@
 .actuality-card {
     width: 420px;
-    height: 500px;
+    height: 600px;
     box-shadow: inset var(--box-shadow-card);
     border: none;
     border-radius: var(--border-radius-card);
