@@ -31,10 +31,10 @@
     <div class="p-3">
         <h5 class="card-title d-flex pt-4"> {{report.title}} </h5>
         <p class="card-text"><strong> Le {{ report.date|date("d-m-y") }}, </strong></p>
-        <p class="report-card-description card-text blockquote-footer pt-3"> {{ report.description|u.truncate(350, '...', false) }}</p>    
+        <p class="report-card-description card-text blockquote-footer pt-3"> {{ report.description|u.truncate(100, '...', false) }}</p>    
     </div>
     <div>
-        <a href="./uploads/report_uploads/{{ report.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'info</a>
+        <a href="{{ report.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'info</a>
     </div>
 </div>
 </div>
