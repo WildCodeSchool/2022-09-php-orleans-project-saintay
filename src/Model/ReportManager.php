@@ -11,7 +11,7 @@ class ReportManager extends AbstractManager
     public function selectReports()
     {
         $query = "SELECT report.id, report_category.id as category_id, link, date,
-        report_category.image, name, title
+        report_category.image, name, title, description
         FROM " . self::TABLE . " INNER JOIN report_category ON report.category_id =report_category.id
         ORDER BY date DESC ";
 

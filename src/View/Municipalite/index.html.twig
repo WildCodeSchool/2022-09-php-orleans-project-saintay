@@ -6,9 +6,17 @@
 
 {% block sidebar %}
 {% set sideNav = [
+ {
+			'title' : 'Accueil',
+			'link' : '/municipalite'
+        },
         {
 			'title' : 'L\'Équipe Municipale',
-			'link' : '/municipalite'
+			'link' : '/municipalite/equipe-municipale'
+        },
+        {
+			'title' : 'L\'Équipe Communale',
+			'link' : '/municipalite/equipe-communale'
         },
         {
 			'title' : 'Documents Officiels',
@@ -42,11 +50,17 @@
 	<h2 class="mt-4">Retrouvez ici toutes les informations relatives à la municipalité</h2>
 	<hr>
 	<div class="col">
-		<a href= "municipalite" class="btn bg-primary text-secondary p-3">
+		<a href= "/municipalite/equipe-municipale" class="btn bg-primary text-secondary p-3">
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
 				<path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z"/>
 			</svg>
 			<span class="ms-2">L'équipe Municipale</span>
+		</a>
+		<a href= "/municipalite/equipe-communale" class="btn bg-primary text-secondary p-3">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person-fill" viewBox="0 0 16 16">
+				<path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11z"/>
+			</svg>
+			<span class="ms-2">L'équipe Communale</span>
 		</a>
 		<a href="/reunions-et-arretes"class="btn bg-primary text-secondary p-3">
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
@@ -71,26 +85,5 @@
 			<span class="ms-2">Plan de la ville</span>
 		</a>
 	</div>
-</section>
-	<div class="container municipalityTeam">
-		<h2 class="mb-3 mt-5">Organigramme de l'équipe Municipale</h2>
-		<div class="row justify-content-center g-3">
-			{% for employee in employees %}
-				<div class="col-sm-3">
-					<div class="card">
-						<img 
-							class="card-img-top" 
-							src={% if employee.image is not null %}{{ employee.image }}{% else %}{{ './assets/images/placeholder.jpg' }}{% endif %}  
-							alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-text">{{ employee.firstname }}
-								{{employee.lastname}}
-							</h5>
-							<p class="card-text">{{ employee.role }}
-							</p>
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
+
 	{% endblock %}

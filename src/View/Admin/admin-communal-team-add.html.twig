@@ -1,14 +1,15 @@
 {% extends 'layout_admin.html.twig' %}
 
 {% block sidebar %}
-    {% set sideNav = [
+	{% set sideNav = [      
             {
-                'title' : 'Retour', 
+                'title' : 'Retour',
                 'link' : '/admin/equipe-communale'
             }
+
         ]      
     %}
-    {% include './Item/_sidebar.html.twig' %}
+	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
 
 {% block content %}

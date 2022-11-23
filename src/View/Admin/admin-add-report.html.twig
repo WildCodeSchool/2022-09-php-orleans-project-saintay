@@ -26,7 +26,7 @@
 	{% endif %}
 
 
-	<form class="w-75" method="POST" enctype="multipart/form-data" novalidate>
+	<form class="w-75" method="POST" enctype="multipart/form-data">
 		<div class="form-group my-2">
 
 			<label for="title">Titre du document</label>
@@ -56,12 +56,12 @@
 				aria-describedby="Description du document" 
 				rows="3" 
 				required
-			>{% if report.description is defined %}{{report.description}}{% endif %}
+			>{%- if report.description is defined -%}{{report.description}}{%- endif -%}
 			</textarea>
 		</div>
 		<div class="form-group my-2">
 			<label for="report_category">Selectionnez une catégorie</label>
-			<select type="report_category" id="report_category" name='category' required>
+			<select type="report_category" id="report_category" name='category' class="form-control" required>
 				{% for category in categories %}
             <option value="{{ category.id }}">{{ category.name }}</option>
         {% endfor %}

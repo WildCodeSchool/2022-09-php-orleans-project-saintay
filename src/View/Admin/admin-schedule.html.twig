@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block sidebar %}
-	{% set sideNav = [
+	{% set sideNav = [    
             {
                 'title' : 'Accueil', 
                 'link' : '/admin'
@@ -15,8 +15,9 @@
                 'link' : '/admin/actualite'
             },
             {
-                'title' : 'Horaire de la mairie', 
-                'link' : '/admin/horaires'
+
+                'title' : 'Mot du maire', 
+                'link' : '/admin/mot-du-maire'
             },
             {
             
@@ -24,22 +25,29 @@
                 'link' : '/admin/association'
             },
             {
-                'title' : 'Documents officiels', 
-                'link' : '/admin/documents'
-            },
-			{
-				
-                'title' : 'Mot du maire', 
-                'link' : '/admin/mot-du-maire'
-            },
-            {
                 'title' : 'Équipe Municipale', 
                 'link' : '/admin/municipalite'
-            }        
+            },
+            {
+
+                'title' : 'Horaire de la mairie', 
+                'link' : '/admin/horaires'
+            },
+            {
+                'title' : 'Documents officiels', 
+                'link' : '/admin/documents'
+
+            },
+            {
+                'title' : 'Équipe Communale', 
+                'link' : '/admin/equipe-communale'
+            },
+
         ]      
-    %}
+%}
 	{% include './Item/_sidebar.html.twig' %}
 {% endblock %}
+
 {% block content %}
 
 	<div class="d-flex flex-column">

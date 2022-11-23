@@ -50,29 +50,26 @@
             'title' : 'Service de secours', 
             'link' : '#pompiers'
         },
+        {
+            'title' : 'Petite enfance', 
+            'link' : '#petite-enfance'
+        },
 		{
             'title' : 'Garde d\'enfant', 
             'link' : '#garde-enfant'
-        },
-		{
-            'title' : 'Petite enfance', 
-            'link' : '#petite-enfance'
         },
         {
             'title' : 'Transports en commun', 
             'link' : '#transport-commun'
         },
-
         {
             'title' : 'Camping', 
             'link' : '#camping'
         },
-        
-		    {
-           'title' : 'Equipe Communale', 
-            'link' : '#employes'
+        {
+            'title' : 'Retour', 
+            'link' : '/'
         }
-      
     ]      
     %}
 
@@ -119,8 +116,5 @@
   {% include './Municipal-services/_publicTransport.html.twig' %}
 
   {% include './Municipal-services/_camping.html.twig' %}
-  
-  {% include './Municipal-services/_commun-team.html.twig' %}
-
 
 {% endblock %}
