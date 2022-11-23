@@ -11,7 +11,7 @@
 		</div>
 		<p>{{ wordMayor.description | nl2br }}</p>
 		<div class="d-flex">
-			<img class="float-start" src={% if wordMayor.image is not null %} {{ wordMayor.image }} {% else %} {{ './assets/images/placeholder.jpg' }} {% endif %} alt="Card image mayor" height="160" width="130px">
+			<img class="float-start" src={% if wordMayor.image is not null %} {{ 'uploads/' ~ wordMayor.image }} {% else %} {{ './assets/images/placeholder.jpg' }} {% endif %} alt="Card image mayor" height="160" width="130px">
 			<p class="ps-2 fs-5">{{ wordMayor.signature | nl2br }}</p>
 		</div>
 	</div>
