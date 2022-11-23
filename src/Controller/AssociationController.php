@@ -136,8 +136,7 @@ class AssociationController extends AbstractController
                 sans caractères spéciaux.';
         }
         if (
-            strlen($phoneNumber) < self::PHONE_NUMBER_LENGTH
-            || strlen($phoneNumber) > self::PHONE_NUMBER_LENGTH
+            strlen($phoneNumber) != self::PHONE_NUMBER_LENGTH
         ) {
             $errors[] = 'Le  numero de téléphone doit contenir '
                 . self::PHONE_NUMBER_LENGTH . ' chiffres.';
