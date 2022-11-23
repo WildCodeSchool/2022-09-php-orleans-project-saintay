@@ -35,7 +35,7 @@
 
 	<div class="form-group my-2">
 		<label for="phone_number">Numero pour l'association :</label>
-		<input type="tel" id="phone_number" name="phone_number" placeholder="022233445566" value="{% if association.phone_number is defined %}{{ association.phone_number }}{% endif %}" required>
+		<input type="tel" id="phone_number" name="phone_number" placeholder="022233445566" class="form-control" value="{%- if association.phone_number is defined -%}{{ association.phone_number }}{%- endif -%}" required>
 	</div>
 
 	<button type="submit" class="btn bg-primary text-secondary p-2 mt-3">Soumettre</button>
