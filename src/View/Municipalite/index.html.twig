@@ -77,24 +77,23 @@
 	</div>
 </section>
 	<div class="container municipalityTeam" id="municipalityTeam">
-		<h2 class="mb-3 mt-5">Organigramme de l'équipe Municipale</h2>
-		<div class="row justify-content-center g-3">
-			{% for employee in employees %}
-				<div class="col-sm-3">
-					<div class="card">
-						<img 
-							class="card-img-top" 
-							src={% if employee.image is not null %}{{ employee.image }}{% else %}{{ './assets/images/placeholder.jpg' }}{% endif %}  
-							alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-text">{{ employee.firstname }}
-								{{employee.lastname}}
-							</h5>
-							<p class="card-text">{{ employee.role }}
-							</p>
-						</div>
+	 <div class="row justify-content-center g-3">
+		{% for employee in employees %}
+			<div class="col-sm-6 col-md-4 col-xl-3">
+				<div class="d-flex align-items-center justify-content-center flex-column p-4">
+					<img 
+						class="card-img-top" 
+						src={% if employee.image is not null %}{{ employee.image }}{% else %}{{ './assets/images/placeholder.jpg' }}{% endif %} 
+						alt="Card image communal">
+					<div class="card-body">
+						<h4 class="card-text text-center p-2 employe">{{ employee.firstname }}
+							{{employee.lastname}}
+						</h4>
+						<p class="card-text text-center employe">{{ employee.role }}
+						</p>
 					</div>
 				</div>
-			{% endfor %}
-		</div>
+			</div>
+		{% endfor %}
+	</div>
 	{% endblock %}
