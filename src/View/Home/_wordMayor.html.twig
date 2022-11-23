@@ -1,13 +1,13 @@
-<h2 class="">Mot du maire</h2>
+<h4 class="mt-4">Mot du maire</h4>
 <hr>
 <div class="d-flex flex-column flex-md-row mt-2">
 	<div class="card-body">
 		<div class="d-flex justify-content-start">
-		<p class="bd callout bg-light rounded my-4 fst-italic text-primary"><span class="text-primary fs-5">{{ wordMayor.title }}</span></p>
+		<p class="bd callout bg-light rounded my-4 fst-italic text-primary"><span class="text-primary fs-5">" {{ wordMayor.title }} "</span></p>
 		</div>
 		<p>{{ wordMayor.description | nl2br }}</p>
 		<div class="d-flex">
-			<img class="float-start" src="../uploads/{{ wordMayor.image }}" alt="Card image mayor" height="170" width="125px">
+			<img class="float-start" src="../uploads/{{ wordMayor.image }}" alt="Card image mayor" height="160" width="130px">
 			<p class="ps-2 fs-5">{{ wordMayor.signature | nl2br }}</p>
 		</div>
 	</div>
