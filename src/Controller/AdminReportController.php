@@ -9,7 +9,7 @@ use App\Controller\AbstractController;
 
 class AdminReportController extends AbstractController
 {
-    public const UPLOAD_DIR = './uploads/report_uploads/';
+    public const UPLOAD_DIR = 'uploads/';
     public const AUTH_EXTENSION = ['pdf', 'PDF'];
     public const MAX_FILE_SIZE = 1000000;
 
@@ -59,11 +59,12 @@ class AdminReportController extends AbstractController
     {
         $errors = [];
         $uniqName = '';
+        $uploadFile = [];
 
         if (!empty($files['file']['name'])) {
             $extension = pathinfo($files['file']['name'], PATHINFO_EXTENSION);
-            $filesName = explode(".", $files['file']['name'])[0];
-            $uniqName = uniqid('', true) . $filesName . "." . $extension;
+            $filesName = explode(".", $files['file']['name']);
+            $uniqName = uniqid('') . $filesName[0] . "." . $extension;
             $uploadFile = self::UPLOAD_DIR . $uniqName;
             $errors = $this->validateUpload($files, $errors);
 
@@ -73,7 +74,7 @@ class AdminReportController extends AbstractController
         } else {
             $errors[] = 'Erreur. Le fichier est obligatoire.';
         }
-        return [$errors, $uniqName];
+        return [$errors, $uploadFile];
     }
 
     public function validateUpload($files, $errors)
@@ -130,6 +131,7 @@ class AdminReportController extends AbstractController
 
 
         return $this->twig->render('Admin/admin-add-report.html.twig', [
+            'errors' => $errors,
             'categories' => $reportCategory
         ]);
     }
@@ -160,6 +162,7 @@ class AdminReportController extends AbstractController
             }
         }
         return $this->twig->render('Admin/admin-edit-report.html.twig', [
+            'errors' => $errors,
             'report' => $report,
             'categories' => $reportCategory
         ]);

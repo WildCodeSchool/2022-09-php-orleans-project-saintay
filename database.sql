@@ -1,5 +1,5 @@
 
--- Active: 1666773360795@@127.0.0.1@3306@saint_ay
+-- Active: 1665745572078@@127.0.0.1@3306@saint_ay
 
 -- Active: 1665745572078@@127.0.0.1@3306@saint_ay
 
@@ -138,10 +138,10 @@ CREATE TABLE
 INSERT INTO actuality
 VALUES (
         1,
-        "Nouveau site est en construction",
-        20221120,
-        "/assets/images/homme-devant-ordinateur.jpg",
-        "Un nouveau site est actuellement en cours de construction. Tout le contenu n'est pas encore disponible",
+        "Le nouveau site est là !",
+        20221123,
+        "https://france3-regions.francetvinfo.fr/image/EQ84IAze42zfJ360kMC9MArSTbE/1200x900/regions/2020/06/12/5ee3b4f92ac60_feu_artifice-4873260.jpg",
+        "C'est bon, le nouveau site est enfin arrivé ! Et c'est le jour du demo day !",
         NULL
     );
 
@@ -186,7 +186,7 @@ INSERT INTO actuality
 VALUES (
         6,
         "Les Journées artistiques sont lancées",
-        2022111,
+        20221101,
         "https://img.lamontagne.fr/k8xgjzC8qpKXG8FVX03kU3JY8Dxj6H8xssS62KTFCoo/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzMvMTkvMjAwMDAwNjMzMTk3OA.jpg",
         "Les 27e journées artistiques agyliennes se dérouleront du 11 au 19 novembre. Peinture, théâtre, cinéma et musique sont au programme.",
         "https://www.larep.fr/widgetRss/saint-ay-45130/actualites/les-journees-artistiques-sont-lancees_14214888/"
@@ -577,7 +577,7 @@ INSERT INTO
 
 VALUES (
         'De la force de la douceur, de la douceur de la force.',
-        'La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l indépendance d une grande agglomération, génère le caractère attractif de SAINT-AY.
+        'La situation stratégique de SAINT-AY sur une voie de communication importante, à proximité immédiate mais dans l\'indépendance d\'une grande agglomération, génère le caractère attractif de SAINT-AY.
 Le dynamisme de ses habitants à travers la vie associative, scolaire et économique, constitue sa principale richesse.
 Ses bords de Loire et de Mauve et ses terres champêtres dégagent une impression de douceur et de bien-être.
 
@@ -586,7 +586,7 @@ Depuis plusieurs décennies, la Municipalité conjugue avec détermination ces a
     Favoriser le plein épanouissement de la vie associative, scolaire et économique,
     Protéger et mettre en valeur le patrimoine naturel et architectural. 
 
-Ainsi, d agréable village de vignerons du début du XXème siècle, SAINT - AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n a d égal que la douceur de vivre.',
+Ainsi, d\'agréable village de vignerons du début du XXème siècle, SAINT - AY est devenu, en ce début du XXIème siècle, une petite ville attractive dont le dynamisme n a d égal que la douceur de vivre.',
         "MairePortrait.png",
         'Fréderic CUILLERIER
         Maire de Saint-AY 
