@@ -4,8 +4,8 @@
     <div class="d-flex flex-column justify-content-between h-100">
         <div class="p-3">
             <h5 class="card-title d-flex pt-4"> {{actuality.title}} </h5>
-            <p class="card-text"><b> Le {{ actuality.date|date("d-m-y") }}, </b></p>
-            <p class="actuality-card-description card-text blockquote-footer pt-3"> {{ actuality.description|u.truncate(150, '...', false) }}</p>    
+            <p class="card-text"><b> Le {{ actuality.date|date("d-m-y") | nl2br }}, </b></p>
+            <p class="actuality-card-description card-text blockquote-footer pt-3"> {{ actuality.description|u.truncate(150, '...', false) | nl2br }}</p>    
         </div>
         <div>
             <a href="{{ actuality.link }}" target="_blank" class="btn bg-primary text-secondary container-fluid">Plus d'info</a>
