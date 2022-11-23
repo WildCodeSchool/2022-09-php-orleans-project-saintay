@@ -1,0 +1,48 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/municipalite.css">
+{% endblock %}
+
+{% block sidebar %}
+{% set sideNav = [
+        {
+			'title' : 'Accueil',
+			'link' : '/municipalite'
+        },
+        {
+			'title' : 'L\'Équipe Municipale',
+			'link' : '/municipalite/equipe-municipale'
+        },
+        {
+			'title' : 'L\'Équipe Communale',
+			'link' : '/municipalite/equipe-communale'
+        },
+        {
+			'title' : 'Documents Officiels',
+			'link' : '/reunions-et-arretes'
+        },
+        {
+			'title' : 'Urbanisme',
+			'link' : '/urbanisme'
+        },
+        {
+			'title' : 'Plan de la Ville',
+			'link' : '/plan-ville'
+        }
+    ]      
+    %}
+
+	{% include './Item/_sidebar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+
+<section class="history pb-4 px-2 px-lg-5 w-100">
+	<div class="container municipalityTeam">
+		<h1 class="mt-5">L'équipe Communale</h1>
+        {% include './Municipalite/_commun-team.html.twig' %}
+</section>
+
+{% endblock %}
