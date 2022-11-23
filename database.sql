@@ -138,10 +138,10 @@ CREATE TABLE
 INSERT INTO actuality
 VALUES (
         1,
-        "Nouveau site est en construction",
-        20221120,
-        "/assets/images/homme-devant-ordinateur.jpg",
-        "Un nouveau site est actuellement en cours de construction. Tout le contenu n'est pas encore disponible",
+        "Le nouveau site est là !",
+        20221123,
+        "https://france3-regions.francetvinfo.fr/image/EQ84IAze42zfJ360kMC9MArSTbE/1200x900/regions/2020/06/12/5ee3b4f92ac60_feu_artifice-4873260.jpg",
+        "C'est bon, le nouveau site est enfin arrivé ! Et c'est le jour du demo day !",
         NULL
     );
 
